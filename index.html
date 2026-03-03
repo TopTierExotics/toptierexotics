@@ -14,6 +14,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+cursor:none;
 }
 
 body{
@@ -24,6 +25,20 @@ overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
+/* ===== CUSTOM CURSOR ===== */
+.cursor{
+width:20px;
+height:20px;
+border:2px solid #39ff14;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:2000;
+transition:0.08s ease-out;
+mix-blend-mode:difference;
+}
+
 /* ===== BACKGROUND ===== */
 .background{
 position:fixed;
@@ -32,25 +47,41 @@ left:0;
 width:100%;
 height:100%;
 background:url("logo.png") center center/cover no-repeat;
-filter:blur(45px);
-transform:scale(1.3);
-z-index:-2;
-animation:slowZoom 20s ease-in-out infinite alternate;
+filter:blur(50px);
+transform:scale(1.4);
+z-index:-3;
+animation:slowZoom 25s ease-in-out infinite alternate;
 }
 
 @keyframes slowZoom{
-from{transform:scale(1.3);}
-to{transform:scale(1.4);}
+from{transform:scale(1.4);}
+to{transform:scale(1.5);}
 }
 
+/* ===== DARK DEPTH OVERLAY ===== */
 .overlay{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.98));
+background:
+linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.98)),
+radial-gradient(circle at center, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+z-index:-2;
+}
+
+/* ===== GRAIN TEXTURE ===== */
+.grain{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("https://grainy-gradients.vercel.app/noise.svg");
+opacity:0.05;
 z-index:-1;
+pointer-events:none;
 }
 
 /* ===== BURGER ===== */
@@ -73,11 +104,9 @@ transition:0.4s;
 .burger.active div:nth-child(1){
 transform:rotate(45deg) translate(6px,6px);
 }
-
 .burger.active div:nth-child(2){
 opacity:0;
 }
-
 .burger.active div:nth-child(3){
 transform:rotate(-45deg) translate(7px,-7px);
 }
@@ -90,7 +119,7 @@ left:-320px;
 width:300px;
 height:100%;
 background:rgba(15,15,15,0.95);
-backdrop-filter:blur(30px);
+backdrop-filter:blur(40px);
 padding:120px 40px;
 transition:0.5s ease;
 z-index:1000;
@@ -128,19 +157,16 @@ position:relative;
 }
 
 .hero-logo{
-width:440px;
+width:460px;
 max-width:85%;
-filter:drop-shadow(0 0 45px rgba(57,255,20,0.35));
-opacity:0;
-transform:translateY(30px);
-animation:heroEntrance 1.2s ease forwards;
+filter:drop-shadow(0 0 55px rgba(57,255,20,0.4));
+animation:floatLogo 6s ease-in-out infinite;
 }
 
-@keyframes heroEntrance{
-to{
-opacity:1;
-transform:translateY(0);
-}
+@keyframes floatLogo{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 }
 
 .hero p{
@@ -166,7 +192,7 @@ animation:pulse 3s infinite;
 
 @keyframes pulse{
 0%{box-shadow:0 0 0px #39ff14;}
-50%{box-shadow:0 0 35px #39ff14;}
+50%{box-shadow:0 0 40px #39ff14;}
 100%{box-shadow:0 0 0px #39ff14;}
 }
 
@@ -174,49 +200,9 @@ animation:pulse 3s infinite;
 transform:scale(1.08);
 }
 
-.secondary-cta{
-font-size:0.9rem;
-letter-spacing:3px;
-text-transform:uppercase;
-opacity:0.75;
-cursor:pointer;
-transition:0.3s;
-}
-
-.secondary-cta:hover{
-opacity:1;
-color:#39ff14;
-}
-
-/* ===== SCROLL ===== */
-.scroll-indicator{
-position:absolute;
-bottom:40px;
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:10px;
-opacity:0.8;
-}
-
-.arrow{
-width:18px;
-height:18px;
-border-left:2px solid white;
-border-bottom:2px solid white;
-transform:rotate(-45deg);
-animation:arrowBounce 2s infinite;
-}
-
-@keyframes arrowBounce{
-0%{transform:rotate(-45deg) translateY(0);}
-50%{transform:rotate(-45deg) translateY(8px);}
-100%{transform:rotate(-45deg) translateY(0);}
-}
-
 /* ===== PRODUCTS ===== */
 .products{
-padding:160px 10%;
+padding:180px 10%;
 background:#0a0a0a;
 }
 
@@ -253,7 +239,7 @@ transform:translateY(0);
 }
 
 .product:hover{
-box-shadow:0 0 70px rgba(57,255,20,0.25);
+box-shadow:0 0 80px rgba(57,255,20,0.25);
 }
 
 .product h3{
@@ -268,7 +254,7 @@ margin-bottom:30px;
 
 /* ===== FAQ ===== */
 .faq{
-padding:160px 10%;
+padding:180px 10%;
 background:#000;
 }
 
@@ -323,8 +309,10 @@ opacity:0.8;
 
 <body>
 
+<div class="cursor" id="cursor"></div>
 <div class="background"></div>
 <div class="overlay"></div>
+<div class="grain"></div>
 
 <div class="burger" id="burger" onclick="toggleMenu()">
 <div></div>
@@ -347,14 +335,6 @@ opacity:0.8;
 <button class="primary-btn" onclick="window.open('https://t.me/+pjrH2Z-XE3VlZmNk','_blank')">
 Enter The Drop
 </button>
-
-<div class="secondary-cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-Explore Collection
-</div>
-
-<div class="scroll-indicator">
-<div class="arrow"></div>
-</div>
 
 </section>
 
@@ -395,11 +375,13 @@ Explore Collection
 
 <script>
 
+/* Burger */
 function toggleMenu(){
 document.getElementById("sideMenu").classList.toggle("active");
 document.getElementById("burger").classList.toggle("active");
 }
 
+/* FAQ */
 document.querySelectorAll(".faq-question").forEach(btn=>{
 btn.addEventListener("click",()=>{
 const answer = btn.nextElementSibling;
@@ -407,6 +389,7 @@ answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "
 });
 });
 
+/* Scroll reveal */
 window.addEventListener("scroll",()=>{
 document.querySelectorAll(".product").forEach(card=>{
 const rect = card.getBoundingClientRect();
@@ -414,6 +397,13 @@ if(rect.top < window.innerHeight - 100){
 card.classList.add("show");
 }
 });
+});
+
+/* Cursor */
+const cursor = document.getElementById("cursor");
+document.addEventListener("mousemove", e=>{
+cursor.style.left = e.clientX + "px";
+cursor.style.top = e.clientY + "px";
 });
 
 </script>

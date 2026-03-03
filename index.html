@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TopTierExotics | Luxury Streetwear</title>
+<title>TopTierExotics | Private Access Luxury Streetwear</title>
 
-<meta name="description" content="TopTierExotics offers premium luxury streetwear including hats and tracksuits. Private access ordering via Telegram. Worldwide shipping available.">
-<meta name="keywords" content="TopTierExotics, luxury streetwear, premium tracksuit, streetwear brand">
+<meta name="description" content="TopTierExotics is a private access luxury streetwear brand. Worldwide shipping. Secure PayPal payments.">
+<meta name="keywords" content="TopTierExotics, luxury streetwear, private streetwear brand">
 <meta name="author" content="TopTierExotics">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@ scroll-behavior:smooth;
 letter-spacing:0.5px;
 }
 
-/* ===== CUSTOM CURSOR ===== */
+/* ===== CURSOR ===== */
 .cursor{
 width:18px;
 height:18px;
@@ -146,7 +146,6 @@ align-items:center;
 text-align:center;
 padding:0 20px;
 gap:45px;
-position:relative;
 }
 
 .hero-logo{
@@ -163,7 +162,7 @@ animation:floatLogo 7s ease-in-out infinite;
 }
 
 .hero p{
-font-size:1.05rem;
+font-size:1rem;
 letter-spacing:3px;
 font-weight:300;
 opacity:0.75;
@@ -186,6 +185,13 @@ transition:0.3s;
 .primary-btn:hover{
 transform:scale(1.06);
 box-shadow:0 0 45px #39ff14;
+}
+
+.trust-text{
+margin-top:20px;
+font-size:0.75rem;
+letter-spacing:2px;
+opacity:0.6;
 }
 
 /* ===== PRODUCTS ===== */
@@ -237,55 +243,6 @@ margin-bottom:35px;
 font-size:0.95rem;
 }
 
-/* ===== FAQ ===== */
-.faq{
-padding:220px 12%;
-background:#000;
-}
-
-.faq h2{
-text-align:center;
-margin-bottom:100px;
-letter-spacing:6px;
-font-family:'Playfair Display',serif;
-font-weight:500;
-}
-
-.faq-item{
-margin-bottom:30px;
-}
-
-.faq-question{
-width:100%;
-padding:22px;
-background:#111;
-border:none;
-color:white;
-cursor:pointer;
-text-align:left;
-font-size:0.9rem;
-letter-spacing:2px;
-transition:0.3s;
-}
-
-.faq-question:hover{
-background:#161616;
-}
-
-.faq-answer{
-max-height:0;
-overflow:hidden;
-transition:max-height 0.4s ease;
-background:#151515;
-padding:0 25px;
-}
-
-.faq-answer p{
-padding:22px 0;
-opacity:0.65;
-font-size:0.9rem;
-}
-
 /* ===== FOOTER ===== */
 .footer{
 padding:80px 10%;
@@ -319,32 +276,30 @@ transform:scale(1.15);
 filter:brightness(1.1);
 }
 
-/* ===== LEGAL ===== */
-.legal{
-padding:150px 12%;
-background:#0a0a0a;
-border-top:1px solid rgba(255,255,255,0.04);
+/* ===== CONTACT ===== */
+.contact{
+padding:180px 12%;
+background:#000;
+text-align:center;
 }
 
-.legal h2{
+.contact h2{
+margin-bottom:40px;
+letter-spacing:6px;
 font-family:'Playfair Display',serif;
-margin-bottom:35px;
-letter-spacing:3px;
 font-weight:500;
 }
 
-.legal p{
+.contact p{
 opacity:0.6;
-margin-bottom:60px;
-line-height:1.8;
+letter-spacing:2px;
 font-size:0.9rem;
 }
 
-/* ===== MOBILE ===== */
 @media(max-width:768px){
 .hero-logo{ width:260px; }
 .product-grid{ flex-direction:column; align-items:center; gap:60px; }
-.products, .faq, .legal{ padding:140px 8%; }
+.products, .contact{ padding:140px 8%; }
 }
 
 </style>
@@ -365,15 +320,19 @@ font-size:0.9rem;
 <div class="side-panel" id="sideMenu">
 <a href="#home" onclick="toggleMenu()">HOME</a>
 <a href="#products" onclick="toggleMenu()">PRODUCTS</a>
-<a href="#faq" onclick="toggleMenu()">FAQ</a>
+<a href="#contact" onclick="toggleMenu()">CONTACT US</a>
+<a href="https://www.paypal.me/TopTierExotics" target="_blank">PAYPAL</a>
 </div>
 
 <section class="hero" id="home">
 <img src="logo.png" class="hero-logo" alt="TopTierExotics Logo">
-<p>Luxury Streetwear. Elevated Energy.</p>
+<p>Private Access Luxury Streetwear</p>
 <button class="primary-btn" onclick="window.open('https://t.me/+pjrH2Z-XE3VlZmNk','_blank')">
 SHOP COLLECTION
 </button>
+<div class="trust-text">
+WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS
+</div>
 </section>
 
 <section class="products" id="products">
@@ -392,20 +351,13 @@ SHOP COLLECTION
 </div>
 </section>
 
-<section class="faq" id="faq">
-<h2>FAQ</h2>
-<div class="faq-item">
-<button class="faq-question">HOW LONG IS SHIPPING?</button>
-<div class="faq-answer"><p>Shipping times vary depending on location.</p></div>
-</div>
-<div class="faq-item">
-<button class="faq-question">ARE ITEMS RESTOCKED?</button>
-<div class="faq-answer"><p>Yes. We restock regularly.</p></div>
-</div>
+<section class="contact" id="contact">
+<h2>CONTACT US</h2>
+<p>For all inquiries, sizing questions, and orders — join our Telegram channel.</p>
 </section>
 
 <footer class="footer">
-<h3>CONNECT & PAY</h3>
+<h3>CONNECT</h3>
 <div class="footer-icons">
 <a href="https://t.me/+pjrH2Z-XE3VlZmNk" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
@@ -416,31 +368,12 @@ SHOP COLLECTION
 </div>
 </footer>
 
-<section class="legal">
-<h2>PRIVACY POLICY</h2>
-<p>
-TopTierExotics does not collect personal data directly through this website. Orders are processed via Telegram and payments are securely handled through PayPal. We do not store payment information.
-</p>
-
-<h2>TERMS & CONDITIONS</h2>
-<p>
-By purchasing from TopTierExotics, you agree to our standard terms of sale. All sales are subject to availability. Shipping times may vary depending on location. Refunds and exchanges are handled case-by-case.
-</p>
-</section>
-
 <script>
 
 function toggleMenu(){
 document.getElementById("sideMenu").classList.toggle("active");
 document.getElementById("burger").classList.toggle("active");
 }
-
-document.querySelectorAll(".faq-question").forEach(btn=>{
-btn.addEventListener("click",()=>{
-const answer = btn.nextElementSibling;
-answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
-});
-});
 
 const cursor = document.getElementById("cursor");
 document.addEventListener("mousemove", e=>{

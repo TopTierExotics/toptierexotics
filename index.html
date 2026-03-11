@@ -14,7 +14,14 @@
 
 <style>
 
-/* ===== GLOBAL ===== */
+/* ===== HARD RESET ===== */
+
+html,body{
+margin:0;
+padding:0;
+background:#000;
+overflow-x:hidden;
+}
 
 *{
 margin:0;
@@ -22,9 +29,10 @@ padding:0;
 box-sizing:border-box;
 }
 
+/* ===== GLOBAL ===== */
+
 body{
 font-family:'Montserrat',sans-serif;
-background:#000;
 color:white;
 line-height:1.5;
 scroll-behavior:smooth;
@@ -94,13 +102,13 @@ left:0;
 /* ===== HERO ===== */
 
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:40px 20px;
 }
 
 .hero-logo{
@@ -143,7 +151,7 @@ box-shadow:0 0 25px rgba(57,255,20,.6);
 }
 
 .trust{
-margin-top:55px;
+margin-top:60px;
 font-size:.75rem;
 opacity:.6;
 letter-spacing:2px;
@@ -411,6 +419,7 @@ p.classList.add("show");
 }
 
 window.addEventListener("scroll",revealProducts);
+window.addEventListener("load",revealProducts);
 
 </script>
 

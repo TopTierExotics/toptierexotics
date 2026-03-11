@@ -7,8 +7,6 @@
 <title>TopTierExotics | Private Access Luxury Streetwear</title>
 
 <meta name="description" content="TopTierExotics is a private access luxury streetwear brand. Worldwide shipping. Secure PayPal payments.">
-<meta name="keywords" content="TopTierExotics, luxury streetwear, private streetwear brand">
-<meta name="author" content="TopTierExotics">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
@@ -40,15 +38,9 @@ left:0;
 width:100%;
 height:100%;
 background:url("logo.png") center center/cover no-repeat;
-filter:blur(55px);
-transform:scale(1.45);
+filter:blur(40px);
+transform:scale(1.25);
 z-index:-3;
-animation:slowZoom 30s ease-in-out infinite alternate;
-}
-
-@keyframes slowZoom{
-from{transform:scale(1.45);}
-to{transform:scale(1.55);}
 }
 
 .overlay{
@@ -58,8 +50,7 @@ left:0;
 width:100%;
 height:100%;
 background:
-linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
-radial-gradient(circle at center, rgba(0,0,0,0.5), rgba(0,0,0,0.95));
+linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
 z-index:-2;
 }
 
@@ -102,9 +93,9 @@ left:-320px;
 width:300px;
 height:100%;
 background:rgba(10,10,10,0.97);
-backdrop-filter:blur(40px);
+backdrop-filter:blur(30px);
 padding:140px 50px;
-transition:0.5s ease;
+transition:0.4s ease;
 z-index:1000;
 }
 
@@ -112,7 +103,7 @@ z-index:1000;
 display:block;
 color:white;
 text-decoration:none;
-margin-bottom:45px;
+margin-bottom:40px;
 font-size:0.95rem;
 letter-spacing:3px;
 font-weight:500;
@@ -141,16 +132,9 @@ gap:45px;
 }
 
 .hero-logo{
-width:440px;
+width:420px;
 max-width:85%;
-filter:drop-shadow(0 0 60px rgba(57,255,20,0.35));
-animation:floatLogo 7s ease-in-out infinite;
-}
-
-@keyframes floatLogo{
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
+filter:drop-shadow(0 0 50px rgba(57,255,20,0.35));
 }
 
 .hero p{
@@ -175,8 +159,8 @@ transition:0.3s;
 }
 
 .primary-btn:hover{
-transform:scale(1.06);
-box-shadow:0 0 45px #39ff14;
+transform:scale(1.05);
+box-shadow:0 0 40px #39ff14;
 }
 
 .trust-text{
@@ -186,24 +170,17 @@ letter-spacing:2px;
 opacity:0.6;
 }
 
-/* ===== SECTION FADE ===== */
-
-.section-divider{
-height:160px;
-background:linear-gradient(to bottom, rgba(0,0,0,0), #0a0a0a);
-}
-
 /* ===== PRODUCTS ===== */
 
 .products{
-padding:200px 12%;
+padding:160px 12%;
 background:#0a0a0a;
 }
 
 .products h2{
 text-align:center;
-margin-bottom:100px;
-font-size:2.4rem;
+margin-bottom:90px;
+font-size:2.3rem;
 letter-spacing:6px;
 font-weight:500;
 font-family:'Playfair Display',serif;
@@ -213,28 +190,28 @@ font-family:'Playfair Display',serif;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:90px;
+gap:70px;
 }
 
 .product{
 background:linear-gradient(145deg,#111,#0d0d0d);
 padding:40px 40px 55px 40px;
-border-radius:28px;
-width:340px;
+border-radius:26px;
+width:330px;
 border:1px solid rgba(255,255,255,0.04);
 text-align:center;
-transition:0.4s;
+transition:0.35s;
 }
 
 .product:hover{
-box-shadow:0 0 90px rgba(57,255,20,0.2);
-transform:translateY(-12px);
+box-shadow:0 0 70px rgba(57,255,20,0.18);
+transform:translateY(-8px);
 }
 
 .product img{
 width:100%;
-border-radius:18px;
-margin-bottom:30px;
+border-radius:16px;
+margin-bottom:28px;
 }
 
 .product h3{
@@ -252,13 +229,13 @@ font-size:0.95rem;
 /* ===== CONTACT ===== */
 
 .contact{
-padding:200px 12%;
+padding:160px 12%;
 background:#000;
 text-align:center;
 }
 
 .contact h2{
-margin-bottom:40px;
+margin-bottom:35px;
 letter-spacing:6px;
 font-family:'Playfair Display',serif;
 font-weight:500;
@@ -273,7 +250,7 @@ font-size:0.9rem;
 /* ===== FOOTER ===== */
 
 .footer{
-padding:80px 10%;
+padding:70px 10%;
 background:#050505;
 text-align:center;
 border-top:1px solid rgba(255,255,255,0.04);
@@ -289,11 +266,11 @@ font-size:0.9rem;
 .footer-icons{
 display:flex;
 justify-content:center;
-gap:50px;
+gap:45px;
 }
 
 .footer-icons img{
-width:38px;
+width:36px;
 transition:0.3s;
 cursor:pointer;
 filter:brightness(0.85);
@@ -309,18 +286,18 @@ filter:brightness(1.1);
 @media(max-width:768px){
 
 .hero-logo{
-width:260px;
+width:250px;
 }
 
 .product-grid{
 flex-direction:column;
 align-items:center;
-gap:60px;
+gap:55px;
 }
 
 .products,
 .contact{
-padding:140px 8%;
+padding:120px 8%;
 }
 
 }
@@ -342,13 +319,9 @@ padding:140px 8%;
 <div class="side-panel" id="sideMenu">
 
 <a href="#home" onclick="toggleMenu()">HOME</a>
-
 <a href="#products" onclick="toggleMenu()">PRODUCTS</a>
-
 <a href="#contact" onclick="toggleMenu()">CONTACT US</a>
-
 <a href="https://t.me/+pjrH2Z-XE3VlZmNk" target="_blank">SOCIALS</a>
-
 <a href="https://www.paypal.me/TopTierExotics" target="_blank">PAYPAL</a>
 
 </div>
@@ -368,8 +341,6 @@ WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS
 </div>
 
 </section>
-
-<div class="section-divider"></div>
 
 <section class="products" id="products">
 
@@ -407,8 +378,6 @@ ORDER
 
 </section>
 
-<div class="section-divider"></div>
-
 <section class="contact" id="contact">
 
 <h2>CONTACT US</h2>
@@ -426,15 +395,11 @@ For all inquiries, sizing questions, and orders — join our Telegram channel.
 <div class="footer-icons">
 
 <a href="https://t.me/+pjrH2Z-XE3VlZmNk" target="_blank">
-
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
-
 </a>
 
 <a href="https://www.paypal.me/TopTierExotics" target="_blank">
-
 <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png">
-
 </a>
 
 </div>

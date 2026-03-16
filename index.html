@@ -50,11 +50,12 @@ top:0;
 left:-300px;
 width:280px;
 height:100%;
-background:#0a0a0a;
+background:#000;
 padding:120px 34px;
 transition:.32s;
 z-index:1100;
 }
+
 .side-menu a{
 display:block;
 color:#fff;
@@ -63,8 +64,14 @@ margin-bottom:34px;
 letter-spacing:3px;
 font-size:.95rem;
 }
-.side-menu a:hover{color:#39ff14;}
-.side-menu.active{left:0;}
+
+.side-menu a:hover{
+color:#39ff14;
+}
+
+.side-menu.active{
+left:0;
+}
 
 /* ===== HERO ===== */
 .hero{
@@ -76,6 +83,7 @@ align-items:center;
 text-align:center;
 padding:48px 20px;
 }
+
 .hero-logo{
 width:360px;
 max-width:85%;
@@ -83,6 +91,7 @@ margin-bottom:30px;
 filter:drop-shadow(0 0 40px rgba(57,255,20,.35));
 animation:floatLogo 6s ease-in-out infinite;
 }
+
 @keyframes floatLogo{
 0%{transform:translateY(0)}
 50%{transform:translateY(-10px)}
@@ -108,6 +117,7 @@ letter-spacing:2px;
 cursor:pointer;
 transition:.22s;
 }
+
 .primary-btn:hover{
 transform:scale(1.05);
 box-shadow:0 0 25px rgba(57,255,20,.55);
@@ -123,7 +133,7 @@ letter-spacing:2px;
 /* ===== PRODUCTS ===== */
 .products{
 padding:140px 10%;
-background:#0a0a0a;
+background:#000;
 }
 
 .products h2{
@@ -142,7 +152,7 @@ max-width:1000px;
 margin:0 auto;
 }
 
-/* ===== PRODUCT CARD ===== */
+/* ===== PRODUCT ===== */
 .product{
 background:#111;
 border-radius:20px;
@@ -168,7 +178,6 @@ width:100%;
 border-radius:14px;
 margin-bottom:20px;
 transition:transform .35s;
-display:block;
 }
 
 .product:hover img{
@@ -256,7 +265,7 @@ left:-260px;
 <body>
 
 <!-- BURGER -->
-<div class="burger" id="burger" onclick="toggleMenu()" tabindex="0">
+<div class="burger" id="burger" onclick="toggleMenu()">
 <div></div>
 <div></div>
 <div></div>
@@ -264,21 +273,27 @@ left:-260px;
 
 <!-- SIDE MENU -->
 <nav class="side-menu" id="menu">
+
 <a href="#home" onclick="toggleMenu()">HOME</a>
 <a href="#products" onclick="toggleMenu()">PRODUCTS</a>
 <a href="#contact" onclick="toggleMenu()">CONTACT US</a>
-<a href="https://t.me/+pjrH2Z-XE3VlZmNk" target="_blank">SOCIALS</a>
+
+<a href="https://t.me/TTE_V2" target="_blank">TELEGRAM</a>
+<a href="https://www.instagram.com/toptierexotics.2k25?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank">INSTAGRAM</a>
+
 <a href="https://www.paypal.me/TopTierExotics" target="_blank">PAYPAL</a>
+
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
 
-<img src="logo.png" class="hero-logo" alt="TopTierExotics Logo">
+<img src="logo.png" class="hero-logo">
 
 <p>PRIVATE ACCESS LUXURY STREETWEAR</p>
 
-<button class="primary-btn" onclick="window.open('https://t.me/+pjrH2Z-XE3VlZmNk','_blank')">
+<button class="primary-btn"
+onclick="window.open('https://t.me/TTE_V2','_blank')">
 SHOP COLLECTION
 </button>
 
@@ -296,21 +311,36 @@ WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS
 <div class="product-grid">
 
 <article class="product">
-<img src="hat.png" loading="lazy" alt="TopTierExotics Hat">
+
+<img src="hat.png">
+
 <h3>TOPTIEREXOTICS HAT</h3>
+
 <p>Structured fit. Breathable fabric. Everyday essential.</p>
-<button class="primary-btn" onclick="window.open('https://t.me/+pjrH2Z-XE3VlZmNk','_blank')">ORDER</button>
+
+<button class="primary-btn"
+onclick="window.open('https://t.me/TTE_V2','_blank')">
+ORDER
+</button>
+
 </article>
 
 <article class="product">
-<img src="tracksuit.png" loading="lazy" alt="TopTierExotics Tracksuit">
+
+<img src="tracksuit.png">
+
 <h3>TOPTIEREXOTICS TRACKSUIT</h3>
+
 <p>Premium hoodie and tapered joggers. Clean tailored fit.</p>
-<button class="primary-btn" onclick="window.open('https://t.me/+pjrH2Z-XE3VlZmNk','_blank')">ORDER</button>
+
+<button class="primary-btn"
+onclick="window.open('https://t.me/TTE_V2','_blank')">
+ORDER
+</button>
+
 </article>
 
 </div>
-
 </section>
 
 <!-- CONTACT -->
@@ -319,7 +349,7 @@ WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS
 <h2>CONTACT US</h2>
 
 <p>
-For all inquiries, sizing questions, and orders — join our Telegram channel.
+For all inquiries, sizing questions, and orders — join our Telegram or message us on Instagram.
 </p>
 
 </section>
@@ -331,12 +361,16 @@ For all inquiries, sizing questions, and orders — join our Telegram channel.
 
 <div class="footer-icons">
 
-<a href="https://t.me/+pjrH2Z-XE3VlZmNk" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+<a href="https://t.me/TTE_V2" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+</a>
+
+<a href="https://www.instagram.com/toptierexotics.2k25?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 </a>
 
 <a href="https://www.paypal.me/TopTierExotics" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174861.png">
 </a>
 
 </div>
@@ -345,27 +379,27 @@ For all inquiries, sizing questions, and orders — join our Telegram channel.
 
 <script>
 
-/* MENU TOGGLE */
 function toggleMenu(){
-const menu = document.getElementById('menu');
-const burger = document.getElementById('burger');
+
+const menu=document.getElementById('menu');
+const burger=document.getElementById('burger');
 
 menu.classList.toggle('active');
 burger.classList.toggle('active');
+
 }
 
-/* PRODUCT REVEAL */
-const products = document.querySelectorAll(".product");
+const products=document.querySelectorAll(".product");
 
 function revealProducts(){
 
-const trigger = window.innerHeight * 0.85;
+const trigger=window.innerHeight*0.85;
 
-products.forEach(product => {
+products.forEach(product=>{
 
-const top = product.getBoundingClientRect().top;
+const top=product.getBoundingClientRect().top;
 
-if(top < trigger){
+if(top<trigger){
 product.classList.add("show");
 }
 
@@ -373,8 +407,8 @@ product.classList.add("show");
 
 }
 
-window.addEventListener("scroll", revealProducts);
-window.addEventListener("load", revealProducts);
+window.addEventListener("scroll",revealProducts);
+window.addEventListener("load",revealProducts);
 
 </script>
 

@@ -173,7 +173,6 @@ transform:translateY(-10px);
 box-shadow:0 0 40px rgba(57,255,20,.25),0 25px 60px rgba(0,0,0,.7);
 }
 
-/* ===== PRODUCT IMAGE ===== */
 .product-image{
 position:relative;
 }
@@ -182,7 +181,7 @@ position:relative;
 width:100%;
 border-radius:14px;
 margin-bottom:20px;
-transition:transform .35s,opacity .25s;
+transition:transform .35s;
 cursor:pointer;
 }
 
@@ -195,29 +194,28 @@ transform:scale(1.05);
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:rgba(0,0,0,.6);
+background:rgba(0,0,0,.55);
 color:#39ff14;
 border:none;
-width:36px;
-height:36px;
+width:34px;
+height:34px;
 border-radius:50%;
 font-size:18px;
 cursor:pointer;
 display:none;
 }
 
-.arrow:hover{
-box-shadow:0 0 15px rgba(57,255,20,.7);
-}
-
-.arrow-left{left:-12px;}
-.arrow-right{right:-12px;}
+.arrow-left{left:10px;}
+.arrow-right{right:10px;}
 
 .product-image.active .arrow{
 display:block;
 }
 
-/* ===== TEXT ===== */
+.arrow:hover{
+box-shadow:0 0 10px rgba(57,255,20,.6);
+}
+
 .product h3{
 margin-bottom:12px;
 letter-spacing:2px;
@@ -346,7 +344,7 @@ WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS
 
 <button class="arrow arrow-left" onclick="changeHat(-1)">‹</button>
 
-<img src="hat.png" id="hatImage" onclick="activateGallery()">
+<img src="hat.png" id="hatImage" onclick="activateHat()">
 
 <button class="arrow arrow-right" onclick="changeHat(1)">›</button>
 
@@ -365,7 +363,11 @@ ORDER
 
 <article class="product">
 
+<div class="product-image">
+
 <img src="tracksuit.png">
+
+</div>
 
 <h3>TOPTIEREXOTICS TRACKSUIT</h3>
 
@@ -441,7 +443,7 @@ product.classList.add("show");
 window.addEventListener("scroll",revealProducts);
 window.addEventListener("load",revealProducts);
 
-/* ===== HAT GALLERY ===== */
+/* ===== HAT IMAGE SWITCHER ===== */
 
 const hatImages=[
 "hat.png",
@@ -451,7 +453,7 @@ const hatImages=[
 
 let hatIndex=0;
 
-function activateGallery(){
+function activateHat(){
 document.getElementById("hatContainer").classList.add("active");
 }
 
@@ -467,14 +469,7 @@ if(hatIndex>=hatImages.length){
 hatIndex=0;
 }
 
-const img=document.getElementById("hatImage");
-
-img.style.opacity=0;
-
-setTimeout(()=>{
-img.src=hatImages[hatIndex];
-img.style.opacity=1;
-},150);
+document.getElementById("hatImage").src=hatImages[hatIndex];
 
 }
 

@@ -6,8 +6,6 @@
 
 <title>TopTierExotics | Private Access Luxury Streetwear</title>
 
-<meta name="description" content="TopTierExotics is a private access luxury streetwear brand. Worldwide shipping. Secure PayPal payments.">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -18,9 +16,21 @@ html,body{margin:0;padding:0;background:#000;overflow-x:hidden;}
 body{
 font-family:'Montserrat',sans-serif;
 color:#fff;
-line-height:1.5;
-scroll-behavior:smooth;
--webkit-font-smoothing:antialiased;
+}
+
+/* CURSOR GLOW */
+
+.cursor{
+position:fixed;
+width:120px;
+height:120px;
+border-radius:50%;
+background:radial-gradient(circle, rgba(57,255,20,.25), transparent 70%);
+pointer-events:none;
+z-index:999;
+transform:translate(-50%,-50%);
+opacity:0;
+transition:opacity .3s;
 }
 
 /* LOADER */
@@ -83,6 +93,27 @@ background:#000;
 padding:120px 34px;
 transition:.32s;
 z-index:1100;
+overflow:hidden;
+}
+
+.menu-main,.menu-socials{
+position:absolute;
+top:120px;
+left:34px;
+width:calc(100% - 68px);
+transition:.3s;
+}
+
+.menu-socials{
+left:300px;
+}
+
+.side-menu.social-open .menu-main{
+left:-300px;
+}
+
+.side-menu.social-open .menu-socials{
+left:34px;
 }
 
 .side-menu a{
@@ -92,11 +123,10 @@ text-decoration:none;
 margin-bottom:34px;
 letter-spacing:3px;
 font-size:.95rem;
+cursor:pointer;
 }
 
 .side-menu a:hover{color:#39ff14;}
-
-.side-menu.active{left:0;}
 
 /* HERO */
 
@@ -107,7 +137,6 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:48px 20px;
 }
 
 .hero-logo{
@@ -122,14 +151,6 @@ animation:floatLogo 6s ease-in-out infinite;
 50%{transform:translateY(-10px)}
 }
 
-.hero p{
-letter-spacing:3px;
-font-size:.95rem;
-opacity:.78;
-margin-bottom:35px;
-text-transform:uppercase;
-}
-
 .primary-btn{
 padding:16px 56px;
 border:none;
@@ -139,34 +160,12 @@ color:#000;
 font-weight:600;
 letter-spacing:2.5px;
 cursor:pointer;
-transition:.3s;
-}
-
-.primary-btn:hover{
-transform:scale(1.06);
-box-shadow:0 0 30px rgba(57,255,20,.5);
-}
-
-.trust{
-margin-top:60px;
-font-size:.75rem;
-opacity:.62;
-letter-spacing:2px;
 }
 
 /* PRODUCTS */
 
 .products{
 padding:140px 10%;
-background:#000;
-}
-
-.products h2{
-text-align:center;
-margin-bottom:70px;
-font-size:2.2rem;
-letter-spacing:6px;
-font-family:'Playfair Display',serif;
 }
 
 .product-grid{
@@ -182,23 +181,13 @@ background:#111;
 border-radius:22px;
 padding:40px 30px;
 text-align:center;
-transition:transform .35s,box-shadow .35s;
-opacity:0;
-transform:translateY(40px);
-position:relative;
-}
-
-.product.show{
-opacity:1;
-transform:translateY(0);
+transition:.35s;
 }
 
 .product:hover{
 transform:translateY(-12px);
-box-shadow:0 0 35px rgba(57,255,20,.25),0 25px 60px rgba(0,0,0,.7);
+box-shadow:0 0 35px rgba(57,255,20,.25);
 }
-
-/* IMAGE */
 
 .product-image{
 position:relative;
@@ -206,85 +195,16 @@ height:260px;
 display:flex;
 align-items:center;
 justify-content:center;
-margin-bottom:10px;
 }
 
 .product-image img{
 max-width:100%;
 max-height:100%;
-object-fit:contain;
 border-radius:14px;
 cursor:pointer;
-transition:.35s;
 }
 
-.product-image:hover img{
-transform:scale(1.04);
-}
-
-/* TEXT */
-
-.product h3{
-margin-top:12px;
-margin-bottom:10px;
-}
-
-.product p{
-opacity:.7;
-font-size:.9rem;
-margin-bottom:26px;
-}
-
-.product .primary-btn{
-margin-top:10px;
-}
-
-/* ARROWS */
-
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,.6);
-color:#39ff14;
-border:none;
-width:36px;
-height:36px;
-border-radius:50%;
-cursor:pointer;
-opacity:0;
-transition:.25s;
-}
-
-.arrow-left{left:10px;}
-.arrow-right{right:10px;}
-
-.product-image:hover .arrow{
-opacity:1;
-}
-
-/* DOTS */
-
-.gallery-dots{
-display:flex;
-justify-content:center;
-gap:8px;
-margin-bottom:18px;
-}
-
-.gallery-dots span{
-width:8px;
-height:8px;
-border-radius:50%;
-background:#555;
-}
-
-.gallery-dots .active{
-background:#39ff14;
-box-shadow:0 0 6px rgba(57,255,20,.8);
-}
-
-/* ZOOM (UPGRADED) */
+/* ZOOM */
 
 .zoom{
 position:fixed;
@@ -296,7 +216,6 @@ background:rgba(0,0,0,.95);
 display:flex;
 align-items:center;
 justify-content:center;
-z-index:2000;
 opacity:0;
 pointer-events:none;
 transition:.3s;
@@ -318,53 +237,12 @@ transition:.3s;
 transform:scale(1);
 }
 
-/* CONTACT */
-
-.contact{
-padding:120px 10%;
-text-align:center;
-}
-
-.contact h2{
-letter-spacing:6px;
-margin-bottom:25px;
-font-family:'Playfair Display',serif;
-}
-
-.contact p{
-opacity:.6;
-letter-spacing:2px;
-max-width:560px;
-margin:0 auto;
-}
-
-/* FOOTER */
-
-.footer{
-padding:60px 10%;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.05);
-}
-
-.footer-icons{
-display:flex;
-justify-content:center;
-gap:40px;
-}
-
-.footer-icons img{
-width:34px;
-transition:.25s;
-}
-
-.footer-icons img:hover{
-transform:scale(1.2);
-}
-
 </style>
 </head>
 
 <body>
+
+<div class="cursor" id="cursor"></div>
 
 <div class="loader" id="loader">
 <img src="logo.png">
@@ -375,65 +253,53 @@ transform:scale(1.2);
 </div>
 
 <nav class="side-menu" id="menu">
-<a href="#home" onclick="toggleMenu()">HOME</a>
-<a href="#products" onclick="toggleMenu()">PRODUCTS</a>
-<a href="#contact" onclick="toggleMenu()">CONTACT US</a>
+
+<div class="menu-main">
+<a onclick="toggleMenu()">HOME</a>
+<a onclick="toggleMenu()">PRODUCTS</a>
+<a onclick="toggleMenu()">CONTACT</a>
+<a onclick="openSocials()">SOCIALS</a>
+<a href="https://www.paypal.me/TopTierExotics" target="_blank">PAYPAL</a>
+</div>
+
+<div class="menu-socials">
+<a onclick="closeSocials()">← BACK</a>
 <a href="https://t.me/TTE_V2" target="_blank">TELEGRAM</a>
 <a href="https://www.instagram.com/toptierexotics.2k25" target="_blank">INSTAGRAM</a>
-<a href="https://www.paypal.me/TopTierExotics" target="_blank">PAYPAL</a>
+</div>
+
 </nav>
 
-<section class="hero" id="home">
+<section class="hero">
 <img src="logo.png" class="hero-logo">
-<p>PRIVATE ACCESS LUXURY STREETWEAR</p>
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2','_blank')">SHOP COLLECTION</button>
-<div class="trust">WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS</div>
+<button class="primary-btn">SHOP COLLECTION</button>
 </section>
 
-<section class="products" id="products">
-<h2>FEATURED COLLECTION</h2>
+<section class="products">
 
 <div class="product-grid">
 
 <article class="product">
-<div class="product-image" id="hatGallery">
-<button class="arrow arrow-left" onclick="changeHat(-1)">‹</button>
+<div class="product-image">
 <img src="hat.png" id="hatImage">
-<button class="arrow arrow-right" onclick="changeHat(1)">›</button>
 </div>
-<div class="gallery-dots" id="hatDots"></div>
 <h3>TOPTIEREXOTICS HAT</h3>
-<p>Structured fit. Breathable fabric. Everyday essential.</p>
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2','_blank')">ORDER</button>
+<p>Structured fit. Breathable fabric.</p>
+<button class="primary-btn">ORDER</button>
 </article>
 
 <article class="product">
-<div class="product-image" id="tracksuitGallery">
-<button class="arrow arrow-left" onclick="changeTracksuit(-1)">‹</button>
+<div class="product-image">
 <img src="tracksuit.png" id="tracksuitImage">
-<button class="arrow arrow-right" onclick="changeTracksuit(1)">›</button>
 </div>
-<div class="gallery-dots" id="tracksuitDots"></div>
 <h3>TOPTIEREXOTICS TRACKSUIT</h3>
-<p>Premium hoodie and tapered joggers. Clean tailored fit.</p>
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2','_blank')">ORDER</button>
+<p>Premium hoodie and joggers.</p>
+<button class="primary-btn">ORDER</button>
 </article>
 
 </div>
-</section>
 
-<section class="contact" id="contact">
-<h2>CONTACT US</h2>
-<p>For all inquiries, sizing questions, and orders — join our Telegram or message us on Instagram.</p>
 </section>
-
-<footer class="footer">
-<div class="footer-icons">
-<a href="https://t.me/TTE_V2" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"></a>
-<a href="https://www.instagram.com/toptierexotics.2k25" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-<a href="https://www.paypal.me/TopTierExotics" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174861.png"></a>
-</div>
-</footer>
 
 <div class="zoom" id="zoom" onclick="closeZoom()">
 <img id="zoomImg">
@@ -442,88 +308,34 @@ transform:scale(1.2);
 <script>
 
 /* LOADER */
-
-window.addEventListener("load",()=>{
-setTimeout(()=>{
-loader.style.opacity="0";
-setTimeout(()=>loader.style.display="none",800);
-},900);
-});
+window.onload=()=>setTimeout(()=>loader.style.display="none",800);
 
 /* MENU */
-
 function toggleMenu(){
 menu.classList.toggle('active');
 burger.classList.toggle('active');
 }
 
-/* REVEAL */
+function openSocials(){
+menu.classList.add("social-open");
+}
 
-const products=document.querySelectorAll(".product");
+function closeSocials(){
+menu.classList.remove("social-open");
+}
 
-function revealProducts(){
-const trigger=window.innerHeight*0.85;
-products.forEach(p=>{
-if(p.getBoundingClientRect().top<trigger){p.classList.add("show");}
+/* CURSOR (DESKTOP ONLY) */
+
+const cursor=document.getElementById("cursor");
+
+if(!('ontouchstart' in window)){
+cursor.style.opacity=1;
+
+document.addEventListener("mousemove",(e)=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
 });
 }
-
-window.addEventListener("scroll",revealProducts);
-window.addEventListener("load",revealProducts);
-
-/* FIXED GALLERY */
-
-let hatLock=false;
-let tracksuitLock=false;
-
-function changeHat(d){
-if(hatLock)return;
-hatLock=true;
-
-hatIndex=(hatIndex+d+hatImages.length)%hatImages.length;
-hatImage.src=hatImages[hatIndex];
-updateDots("hatDots",hatIndex);
-
-setTimeout(()=>hatLock=false,300);
-}
-
-function changeTracksuit(d){
-if(tracksuitLock)return;
-tracksuitLock=true;
-
-tracksuitIndex=(tracksuitIndex+d+tracksuitImages.length)%tracksuitImages.length;
-tracksuitImage.src=tracksuitImages[tracksuitIndex];
-updateDots("tracksuitDots",tracksuitIndex);
-
-setTimeout(()=>tracksuitLock=false,300);
-}
-
-/* IMAGES */
-
-const hatImages=["hat.png","hat1-back.jpg","hat1-side.jpg"];
-let hatIndex=0;
-
-const tracksuitImages=["tracksuit.png","tracksuit-back.jpg","tracksuit-side.jpg","tracksuit-detail.jpg"];
-let tracksuitIndex=0;
-
-/* DOTS */
-
-function createDots(container,images){
-images.forEach((_,i)=>{
-const dot=document.createElement("span");
-if(i===0)dot.classList.add("active");
-document.getElementById(container).appendChild(dot);
-});
-}
-
-function updateDots(container,index){
-const dots=document.getElementById(container).children;
-for(let d of dots)d.classList.remove("active");
-dots[index].classList.add("active");
-}
-
-createDots("hatDots",hatImages);
-createDots("tracksuitDots",tracksuitImages);
 
 /* ZOOM */
 
@@ -538,31 +350,6 @@ zoom.classList.add("show");
 function closeZoom(){
 zoom.classList.remove("show");
 }
-
-/* HOVER AUTO ROTATE (FIXED) */
-
-let hatInterval=null;
-let tracksuitInterval=null;
-
-hatGallery.addEventListener("mouseenter",()=>{
-if(hatInterval)return;
-hatInterval=setInterval(()=>changeHat(1),2500);
-});
-
-hatGallery.addEventListener("mouseleave",()=>{
-clearInterval(hatInterval);
-hatInterval=null;
-});
-
-tracksuitGallery.addEventListener("mouseenter",()=>{
-if(tracksuitInterval)return;
-tracksuitInterval=setInterval(()=>changeTracksuit(1),2500);
-});
-
-tracksuitGallery.addEventListener("mouseleave",()=>{
-clearInterval(tracksuitInterval);
-tracksuitInterval=null;
-});
 
 </script>
 

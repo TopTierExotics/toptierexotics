@@ -6,589 +6,345 @@
 
 <title>TopTierExotics | Private Access Luxury Streetwear</title>
 
-<meta name="description" content="TopTierExotics is a private access luxury streetwear brand. Worldwide shipping. Secure PayPal payments.">
+<meta name="description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 
-html,body{margin:0;padding:0;background:#000;overflow-x:hidden;}
-*{box-sizing:border-box;margin:0;padding:0;}
-
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
 font-family:'Montserrat',sans-serif;
-color:#fff;
-line-height:1.5;
-scroll-behavior:smooth;
--webkit-font-smoothing:antialiased;
-}
-
-/* LOADER */
-
-.loader{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
 background:#000;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:3000;
-transition:opacity .8s;
+color:#fff;
+overflow-x:hidden;
 }
 
-.loader img{
-width:160px;
-filter:drop-shadow(0 0 30px rgba(57,255,20,.6));
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.05)}
-100%{transform:scale(1)}
+/* GLOBAL */
+section{padding:100px 10%;}
+h2{
+font-family:'Playfair Display',serif;
+letter-spacing:6px;
+text-align:center;
+margin-bottom:60px;
 }
 
 /* BURGER */
-
 .burger{
 position:fixed;
-top:30px;
-left:30px;
+top:25px;
+left:25px;
 width:30px;
 cursor:pointer;
-z-index:1200;
+z-index:2000;
 }
-
 .burger div{
-height:2px;
-background:#fff;
-margin:7px 0;
-transition:.28s;
+height:2px;background:#fff;margin:7px 0;transition:.3s;
 }
-
 .burger.active div:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
 .burger.active div:nth-child(2){opacity:0;}
 .burger.active div:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
 
 /* MENU */
-
 .side-menu{
 position:fixed;
 top:0;
-left:-300px;
-width:280px;
+left:-100%;
+width:300px;
 height:100%;
-background:#000;
-padding:120px 34px;
-transition:.32s;
-z-index:1100;
+background:#050505;
+padding:120px 40px;
+transition:.4s;
+z-index:1500;
+}
+.side-menu.active{left:0;}
+
+.side-menu h4{
+margin:30px 0 15px;
+opacity:.5;
+font-size:.8rem;
+letter-spacing:3px;
 }
 
 .side-menu a{
 display:block;
 color:#fff;
 text-decoration:none;
-margin-bottom:34px;
-letter-spacing:3px;
-font-size:.95rem;
+margin-bottom:20px;
+letter-spacing:2px;
+transition:.3s;
+}
+.side-menu a:hover{
+color:#39ff14;
+transform:translateX(6px);
 }
 
-.side-menu a:hover{color:#39ff14;}
-
-.side-menu.active{left:0;}
-
 /* HERO */
-
 .hero{
 min-height:100vh;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-padding:48px 20px;
+padding:20px;
 }
 
-.hero-logo{
-width:360px;
+.hero img{
+width:320px;
 max-width:85%;
-margin-bottom:30px;
-filter:drop-shadow(0 0 40px rgba(57,255,20,.35));
-animation:floatLogo 6s ease-in-out infinite;
+margin-bottom:25px;
+filter:drop-shadow(0 0 40px rgba(57,255,20,.3));
+animation:float 6s ease-in-out infinite;
 }
 
-@keyframes floatLogo{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 }
 
 .hero p{
 letter-spacing:3px;
-font-size:.95rem;
-opacity:.78;
-margin-bottom:35px;
-text-transform:uppercase;
+opacity:.7;
+margin-bottom:25px;
 }
 
-.primary-btn{
-padding:16px 56px;
-border:none;
+.btn{
+padding:15px 50px;
 border-radius:50px;
+border:none;
 background:#39ff14;
 color:#000;
 font-weight:600;
-letter-spacing:2.5px;
+letter-spacing:2px;
 cursor:pointer;
 transition:.3s;
+margin:10px;
+}
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 30px rgba(57,255,20,.6);
 }
 
-.primary-btn:hover{
-transform:scale(1.06);
-box-shadow:0 0 30px rgba(57,255,20,.5);
-}
-
-.trust{
-margin-top:60px;
-font-size:.75rem;
-opacity:.62;
-letter-spacing:2px;
+.sub-btn{
+background:transparent;
+color:#39ff14;
+border:1px solid #39ff14;
 }
 
 /* PRODUCTS */
-
-.products{
-padding:140px 10%;
-background:#000;
-}
-
-.products h2{
-text-align:center;
-margin-bottom:70px;
-font-size:2.2rem;
-letter-spacing:6px;
-font-family:'Playfair Display',serif;
-}
-
 .product-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:60px;
+gap:50px;
 max-width:1000px;
-margin:0 auto;
+margin:auto;
 }
 
 .product{
-background:#111;
-border-radius:22px;
-padding:40px 30px;
+background:#0d0d0d;
+padding:30px;
+border-radius:20px;
 text-align:center;
-transition:transform .35s,box-shadow .35s;
-opacity:0;
-transform:translateY(40px);
+transition:.3s;
 position:relative;
-}
-
-.product.show{
-opacity:1;
-transform:translateY(0);
 }
 
 .product:hover{
-transform:translateY(-12px);
-box-shadow:0 0 35px rgba(57,255,20,.25),0 25px 60px rgba(0,0,0,.7);
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(57,255,20,.2);
 }
 
-/* PRODUCT IMAGE */
-
-.product-image{
-position:relative;
-height:260px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:10px;
-}
-
-.product-image img{
-max-width:100%;
-max-height:100%;
-object-fit:contain;
-border-radius:14px;
-cursor:pointer;
-}
-
-/* TITLE + TEXT SPACING */
-
-.product h3{
-margin-top:12px;
-margin-bottom:10px;
+.badge{
+position:absolute;
+top:15px;
+left:15px;
+background:#39ff14;
+color:#000;
+padding:5px 12px;
+font-size:.7rem;
+border-radius:20px;
 letter-spacing:1px;
 }
 
+.product img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.product h3{margin-bottom:10px;}
 .product p{
 opacity:.7;
 font-size:.9rem;
-margin-bottom:26px; /* KEY FIX */
+margin-bottom:20px;
 }
 
-/* BUTTON SPACING FIX */
-
-.product .primary-btn{
-margin-top:10px;
+/* TELEGRAM SECTION */
+.telegram{
+text-align:center;
+background:#050505;
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
 }
 
-/* ARROWS */
-
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,.6);
-color:#39ff14;
-border:none;
-width:36px;
-height:36px;
-border-radius:50%;
-font-size:18px;
-cursor:pointer;
-opacity:0;
-transition:.25s;
-}
-
-.arrow-left{left:10px;}
-.arrow-right{right:10px;}
-
-.product-image:hover .arrow{
-opacity:1;
-}
-
-/* DOTS */
-
-.gallery-dots{
-display:flex;
-justify-content:center;
-gap:8px;
-margin-bottom:18px;
-}
-
-.gallery-dots span{
-width:8px;
-height:8px;
-border-radius:50%;
-background:#555;
-}
-
-.gallery-dots .active{
-background:#39ff14;
-box-shadow:0 0 6px rgba(57,255,20,.8);
+.telegram h2{margin-bottom:20px;}
+.telegram p{
+max-width:500px;
+margin:0 auto 30px;
+opacity:.7;
 }
 
 /* CONTACT */
-
-.contact{
-padding:120px 10%;
-text-align:center;
-}
-
-.contact h2{
-letter-spacing:6px;
-margin-bottom:25px;
-font-family:'Playfair Display',serif;
-}
-
+.contact{text-align:center;}
 .contact p{
 opacity:.6;
-letter-spacing:2px;
-max-width:560px;
-margin:0 auto;
+max-width:500px;
+margin:auto;
 }
 
 /* FOOTER */
-
 .footer{
 padding:60px 10%;
 text-align:center;
 border-top:1px solid rgba(255,255,255,.05);
 }
-
-.footer h3{
-margin-bottom:25px;
-letter-spacing:4px;
-font-size:.9rem;
-}
-
 .footer-icons{
 display:flex;
 justify-content:center;
-gap:40px;
+gap:30px;
+margin-top:20px;
 }
-
 .footer-icons img{
-width:34px;
-transition:.25s;
+width:32px;
+transition:.3s;
 }
-
-.footer-icons img:hover{
-transform:scale(1.2);
-}
-
-/* ZOOM */
-
-.zoom{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000;
-display:none;
-align-items:center;
-justify-content:center;
-z-index:2000;
-}
-
-.zoom img{
-max-width:90%;
-max-height:90%;
-}
+.footer-icons img:hover{transform:scale(1.2);}
 
 </style>
 </head>
 
 <body>
 
-<div class="loader" id="loader">
-<img src="logo.png">
-</div>
-
-<div class="burger" id="burger" onclick="toggleMenu()">
-<div></div>
-<div></div>
-<div></div>
+<div class="burger" onclick="toggleMenu()" id="burger">
+<div></div><div></div><div></div>
 </div>
 
 <nav class="side-menu" id="menu">
 
 <a href="#home" onclick="toggleMenu()">HOME</a>
-<a href="#products" onclick="toggleMenu()">PRODUCTS</a>
-<a href="#contact" onclick="toggleMenu()">CONTACT US</a>
+<a href="#products" onclick="toggleMenu()">COLLECTION</a>
+<a href="#contact" onclick="toggleMenu()">CONTACT</a>
 
+<h4>COMMUNITY</h4>
 <a href="https://t.me/TTE_V2" target="_blank">TELEGRAM</a>
 <a href="https://www.instagram.com/toptierexotics.2k25" target="_blank">INSTAGRAM</a>
 
+<h4>PAYMENTS</h4>
 <a href="https://www.paypal.me/TopTierExotics" target="_blank">PAYPAL</a>
 
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
 
-<img src="logo.png" class="hero-logo">
+<img src="logo.png">
 
-<p>PRIVATE ACCESS LUXURY STREETWEAR</p>
+<p>PRIVATE ACCESS • LIMITED DROPS • MEMBERS ONLY</p>
 
-<button class="primary-btn"
-onclick="window.open('https://t.me/TTE_V2','_blank')">
+<button class="btn" onclick="window.open('https://t.me/TTE_V2')">
 SHOP COLLECTION
 </button>
 
-<div class="trust">
-WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS
-</div>
+<button class="btn sub-btn" onclick="window.open('https://t.me/TTE_V2')">
+JOIN PRIVATE TELEGRAM
+</button>
 
 </section>
 
-<section class="products" id="products">
+<!-- PRODUCTS -->
+<section id="products">
 
 <h2>FEATURED COLLECTION</h2>
 
 <div class="product-grid">
 
-<article class="product">
-
-<div class="product-image" id="hatGallery">
-
-<button class="arrow arrow-left" onclick="changeHat(-1)">‹</button>
-<img src="hat.png" id="hatImage">
-<button class="arrow arrow-right" onclick="changeHat(1)">›</button>
-
-</div>
-
-<div class="gallery-dots" id="hatDots"></div>
-
+<div class="product">
+<div class="badge">LIMITED DROP</div>
+<img src="hat.png">
 <h3>TOPTIEREXOTICS HAT</h3>
 <p>Structured fit. Breathable fabric. Everyday essential.</p>
-
-<button class="primary-btn"
-onclick="window.open('https://t.me/TTE_V2','_blank')">
-ORDER
+<button class="btn" onclick="window.open('https://t.me/TTE_V2')">
+SECURE VIA TELEGRAM
 </button>
-
-</article>
-
-<article class="product">
-
-<div class="product-image" id="tracksuitGallery">
-
-<button class="arrow arrow-left" onclick="changeTracksuit(-1)">‹</button>
-<img src="tracksuit.png" id="tracksuitImage">
-<button class="arrow arrow-right" onclick="changeTracksuit(1)">›</button>
-
 </div>
 
-<div class="gallery-dots" id="tracksuitDots"></div>
-
+<div class="product">
+<div class="badge">LIMITED DROP</div>
+<img src="tracksuit.png">
 <h3>TOPTIEREXOTICS TRACKSUIT</h3>
 <p>Premium hoodie and tapered joggers. Clean tailored fit.</p>
-
-<button class="primary-btn"
-onclick="window.open('https://t.me/TTE_V2','_blank')">
-ORDER
+<button class="btn" onclick="window.open('https://t.me/TTE_V2')">
+SECURE VIA TELEGRAM
 </button>
-
-</article>
+</div>
 
 </div>
+
 </section>
 
-<section class="contact" id="contact">
+<!-- TELEGRAM PUSH -->
+<section class="telegram">
 
-<h2>CONTACT US</h2>
+<h2>PRIVATE ACCESS ONLY</h2>
 
 <p>
-For all inquiries, sizing questions, and orders — join our Telegram or message us on Instagram.
+All drops are released exclusively through our Telegram. Members get early access before public release.
+</p>
+
+<button class="btn" onclick="window.open('https://t.me/TTE_V2')">
+JOIN NOW
+</button>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<h2>CONTACT</h2>
+
+<p>
+For inquiries, sizing, or orders — message us directly via Telegram or Instagram.
 </p>
 
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
 
-<h3>CONNECT</h3>
+<p>CONNECT</p>
 
 <div class="footer-icons">
-
 <a href="https://t.me/TTE_V2" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
 </a>
-
 <a href="https://www.instagram.com/toptierexotics.2k25" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 </a>
-
 <a href="https://www.paypal.me/TopTierExotics" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png">
 </a>
-
 </div>
 
 </footer>
 
-<div class="zoom" id="zoom" onclick="closeZoom()">
-<img id="zoomImg">
-</div>
-
 <script>
-
-window.addEventListener("load",()=>{
-setTimeout(()=>{
-document.getElementById("loader").style.opacity="0";
-setTimeout(()=>{document.getElementById("loader").style.display="none"},800);
-},900);
-});
-
 function toggleMenu(){
-const menu=document.getElementById('menu');
-const burger=document.getElementById('burger');
-menu.classList.toggle('active');
-burger.classList.toggle('active');
+document.getElementById("menu").classList.toggle("active");
+document.getElementById("burger").classList.toggle("active");
 }
-
-const products=document.querySelectorAll(".product");
-
-function revealProducts(){
-const trigger=window.innerHeight*0.85;
-
-products.forEach(product=>{
-const top=product.getBoundingClientRect().top;
-if(top<trigger){product.classList.add("show");}
-});
-}
-
-window.addEventListener("scroll",revealProducts);
-window.addEventListener("load",revealProducts);
-
-const hatImages=["hat.png","hat1-back.jpg","hat1-side.jpg"];
-let hatIndex=0;
-let hatInterval;
-
-function changeHat(d){
-hatIndex=(hatIndex+d+hatImages.length)%hatImages.length;
-document.getElementById("hatImage").src=hatImages[hatIndex];
-updateDots("hatDots",hatIndex);
-}
-
-const tracksuitImages=["tracksuit.png","tracksuit-back.jpg","tracksuit-side.jpg","tracksuit-detail.jpg"];
-let tracksuitIndex=0;
-let tracksuitInterval;
-
-function changeTracksuit(d){
-tracksuitIndex=(tracksuitIndex+d+tracksuitImages.length)%tracksuitImages.length;
-document.getElementById("tracksuitImage").src=tracksuitImages[tracksuitIndex];
-updateDots("tracksuitDots",tracksuitIndex);
-}
-
-function createDots(container,images){
-const el=document.getElementById(container);
-images.forEach((img,i)=>{
-const dot=document.createElement("span");
-if(i===0)dot.classList.add("active");
-el.appendChild(dot);
-});
-}
-
-function updateDots(container,index){
-const dots=document.getElementById(container).children;
-for(let i=0;i<dots.length;i++){dots[i].classList.remove("active");}
-dots[index].classList.add("active");
-}
-
-createDots("hatDots",hatImages);
-createDots("tracksuitDots",tracksuitImages);
-
-document.getElementById("hatImage").onclick=openZoom;
-document.getElementById("tracksuitImage").onclick=openZoom;
-
-function openZoom(e){
-document.getElementById("zoomImg").src=e.target.src;
-document.getElementById("zoom").style.display="flex";
-}
-
-function closeZoom(){
-document.getElementById("zoom").style.display="none";
-}
-
-const hatGallery=document.getElementById("hatGallery");
-const tracksuitGallery=document.getElementById("tracksuitGallery");
-
-hatGallery.addEventListener("mouseenter",()=>{
-hatInterval=setInterval(()=>changeHat(1),2000);
-});
-
-hatGallery.addEventListener("mouseleave",()=>{
-clearInterval(hatInterval);
-});
-
-tracksuitGallery.addEventListener("mouseenter",()=>{
-tracksuitInterval=setInterval(()=>changeTracksuit(1),2000);
-});
-
-tracksuitGallery.addEventListener("mouseleave",()=>{
-clearInterval(tracksuitInterval);
-});
-
 </script>
 
 </body>

@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>TopTierExotics | Private Access Luxury Streetwear</title>
-
-<meta name="description" content="TopTierExotics - Private access luxury streetwear. Worldwide shipping. Limited drops.">
-<meta name="theme-color" content="#000000">
+<meta name="description" content="TopTierExotics is a private access luxury streetwear brand. Worldwide shipping. Secure PayPal payments.">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
@@ -26,33 +24,27 @@ scroll-behavior:smooth;
 /* LOADER */
 .loader{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;width:100%;height:100%;
 background:#000;
-display:flex;
-align-items:center;
-justify-content:center;
+display:flex;align-items:center;justify-content:center;
 z-index:3000;
-transition:opacity .6s ease;
+transition:opacity .8s;
 }
 .loader img{
-width:150px;
+width:160px;
+filter:drop-shadow(0 0 30px rgba(57,255,20,.6));
 animation:pulse 2s infinite;
 }
 @keyframes pulse{
 0%{transform:scale(1)}
-50%{transform:scale(1.08)}
+50%{transform:scale(1.05)}
 100%{transform:scale(1)}
 }
 
 /* BURGER */
 .burger{
 position:fixed;
-top:25px;
-left:25px;
-width:30px;
+top:30px;left:30px;width:30px;
 cursor:pointer;
 z-index:2000;
 }
@@ -66,22 +58,18 @@ height:2px;background:#fff;margin:7px 0;transition:.3s;
 /* MENU */
 .side-menu{
 position:fixed;
-top:0;
-left:-100%;
-width:280px;
-height:100%;
-background:#050505;
-padding:120px 30px;
-transition:.4s;
+top:0;left:-300px;width:280px;height:100%;
+background:#000;
+padding:120px 34px;
+transition:.3s;
 z-index:1500;
 }
 .side-menu.active{left:0;}
 .side-menu a{
 display:block;
-margin-bottom:25px;
-color:#fff;
-text-decoration:none;
-letter-spacing:2px;
+margin-bottom:30px;
+color:#fff;text-decoration:none;
+letter-spacing:3px;
 }
 .side-menu a:hover{color:#39ff14;}
 
@@ -93,40 +81,49 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:40px 20px;
 }
 .hero-logo{
-width:300px;
-margin-bottom:20px;
+width:360px;
+max-width:85%;
+margin-bottom:30px;
+filter:drop-shadow(0 0 40px rgba(57,255,20,.35));
+animation:float 6s infinite ease-in-out;
+}
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
 }
 .hero p{
 letter-spacing:3px;
-opacity:.7;
-margin-bottom:25px;
+opacity:.8;
+margin-bottom:30px;
 }
 
 /* BUTTON */
 .primary-btn{
-padding:14px 40px;
+padding:16px 50px;
+border:none;
 border-radius:50px;
 background:#39ff14;
 color:#000;
-border:none;
 font-weight:600;
 cursor:pointer;
 transition:.3s;
 }
 .primary-btn:hover{
 transform:scale(1.05);
+box-shadow:0 0 30px rgba(57,255,20,.5);
 }
 
 /* PRODUCTS */
 .products{
-padding:100px 10%;
+padding:140px 10%;
 }
 .products h2{
 text-align:center;
-margin-bottom:60px;
+margin-bottom:70px;
 letter-spacing:6px;
 font-family:'Playfair Display',serif;
 }
@@ -134,49 +131,55 @@ font-family:'Playfair Display',serif;
 .product-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:50px;
+gap:60px;
 max-width:1000px;
 margin:auto;
 }
 
 .product{
 background:#111;
-border-radius:20px;
-padding:30px;
+border-radius:22px;
+padding:40px 30px;
 text-align:center;
+transition:.35s;
 opacity:0;
 transform:translateY(40px);
-transition:.3s;
+position:relative;
 }
-
 .product.show{
 opacity:1;
 transform:translateY(0);
 }
+.product:hover{
+transform:translateY(-12px);
+box-shadow:0 0 35px rgba(57,255,20,.25);
+}
 
+/* IMAGE */
 .product-image{
 position:relative;
-height:250px;
+height:260px;
 display:flex;
 align-items:center;
 justify-content:center;
 margin-bottom:10px;
 }
-
 .product-image img{
 max-width:100%;
 max-height:100%;
+border-radius:12px;
 cursor:pointer;
+transition:opacity .25s;
 }
 
-/* ARROWS */
+/* ARROWS FIXED */
 .arrow{
 position:absolute;
 bottom:10px;
-background:#000;
+background:rgba(0,0,0,.7);
 color:#39ff14;
 border:none;
-width:30px;height:30px;
+width:34px;height:34px;
 border-radius:50%;
 }
 .arrow-left{left:10px;}
@@ -186,39 +189,44 @@ border-radius:50%;
 .gallery-dots{
 display:flex;
 justify-content:center;
-gap:6px;
-margin-bottom:15px;
+gap:8px;
+margin-bottom:18px;
 }
 .gallery-dots span{
-width:6px;height:6px;border-radius:50%;background:#555;
+width:8px;height:8px;border-radius:50%;background:#555;
 }
-.gallery-dots .active{background:#39ff14;}
+.gallery-dots .active{
+background:#39ff14;
+}
 
 /* FOOTER */
 .footer{
-padding:50px;
+padding:60px 10%;
 text-align:center;
+border-top:1px solid rgba(255,255,255,.05);
 }
 .footer-icons{
 display:flex;
 justify-content:center;
-gap:30px;
+gap:40px;
 }
 .footer-icons img{
-width:30px;
+width:34px;
+transition:.25s;
+}
+.footer-icons img:hover{
+transform:scale(1.2);
 }
 
 /* ZOOM */
 .zoom{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;width:100%;height:100%;
 background:#000;
 display:none;
 align-items:center;
 justify-content:center;
+z-index:2000;
 }
 .zoom img{
 max-width:90%;
@@ -243,78 +251,58 @@ max-height:90%;
 <a href="#products">PRODUCTS</a>
 <a href="#contact">CONTACT</a>
 <a href="https://t.me/TTE_V2" target="_blank">TELEGRAM</a>
+<a href="https://www.instagram.com/toptierexotics.2k25" target="_blank">INSTAGRAM</a>
+<a href="https://www.paypal.me/TopTierExotics" target="_blank">PAYPAL</a>
 </nav>
 
 <section class="hero" id="home">
 <img src="logo.png" class="hero-logo">
 <p>PRIVATE ACCESS LUXURY STREETWEAR</p>
-
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">
-SHOP COLLECTION
-</button>
+<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">SHOP COLLECTION</button>
 </section>
 
 <section class="products" id="products">
-
 <h2>FEATURED COLLECTION</h2>
 
 <div class="product-grid">
 
-<!-- HAT -->
 <article class="product">
-
 <div class="product-image" id="hatGallery">
 <button class="arrow arrow-left" onclick="changeHat(-1)">‹</button>
 <img src="hat.png" id="hatImage">
 <button class="arrow arrow-right" onclick="changeHat(1)">›</button>
 </div>
-
 <div class="gallery-dots" id="hatDots"></div>
 
 <h3>TOPTIEREXOTICS HAT</h3>
 <p>Structured fit. Breathable fabric.</p>
 
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">
-ORDER
-</button>
-
+<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">ORDER</button>
 </article>
 
-<!-- TRACKSUIT -->
 <article class="product">
-
 <div class="product-image" id="tracksuitGallery">
 <button class="arrow arrow-left" onclick="changeTracksuit(-1)">‹</button>
 <img src="tracksuit.png" id="tracksuitImage">
 <button class="arrow arrow-right" onclick="changeTracksuit(1)">›</button>
 </div>
-
 <div class="gallery-dots" id="tracksuitDots"></div>
 
 <h3>TOPTIEREXOTICS TRACKSUIT</h3>
 <p>Premium hoodie and joggers.</p>
 
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">
-BUY NOW
-</button>
-
+<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">BUY NOW</button>
 </article>
 
 </div>
 </section>
 
-<section id="contact" style="text-align:center;padding:80px;">
-<p>Contact us via Telegram or Instagram.</p>
-</section>
-
 <footer class="footer">
-
 <div class="footer-icons">
 <a href="https://t.me/TTE_V2"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"></a>
 <a href="https://www.instagram.com/toptierexotics.2k25"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
 <a href="https://www.paypal.me/TopTierExotics"><img src="https://cdn-icons-png.flaticon.com/512/174/174861.png"></a>
 </div>
-
 </footer>
 
 <div class="zoom" id="zoom">
@@ -323,14 +311,13 @@ BUY NOW
 
 <script>
 
-/* SAFE SELECTORS */
 const loader=document.getElementById("loader");
 const burger=document.getElementById("burger");
 const menu=document.getElementById("menu");
 
 /* LOADER */
 window.onload=()=>{
-setTimeout(()=>loader.style.display="none",700);
+setTimeout(()=>loader.style.display="none",800);
 };
 
 /* MENU */
@@ -367,6 +354,13 @@ function changeTracksuit(d){
 tracksuitIndex=(tracksuitIndex+d+tracksuitImages.length)%tracksuitImages.length;
 tracksuitImage.src=tracksuitImages[tracksuitIndex];
 }
+
+/* HOVER SWAP */
+hatGallery.onmouseenter=()=>hatImage.src=hatImages[1];
+hatGallery.onmouseleave=()=>hatImage.src=hatImages[hatIndex];
+
+tracksuitGallery.onmouseenter=()=>tracksuitImage.src=tracksuitImages[1];
+tracksuitGallery.onmouseleave=()=>tracksuitImage.src=tracksuitImages[tracksuitIndex];
 
 /* ZOOM */
 hatImage.onclick=e=>{zoom.style.display="flex";zoomImg.src=e.target.src;}

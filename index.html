@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>TopTierExotics | Private Access Luxury Streetwear</title>
-
 <meta name="description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 <meta name="robots" content="index, follow">
 
@@ -51,6 +50,11 @@ width:160px;
 animation:pulse 2s infinite;
 filter:drop-shadow(0 0 40px rgba(57,255,20,.7));
 }
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
+}
 
 /* BURGER */
 .burger{
@@ -68,7 +72,7 @@ height:2px;background:#fff;margin:7px 0;transition:.3s;
 .burger.active div:nth-child(2){opacity:0;}
 .burger.active div:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
 
-/* OVERLAY (NEW) */
+/* OVERLAY */
 .overlay{
 position:fixed;
 top:0;left:0;width:100%;height:100%;
@@ -174,7 +178,6 @@ letter-spacing:6px;
 font-family:'Playfair Display',serif;
 }
 
-/* GRID */
 .product-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -241,7 +244,14 @@ width:34px;
 height:34px;
 border-radius:50%;
 cursor:pointer;
+transition:.3s;
 }
+.arrow:hover{
+transform:scale(1.15);
+box-shadow:0 0 12px rgba(57,255,20,.6);
+}
+.arrow-left{left:12px;}
+.arrow-right{right:12px;}
 
 /* DOTS */
 .gallery-dots{
@@ -255,6 +265,7 @@ width:8px;height:8px;border-radius:50%;background:#555;
 }
 .gallery-dots .active{
 background:#39ff14;
+box-shadow:0 0 6px rgba(57,255,20,.8);
 }
 
 /* TELEGRAM */
@@ -263,12 +274,40 @@ text-align:center;
 padding:100px 10%;
 background:#050505;
 }
+.telegram p{
+max-width:500px;
+margin:20px auto;
+opacity:.7;
+}
+
+/* CONTACT */
+.contact{
+padding:100px 10%;
+text-align:center;
+}
 
 /* FOOTER */
 .footer{
 padding:60px 10%;
 text-align:center;
 border-top:1px solid rgba(255,255,255,.05);
+}
+.footer h3{
+margin-bottom:25px;
+letter-spacing:4px;
+font-size:.9rem;
+}
+.footer-icons{
+display:flex;
+justify-content:center;
+gap:40px;
+}
+.footer-icons img{
+width:34px;
+transition:.25s;
+}
+.footer-icons img:hover{
+transform:scale(1.2);
 }
 
 /* ZOOM */
@@ -281,6 +320,10 @@ align-items:center;
 justify-content:center;
 z-index:2000;
 }
+.zoom img{
+max-width:90%;
+max-height:90%;
+}
 
 </style>
 </head>
@@ -288,7 +331,7 @@ z-index:2000;
 <body>
 
 <div class="loader" id="loader">
-<img src="logo.png" alt="Logo">
+<img src="logo.png" alt="TopTierExotics Logo">
 </div>
 
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
@@ -311,7 +354,6 @@ z-index:2000;
 
 <p>PRIVATE ACCESS • LIMITED DROPS • MEMBERS ONLY</p>
 
-<!-- FIXED BUTTON -->
 <button class="primary-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
 SHOP COLLECTION
 </button>
@@ -323,7 +365,6 @@ JOIN TELEGRAM
 <div class="trust">WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS</div>
 </section>
 
-<!-- PRODUCTS (UNCHANGED FEATURES) -->
 <section class="products" id="products">
 <h1>FEATURED COLLECTION</h1>
 
@@ -334,7 +375,7 @@ JOIN TELEGRAM
 
 <div class="product-image">
 <button class="arrow arrow-left" onclick="changeHat(-1)">‹</button>
-<img src="hat.png" id="hatImage" loading="lazy" alt="Hat">
+<img src="hat.png" id="hatImage" loading="lazy" alt="TopTier Hat">
 <button class="arrow arrow-right" onclick="changeHat(1)">›</button>
 </div>
 
@@ -378,11 +419,26 @@ SECURE VIA TELEGRAM
 
 <section class="contact" id="contact">
 <h2>CONTACT</h2>
-<p>Message us via Telegram or Instagram.</p>
+<p>Message us via Telegram or Instagram for orders and inquiries.</p>
 </section>
 
 <footer class="footer">
 <h3>CONNECT</h3>
+
+<div class="footer-icons">
+<a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+</a>
+
+<a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+
+<a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174861.png">
+</a>
+</div>
+
 </footer>
 
 <div class="zoom" id="zoom" onclick="closeZoom()">
@@ -390,6 +446,14 @@ SECURE VIA TELEGRAM
 </div>
 
 <script>
+
+/* SAFE ELEMENT REFERENCES */
+const loader=document.getElementById("loader");
+const menu=document.getElementById("menu");
+const burger=document.getElementById("burger");
+const overlay=document.getElementById("overlay");
+const zoom=document.getElementById("zoom");
+const zoomImg=document.getElementById("zoomImg");
 
 /* LOADER */
 window.addEventListener("load",()=>{
@@ -416,9 +480,11 @@ p.classList.add("show");
 });
 });
 
-/* GALLERIES (UNCHANGED BUT CLEANER) */
+/* GALLERIES */
 const hatImages=["hat.png","hat1-back.jpg","hat1-side.jpg"];
 let hatIndex=0;
+const hatImage=document.getElementById("hatImage");
+
 function changeHat(d){
 hatIndex=(hatIndex+d+hatImages.length)%hatImages.length;
 hatImage.src=hatImages[hatIndex];
@@ -427,6 +493,8 @@ updateDots("hatDots",hatIndex);
 
 const tracksuitImages=["tracksuit.png","tracksuit-back.jpg","tracksuit-side.jpg","tracksuit-detail.jpg"];
 let tracksuitIndex=0;
+const tracksuitImage=document.getElementById("tracksuitImage");
+
 function changeTracksuit(d){
 tracksuitIndex=(tracksuitIndex+d+tracksuitImages.length)%tracksuitImages.length;
 tracksuitImage.src=tracksuitImages[tracksuitIndex];
@@ -441,10 +509,12 @@ if(i===0)dot.classList.add("active");
 el.appendChild(dot);
 });
 }
+
 function updateDots(id,i){
 [...document.getElementById(id).children].forEach(d=>d.classList.remove("active"));
 document.getElementById(id).children[i].classList.add("active");
 }
+
 createDots("hatDots",hatImages);
 createDots("tracksuitDots",tracksuitImages);
 
@@ -455,6 +525,7 @@ zoomImg.src=e.target.src;
 zoom.style.display="flex";
 });
 });
+
 function closeZoom(){
 zoom.style.display="none";
 }

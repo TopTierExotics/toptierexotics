@@ -1,536 +1,1496 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TopTierExotics | Private Access Luxury Streetwear</title>
+  <meta
+    name="description"
+    content="TopTierExotics blends luxury minimalism with streetwear energy through limited drops, secure checkout support, and member-first access."
+  >
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TopTierExotics | Private Access Luxury Streetwear">
+  <meta
+    property="og:description"
+    content="Limited drops, premium fits, and member-first access. Discover the latest TopTierExotics collection."
+  >
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect fill='%23070707' width='1200' height='630'/%3E%3Ccircle cx='950' cy='120' r='180' fill='%231d4d1f' fill-opacity='.35'/%3E%3Ccircle cx='250' cy='540' r='220' fill='%23121f13'/%3E%3Ctext x='90' y='280' fill='white' font-size='92' font-family='Georgia, serif'%3ETopTier%3C/text%3E%3Ctext x='90' y='365' fill='%23b4ff64' font-size='92' font-family='Georgia, serif'%3EExotics%3C/text%3E%3Ctext x='95' y='430' fill='%23d1d5db' font-size='28' font-family='Arial, sans-serif'%3EPrivate Access Luxury Streetwear%3C/text%3E%3C/svg%3E">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TopTierExotics | Private Access Luxury Streetwear">
+  <meta
+    name="twitter:description"
+    content="Luxury structure. Streetwear energy. Limited drops with member-first access."
+  >
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "TopTierExotics",
+          "description": "Private access luxury streetwear with limited drops and member-first release access.",
+          "sameAs": [
+            "https://www.instagram.com/toptierexotics.2k25",
+            "https://t.me/TTE_V2"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why is Telegram the main access point?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Telegram is used for early release notices, quantity updates, and direct support so the highest-intent buyers stay closest to the drop schedule."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I order from outside the UK?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Worldwide shipping support is available depending on destination and carrier coverage. Confirm location details before payment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I know sizing before I buy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Message before checkout for size guidance, fit notes, and availability. That conversation should happen before payment so the order stays clean."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are all products permanently available?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The brand is built around controlled quantity, selected releases, and lower-volume availability rather than permanent open inventory."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: rgba(15, 15, 15, 0.84);
+      --panel-strong: rgba(18, 18, 18, 0.96);
+      --line: rgba(255, 255, 255, 0.1);
+      --line-strong: rgba(255, 255, 255, 0.18);
+      --text: #f7f6f1;
+      --muted: #b7b5ab;
+      --soft: #8f8c83;
+      --accent: #b8ff54;
+      --accent-deep: #85c82f;
+      --danger: #ff6961;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1180px;
+    }
 
-<title>TopTierExotics | Private Access Luxury Streetwear</title>
-<meta name="description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
-<meta name="robots" content="index, follow">
+    * {
+      box-sizing: border-box;
+    }
 
-<!-- OPEN GRAPH -->
-<meta property="og:title" content="TopTierExotics">
-<meta property="og:description" content="Private access luxury streetwear. Limited drops.">
-<meta property="og:type" content="website">
+    html {
+      scroll-behavior: smooth;
+    }
 
-<!-- PERFORMANCE -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    body {
+      margin: 0;
+      min-width: 320px;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(143, 255, 92, 0.16), transparent 26%),
+        radial-gradient(circle at left 78%, rgba(169, 124, 255, 0.08), transparent 22%),
+        linear-gradient(180deg, #070707 0%, #050505 48%, #080808 100%);
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
 
-<style>
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-font-family:'Montserrat',sans-serif;
-background:#000;
-color:#fff;
-overflow-x:hidden;
-scroll-behavior:smooth;
-}
+    a {
+      color: inherit;
+    }
 
-/* LOADER */
-.loader{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:3000;
-transition:opacity .6s ease;
-}
-.loader img{
-width:160px;
-animation:pulse 2s infinite;
-filter:drop-shadow(0 0 40px rgba(57,255,20,.7));
-}
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
-}
+    button {
+      cursor: pointer;
+    }
 
-/* BURGER */
-.burger{
-position:fixed;
-top:25px;
-left:25px;
-width:30px;
-cursor:pointer;
-z-index:2000;
-}
-.burger div{
-height:2px;background:#fff;margin:7px 0;transition:.3s;
-}
-.burger.active div:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.burger.active div:nth-child(2){opacity:0;}
-.burger.active div:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
 
-/* OVERLAY */
-.overlay{
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,.7);
-opacity:0;pointer-events:none;
-transition:.3s;
-z-index:1400;
-}
-.overlay.active{opacity:1;pointer-events:auto;}
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
-/* MENU */
-.side-menu{
-position:fixed;
-top:0;
-left:-100%;
-width:280px;
-height:100%;
-background:#050505;
-padding:120px 30px;
-transition:.4s;
-z-index:1500;
-box-shadow:20px 0 60px rgba(0,0,0,.8);
-}
-.side-menu.active{left:0;}
-.side-menu a{
-display:block;
-margin-bottom:25px;
-color:#fff;
-text-decoration:none;
-letter-spacing:2px;
-transition:.3s;
-}
-.side-menu a:hover{
-color:#39ff14;
-transform:translateX(6px);
-}
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      z-index: 1000;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #071000;
+      font-weight: 800;
+      text-decoration: none;
+    }
 
-/* HERO */
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:30px 20px;
-}
-.hero-logo{
-width:320px;
-margin-bottom:20px;
-filter:drop-shadow(0 0 40px rgba(57,255,20,.4));
-animation:float 6s infinite ease-in-out;
-}
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
-100%{transform:translateY(0)}
-}
-.hero p{
-letter-spacing:3px;
-opacity:.75;
-margin-bottom:25px;
-}
+    .skip-link:focus {
+      top: 16px;
+    }
 
-/* BUTTONS */
-.primary-btn{
-padding:14px 45px;
-border-radius:50px;
-background:#39ff14;
-color:#000;
-border:none;
-font-weight:600;
-cursor:pointer;
-transition:.3s;
-margin:8px;
-}
-.primary-btn:hover{
-transform:scale(1.07);
-box-shadow:0 0 30px rgba(57,255,20,.6);
-}
-.secondary-btn{
-background:transparent;
-color:#39ff14;
-border:1px solid #39ff14;
-}
+    .shell {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-/* TRUST */
-.trust{
-margin-top:30px;
-font-size:.75rem;
-opacity:.6;
-letter-spacing:2px;
-}
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(5, 5, 5, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-/* PRODUCTS */
-.products{
-padding:120px 10%;
-}
-.products h1{
-text-align:center;
-margin-bottom:60px;
-letter-spacing:6px;
-font-family:'Playfair Display',serif;
-}
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 78px;
+    }
 
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:50px;
-max-width:1000px;
-margin:auto;
-}
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
 
-.product{
-background:#0d0d0d;
-border-radius:20px;
-padding:35px;
-text-align:center;
-transition:.35s;
-opacity:0;
-transform:translateY(40px);
-position:relative;
-}
-.product.show{
-opacity:1;
-transform:translateY(0);
-}
-.product:hover{
-transform:translateY(-12px);
-box-shadow:0 0 35px rgba(57,255,20,.25);
-}
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(184, 255, 84, 0.24), rgba(184, 255, 84, 0.06)),
+        rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(184, 255, 84, 0.22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
 
-/* BADGE */
-.badge{
-position:absolute;
-top:15px;
-left:15px;
-background:#39ff14;
-color:#000;
-font-size:.7rem;
-padding:5px 10px;
-border-radius:20px;
-}
+    .brand-text strong,
+    .brand-text span {
+      display: block;
+      line-height: 1;
+    }
 
-/* IMAGE */
-.product-image{
-position:relative;
-height:260px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:10px;
-}
-.product-image img{
-max-width:100%;
-max-height:100%;
-cursor:pointer;
-border-radius:10px;
-}
+    .brand-text strong {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
-/* ARROWS */
-.arrow{
-position:absolute;
-bottom:12px;
-background:rgba(0,0,0,.7);
-color:#39ff14;
-border:none;
-width:34px;
-height:34px;
-border-radius:50%;
-cursor:pointer;
-transition:.3s;
-}
-.arrow:hover{
-transform:scale(1.15);
-box-shadow:0 0 12px rgba(57,255,20,.6);
-}
-.arrow-left{left:12px;}
-.arrow-right{right:12px;}
+    .brand-text span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.73rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-/* DOTS */
-.gallery-dots{
-display:flex;
-justify-content:center;
-gap:8px;
-margin-bottom:15px;
-}
-.gallery-dots span{
-width:8px;height:8px;border-radius:50%;background:#555;
-}
-.gallery-dots .active{
-background:#39ff14;
-box-shadow:0 0 6px rgba(57,255,20,.8);
-}
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
 
-/* TELEGRAM */
-.telegram{
-text-align:center;
-padding:100px 10%;
-background:#050505;
-}
-.telegram p{
-max-width:500px;
-margin:20px auto;
-opacity:.7;
-}
+    .desktop-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.94rem;
+    }
 
-/* CONTACT */
-.contact{
-padding:100px 10%;
-text-align:center;
-}
+    .desktop-nav a:hover,
+    .desktop-nav a:focus-visible {
+      color: var(--text);
+    }
 
-/* FOOTER */
-.footer{
-padding:60px 10%;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.05);
-}
-.footer h3{
-margin-bottom:25px;
-letter-spacing:4px;
-font-size:.9rem;
-}
-.footer-icons{
-display:flex;
-justify-content:center;
-gap:40px;
-}
-.footer-icons img{
-width:34px;
-transition:.25s;
-}
-.footer-icons img:hover{
-transform:scale(1.2);
-}
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-/* ZOOM */
-.zoom{
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,.95);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:2000;
-}
-.zoom img{
-max-width:90%;
-max-height:90%;
-}
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+    }
 
-</style>
+    .menu-toggle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .button,
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover,
+    .button-link:hover,
+    .button:focus-visible,
+    .button-link:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--accent), #ddff93);
+      color: #0a1200;
+      box-shadow: 0 10px 30px rgba(184, 255, 84, 0.18);
+    }
+
+    .button-secondary {
+      border-color: rgba(184, 255, 84, 0.3);
+      background: rgba(184, 255, 84, 0.06);
+      color: var(--text);
+    }
+
+    .button-ghost {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+    }
+
+    .mobile-panel {
+      position: fixed;
+      inset: 0;
+      display: none;
+      z-index: 30;
+    }
+
+    .mobile-panel[data-open="true"] {
+      display: block;
+    }
+
+    .mobile-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .mobile-sheet {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: min(360px, 100%);
+      height: 100%;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top, rgba(184, 255, 84, 0.08), transparent 38%),
+        #0c0c0c;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-sheet-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .mobile-close {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .mobile-nav {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mobile-nav a {
+      padding: 15px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      text-decoration: none;
+      font-size: 1.02rem;
+    }
+
+    .hero {
+      padding: 78px 0 36px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+        rgba(255, 255, 255, 0.02);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 44px;
+    }
+
+    .hero-copy::before,
+    .hero-panel::before,
+    .feature-card::before,
+    .product-card::before,
+    .info-card::before,
+    .faq-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 40%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--accent);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.77rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    .hero-copy h1 {
+      max-width: 12ch;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 5vw, 5.2rem);
+      line-height: 0.93;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-copy h1 span {
+      color: var(--accent);
+    }
+
+    .hero-lead {
+      max-width: 58ch;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .hero-trust {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .trust-chip {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .trust-chip strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .trust-chip span {
+      display: block;
+      margin-top: 6px;
+      color: var(--soft);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .hero-panel {
+      padding: 28px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .hero-visual {
+      min-height: 410px;
+      padding: 30px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 50% 12%, rgba(184, 255, 84, 0.22), transparent 28%),
+        linear-gradient(180deg, rgba(184, 255, 84, 0.08), rgba(255, 255, 255, 0) 55%),
+        linear-gradient(180deg, #121212, #090909);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .panel-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .mini-card span {
+      display: block;
+      margin-top: 6px;
+      color: var(--soft);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    main section {
+      padding: 42px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-head p {
+      max-width: 54ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .section-head h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+    }
+
+    .feature-grid,
+    .info-grid,
+    .footer-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-card,
+    .info-card,
+    .faq-item,
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card,
+    .info-card {
+      padding: 24px;
+    }
+
+    .feature-card h3,
+    .info-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p,
+    .info-card p,
+    .info-card li,
+    .product-copy p,
+    .faq-panel p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .product-visual {
+      position: relative;
+      padding: 28px 28px 14px;
+    }
+
+    .product-frame {
+      min-height: 360px;
+      padding: 22px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top, rgba(184, 255, 84, 0.16), transparent 32%),
+        linear-gradient(180deg, #181818, #0f0f0f);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .product-frame svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .product-tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pill-accent {
+      background: rgba(184, 255, 84, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(184, 255, 84, 0.22);
+    }
+
+    .pill-dark {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .product-copy {
+      padding: 0 28px 28px;
+    }
+
+    .product-copy h3 {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: var(--accent);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .spec-list,
+    .policy-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .spec-list li,
+    .policy-list li {
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .spec-list li::before,
+    .policy-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(184, 255, 84, 0.4);
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary span:last-child {
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .faq-panel {
+      padding: 0 24px 22px;
+    }
+
+    .cta-banner {
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(184, 255, 84, 0.18);
+      background:
+        radial-gradient(circle at top left, rgba(184, 255, 84, 0.12), transparent 24%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+      box-shadow: var(--shadow);
+    }
+
+    .cta-banner h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.97;
+      max-width: 14ch;
+    }
+
+    .cta-banner p {
+      max-width: 56ch;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 14px 0 22px;
+    }
+
+    .footer {
+      padding: 36px 0 60px;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      align-items: start;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand p,
+    .footer-nav a,
+    .footer-note {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footer-nav {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover,
+    .footer-nav a:focus-visible {
+      color: var(--text);
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 0.92rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .desktop-nav,
+      .nav-actions .button-link {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .hero-grid,
+      .feature-grid,
+      .info-grid,
+      .collection-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .cta-banner {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-row {
+        min-height: 72px;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .cta-banner,
+      .feature-card,
+      .info-card,
+      .product-copy,
+      .product-visual {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero-copy {
+        padding-top: 28px;
+        padding-bottom: 28px;
+      }
+
+      .hero-panel {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .hero-lead {
+        font-size: 1rem;
+      }
+
+      .hero-trust,
+      .panel-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .product-copy h3 {
+        flex-direction: column;
+      }
+
+      .button,
+      .button-link {
+        width: 100%;
+      }
+
+      .card-actions {
+        flex-direction: column;
+      }
+
+      .mobile-sheet {
+        width: 100%;
+      }
+
+      .footer {
+        padding-bottom: 44px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-<div class="loader" id="loader">
-<img src="logo.png" alt="TopTierExotics Logo">
-</div>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="#top" aria-label="TopTierExotics home">
+        <span class="brand-mark" aria-hidden="true">TT</span>
+        <span class="brand-text">
+          <strong>TopTierExotics</strong>
+          <span>Private Access Street Luxury</span>
+        </span>
+      </a>
 
-<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="#collection">Collection</a>
+        <a href="#experience">Experience</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<div class="burger" id="burger" onclick="toggleMenu()">
-<div></div><div></div><div></div>
-</div>
+      <div class="nav-actions">
+        <a class="button-link button-secondary" href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+        <a class="button-link button-primary" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">
+          Join Telegram
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-panel"
+          aria-label="Open navigation menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<nav class="side-menu" id="menu">
-<a href="#home" onclick="toggleMenu()">HOME</a>
-<a href="#products" onclick="toggleMenu()">COLLECTION</a>
-<a href="#contact" onclick="toggleMenu()">CONTACT</a>
-<a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">TELEGRAM</a>
-<a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-<a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">PAYPAL</a>
-</nav>
+  <div class="mobile-panel" id="mobile-panel" data-open="false">
+    <div class="mobile-backdrop" data-close-menu="true"></div>
+    <div class="mobile-sheet" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+      <div class="mobile-sheet-top">
+        <strong id="mobile-menu-title">Navigation</strong>
+        <button class="mobile-close" type="button" data-close-menu="true" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+          </svg>
+        </button>
+      </div>
 
-<section class="hero" id="home">
-<img src="logo.png" class="hero-logo" alt="TopTierExotics">
+      <nav class="mobile-nav" aria-label="Mobile">
+        <a href="#collection" data-close-menu="true">Collection</a>
+        <a href="#experience" data-close-menu="true">Experience</a>
+        <a href="#process" data-close-menu="true">Process</a>
+        <a href="#faq" data-close-menu="true">FAQ</a>
+        <a href="#contact" data-close-menu="true">Contact</a>
+        <a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">PayPal</a>
+      </nav>
+    </div>
+  </div>
 
-<p>PRIVATE ACCESS • LIMITED DROPS • MEMBERS ONLY</p>
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Limited drops. Premium construction.</p>
+          <h1>Luxury discipline with <span>streetwear pressure.</span></h1>
+          <p class="hero-lead">
+            TopTierExotics is built for buyers who want refined silhouettes, low-volume releases, and direct access before the wider market ever sees the drop.
+          </p>
 
-<button class="primary-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-SHOP COLLECTION
-</button>
+          <div class="hero-actions">
+            <a class="button-link button-primary" href="#collection">Shop Collection</a>
+            <a class="button-link button-ghost" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">
+              Get Member Access
+            </a>
+          </div>
 
-<button class="primary-btn secondary-btn" onclick="window.open('https://t.me/TTE_V2')">
-JOIN TELEGRAM
-</button>
+          <div class="hero-trust" aria-label="Brand trust points">
+            <div class="trust-chip">
+              <strong>Worldwide shipping</strong>
+              <span>Fulfillment updates and direct order support.</span>
+            </div>
+            <div class="trust-chip">
+              <strong>Secure payments</strong>
+              <span>Protected checkout arranged through approved payment channels.</span>
+            </div>
+            <div class="trust-chip">
+              <strong>Low-volume releases</strong>
+              <span>Scarcity is controlled so the brand never feels overexposed.</span>
+            </div>
+          </div>
+        </div>
 
-<div class="trust">WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS</div>
-</section>
+        <aside class="hero-panel reveal" aria-label="Featured drop preview">
+          <div class="hero-visual">
+            <svg viewBox="0 0 620 760" role="img" aria-label="Stylized featured outfit preview">
+              <defs>
+                <linearGradient id="accentGlow" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#d6ff94"/>
+                  <stop offset="100%" stop-color="#94d934"/>
+                </linearGradient>
+                <linearGradient id="fabricDark" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#161616"/>
+                  <stop offset="100%" stop-color="#232323"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="315" cy="700" rx="180" ry="28" fill="rgba(0,0,0,0.5)"/>
+              <path d="M190 170c28-55 72-87 126-87s98 32 126 87l34 65-76 45-18-42-2 137 46 264H194l46-264-2-137-18 42-76-45 46-65z" fill="url(#fabricDark)" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+              <path d="M270 92c18-18 38-27 60-27s42 9 60 27l-12 60H282l-12-60z" fill="#1c1c1c" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+              <path d="M240 214h150v30H240z" fill="url(#accentGlow)" opacity="0.84"/>
+              <path d="M210 514h210" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+              <path d="M242 332h12v222h-12zM376 332h12v222h-12z" fill="rgba(255,255,255,0.08)"/>
+              <rect x="219" y="635" width="70" height="20" rx="10" fill="#101010"/>
+              <rect x="331" y="635" width="70" height="20" rx="10" fill="#101010"/>
+              <circle cx="121" cy="132" r="18" fill="rgba(184,255,84,0.35)"/>
+              <circle cx="502" cy="170" r="10" fill="rgba(184,255,84,0.55)"/>
+            </svg>
+          </div>
 
-<section class="products" id="products">
-<h1>FEATURED COLLECTION</h1>
+          <div class="panel-row">
+            <div class="mini-card">
+              <strong>Member-first access</strong>
+              <span>Telegram opens the door to previews, release timing, and direct ordering.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Curated by design</strong>
+              <span>Fewer products, tighter positioning, and cleaner signal for the brand.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<div class="product-grid">
+    <section id="experience">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Why it feels different</p>
+            <h2>Not another loud drop page.</h2>
+          </div>
+          <p>
+            The site now balances editorial restraint with selective aggression. That means cleaner typography, stronger trust signals, and a buying path that feels intentional instead of improvised.
+          </p>
+        </div>
 
-<article class="product">
-<div class="badge">LIMITED</div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <h3>Luxury framing</h3>
+            <p>Sharper spacing, better hierarchy, and calmer surfaces let the brand read premium instead of overly gimmicky.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Streetwear edge</h3>
+            <p>Accent contrast, scarcity messaging, and a harder tone keep the brand from becoming soft or generic.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Conversion support</h3>
+            <p>The page explains the process, payment path, delivery expectations, and direct-contact model so buyers are not left guessing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="product-image">
-<button class="arrow arrow-left" onclick="changeHat(-1)">‹</button>
-<img src="hat.png" id="hatImage" loading="lazy" alt="TopTier Hat">
-<button class="arrow arrow-right" onclick="changeHat(1)">›</button>
-</div>
+    <section id="collection">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Featured collection</p>
+            <h2>Built to look rare before it sells out.</h2>
+          </div>
+          <p>
+            These product blocks are structured to feel complete even before final photography is added. Once you have real images, we can swap them into the same layout without redesigning the page.
+          </p>
+        </div>
 
-<div class="gallery-dots" id="hatDots"></div>
+        <div class="collection-grid">
+          <article class="product-card reveal">
+            <div class="product-visual">
+              <div class="product-tag-row">
+                <span class="pill pill-accent">Limited Drop</span>
+                <span class="pill pill-dark">01 / Headwear</span>
+              </div>
+              <div class="product-frame">
+                <svg viewBox="0 0 520 420" role="img" aria-label="Stylized cap product illustration">
+                  <defs>
+                    <linearGradient id="capTop" x1="0" x2="1">
+                      <stop offset="0%" stop-color="#202020"/>
+                      <stop offset="100%" stop-color="#0d0d0d"/>
+                    </linearGradient>
+                  </defs>
+                  <ellipse cx="260" cy="332" rx="158" ry="26" fill="rgba(0,0,0,0.42)"/>
+                  <path d="M153 213c0-74 48-123 118-123 74 0 125 50 125 123v28H153v-28z" fill="url(#capTop)" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+                  <path d="M130 240c44-18 104-30 160-30 50 0 86 8 120 21 18 7 32 20 32 33 0 24-37 46-92 57-85 18-203 14-265-19-20-11-29-27-24-41 5-14 22-18 69-21z" fill="#131313" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+                  <path d="M199 174h143v35H199z" fill="#b8ff54" opacity="0.86"/>
+                  <path d="M175 145c32-27 63-40 97-40 33 0 64 13 95 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+                </svg>
+              </div>
+            </div>
+            <div class="product-copy">
+              <h3>
+                <span>TopTierExotics Signature Hat</span>
+                <span class="price">$65</span>
+              </h3>
+              <p>
+                Structured profile, clean front hit, and a shape designed to hold up as a daily essential instead of looking disposable after a few wears.
+              </p>
+              <ul class="spec-list">
+                <li>Breathable build with a stable crown.</li>
+                <li>Low-quantity release for tighter brand control.</li>
+                <li>Direct order support through Telegram and Instagram.</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button-link button-primary" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">Reserve in Telegram</a>
+                <a class="button-link button-ghost" href="#process">How ordering works</a>
+              </div>
+            </div>
+          </article>
 
-<h3>TOPTIEREXOTICS HAT</h3>
-<p>Structured fit. Breathable fabric. Everyday essential.</p>
+          <article class="product-card reveal">
+            <div class="product-visual">
+              <div class="product-tag-row">
+                <span class="pill pill-accent">Core Set</span>
+                <span class="pill pill-dark">02 / Tracksuit</span>
+              </div>
+              <div class="product-frame">
+                <svg viewBox="0 0 520 420" role="img" aria-label="Stylized tracksuit product illustration">
+                  <defs>
+                    <linearGradient id="trackSuit" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#1b1b1b"/>
+                      <stop offset="100%" stop-color="#0b0b0b"/>
+                    </linearGradient>
+                  </defs>
+                  <ellipse cx="257" cy="382" rx="166" ry="18" fill="rgba(0,0,0,0.42)"/>
+                  <path d="M139 108l42-39h160l40 39 56 64-52 41-42-39v92l37 116H141l37-116v-92l-42 39-52-41 55-64z" fill="url(#trackSuit)" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+                  <path d="M205 70h109v32H205z" fill="#121212"/>
+                  <path d="M171 210h184v24H171z" fill="#b8ff54" opacity="0.82"/>
+                  <path d="M213 270h18v90h-18zM289 270h18v90h-18z" fill="rgba(255,255,255,0.08)"/>
+                </svg>
+              </div>
+            </div>
+            <div class="product-copy">
+              <h3>
+                <span>TopTierExotics Premium Tracksuit</span>
+                <span class="price">$185</span>
+              </h3>
+              <p>
+                A sharper take on the standard hoodie-and-jogger set, built around a controlled silhouette that feels elevated instead of sloppy.
+              </p>
+              <ul class="spec-list">
+                <li>Premium fabric direction with a cleaner tapered finish.</li>
+                <li>Designed for repeat wear without losing its shape.</li>
+                <li>Priority access goes to members before public inquiries.</li>
+              </ul>
+              <div class="card-actions">
+                <a class="button-link button-primary" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">Request Your Size</a>
+                <a class="button-link button-ghost" href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">View Brand Updates</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">
-SECURE VIA TELEGRAM
-</button>
-</article>
+    <section id="process">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Order process</p>
+            <h2>Clear enough to build trust.</h2>
+          </div>
+          <p>
+            If the buying flow looks vague, people hesitate. These steps make the sales process feel deliberate and professional instead of improvised in private messages.
+          </p>
+        </div>
 
-<article class="product">
-<div class="badge">LIMITED</div>
+        <div class="info-grid">
+          <article class="info-card reveal">
+            <h3>1. Join the member channel</h3>
+            <p>Telegram is the main entry point for early access, release timing, size checks, and inventory priority.</p>
+          </article>
+          <article class="info-card reveal">
+            <h3>2. Confirm your order</h3>
+            <p>Message the team with the item, size, shipping country, and any fit questions before payment is arranged.</p>
+          </article>
+          <article class="info-card reveal">
+            <h3>3. Complete protected payment</h3>
+            <p>Approved payment channels are used to keep the transaction traceable and buyer communication clean.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="product-image">
-<button class="arrow arrow-left" onclick="changeTracksuit(-1)">‹</button>
-<img src="tracksuit.png" id="tracksuitImage" loading="lazy" alt="Tracksuit">
-<button class="arrow arrow-right" onclick="changeTracksuit(1)">›</button>
-</div>
+    <section aria-labelledby="policy-title">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Buyer confidence</p>
+            <h2 id="policy-title">Trust is part of the product.</h2>
+          </div>
+          <p>
+            The original version asked for trust without earning it. This version adds the operational context buyers expect from a real brand.
+          </p>
+        </div>
 
-<div class="gallery-dots" id="tracksuitDots"></div>
+        <div class="info-grid">
+          <article class="info-card reveal">
+            <h3>Shipping</h3>
+            <ul class="policy-list">
+              <li>Worldwide shipping support based on destination availability.</li>
+              <li>Dispatch timing is confirmed directly at checkout.</li>
+              <li>Tracking details are provided once the order is fulfilled.</li>
+            </ul>
+          </article>
+          <article class="info-card reveal">
+            <h3>Payment</h3>
+            <ul class="policy-list">
+              <li>Orders are processed through approved payment channels.</li>
+              <li>Transaction details are confirmed before payment is requested.</li>
+              <li>Buyers can verify order terms in direct message before checkout.</li>
+            </ul>
+          </article>
+          <article class="info-card reveal">
+            <h3>Support</h3>
+            <ul class="policy-list">
+              <li>Telegram and Instagram remain active for inquiries and order help.</li>
+              <li>Sizing questions should be resolved before payment.</li>
+              <li>Drop access is prioritized for returning and member-based buyers.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<h3>TOPTIEREXOTICS TRACKSUIT</h3>
-<p>Premium hoodie and tapered joggers. Clean tailored fit.</p>
+    <section id="faq">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">FAQ</p>
+            <h2>Questions buyers actually ask.</h2>
+          </div>
+          <p>
+            This section closes trust gaps, reduces repetitive DMs, and gives the brand a more serious front-facing presentation.
+          </p>
+        </div>
 
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">
-SECURE VIA TELEGRAM
-</button>
-</article>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>
+              <span>Why is Telegram the main access point?</span>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-panel">
+              <p>Telegram is used for early release notices, quantity updates, and direct support. It keeps the highest-intent buyers closest to the drop schedule.</p>
+            </div>
+          </details>
 
-</div>
-</section>
+          <details class="faq-item reveal">
+            <summary>
+              <span>Can I order from outside the UK?</span>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-panel">
+              <p>Yes. Worldwide shipping support is available depending on destination and carrier coverage. Confirm location details before payment.</p>
+            </div>
+          </details>
 
-<section class="telegram">
-<h2>PRIVATE ACCESS ONLY</h2>
-<p>All drops are released via Telegram. Members get early access.</p>
-<button class="primary-btn" onclick="window.open('https://t.me/TTE_V2')">JOIN NOW</button>
-</section>
+          <details class="faq-item reveal">
+            <summary>
+              <span>How do I know sizing before I buy?</span>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-panel">
+              <p>Message before checkout for size guidance, fit notes, and availability. That conversation should happen before payment so the order stays clean.</p>
+            </div>
+          </details>
 
-<section class="contact" id="contact">
-<h2>CONTACT</h2>
-<p>Message us via Telegram or Instagram for orders and inquiries.</p>
-</section>
+          <details class="faq-item reveal">
+            <summary>
+              <span>Are all products permanently available?</span>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-panel">
+              <p>No. The brand position is built around controlled quantity, selected releases, and lower-volume availability rather than permanent open inventory.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-<footer class="footer">
-<h3>CONNECT</h3>
+    <section id="contact">
+      <div class="shell">
+        <div class="cta-banner reveal">
+          <p class="eyebrow">Direct contact</p>
+          <h2>Join the channel. Ask questions. Lock in your order.</h2>
+          <p>
+            Telegram should feel like the members entrance, not the only thing holding the brand together. This page now supports that path with enough clarity to convert serious buyers.
+          </p>
+          <div class="card-actions">
+            <a class="button-link button-primary" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">Enter Telegram</a>
+            <a class="button-link button-secondary" href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">Open Instagram</a>
+            <a class="button-link button-ghost" href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">Payment Channel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<div class="footer-icons">
-<a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
-</a>
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div class="footer-brand">
+        <div class="brand" aria-label="TopTierExotics brand">
+          <span class="brand-mark" aria-hidden="true">TT</span>
+          <span class="brand-text">
+            <strong>TopTierExotics</strong>
+            <span>Luxury discipline. Streetwear energy.</span>
+          </span>
+        </div>
+        <p>
+          Premium streetwear for buyers who want scarcity, sharper presentation, and direct access without the usual low-trust clutter.
+        </p>
+        <p class="footer-note">TopTierExotics recommends confirming sizing, shipping destination, and order terms before completing payment.</p>
+      </div>
 
-<a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
+      <div>
+        <h3>Explore</h3>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#collection">Collection</a>
+          <a href="#experience">Experience</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
 
-<a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">
-<img src="https://cdn-icons-png.flaticon.com/512/174/174861.png">
-</a>
-</div>
+      <div>
+        <h3>Contact</h3>
+        <nav class="footer-nav" aria-label="External links">
+          <a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">PayPal</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 
-</footer>
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mobilePanel = document.getElementById("mobile-panel");
+    const mobileSheet = mobilePanel.querySelector(".mobile-sheet");
+    const closeTriggers = mobilePanel.querySelectorAll("[data-close-menu='true']");
+    const revealItems = document.querySelectorAll(".reveal");
+    let lastFocusedElement = null;
 
-<div class="zoom" id="zoom" onclick="closeZoom()">
-<img id="zoomImg">
-</div>
+    const focusableSelectors = [
+      "a[href]",
+      "button:not([disabled])",
+      "textarea:not([disabled])",
+      "input:not([disabled])",
+      "select:not([disabled])",
+      "[tabindex]:not([tabindex='-1'])"
+    ].join(",");
 
-<script>
+    function setMenuState(open) {
+      mobilePanel.dataset.open = String(open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
 
-/* SAFE ELEMENT REFERENCES */
-const loader=document.getElementById("loader");
-const menu=document.getElementById("menu");
-const burger=document.getElementById("burger");
-const overlay=document.getElementById("overlay");
-const zoom=document.getElementById("zoom");
-const zoomImg=document.getElementById("zoomImg");
+      if (open) {
+        lastFocusedElement = document.activeElement;
+        const firstFocusable = mobileSheet.querySelector(focusableSelectors);
+        if (firstFocusable) {
+          firstFocusable.focus();
+        }
+      } else if (lastFocusedElement instanceof HTMLElement) {
+        lastFocusedElement.focus();
+      }
+    }
 
-/* LOADER */
-window.addEventListener("load",()=>{
-setTimeout(()=>{
-loader.style.opacity="0";
-setTimeout(()=>loader.style.display="none",600);
-},500);
-});
+    menuToggle.addEventListener("click", () => {
+      const open = mobilePanel.dataset.open !== "true";
+      setMenuState(open);
+    });
 
-/* MENU */
-function toggleMenu(){
-menu.classList.toggle("active");
-burger.classList.toggle("active");
-overlay.classList.toggle("active");
-}
+    closeTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => setMenuState(false));
+    });
 
-/* REVEAL */
-const products=document.querySelectorAll(".product");
-window.addEventListener("scroll",()=>{
-products.forEach(p=>{
-if(p.getBoundingClientRect().top<window.innerHeight*0.85){
-p.classList.add("show");
-}
-});
-});
+    mobilePanel.addEventListener("click", (event) => {
+      if (event.target === mobilePanel) {
+        setMenuState(false);
+      }
+    });
 
-/* GALLERIES */
-const hatImages=["hat.png","hat1-back.jpg","hat1-side.jpg"];
-let hatIndex=0;
-const hatImage=document.getElementById("hatImage");
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && mobilePanel.dataset.open === "true") {
+        setMenuState(false);
+      }
 
-function changeHat(d){
-hatIndex=(hatIndex+d+hatImages.length)%hatImages.length;
-hatImage.src=hatImages[hatIndex];
-updateDots("hatDots",hatIndex);
-}
+      if (event.key !== "Tab" || mobilePanel.dataset.open !== "true") {
+        return;
+      }
 
-const tracksuitImages=["tracksuit.png","tracksuit-back.jpg","tracksuit-side.jpg","tracksuit-detail.jpg"];
-let tracksuitIndex=0;
-const tracksuitImage=document.getElementById("tracksuitImage");
+      const focusable = Array.from(mobileSheet.querySelectorAll(focusableSelectors));
+      if (!focusable.length) {
+        return;
+      }
 
-function changeTracksuit(d){
-tracksuitIndex=(tracksuitIndex+d+tracksuitImages.length)%tracksuitImages.length;
-tracksuitImage.src=tracksuitImages[tracksuitIndex];
-updateDots("tracksuitDots",tracksuitIndex);
-}
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
 
-function createDots(id,arr){
-const el=document.getElementById(id);
-arr.forEach((_,i)=>{
-const dot=document.createElement("span");
-if(i===0)dot.classList.add("active");
-el.appendChild(dot);
-});
-}
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
 
-function updateDots(id,i){
-[...document.getElementById(id).children].forEach(d=>d.classList.remove("active"));
-document.getElementById(id).children[i].classList.add("active");
-}
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.16
+    });
 
-createDots("hatDots",hatImages);
-createDots("tracksuitDots",tracksuitImages);
-
-/* ZOOM */
-document.querySelectorAll(".product img").forEach(img=>{
-img.addEventListener("click",(e)=>{
-zoomImg.src=e.target.src;
-zoom.style.display="flex";
-});
-});
-
-function closeZoom(){
-zoom.style.display="none";
-}
-
-</script>
-
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
 </body>
 </html>

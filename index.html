@@ -8,18 +8,38 @@
 <meta name="description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://toptierexotics.github.io/toptierexotics/">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preload" as="image" href="logo.png" fetchpriority="high">
 
 <!-- OPEN GRAPH -->
 <meta property="og:title" content="TopTierExotics | Private Access Luxury Streetwear">
 <meta property="og:description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://toptierexotics.github.io/toptierexotics/">
 <meta property="og:image" content="logo.png">
+<meta property="og:site_name" content="TopTierExotics">
 
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TopTierExotics | Private Access Luxury Streetwear">
 <meta name="twitter:description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 <meta name="twitter:image" content="logo.png">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"TopTierExotics",
+  "url":"https://toptierexotics.github.io/toptierexotics/",
+  "logo":"https://toptierexotics.github.io/toptierexotics/logo.png",
+  "sameAs":[
+    "https://t.me/TTE_V2",
+    "https://www.instagram.com/toptierexotics.2k25",
+    "https://www.paypal.me/TopTierExotics"
+  ]
+}
+</script>
 
 <!-- PERFORMANCE -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -356,6 +376,14 @@ color:var(--muted);
 max-width:32ch;
 margin:0 auto 16px;
 }
+.product-note{
+display:block;
+margin:0 auto 18px;
+font-size:.8rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--soft);
+}
 
 /* BADGE */
 .badge{
@@ -518,6 +546,13 @@ max-width:620px;
 margin:0 auto 24px;
 color:var(--soft);
 }
+.footer-legal{
+margin:26px auto 0;
+font-size:.78rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:rgba(255,255,255,.42);
+}
 .footer-icons{
 display:flex;
 justify-content:center;
@@ -592,6 +627,8 @@ cursor:pointer;
 .burger{top:16px;left:16px;}
 .hero p,.trust{letter-spacing:1.5px;}
 .hero-logo{width:min(228px,64vw);max-height:none;}
+.hero h1{font-size:clamp(2.2rem,13vw,3.5rem);}
+.hero-sub{font-size:.94rem;max-width:33ch;}
 .product{padding:24px 20px;}
 .product-image{height:260px;padding:12px 12px 60px;}
 .primary-btn{width:100%;}
@@ -668,6 +705,7 @@ html{scroll-behavior:auto;}
 
 <h3>TOPTIEREXOTICS HAT</h3>
 <p>Structured fit. Breathable fabric. Everyday essential with a cleaner finish and stronger visual presence.</p>
+<span class="product-note">DM for size and drop availability</span>
 
 <a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">
 SECURE VIA TELEGRAM
@@ -687,6 +725,7 @@ SECURE VIA TELEGRAM
 
 <h3>TOPTIEREXOTICS TRACKSUIT</h3>
 <p>Premium hoodie and tapered joggers. Clean tailored fit with a stronger luxury-streetwear look.</p>
+<span class="product-note">Message first for stock and sizing</span>
 
 <a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">
 SECURE VIA TELEGRAM
@@ -731,6 +770,7 @@ SECURE VIA TELEGRAM
 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/></svg>
 </a>
 </div>
+<p class="footer-legal">&copy; 2026 TopTierExotics. All rights reserved.</p>
 </footer>
 
 <div class="zoom" id="zoom" aria-hidden="true">
@@ -832,9 +872,8 @@ observer.unobserve(entry.target);
 products.forEach((product) => observer.observe(product));
 } else {
 window.addEventListener("scroll", revealVisibleProducts, { passive: true });
+window.addEventListener("resize", revealVisibleProducts, { passive: true });
 }
-
-window.addEventListener("scroll", revealVisibleProducts, { passive: true });
 
 function createDots(name) {
 const gallery = galleries[name];

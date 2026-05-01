@@ -18,14 +18,14 @@
 <meta property="og:description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://toptierexotics.github.io/toptierexotics/">
-<meta property="og:image" content="logo.png">
+<meta property="og:image" content="https://toptierexotics.github.io/toptierexotics/logo.png">
 <meta property="og:site_name" content="TopTierExotics">
 
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TopTierExotics | Private Access Luxury Streetwear">
 <meta name="twitter:description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
-<meta name="twitter:image" content="logo.png">
+<meta name="twitter:image" content="https://toptierexotics.github.io/toptierexotics/logo.png">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -73,6 +73,10 @@ linear-gradient(180deg,#000 0%,#020202 100%);
 color:var(--text);
 overflow-x:hidden;
 line-height:1.5;
+}
+body.menu-open,
+body.zoom-open{
+overflow:hidden;
 }
 img{display:block;max-width:100%;}
 button,input,textarea,select{font:inherit;}
@@ -597,6 +601,9 @@ z-index:2200;
 padding:24px;
 }
 .zoom.active{display:flex;}
+.zoom[aria-hidden="true"]{
+visibility:hidden;
+}
 .zoom img{
 max-width:min(92vw,1000px);
 max-height:82vh;
@@ -649,7 +656,7 @@ html{scroll-behavior:auto;}
 
 <body>
 
-<a class="skip-link" href="#home">Skip to content</a>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="loader" id="loader" aria-hidden="true">
 <img src="logo.png" alt="TopTierExotics Logo">
@@ -670,9 +677,9 @@ html{scroll-behavior:auto;}
 <a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">PAYPAL</a>
 </nav>
 
-<main>
+<main id="main-content" tabindex="-1">
 <section class="hero" id="home">
-<img src="logo.png" class="hero-logo" alt="TopTierExotics">
+<img src="logo.png" class="hero-logo" alt="TopTierExotics" loading="eager" decoding="async" fetchpriority="high">
 
 <p>PRIVATE ACCESS • LIMITED DROPS • MEMBERS ONLY</p>
 <h1>TOPTIEREXOTICS</h1>
@@ -697,7 +704,7 @@ html{scroll-behavior:auto;}
 
 <div class="product-image">
 <button class="arrow arrow-left" type="button" data-gallery="hat" data-direction="-1" aria-label="Previous hat image">&#8249;</button>
-<img src="hat.png" id="hatImage" loading="lazy" decoding="async" alt="TopTierExotics hat front view">
+<img src="hat.png" id="hatImage" loading="lazy" decoding="async" alt="TopTierExotics hat front view" tabindex="0" role="button" aria-label="Open larger view of TopTierExotics hat front view">
 <button class="arrow arrow-right" type="button" data-gallery="hat" data-direction="1" aria-label="Next hat image">&#8250;</button>
 </div>
 
@@ -717,7 +724,7 @@ SECURE VIA TELEGRAM
 
 <div class="product-image">
 <button class="arrow arrow-left" type="button" data-gallery="tracksuit" data-direction="-1" aria-label="Previous tracksuit image">&#8249;</button>
-<img src="tracksuit.png" id="tracksuitImage" loading="lazy" decoding="async" alt="TopTierExotics tracksuit front view">
+<img src="tracksuit.png" id="tracksuitImage" loading="lazy" decoding="async" alt="TopTierExotics tracksuit front view" tabindex="0" role="button" aria-label="Open larger view of TopTierExotics tracksuit front view">
 <button class="arrow arrow-right" type="button" data-gallery="tracksuit" data-direction="1" aria-label="Next tracksuit image">&#8250;</button>
 </div>
 
@@ -773,7 +780,7 @@ SECURE VIA TELEGRAM
 <p class="footer-legal">&copy; 2026 TopTierExotics. All rights reserved.</p>
 </footer>
 
-<div class="zoom" id="zoom" aria-hidden="true">
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Expanded product image" aria-hidden="true">
 <button class="zoom-close" id="zoomClose" type="button" aria-label="Close image zoom">&times;</button>
 <img id="zoomImg" alt="">
 </div>
@@ -788,7 +795,14 @@ const zoom = document.getElementById("zoom");
 const zoomImg = document.getElementById("zoomImg");
 const zoomClose = document.getElementById("zoomClose");
 const products = document.querySelectorAll(".product");
-const body = document.body;
+const pageBody = document.body;
+let lastFocusedElement = null;
+
+const focusableSelector = [
+"a[href]",
+"button:not([disabled])",
+"[tabindex]:not([tabindex='-1'])"
+].join(",");
 
 const galleries = {
 hat: {
@@ -817,9 +831,9 @@ dotsEl: document.getElementById("tracksuitDots")
 };
 
 window.addEventListener("load", () => {
-window.setTimeout(() => {
+window.requestAnimationFrame(() => {
 loader.classList.add("hidden");
-}, 180);
+});
 revealVisibleProducts();
 });
 
@@ -830,7 +844,18 @@ burger.classList.toggle("active", shouldOpen);
 overlay.classList.toggle("active", shouldOpen);
 burger.setAttribute("aria-expanded", String(shouldOpen));
 burger.setAttribute("aria-label", shouldOpen ? "Close menu" : "Open menu");
-body.style.overflow = shouldOpen ? "hidden" : "";
+
+if (shouldOpen) {
+lastFocusedElement = document.activeElement;
+pageBody.classList.add("menu-open");
+const firstLink = menu.querySelector("a");
+if (firstLink) firstLink.focus();
+} else {
+pageBody.classList.remove("menu-open");
+if (lastFocusedElement && typeof lastFocusedElement.focus === "function" && !zoom.classList.contains("active")) {
+lastFocusedElement.focus();
+}
+}
 }
 
 burger.addEventListener("click", () => toggleMenu());
@@ -844,10 +869,20 @@ document.addEventListener("keydown", (event) => {
 if (event.key === "Escape") {
 if (zoom.classList.contains("active")) {
 closeZoom();
+return;
 }
 if (menu.classList.contains("active")) {
 toggleMenu(false);
+return;
 }
+}
+
+if (event.key === "Tab" && menu.classList.contains("active")) {
+trapFocus(event, menu);
+}
+
+if (event.key === "Tab" && zoom.classList.contains("active")) {
+trapFocus(event, zoom);
 }
 });
 
@@ -919,18 +954,52 @@ changeGallery(button.dataset.gallery, Number(button.dataset.direction));
 
 Object.keys(galleries).forEach(createDots);
 
-document.querySelectorAll(".product-image img").forEach((img) => {
-img.addEventListener("click", () => {
-zoomImg.src = img.src;
-zoomImg.alt = img.alt;
+function openZoom(imageElement) {
+lastFocusedElement = document.activeElement;
+zoomImg.src = imageElement.src;
+zoomImg.alt = imageElement.alt;
 zoom.classList.add("active");
 zoom.setAttribute("aria-hidden", "false");
-body.style.overflow = "hidden";
+pageBody.classList.add("zoom-open");
+zoomClose.focus();
+}
+
+function trapFocus(event, container) {
+const focusable = Array.from(container.querySelectorAll(focusableSelector))
+.filter((element) => !element.hasAttribute("disabled"));
+
+if (!focusable.length) {
+return;
+}
+
+const first = focusable[0];
+const last = focusable[focusable.length - 1];
+
+if (event.shiftKey && document.activeElement === first) {
+event.preventDefault();
+last.focus();
+}
+
+if (!event.shiftKey && document.activeElement === last) {
+event.preventDefault();
+first.focus();
+}
+}
+
+document.querySelectorAll(".product-image img").forEach((img) => {
+img.addEventListener("click", () => {
+openZoom(img);
 });
 
-img.addEventListener("error", () => {
-img.alt = "Image unavailable";
-img.style.opacity = ".55";
+img.addEventListener("keydown", (event) => {
+if (event.key === "Enter" || event.key === " ") {
+event.preventDefault();
+openZoom(img);
+}
+});
+
+img.addEventListener("load", () => {
+img.setAttribute("aria-label", "Open larger view of " + img.alt);
 });
 });
 
@@ -938,7 +1007,15 @@ function closeZoom() {
 zoom.classList.remove("active");
 zoom.setAttribute("aria-hidden", "true");
 zoomImg.removeAttribute("src");
-body.style.overflow = menu.classList.contains("active") ? "hidden" : "";
+pageBody.classList.remove("zoom-open");
+if (menu.classList.contains("active")) {
+pageBody.classList.add("menu-open");
+} else {
+pageBody.classList.remove("menu-open");
+}
+if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+lastFocusedElement.focus();
+}
 }
 
 zoom.addEventListener("click", (event) => {

@@ -1,3 +1,7 @@
+updated new tte web
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -200,11 +204,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   transform:translateX(6px);
 }
 
-.mobile-topbar,
-.mobile-sticky-cta{
-  display:none;
-}
-
 .hero{
   min-height:100svh;
   display:flex;
@@ -280,27 +279,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   z-index:1;
 }
 
-.drop-status{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  margin:0 auto 18px;
-  position:relative;
-  z-index:1;
-}
-.drop-status span{
-  padding:8px 12px;
-  border:1px solid rgba(57,255,20,.2);
-  border-radius:999px;
-  background:rgba(57,255,20,.055);
-  color:rgba(255,255,255,.82);
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
 .primary-btn{
   display:inline-flex;
   align-items:center;
@@ -345,12 +323,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   z-index:1;
 }
 
-.mobile-proof{
-  display:none;
-  position:relative;
-  z-index:1;
-}
-
 .products{
   padding:110px 10% 90px;
 }
@@ -368,9 +340,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   margin:0 auto 46px;
   text-align:center;
   color:var(--muted);
-}
-.mobile-scroll-note{
-  display:none;
 }
 .product-grid{
   display:grid;
@@ -402,24 +371,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   font-size:1.05rem;
   letter-spacing:2px;
   margin:4px 0 10px;
-}
-.product-meta{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  margin:0 0 14px;
-  flex-wrap:wrap;
-}
-.product-meta span{
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.075);
-  color:rgba(255,255,255,.68);
-  font-size:.68rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
 }
 .product p{
   color:var(--muted);
@@ -676,282 +627,39 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
 }
 
 @media (max-width:640px){
-  body{padding-bottom:calc(86px + env(safe-area-inset-bottom));}
-  .mobile-topbar{
-    position:fixed;
-    top:max(12px, env(safe-area-inset-top));
-    left:78px;
-    right:14px;
-    min-height:52px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    padding:8px 8px 8px 12px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    background:rgba(5,5,5,.76);
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
-    box-shadow:0 18px 40px rgba(0,0,0,.34);
-    z-index:1300;
-  }
-  .mobile-brand{
-    min-width:0;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    color:#fff;
-    text-decoration:none;
-    font-size:.76rem;
-    font-weight:800;
-    letter-spacing:.08em;
-  }
-  .mobile-brand img{
-    width:28px;
-    height:28px;
-    object-fit:contain;
-    filter:drop-shadow(0 0 10px rgba(57,255,20,.28));
-  }
-  .mobile-topbar .mini-cta{
-    flex:0 0 auto;
-    min-height:36px;
-    padding:10px 12px;
-    border-radius:999px;
-    background:var(--accent);
-    color:#000;
-    text-decoration:none;
-    font-size:.68rem;
-    font-weight:900;
-    letter-spacing:.08em;
-  }
   .burger{width:52px;height:52px;}
   .side-menu{
     width:100%;
     padding:calc(92px + env(safe-area-inset-top)) 20px calc(32px + env(safe-area-inset-bottom));
   }
   .side-menu a{padding:16px 18px;font-size:1rem;}
-  .hero{
-    min-height:auto;
-    padding:116px 18px 48px;
-    justify-content:flex-start;
-  }
-  .hero::before{
-    bottom:24%;
-    width:115vw;
-    height:260px;
-    opacity:.95;
-  }
-  .eyebrow{
-    order:-1;
-    display:inline-flex;
-    max-width:100%;
-    padding:8px 12px;
-    border:1px solid rgba(57,255,20,.18);
-    border-radius:999px;
-    background:rgba(57,255,20,.055);
-    font-size:.65rem;
-    letter-spacing:.12em;
-    white-space:normal;
-  }
-  .hero-logo{
-    width:min(208px,58vw);
-    max-height:none;
-    margin:8px auto 20px;
-    padding:14px;
-    border-radius:30px;
-    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
-    border:1px solid rgba(255,255,255,.07);
-    box-shadow:0 24px 70px rgba(0,0,0,.5), 0 0 48px rgba(57,255,20,.14);
-  }
-  .hero h1{
-    max-width:9ch;
-    font-size:clamp(2.55rem,15vw,4.2rem);
-    line-height:.88;
-    letter-spacing:.025em;
-    margin-bottom:14px;
-  }
-  .drop-status{
-    gap:8px;
-    margin-bottom:14px;
-  }
-  .drop-status span{
-    font-size:.61rem;
-    padding:7px 9px;
-    letter-spacing:.08em;
-  }
-  .hero-sub{
-    font-size:.98rem;
-    max-width:32ch;
-    letter-spacing:0;
-    margin-bottom:16px;
-  }
+  .hero{padding:92px 18px 54px;}
+  .eyebrow,.trust{letter-spacing:1.4px;}
+  .hero-logo{width:min(228px,64vw);max-height:none;}
+  .hero h1{font-size:clamp(2.1rem,13vw,3.45rem);}
+  .hero-sub{font-size:.94rem;max-width:33ch;}
   .trust{
-    display:none;
     font-size:.7rem;
     padding:12px 14px;
     line-height:1.55;
     border-radius:18px;
   }
-  .mobile-proof{
-    width:100%;
-    max-width:360px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-    margin:22px auto 0;
-  }
-  .mobile-proof span{
-    min-height:58px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:10px 8px;
-    border:1px solid rgba(255,255,255,.075);
-    border-radius:16px;
-    background:rgba(255,255,255,.035);
-    color:rgba(255,255,255,.76);
-    font-size:.62rem;
-    font-weight:800;
-    letter-spacing:.08em;
-    line-height:1.25;
-    text-align:center;
-    text-transform:uppercase;
-  }
   .products,.telegram,.contact{padding-top:78px;padding-bottom:72px;}
-  .products{
-    padding-left:0;
-    padding-right:0;
-    overflow:hidden;
-  }
-  .products h2,.telegram h2,.contact h2{
-    max-width:11ch;
-    margin-left:auto;
-    margin-right:auto;
-    letter-spacing:2px;
-    line-height:.98;
-  }
-  .section-copy{
-    max-width:32ch;
-    margin:0 auto 18px;
-    padding:0 20px;
-    font-size:.94rem;
-  }
-  .mobile-scroll-note{
-    display:block;
-    margin:0 auto 18px;
-    padding:0 20px;
-    color:rgba(57,255,20,.82);
-    font-size:.72rem;
-    font-weight:800;
-    letter-spacing:.14em;
-    text-align:center;
-    text-transform:uppercase;
-  }
-  .product-grid{
-    display:flex;
-    gap:16px;
-    max-width:none;
-    margin:0;
-    padding:8px 18px 18px;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    scroll-padding:18px;
-    -webkit-overflow-scrolling:touch;
-  }
-  .product-grid::-webkit-scrollbar{display:none;}
-  .product{
-    flex:0 0 min(86vw,380px);
-    scroll-snap-align:center;
-    padding:18px 14px 20px;
-    border-radius:22px;
-    opacity:1;
-    transform:none;
-    box-shadow:0 18px 44px rgba(0,0,0,.48);
-  }
-  .product:hover{transform:none;}
-  .product h3{
-    font-size:1rem;
-    line-height:1.25;
-    margin-top:0;
-  }
-  .product-meta{
-    gap:6px;
-    margin-bottom:12px;
-  }
-  .product-meta span{
-    font-size:.58rem;
-    padding:6px 8px;
-  }
-  .product p{
-    max-width:29ch;
-    font-size:.9rem;
-  }
-  .product-image{
-    height:292px;
-    padding:10px 10px 44px;
-    margin-bottom:14px;
-    border-radius:20px;
-  }
+  .products h2,.telegram h2,.contact h2{letter-spacing:3px;}
+  .section-copy{margin:0 auto 34px;font-size:.94rem;}
+  .product-grid{gap:24px;}
+  .product{padding:22px 16px 24px;border-radius:20px;}
+  .product-image{height:280px;padding:10px 10px 70px;margin-bottom:14px;}
   .product-image img{max-width:100%;}
   .gallery-dots{gap:12px;margin:0 0 16px;}
   .gallery-dots button{width:12px;height:12px;}
-  .arrow{display:none;}
+  .arrow{width:44px;height:44px;bottom:12px;}
   .primary-btn{width:100%;min-height:56px;padding-left:18px;padding-right:18px;}
   .hero-actions,.contact-links{width:100%;}
   .hero-actions .primary-btn,
   .contact-links .primary-btn{max-width:340px;}
-  .telegram,.contact{
-    padding-left:20px;
-    padding-right:20px;
-  }
-  .telegram{
-    border-radius:28px 28px 0 0;
-    margin-top:6px;
-  }
-  .contact p{
-    font-size:.94rem;
-  }
   .footer-icons{gap:14px;}
   .footer{padding-bottom:calc(36px + env(safe-area-inset-bottom));}
-  .mobile-sticky-cta{
-    position:fixed;
-    left:12px;
-    right:12px;
-    bottom:max(12px, env(safe-area-inset-bottom));
-    display:grid;
-    grid-template-columns:1fr auto;
-    gap:8px;
-    padding:8px;
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:20px;
-    background:rgba(5,5,5,.82);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    box-shadow:0 14px 48px rgba(0,0,0,.56);
-    z-index:1250;
-  }
-  .mobile-sticky-cta a{
-    min-height:50px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:15px;
-    text-decoration:none;
-    font-weight:900;
-    letter-spacing:.08em;
-    font-size:.75rem;
-  }
-  .mobile-sticky-cta .sticky-main{
-    background:var(--accent);
-    color:#000;
-  }
-  .mobile-sticky-cta .sticky-secondary{
-    min-width:92px;
-    border:1px solid rgba(57,255,20,.35);
-    color:var(--accent);
-    background:rgba(57,255,20,.055);
-  }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -976,14 +684,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   <span></span>
 </button>
 
-<div class="mobile-topbar" aria-label="Mobile quick actions">
-  <a class="mobile-brand" href="#home">
-    <img src="logo.png" alt="">
-    <span>TOPTIER</span>
-  </a>
-  <a class="mini-cta" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">JOIN</a>
-</div>
-
 <nav class="side-menu" id="menu" aria-label="Main navigation" aria-hidden="true">
   <a href="#home">HOME</a>
   <a href="#products">COLLECTION</a>
@@ -999,11 +699,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
 
     <p class="eyebrow">PRIVATE ACCESS &bull; LIMITED DROPS &bull; MEMBERS ONLY</p>
     <h1>TOPTIEREXOTICS</h1>
-    <div class="drop-status" aria-label="Drop highlights">
-      <span>Limited stock</span>
-      <span>Direct order</span>
-      <span>Fast reply</span>
-    </div>
     <p class="hero-sub">Luxury streetwear with a harder edge. Limited releases, cleaner presentation, direct Telegram access.</p>
 
     <div class="hero-actions">
@@ -1012,17 +707,11 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
     </div>
 
     <div class="trust">WORLDWIDE SHIPPING &bull; SECURE PAYPAL PAYMENTS &bull; LIMITED ACCESS</div>
-    <div class="mobile-proof" aria-label="Store benefits">
-      <span>Worldwide shipping</span>
-      <span>PayPal secure</span>
-      <span>Private drops</span>
-    </div>
   </section>
 
   <section class="products" id="products" aria-labelledby="products-title">
     <h2 id="products-title">FEATURED COLLECTION</h2>
     <p class="section-copy">A focused private-access collection with clean product galleries, direct ordering, and limited drop availability.</p>
-    <p class="mobile-scroll-note">Swipe the collection</p>
 
     <div class="product-grid">
       <article class="product">
@@ -1037,10 +726,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
         <div class="gallery-dots" id="hatDots" aria-label="Hat image gallery navigation"></div>
 
         <h3>TOPTIEREXOTICS HAT</h3>
-        <div class="product-meta" aria-label="Hat purchase details">
-          <span>Private drop</span>
-          <span>DM sizing</span>
-        </div>
         <p>Structured fit. Breathable fabric. Everyday essential with a cleaner finish and stronger visual presence.</p>
         <span class="product-note">DM for size and drop availability</span>
 
@@ -1059,10 +744,6 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
         <div class="gallery-dots" id="tracksuitDots" aria-label="Tracksuit image gallery navigation"></div>
 
         <h3>TOPTIEREXOTICS TRACKSUIT</h3>
-        <div class="product-meta" aria-label="Tracksuit purchase details">
-          <span>Premium set</span>
-          <span>Stock check</span>
-        </div>
         <p>Premium hoodie and tapered joggers. Clean tailored fit with a stronger luxury-streetwear look.</p>
         <span class="product-note">Message first for stock and sizing</span>
 
@@ -1105,14 +786,9 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
     <a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer" aria-label="PayPal">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/></svg>
     </a>
-</div>
-<p class="footer-legal">&copy; 2026 TopTierExotics. All rights reserved.</p>
+  </div>
+  <p class="footer-legal">&copy; 2026 TopTierExotics. All rights reserved.</p>
 </footer>
-
-<div class="mobile-sticky-cta" aria-label="Mobile quick order">
-  <a class="sticky-main" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">ORDER ON TELEGRAM</a>
-  <a class="sticky-secondary" href="#products">VIEW</a>
-</div>
 
 <div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Expanded product image" aria-hidden="true">
   <button class="zoom-close" id="zoomClose" type="button" aria-label="Close image zoom">&times;</button>
@@ -1310,10 +986,6 @@ Object.keys(galleries).forEach((name) => {
 });
 
 function openZoom(imageElement) {
-  const desktopExperience = window.matchMedia("(min-width: 768px)").matches;
-  if (!desktopExperience) {
-    return;
-  }
   if (Date.now() < suppressZoomUntil || imageElement.classList.contains("is-missing")) {
     return;
   }
@@ -1349,14 +1021,6 @@ function trapFocus(event, container) {
 
 document.querySelectorAll(".product-image img").forEach((img) => {
   img.addEventListener("click", () => {
-    if (!window.matchMedia("(min-width: 768px)").matches) {
-      const frame = img.closest("[data-gallery-frame]");
-      if (frame) {
-        changeGallery(frame.dataset.galleryFrame, 1);
-        suppressZoomUntil = Date.now() + 250;
-      }
-      return;
-    }
     openZoom(img);
   });
 

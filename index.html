@@ -48,17 +48,15 @@
 <style>
 :root{
   --bg:#000;
-  --bg-soft:#050505;
+  --bg-soft:#020202;
   --panel:#0d0d0d;
   --panel-border:rgba(255,255,255,.08);
   --text:#fff;
   --muted:rgba(255,255,255,.74);
   --soft:rgba(255,255,255,.56);
   --accent:#39ff14;
-  --accent-strong:#7cff62;
   --accent-glow:rgba(57,255,20,.34);
   --shadow:0 22px 60px rgba(0,0,0,.54);
-  --radius:18px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -68,7 +66,7 @@ body{
   font-family:"Montserrat",Arial,sans-serif;
   background:
     radial-gradient(circle at 50% 0%, rgba(57,255,20,.09), transparent 29rem),
-    linear-gradient(180deg,#000 0%,#020202 100%);
+    linear-gradient(180deg,var(--bg) 0%,var(--bg-soft) 100%);
   color:var(--text);
   overflow-x:hidden;
   line-height:1.5;
@@ -228,7 +226,7 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   max-height:42vh;
   object-fit:contain;
   margin-bottom:26px;
-  filter:drop-shadow(0 0 40px rgba(57,255,20,.34));
+  filter:drop-shadow(0 0 40px var(--accent-glow));
   animation:float 6s infinite ease-in-out;
   position:relative;
   z-index:1;
@@ -246,6 +244,8 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   z-index:1;
 }
 .hero h1{
+  width:100%;
+  max-width:1100px;
   font-family:"Playfair Display",Georgia,serif;
   font-size:clamp(2.5rem,6vw,5rem);
   line-height:.96;
@@ -256,6 +256,7 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   position:relative;
   z-index:1;
 }
+.hero h1 span{display:inline;}
 .hero-sub{
   max-width:700px;
   font-size:1rem;
@@ -319,9 +320,7 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   z-index:1;
 }
 
-.products{
-  padding:110px 10% 90px;
-}
+.products{padding:110px 10% 90px;}
 .products h2,
 .telegram h2,
 .contact h2{
@@ -450,6 +449,7 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   font-size:1.24rem;
   line-height:1;
 }
+.arrow[hidden]{display:none;}
 .arrow:hover,
 .arrow:focus-visible{
   transform:scale(1.08);
@@ -466,6 +466,7 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   margin:0 0 18px;
   min-height:12px;
 }
+.gallery-dots:empty{display:none;}
 .gallery-dots button{
   width:10px;
   height:10px;
@@ -623,19 +624,76 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
 }
 
 @media (max-width:640px){
-  .burger{width:52px;height:52px;}
+  .burger{
+    width:48px;
+    height:48px;
+    top:max(14px, env(safe-area-inset-top));
+    left:max(12px, env(safe-area-inset-left));
+    border-radius:12px;
+  }
   .side-menu{
     width:100%;
     padding:calc(92px + env(safe-area-inset-top)) 20px calc(32px + env(safe-area-inset-bottom));
   }
   .side-menu a{padding:16px 18px;font-size:1rem;}
-  .hero{padding:92px 18px 54px;}
-  .eyebrow,.trust{letter-spacing:1.4px;}
-  .hero-logo{width:min(228px,64vw);max-height:none;}
-  .hero h1{font-size:clamp(2.1rem,13vw,3.45rem);}
-  .hero-sub{font-size:.94rem;max-width:33ch;}
+  .hero{
+    min-height:100svh;
+    justify-content:center;
+    padding:86px 14px 42px;
+  }
+  .hero::before{
+    bottom:13%;
+    width:92vw;
+    height:190px;
+    opacity:.9;
+  }
+  .hero-logo{
+    width:min(224px,62vw);
+    max-height:32svh;
+    margin-bottom:24px;
+  }
+  .eyebrow{
+    max-width:31ch;
+    margin-bottom:18px;
+    font-size:.78rem;
+    line-height:1.62;
+    letter-spacing:1.7px;
+  }
+  .hero h1{
+    max-width:360px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:14px;
+    font-size:clamp(2.15rem,11.5vw,2.95rem);
+    line-height:.9;
+    letter-spacing:.025em;
+  }
+  .hero h1 span{display:block;}
+  .hero-sub{
+    max-width:32ch;
+    margin-bottom:16px;
+    font-size:.93rem;
+    line-height:1.55;
+    letter-spacing:.045em;
+  }
+  .hero-actions{
+    width:100%;
+    max-width:340px;
+    gap:10px;
+    margin-top:4px;
+  }
+  .primary-btn{
+    width:100%;
+    min-height:52px;
+    padding-left:18px;
+    padding-right:18px;
+  }
   .trust{
-    font-size:.7rem;
+    width:100%;
+    max-width:360px;
+    margin-top:24px;
+    font-size:.68rem;
+    letter-spacing:1.45px;
     padding:12px 14px;
     line-height:1.55;
     border-radius:18px;
@@ -645,17 +703,28 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
   .section-copy{margin:0 auto 34px;font-size:.94rem;}
   .product-grid{gap:24px;}
   .product{padding:22px 16px 24px;border-radius:20px;}
-  .product-image{height:280px;padding:10px 10px 70px;margin-bottom:14px;}
+  .product-image{height:280px;padding:10px;margin-bottom:14px;}
   .product-image img{max-width:100%;}
   .gallery-dots{gap:12px;margin:0 0 16px;}
   .gallery-dots button{width:12px;height:12px;}
   .arrow{width:44px;height:44px;bottom:12px;}
-  .primary-btn{width:100%;min-height:56px;padding-left:18px;padding-right:18px;}
-  .hero-actions,.contact-links{width:100%;}
-  .hero-actions .primary-btn,
+  .contact-links{width:100%;}
   .contact-links .primary-btn{max-width:340px;}
   .footer-icons{gap:14px;}
   .footer{padding-bottom:calc(36px + env(safe-area-inset-bottom));}
+}
+
+@media (max-width:380px){
+  .hero{padding-left:12px;padding-right:12px;}
+  .hero-logo{width:min(205px,60vw);margin-bottom:22px;}
+  .eyebrow{font-size:.74rem;max-width:30ch;}
+  .hero h1{
+    max-width:318px;
+    font-size:clamp(2rem,10.8vw,2.55rem);
+    letter-spacing:.02em;
+  }
+  .hero-sub{font-size:.88rem;}
+  .trust{font-size:.64rem;}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -694,7 +763,7 @@ button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
     <img src="logo.png" class="hero-logo" alt="TopTierExotics logo" loading="eager" decoding="async" fetchpriority="high">
 
     <p class="eyebrow">PRIVATE ACCESS &bull; LIMITED DROPS &bull; MEMBERS ONLY</p>
-    <h1>TOPTIEREXOTICS</h1>
+    <h1><span>TOPTIER</span><span>EXOTICS</span></h1>
     <p class="hero-sub">Luxury streetwear with a harder edge. Limited releases, cleaner presentation, direct Telegram access.</p>
 
     <div class="hero-actions">
@@ -801,6 +870,7 @@ const zoomImg = document.getElementById("zoomImg");
 const zoomClose = document.getElementById("zoomClose");
 const products = document.querySelectorAll(".product");
 const pageBody = document.body;
+const loaderStartTime = performance.now();
 let lastFocusedElement = null;
 let suppressZoomUntil = 0;
 
@@ -814,24 +884,15 @@ const fallbackImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 const galleries = {
   hat: {
-    images: ["hat.png", "hat1-back.jpg", "hat1-side.jpg"],
-    alts: [
-      "TopTierExotics hat front view",
-      "TopTierExotics hat back view",
-      "TopTierExotics hat side view"
-    ],
+    images: ["hat.png"],
+    alts: ["TopTierExotics hat front view"],
     index: 0,
     imageEl: document.getElementById("hatImage"),
     dotsEl: document.getElementById("hatDots")
   },
   tracksuit: {
-    images: ["tracksuit.png", "tracksuit-back.jpg", "tracksuit-side.jpg", "tracksuit-detail.jpg"],
-    alts: [
-      "TopTierExotics tracksuit front view",
-      "TopTierExotics tracksuit back view",
-      "TopTierExotics tracksuit side view",
-      "TopTierExotics tracksuit detail view"
-    ],
+    images: ["tracksuit.png"],
+    alts: ["TopTierExotics tracksuit front view"],
     index: 0,
     imageEl: document.getElementById("tracksuitImage"),
     dotsEl: document.getElementById("tracksuitDots")
@@ -839,16 +900,21 @@ const galleries = {
 };
 
 function hideLoader() {
-  if (loader) {
+  if (!loader || loader.classList.contains("hidden")) return;
+
+  const minimumDisplay = 500;
+  const elapsed = performance.now() - loaderStartTime;
+  const delay = Math.max(0, minimumDisplay - elapsed);
+
+  window.setTimeout(() => {
     loader.classList.add("hidden");
-  }
+  }, delay);
 }
 
 window.addEventListener("load", () => {
   window.requestAnimationFrame(hideLoader);
   revealVisibleProducts();
 });
-window.setTimeout(hideLoader, 2200);
 
 function toggleMenu(forceState) {
   const shouldOpen = typeof forceState === "boolean" ? forceState : !menu.classList.contains("active");
@@ -929,6 +995,8 @@ function createDots(name) {
   const gallery = galleries[name];
   gallery.dotsEl.innerHTML = "";
 
+  if (gallery.images.length <= 1) return;
+
   gallery.images.forEach((_, index) => {
     const dot = document.createElement("button");
     dot.type = "button";
@@ -949,6 +1017,16 @@ function updateDots(name) {
   });
 }
 
+function updateGalleryControls(name) {
+  const gallery = galleries[name];
+  const hasMultipleImages = gallery.images.length > 1;
+
+  document.querySelectorAll('[data-gallery="' + name + '"]').forEach((button) => {
+    button.hidden = !hasMultipleImages;
+    button.disabled = !hasMultipleImages;
+  });
+}
+
 function setGalleryImage(name, index) {
   const gallery = galleries[name];
   gallery.index = index;
@@ -963,6 +1041,8 @@ function setGalleryImage(name, index) {
 function changeGallery(name, direction) {
   const gallery = galleries[name];
   const total = gallery.images.length;
+  if (total <= 1) return;
+
   const nextIndex = (gallery.index + direction + total) % total;
   setGalleryImage(name, nextIndex);
 }
@@ -975,6 +1055,8 @@ document.querySelectorAll("[data-gallery]").forEach((button) => {
 
 Object.keys(galleries).forEach((name) => {
   createDots(name);
+  updateGalleryControls(name);
+
   galleries[name].images.slice(1).forEach((src) => {
     const preload = new Image();
     preload.src = src;
@@ -985,6 +1067,7 @@ function openZoom(imageElement) {
   if (Date.now() < suppressZoomUntil || imageElement.classList.contains("is-missing")) {
     return;
   }
+
   lastFocusedElement = document.activeElement;
   zoomImg.src = imageElement.currentSrc || imageElement.src;
   zoomImg.alt = imageElement.alt;
@@ -1035,10 +1118,14 @@ document.querySelectorAll(".product-image img").forEach((img) => {
   img.addEventListener("error", () => {
     img.classList.remove("is-loading");
     img.classList.add("is-missing");
-    img.src = fallbackImage;
+
+    if (img.src !== fallbackImage) {
+      img.src = fallbackImage;
+    }
+
     img.alt = "Product image coming soon";
     img.setAttribute("aria-label", "Product image coming soon");
-  }, { once: true });
+  });
 });
 
 document.querySelectorAll("[data-gallery-frame]").forEach((frame) => {
@@ -1055,6 +1142,9 @@ document.querySelectorAll("[data-gallery-frame]").forEach((frame) => {
     const touch = event.changedTouches[0];
     const deltaX = touch.clientX - startX;
     const deltaY = touch.clientY - startY;
+    const gallery = galleries[frame.dataset.galleryFrame];
+
+    if (!gallery || gallery.images.length <= 1) return;
 
     if (Math.abs(deltaX) > 36 && Math.abs(deltaX) > Math.abs(deltaY)) {
       changeGallery(frame.dataset.galleryFrame, deltaX < 0 ? 1 : -1);

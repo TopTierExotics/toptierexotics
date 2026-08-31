@@ -1,39 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>TopTierExotics | Private Access Luxury Streetwear</title>
-<meta name="description" content="Private access luxury streetwear with limited drops, direct Telegram ordering, and early member updates.">
+<meta name="description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#000000">
-<meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://toptierexotics.github.io/toptierexotics/">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="preload" as="image" href="logo.png" fetchpriority="high">
 
+<!-- OPEN GRAPH -->
 <meta property="og:title" content="TopTierExotics | Private Access Luxury Streetwear">
-<meta property="og:description" content="Private access luxury streetwear with limited drops, direct Telegram ordering, and early member updates.">
+<meta property="og:description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://toptierexotics.github.io/toptierexotics/">
 <meta property="og:image" content="https://toptierexotics.github.io/toptierexotics/logo.png">
 <meta property="og:site_name" content="TopTierExotics">
 
+<!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TopTierExotics | Private Access Luxury Streetwear">
-<meta name="twitter:description" content="Private access luxury streetwear with limited drops, direct Telegram ordering, and early member updates.">
+<meta name="twitter:description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
 <meta name="twitter:image" content="https://toptierexotics.github.io/toptierexotics/logo.png">
-
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "TopTierExotics",
-  "url": "https://toptierexotics.github.io/toptierexotics/",
-  "logo": "https://toptierexotics.github.io/toptierexotics/logo.png",
-  "sameAs": [
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"TopTierExotics",
+  "url":"https://toptierexotics.github.io/toptierexotics/",
+  "logo":"https://toptierexotics.github.io/toptierexotics/logo.png",
+  "sameAs":[
     "https://t.me/TTE_V2",
     "https://www.instagram.com/toptierexotics.2k25",
     "https://www.paypal.me/TopTierExotics"
@@ -41,839 +42,818 @@
 }
 </script>
 
+<!-- PERFORMANCE -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
-  --bg:#000;
-  --bg-soft:#020202;
-  --panel:#0d0d0d;
-  --panel-border:rgba(255,255,255,.08);
-  --text:#fff;
-  --muted:rgba(255,255,255,.74);
-  --soft:rgba(255,255,255,.56);
-  --accent:#39ff14;
-  --accent-glow:rgba(57,255,20,.34);
-  --shadow:0 22px 60px rgba(0,0,0,.54);
+--bg:#000;
+--bg-soft:#050505;
+--panel:#0d0d0d;
+--panel-border:rgba(255,255,255,.07);
+--text:#fff;
+--muted:rgba(255,255,255,.72);
+--soft:rgba(255,255,255,.55);
+--accent:#39ff14;
+--accent-glow:rgba(57,255,20,.35);
+--shadow:0 20px 60px rgba(0,0,0,.55);
+--radius:20px;
 }
 
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
 body{
-  min-width:320px;
-  font-family:"Montserrat",Arial,sans-serif;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(57,255,20,.09), transparent 29rem),
-    linear-gradient(180deg,var(--bg) 0%,var(--bg-soft) 100%);
-  color:var(--text);
-  overflow-x:hidden;
-  line-height:1.5;
+font-family:'Montserrat',sans-serif;
+background:
+radial-gradient(circle at top center, rgba(57,255,20,.08), transparent 28%),
+linear-gradient(180deg,#000 0%,#020202 100%);
+color:var(--text);
+overflow-x:hidden;
+line-height:1.5;
 }
 body.menu-open,
-body.zoom-open{overflow:hidden;}
-img{display:block;max-width:100%;height:auto;}
+body.zoom-open{
+overflow:hidden;
+}
+img{display:block;max-width:100%;}
 button,input,textarea,select{font:inherit;}
 a{color:inherit;}
-button,a,[role="button"]{-webkit-tap-highlight-color:transparent;}
+button,
+a,
+[role="button"]{
+-webkit-tap-highlight-color:transparent;
+}
 
 .skip-link{
-  position:absolute;
-  left:16px;
-  top:-64px;
-  padding:12px 16px;
-  background:var(--accent);
-  color:#000;
-  font-weight:800;
-  border-radius:999px;
-  z-index:5000;
-  text-decoration:none;
+position:absolute;
+left:16px;
+top:-56px;
+padding:12px 16px;
+background:var(--accent);
+color:#000;
+font-weight:700;
+border-radius:999px;
+z-index:5000;
+text-decoration:none;
 }
 .skip-link:focus{top:16px;}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 
-.loader{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:3000;
-  transition:opacity .45s ease, visibility .45s ease;
+:focus-visible{
+outline:2px solid var(--accent);
+outline-offset:3px;
 }
-.loader.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+
+/* LOADER */
+.loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:3000;
+transition:opacity .45s ease, visibility .45s ease;
+}
+.loader.hidden{
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+}
 .loader img{
-  width:min(160px,44vw);
-  filter:drop-shadow(0 0 34px rgba(57,255,20,.55));
-  animation:pulse 1.9s infinite;
+width:min(160px,44vw);
+animation:pulse 1.9s infinite;
+filter:drop-shadow(0 0 34px rgba(57,255,20,.55));
 }
 @keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.05)}
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
 }
 
+/* BURGER */
 .burger{
-  position:fixed;
-  top:max(18px, env(safe-area-inset-top));
-  left:max(18px, env(safe-area-inset-left));
-  width:50px;
-  height:50px;
-  padding:0;
-  border:1px solid rgba(57,255,20,.18);
-  border-radius:14px;
-  background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  cursor:pointer;
-  z-index:2000;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:5px;
+position:fixed;
+top:22px;
+left:22px;
+width:48px;
+height:48px;
+padding:0;
+border:1px solid rgba(57,255,20,.16);
+border-radius:14px;
+background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+backdrop-filter:blur(12px);
+cursor:pointer;
+z-index:2000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:5px;
 }
-.burger span{
-  width:21px;
-  height:2px;
-  margin:0 auto;
-  background:#fff;
-  border-radius:99px;
-  box-shadow:0 0 10px rgba(57,255,20,.12);
-  transition:transform .3s ease, opacity .3s ease, background .3s ease;
+.burger div{
+width:20px;
+height:2px;
+margin:0 auto;
+background:#fff;
+box-shadow:0 0 10px rgba(57,255,20,.1);
+transition:transform .3s ease, opacity .3s ease, background .3s ease;
 }
 .burger:hover,
 .burger:focus-visible{
-  border-color:rgba(57,255,20,.36);
-  box-shadow:0 0 22px rgba(57,255,20,.13);
+box-shadow:0 0 20px rgba(57,255,20,.12);
+border-color:rgba(57,255,20,.3);
 }
-.burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.burger.active span:nth-child(2){opacity:0;}
-.burger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.burger.active div:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.burger.active div:nth-child(2){opacity:0;}
+.burger.active div:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
 
+/* OVERLAY */
 .overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.72);
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .3s ease;
-  z-index:1400;
-  backdrop-filter:blur(5px);
-  -webkit-backdrop-filter:blur(5px);
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.72);
+opacity:0;
+pointer-events:none;
+transition:opacity .3s ease;
+z-index:1400;
+backdrop-filter:blur(4px);
 }
 .overlay.active{opacity:1;pointer-events:auto;}
 
+/* MENU */
 .side-menu{
-  position:fixed;
-  top:0;
-  left:0;
-  width:min(304px,84vw);
-  height:100dvh;
-  background:
-    linear-gradient(180deg,rgba(57,255,20,.06),transparent 18%),
-    #050505;
-  padding:110px 30px 40px;
-  transform:translateX(-105%);
-  transition:transform .35s ease;
-  z-index:1500;
-  box-shadow:20px 0 60px rgba(0,0,0,.8);
-  border-right:1px solid rgba(255,255,255,.07);
+position:fixed;
+top:0;
+left:-100%;
+width:min(300px,82vw);
+height:100%;
+background:
+linear-gradient(180deg,rgba(57,255,20,.06),transparent 18%),
+#050505;
+padding:110px 30px 40px;
+transition:left .35s ease;
+z-index:1500;
+box-shadow:20px 0 60px rgba(0,0,0,.8);
+border-right:1px solid rgba(255,255,255,.06);
 }
-.side-menu.active{transform:translateX(0);}
+.side-menu.active{left:0;}
 .side-menu a{
-  display:block;
-  margin-bottom:12px;
-  padding:14px 16px;
-  color:#fff;
-  text-decoration:none;
-  letter-spacing:2px;
-  border-radius:14px;
-  transition:transform .25s ease, color .25s ease, background .25s ease;
+display:block;
+margin-bottom:18px;
+padding:14px 16px;
+color:#fff;
+text-decoration:none;
+letter-spacing:2px;
+border-radius:14px;
+transition:transform .25s ease, color .25s ease, background .25s ease;
 }
 .side-menu a:hover,
 .side-menu a:focus-visible{
-  color:var(--accent);
-  background:rgba(255,255,255,.045);
-  transform:translateX(6px);
+color:#39ff14;
+background:rgba(255,255,255,.03);
+transform:translateX(6px);
 }
 
+/* HERO */
 .hero{
-  min-height:100svh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:96px 20px 64px;
-  position:relative;
-  overflow:hidden;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:90px 20px 64px;
+position:relative;
 }
 .hero::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:10%;
-  width:min(720px,88vw);
-  height:240px;
-  transform:translateX(-50%);
-  background:radial-gradient(circle, rgba(57,255,20,.12), transparent 70%);
-  filter:blur(12px);
-  pointer-events:none;
+content:"";
+position:absolute;
+inset:auto 50% 100px 50%;
+width:min(720px,88vw);
+height:240px;
+transform:translateX(-50%);
+background:radial-gradient(circle, rgba(57,255,20,.12), transparent 70%);
+filter:blur(12px);
+pointer-events:none;
 }
 .hero-logo{
-  width:min(260px,58vw);
-  max-height:42vh;
-  object-fit:contain;
-  margin-bottom:26px;
-  filter:drop-shadow(0 0 40px var(--accent-glow));
-  animation:float 6s infinite ease-in-out;
-  position:relative;
-  z-index:1;
+width:min(260px,58vw);
+max-height:42vh;
+object-fit:contain;
+margin-bottom:26px;
+filter:drop-shadow(0 0 40px rgba(57,255,20,.34));
+animation:float 6s infinite ease-in-out;
 }
 @keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
 }
-.eyebrow{
-  letter-spacing:3px;
-  color:rgba(255,255,255,.82);
-  margin-bottom:18px;
-  max-width:760px;
-  position:relative;
-  z-index:1;
+.hero p{
+letter-spacing:3px;
+opacity:.8;
+margin-bottom:18px;
+max-width:760px;
 }
 .hero h1{
-  width:100%;
-  max-width:1100px;
-  font-family:"Playfair Display",Georgia,serif;
-  font-size:clamp(2.5rem,6vw,5rem);
-  line-height:.96;
-  letter-spacing:.04em;
-  margin-bottom:18px;
-  text-transform:uppercase;
-  text-shadow:0 0 24px rgba(57,255,20,.09);
-  position:relative;
-  z-index:1;
+font-family:'Playfair Display',serif;
+font-size:clamp(2.5rem,6vw,5rem);
+line-height:.94;
+letter-spacing:.04em;
+margin-bottom:18px;
+text-transform:uppercase;
+text-shadow:0 0 24px rgba(57,255,20,.08);
 }
 .hero-sub{
-  max-width:700px;
-  font-size:1rem;
-  color:var(--muted);
-  margin:0 auto 14px;
-  letter-spacing:.06em;
-  position:relative;
-  z-index:1;
+max-width:700px;
+font-size:1rem;
+color:var(--muted);
+margin:0 auto 14px;
+letter-spacing:.08em;
 }
 .hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  margin-top:8px;
-  position:relative;
-  z-index:1;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+margin-top:8px;
 }
 
+/* BUTTONS */
 .primary-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:52px;
-  padding:14px 30px;
-  border-radius:999px;
-  background:var(--accent);
-  color:#000;
-  border:1px solid transparent;
-  font-weight:800;
-  cursor:pointer;
-  text-decoration:none;
-  text-align:center;
-  line-height:1.15;
-  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 30px;
+min-height:52px;
+border-radius:50px;
+background:#39ff14;
+color:#000;
+border:1px solid transparent;
+font-weight:700;
+cursor:pointer;
+transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+margin:0;
+text-decoration:none;
 }
 .primary-btn:hover,
 .primary-btn:focus-visible{
-  transform:translateY(-2px);
-  box-shadow:0 0 30px rgba(57,255,20,.35);
+transform:translateY(-2px);
+box-shadow:0 0 30px rgba(57,255,20,.35);
 }
 .secondary-btn{
-  background:rgba(0,0,0,.18);
-  color:var(--accent);
-  border-color:rgba(57,255,20,.8);
+background:transparent;
+color:#39ff14;
+border:1px solid rgba(57,255,20,.8);
 }
-.secondary-btn:hover,
-.secondary-btn:focus-visible{background:rgba(57,255,20,.08);}
 
+/* TRUST */
 .trust{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:0 10px;
-  margin-top:28px;
-  font-size:.76rem;
-  color:rgba(255,255,255,.72);
-  letter-spacing:2px;
-  padding:14px 18px;
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:999px;
-  background:rgba(255,255,255,.025);
-  box-shadow:inset 0 0 0 1px rgba(57,255,20,.035);
-  position:relative;
-  z-index:1;
-}
-.trust span:not(:last-child)::after{
-  content:"•";
-  margin-left:10px;
-  color:rgba(255,255,255,.46);
+margin-top:28px;
+font-size:.76rem;
+opacity:.68;
+letter-spacing:2px;
+padding:14px 18px;
+border:1px solid rgba(255,255,255,.06);
+border-radius:999px;
+background:rgba(255,255,255,.02);
+box-shadow:inset 0 0 0 1px rgba(57,255,20,.03);
 }
 
-.products{padding:110px 10% 90px;}
-.products h2,
+/* PRODUCTS */
+.products{
+padding:110px 10% 90px;
+}
+.products h1,
 .telegram h2,
 .contact h2{
-  text-align:center;
-  margin-bottom:18px;
-  letter-spacing:5px;
-  font-family:"Playfair Display",Georgia,serif;
-  font-size:clamp(2rem,4vw,3rem);
+text-align:center;
+margin-bottom:18px;
+letter-spacing:6px;
+font-family:'Playfair Display',serif;
+font-size:clamp(2rem,4vw,3rem);
 }
 .section-copy{
-  max-width:700px;
-  margin:0 auto 46px;
-  text-align:center;
-  color:var(--muted);
+max-width:700px;
+margin:0 auto 46px;
+text-align:center;
+color:var(--muted);
 }
+
 .product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
-  gap:34px;
-  max-width:1100px;
-  margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:34px;
+max-width:1100px;
+margin:auto;
 }
+
 .product{
-  background:
-    linear-gradient(180deg,rgba(57,255,20,.045),transparent 22%),
-    var(--panel);
-  border:1px solid var(--panel-border);
-  border-radius:24px;
-  padding:26px 26px 28px;
-  text-align:center;
-  transition:transform .35s ease, box-shadow .35s ease, opacity .45s ease;
-  opacity:0;
-  transform:translateY(40px);
-  position:relative;
-  box-shadow:var(--shadow);
+background:
+linear-gradient(180deg,rgba(57,255,20,.04),transparent 22%),
+var(--panel);
+border:1px solid var(--panel-border);
+border-radius:24px;
+padding:26px 26px 28px;
+text-align:center;
+transition:transform .35s ease, box-shadow .35s ease, opacity .45s ease;
+opacity:0;
+transform:translateY(40px);
+position:relative;
+box-shadow:var(--shadow);
 }
-.product.show{opacity:1;transform:translateY(0);}
+.product.show{
+opacity:1;
+transform:translateY(0);
+}
 .product:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 40px rgba(57,255,20,.18), var(--shadow);
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(57,255,20,.18), var(--shadow);
 }
 .product h3{
-  font-size:1.05rem;
-  letter-spacing:2px;
-  margin:4px 0 10px;
+font-size:1.05rem;
+letter-spacing:2px;
+margin:4px 0 10px;
 }
 .product p{
-  color:var(--muted);
-  max-width:34ch;
-  margin:0 auto 16px;
+color:var(--muted);
+max-width:32ch;
+margin:0 auto 16px;
 }
 .product-note{
-  display:block;
-  margin:0 auto 18px;
-  font-size:.78rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--soft);
-}
-.badge{
-  position:absolute;
-  top:16px;
-  left:16px;
-  background:var(--accent);
-  color:#000;
-  font-size:.7rem;
-  font-weight:800;
-  padding:6px 11px;
-  border-radius:20px;
-  box-shadow:0 0 20px rgba(57,255,20,.18);
-  z-index:2;
+display:block;
+margin:0 auto 18px;
+font-size:.8rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--soft);
 }
 
+/* BADGE */
+.badge{
+position:absolute;
+top:16px;
+left:16px;
+background:#39ff14;
+color:#000;
+font-size:.7rem;
+font-weight:700;
+padding:6px 11px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(57,255,20,.18);
+}
+
+/* IMAGE */
 .product-image{
-  position:relative;
-  height:300px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:16px;
-  padding:12px 12px 64px;
-  border-radius:18px;
-  background:
-    radial-gradient(circle at top, rgba(57,255,20,.08), transparent 38%),
-    linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
-  border:1px solid rgba(255,255,255,.055);
-  overflow:hidden;
-  touch-action:pan-y pinch-zoom;
-  user-select:none;
+position:relative;
+height:300px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:16px;
+padding:12px 12px 64px;
+border-radius:18px;
+background:
+radial-gradient(circle at top, rgba(57,255,20,.08), transparent 38%),
+linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+border:1px solid rgba(255,255,255,.05);
+overflow:hidden;
+touch-action:pan-y pinch-zoom;
+user-select:none;
 }
 .product-image img{
-  max-width:108%;
-  max-height:100%;
-  cursor:pointer;
-  border-radius:12px;
-  object-fit:contain;
-  transition:transform .3s ease, filter .3s ease, opacity .2s ease;
+max-width:108%;
+max-height:100%;
+cursor:pointer;
+border-radius:12px;
+object-fit:contain;
+transition:transform .3s ease, filter .3s ease;
 }
 .product-image img:hover{
-  transform:scale(1.03);
-  filter:drop-shadow(0 0 18px rgba(57,255,20,.18));
-}
-.product-image img.is-loading{opacity:.35;}
-.product-image img.is-missing{
-  min-width:170px;
-  min-height:170px;
-  padding:22px;
-  border:1px dashed rgba(57,255,20,.28);
-  background:rgba(57,255,20,.04);
+transform:scale(1.03);
+filter:drop-shadow(0 0 18px rgba(57,255,20,.18));
 }
 
+/* ARROWS */
 .arrow{
-  position:absolute;
-  bottom:14px;
-  z-index:2;
-  background:rgba(0,0,0,.72);
-  color:var(--accent);
-  border:1px solid rgba(57,255,20,.26);
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  cursor:pointer;
-  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
-  display:grid;
-  place-items:center;
-  font-size:1.24rem;
-  line-height:1;
+position:absolute;
+bottom:14px;
+z-index:2;
+background:rgba(0,0,0,.72);
+color:#39ff14;
+border:1px solid rgba(57,255,20,.25);
+width:38px;
+height:38px;
+border-radius:50%;
+cursor:pointer;
+transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+display:grid;
+place-items:center;
+font-size:1.1rem;
+line-height:1;
 }
-.arrow[hidden]{display:none;}
 .arrow:hover,
 .arrow:focus-visible{
-  transform:scale(1.08);
-  box-shadow:0 0 12px rgba(57,255,20,.35);
-  background:rgba(10,10,10,.94);
+transform:scale(1.08);
+box-shadow:0 0 12px rgba(57,255,20,.35);
+background:rgba(10,10,10,.92);
 }
 .arrow-left{left:14px;}
 .arrow-right{right:14px;}
 
+/* DOTS */
 .gallery-dots{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  margin:0 0 18px;
-  min-height:12px;
+display:flex;
+justify-content:center;
+gap:8px;
+margin:0 0 18px;
+min-height:12px;
 }
-.gallery-dots:empty{display:none;}
 .gallery-dots button{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#555;
-  border:none;
-  padding:0;
-  cursor:pointer;
-  transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+width:9px;
+height:9px;
+border-radius:50%;
+background:#555;
+border:none;
+padding:0;
+cursor:pointer;
+transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
 }
 .gallery-dots button.active{
-  background:var(--accent);
-  box-shadow:0 0 8px rgba(57,255,20,.8);
-  transform:scale(1.1);
+background:#39ff14;
+box-shadow:0 0 8px rgba(57,255,20,.8);
+transform:scale(1.08);
 }
 
+/* TELEGRAM */
 .telegram{
-  text-align:center;
-  padding:100px 10%;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.022), rgba(255,255,255,.01)),
-    #050505;
-  border-top:1px solid rgba(255,255,255,.045);
-  border-bottom:1px solid rgba(255,255,255,.045);
-  position:relative;
-  overflow:hidden;
+text-align:center;
+padding:100px 10%;
+background:
+linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)),
+#050505;
+border-top:1px solid rgba(255,255,255,.04);
+border-bottom:1px solid rgba(255,255,255,.04);
+position:relative;
+overflow:hidden;
 }
 .telegram::before,
 .contact::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:0;
-  width:min(460px,72vw);
-  height:1px;
-  transform:translateX(-50%);
-  background:linear-gradient(90deg, transparent, rgba(57,255,20,.3), transparent);
-  pointer-events:none;
+content:"";
+position:absolute;
+left:50%;
+top:0;
+width:min(460px,72vw);
+height:1px;
+transform:translateX(-50%);
+background:linear-gradient(90deg, transparent, rgba(57,255,20,.28), transparent);
+pointer-events:none;
 }
 .telegram p{
-  max-width:620px;
-  margin:20px auto 28px;
-  color:var(--muted);
+max-width:620px;
+margin:20px auto 28px;
+opacity:.78;
+color:var(--muted);
 }
 
+/* CONTACT */
 .contact{
-  padding:100px 10%;
-  text-align:center;
-  position:relative;
+padding:100px 10%;
+text-align:center;
+position:relative;
 }
 .contact p{
-  max-width:620px;
-  margin:0 auto 16px;
-  color:var(--muted);
+max-width:620px;
+margin:0 auto 16px;
+color:var(--muted);
 }
 .contact-links{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-  margin-top:26px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
+margin-top:26px;
 }
 
+/* FOOTER */
 .footer{
-  padding:60px 10%;
-  text-align:center;
-  border-top:1px solid rgba(255,255,255,.055);
-  background:#020202;
+padding:60px 10%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.05);
+background:#020202;
 }
-.footer h2{
-  margin-bottom:20px;
-  letter-spacing:4px;
-  font-size:.92rem;
+.footer h3{
+margin-bottom:20px;
+letter-spacing:4px;
+font-size:.9rem;
 }
 .footer-copy{
-  max-width:620px;
-  margin:0 auto 24px;
-  color:var(--soft);
+max-width:620px;
+margin:0 auto 24px;
+color:var(--soft);
 }
 .footer-legal{
-  margin:26px auto 0;
-  font-size:.78rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.42);
+margin:26px auto 0;
+font-size:.78rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:rgba(255,255,255,.42);
 }
 .footer-icons{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
 }
 .footer-icons a{
-  width:52px;
-  height:52px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.09);
-  background:rgba(255,255,255,.025);
-  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+width:52px;
+height:52px;
+display:grid;
+place-items:center;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.02);
+transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 .footer-icons a:hover,
 .footer-icons a:focus-visible{
-  transform:translateY(-3px);
-  border-color:rgba(57,255,20,.45);
-  box-shadow:0 0 22px rgba(57,255,20,.22);
+transform:translateY(-3px);
+border-color:rgba(57,255,20,.45);
+box-shadow:0 0 22px rgba(57,255,20,.22);
 }
 .footer-icons svg{
-  width:26px;
-  height:26px;
-  fill:#f4f4f4;
-  filter:drop-shadow(0 0 10px rgba(255,255,255,.05));
+width:26px;
+height:26px;
+fill:#f4f4f4;
+filter:drop-shadow(0 0 10px rgba(255,255,255,.05));
 }
 
+/* ZOOM */
 .zoom{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.95);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:2200;
-  padding:24px;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:2200;
+padding:24px;
 }
 .zoom.active{display:flex;}
-.zoom[aria-hidden="true"]{visibility:hidden;}
+.zoom[aria-hidden="true"]{
+visibility:hidden;
+}
 .zoom img{
-  max-width:min(92vw,1000px);
-  max-height:82vh;
-  border-radius:16px;
-  box-shadow:0 0 45px rgba(0,0,0,.7);
+max-width:min(92vw,1000px);
+max-height:82vh;
+border-radius:16px;
+box-shadow:0 0 45px rgba(0,0,0,.7);
 }
 .zoom-close{
-  position:absolute;
-  top:max(20px, env(safe-area-inset-top));
-  right:max(20px, env(safe-area-inset-right));
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.16);
-  background:rgba(255,255,255,.06);
-  color:#fff;
-  font-size:1.6rem;
-  cursor:pointer;
-  display:grid;
-  place-items:center;
-  line-height:1;
+position:absolute;
+top:20px;
+right:20px;
+width:48px;
+height:48px;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.14);
+background:rgba(255,255,255,.05);
+color:#fff;
+font-size:1.6rem;
+cursor:pointer;
 }
 
 @media (max-width:900px){
-  .products,.telegram,.contact,.footer{padding-left:20px;padding-right:20px;}
-  .products{padding-top:90px;}
-  .hero{padding-top:96px;}
+.products,.telegram,.contact,.footer{padding-left:20px;padding-right:20px;}
+.products{padding-top:90px;}
+.hero{padding-top:96px;}
 }
 
 @media (max-width:640px){
-  .burger{
-    width:46px;
-    height:46px;
-    top:max(14px, env(safe-area-inset-top));
-    left:max(12px, env(safe-area-inset-left));
-    border-radius:12px;
-  }
-  .side-menu{
-    width:100%;
-    padding:calc(92px + env(safe-area-inset-top)) 20px calc(32px + env(safe-area-inset-bottom));
-  }
-  .side-menu a{padding:16px 18px;font-size:1rem;}
-  .hero{
-    min-height:100svh;
-    justify-content:center;
-    padding:82px 18px 38px;
-  }
-  .hero::before{
-    bottom:12%;
-    width:92vw;
-    height:190px;
-    opacity:.9;
-  }
-  .hero-logo{
-    width:min(210px,58vw);
-    max-height:30svh;
-    margin-bottom:26px;
-  }
-  .eyebrow{
-    max-width:31ch;
-    margin-bottom:16px;
-    font-size:.76rem;
-    line-height:1.62;
-    letter-spacing:1.65px;
-  }
-  .hero h1{
-    max-width:100%;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:14px;
-    font-size:clamp(1.84rem,8.3vw,2.38rem);
-    line-height:.98;
-    letter-spacing:0;
-    white-space:nowrap;
-  }
-  .hero-sub{
-    max-width:29ch;
-    margin-bottom:20px;
-    font-size:.9rem;
-    line-height:1.48;
-    letter-spacing:.035em;
-    color:rgba(255,255,255,.7);
-  }
-  .hero-actions{
-    width:100%;
-    max-width:322px;
-    gap:10px;
-    margin-top:0;
-  }
-  .primary-btn{
-    width:100%;
-    min-height:50px;
-    padding:13px 18px;
-    font-size:.92rem;
-  }
-  .trust{
-    width:100%;
-    max-width:334px;
-    margin-top:22px;
-    gap:4px 0;
-    flex-direction:column;
-    align-items:center;
-    font-size:.62rem;
-    letter-spacing:1.55px;
-    padding:13px 16px;
-    line-height:1.35;
-    border-radius:16px;
-  }
-  .trust span:not(:last-child)::after{content:"";}
-  .products,.telegram,.contact{padding-top:78px;padding-bottom:72px;}
-  .products h2,.telegram h2,.contact h2{letter-spacing:3px;}
-  .section-copy{margin:0 auto 34px;font-size:.94rem;}
-  .product-grid{gap:24px;}
-  .product{padding:22px 16px 24px;border-radius:20px;}
-  .product-image{height:280px;padding:10px;margin-bottom:14px;}
-  .product-image img{max-width:100%;}
-  .gallery-dots{gap:12px;margin:0 0 16px;}
-  .gallery-dots button{width:12px;height:12px;}
-  .arrow{width:44px;height:44px;bottom:12px;}
-  .contact-links{width:100%;}
-  .contact-links .primary-btn{max-width:340px;}
-  .footer-icons{gap:14px;}
-  .footer{padding-bottom:calc(36px + env(safe-area-inset-bottom));}
+.burger{top:16px;left:16px;}
+.burger{
+width:52px;
+height:52px;
+top:max(16px, env(safe-area-inset-top));
+left:max(16px, env(safe-area-inset-left));
 }
-
-@media (max-width:380px){
-  .hero{padding-left:14px;padding-right:14px;}
-  .hero-logo{width:min(198px,58vw);margin-bottom:24px;}
-  .eyebrow{font-size:.72rem;max-width:30ch;}
-  .hero h1{font-size:clamp(1.62rem,8.05vw,2.02rem);}
-  .hero-sub{font-size:.86rem;max-width:28ch;}
-  .trust{font-size:.59rem;}
+.side-menu{
+width:100%;
+padding:calc(92px + env(safe-area-inset-top)) 20px calc(32px + env(safe-area-inset-bottom));
+}
+.side-menu a{
+padding:16px 18px;
+font-size:1rem;
+}
+.hero{
+min-height:100svh;
+padding:92px 18px 54px;
+}
+.hero p,.trust{letter-spacing:1.5px;}
+.hero-logo{width:min(228px,64vw);max-height:none;}
+.hero h1{font-size:clamp(2.2rem,13vw,3.5rem);}
+.hero-sub{font-size:.94rem;max-width:33ch;}
+.trust{
+font-size:.7rem;
+padding:12px 14px;
+line-height:1.6;
+}
+.products,.telegram,.contact{
+padding-top:78px;
+padding-bottom:72px;
+}
+.section-copy{
+margin:0 auto 34px;
+font-size:.94rem;
+}
+.product-grid{
+gap:24px;
+}
+.product{padding:22px 16px 24px;}
+.product-image{
+height:280px;
+padding:10px 10px 70px;
+margin-bottom:14px;
+}
+.product-image img{
+max-width:100%;
+}
+.gallery-dots{
+gap:12px;
+margin:0 0 16px;
+}
+.gallery-dots button{
+width:12px;
+height:12px;
+}
+.arrow{
+width:44px;
+height:44px;
+bottom:12px;
+}
+.primary-btn{
+width:100%;
+min-height:56px;
+}
+.hero-actions,.contact-links{width:100%;}
+.hero-actions .primary-btn,
+.contact-links .primary-btn{max-width:340px;}
+.footer-icons{gap:14px;}
+.footer{
+padding-bottom:calc(36px + env(safe-area-inset-bottom));
+}
 }
 
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto;}
-  *{animation:none!important;transition:none!important;}
+html{scroll-behavior:auto;}
+*{animation:none!important;transition:none!important;}
 }
+
 </style>
 </head>
 
 <body>
+
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="loader" id="loader" aria-hidden="true">
-  <img src="logo.png" alt="">
+<img src="logo.png" alt="TopTierExotics Logo">
 </div>
 
-<div class="overlay" id="overlay" hidden></div>
+<div class="overlay" id="overlay"></div>
 
 <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-  <span></span>
-  <span></span>
-  <span></span>
+<div></div><div></div><div></div>
 </button>
 
-<nav class="side-menu" id="menu" aria-label="Main navigation" aria-hidden="true">
-  <a href="#home">HOME</a>
-  <a href="#products">COLLECTION</a>
-  <a href="#contact">CONTACT</a>
-  <a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">TELEGRAM</a>
-  <a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-  <a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">PAYPAL</a>
+<nav class="side-menu" id="menu" aria-label="Main navigation">
+<a href="#home">HOME</a>
+<a href="#products">COLLECTION</a>
+<a href="#contact">CONTACT</a>
+<a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">TELEGRAM</a>
+<a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+<a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">PAYPAL</a>
 </nav>
 
 <main id="main-content" tabindex="-1">
-  <section class="hero" id="home">
-    <img src="logo.png" class="hero-logo" alt="TopTierExotics logo" loading="eager" decoding="async" fetchpriority="high">
+<section class="hero" id="home">
+<img src="logo.png" class="hero-logo" alt="TopTierExotics" loading="eager" decoding="async" fetchpriority="high">
 
-    <p class="eyebrow">PRIVATE ACCESS &bull; LIMITED DROPS &bull; MEMBERS ONLY</p>
-    <h1>TOPTIEREXOTICS</h1>
-    <p class="hero-sub">Limited luxury streetwear. Cleaner drops, direct access, faster Telegram updates.</p>
+<p>PRIVATE ACCESS • LIMITED DROPS • MEMBERS ONLY</p>
+<h1>TOPTIEREXOTICS</h1>
+<div class="hero-sub">Luxury streetwear with a harder edge. Limited releases, cleaner presentation, direct Telegram access.</div>
 
-    <div class="hero-actions">
-      <a class="primary-btn" href="#products">SHOP COLLECTION</a>
-      <a class="primary-btn secondary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">JOIN TELEGRAM</a>
-    </div>
+<div class="hero-actions">
+<a class="primary-btn" href="#products">SHOP COLLECTION</a>
+<a class="primary-btn secondary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">JOIN TELEGRAM</a>
+</div>
 
-    <div class="trust">
-      <span>WORLDWIDE SHIPPING</span>
-      <span>SECURE PAYPAL PAYMENTS</span>
-      <span>LIMITED ACCESS</span>
-    </div>
-  </section>
+<div class="trust">WORLDWIDE SHIPPING • SECURE PAYPAL PAYMENTS • LIMITED ACCESS</div>
+</section>
 
-  <section class="products" id="products" aria-labelledby="products-title">
-    <h2 id="products-title">FEATURED COLLECTION</h2>
-    <p class="section-copy">A focused private-access collection with clean product galleries, direct ordering, and limited drop availability.</p>
+<section class="products" id="products" aria-labelledby="products-title">
+<h1 id="products-title">FEATURED COLLECTION</h1>
+<p class="section-copy">The same gallery-based collection you wanted, upgraded to feel cleaner, sharper, and more premium without losing the original vibe.</p>
 
-    <div class="product-grid">
-      <article class="product">
-        <div class="badge">LIMITED</div>
+<div class="product-grid">
 
-        <div class="product-image" data-gallery-frame="hat">
-          <button class="arrow arrow-left" type="button" data-gallery="hat" data-direction="-1" aria-label="Previous hat image">&#8249;</button>
-          <img src="hat.png" id="hatImage" loading="lazy" decoding="async" alt="TopTierExotics hat front view" tabindex="0" role="button" aria-label="Open larger view of TopTierExotics hat front view">
-          <button class="arrow arrow-right" type="button" data-gallery="hat" data-direction="1" aria-label="Next hat image">&#8250;</button>
-        </div>
+<article class="product">
+<div class="badge">LIMITED</div>
 
-        <div class="gallery-dots" id="hatDots" aria-label="Hat image gallery navigation"></div>
+<div class="product-image" data-gallery-frame="hat">
+<button class="arrow arrow-left" type="button" data-gallery="hat" data-direction="-1" aria-label="Previous hat image">&#8249;</button>
+<img src="hat.png" id="hatImage" loading="lazy" decoding="async" alt="TopTierExotics hat front view" tabindex="0" role="button" aria-label="Open larger view of TopTierExotics hat front view">
+<button class="arrow arrow-right" type="button" data-gallery="hat" data-direction="1" aria-label="Next hat image">&#8250;</button>
+</div>
 
-        <h3>TOPTIEREXOTICS HAT</h3>
-        <p>Structured fit. Breathable fabric. Everyday essential with a cleaner finish and stronger visual presence.</p>
-        <span class="product-note">DM for size and drop availability</span>
+<div class="gallery-dots" id="hatDots" aria-label="Hat image gallery navigation"></div>
 
-        <a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">SECURE VIA TELEGRAM</a>
-      </article>
+<h3>TOPTIEREXOTICS HAT</h3>
+<p>Structured fit. Breathable fabric. Everyday essential with a cleaner finish and stronger visual presence.</p>
+<span class="product-note">DM for size and drop availability</span>
 
-      <article class="product">
-        <div class="badge">LIMITED</div>
+<a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">
+SECURE VIA TELEGRAM
+</a>
+</article>
 
-        <div class="product-image" data-gallery-frame="tracksuit">
-          <button class="arrow arrow-left" type="button" data-gallery="tracksuit" data-direction="-1" aria-label="Previous tracksuit image">&#8249;</button>
-          <img src="tracksuit.png" id="tracksuitImage" loading="lazy" decoding="async" alt="TopTierExotics tracksuit front view" tabindex="0" role="button" aria-label="Open larger view of TopTierExotics tracksuit front view">
-          <button class="arrow arrow-right" type="button" data-gallery="tracksuit" data-direction="1" aria-label="Next tracksuit image">&#8250;</button>
-        </div>
+<article class="product">
+<div class="badge">LIMITED</div>
 
-        <div class="gallery-dots" id="tracksuitDots" aria-label="Tracksuit image gallery navigation"></div>
+<div class="product-image" data-gallery-frame="tracksuit">
+<button class="arrow arrow-left" type="button" data-gallery="tracksuit" data-direction="-1" aria-label="Previous tracksuit image">&#8249;</button>
+<img src="tracksuit.png" id="tracksuitImage" loading="lazy" decoding="async" alt="TopTierExotics tracksuit front view" tabindex="0" role="button" aria-label="Open larger view of TopTierExotics tracksuit front view">
+<button class="arrow arrow-right" type="button" data-gallery="tracksuit" data-direction="1" aria-label="Next tracksuit image">&#8250;</button>
+</div>
 
-        <h3>TOPTIEREXOTICS TRACKSUIT</h3>
-        <p>Premium hoodie and tapered joggers. Clean tailored fit with a stronger luxury-streetwear look.</p>
-        <span class="product-note">Message first for stock and sizing</span>
+<div class="gallery-dots" id="tracksuitDots" aria-label="Tracksuit image gallery navigation"></div>
 
-        <a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">SECURE VIA TELEGRAM</a>
-      </article>
-    </div>
-  </section>
+<h3>TOPTIEREXOTICS TRACKSUIT</h3>
+<p>Premium hoodie and tapered joggers. Clean tailored fit with a stronger luxury-streetwear look.</p>
+<span class="product-note">Message first for stock and sizing</span>
 
-  <section class="telegram" aria-labelledby="telegram-title">
-    <h2 id="telegram-title">PRIVATE ACCESS ONLY</h2>
-    <p>All drops are released via Telegram. Members get earlier access, faster replies, and direct updates on stock, orders, and new releases.</p>
-    <a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">JOIN NOW</a>
-  </section>
+<a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">
+SECURE VIA TELEGRAM
+</a>
+</article>
 
-  <section class="contact" id="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">CONTACT</h2>
-    <p>Message us via Telegram or Instagram for orders, sizing questions, payment confirmation, and release updates.</p>
-    <p>TopTierExotics is built around direct access. For the fastest response, use Telegram first.</p>
+</div>
+</section>
 
-    <div class="contact-links">
-      <a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">OPEN TELEGRAM</a>
-      <a class="primary-btn secondary-btn" href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">OPEN INSTAGRAM</a>
-    </div>
-  </section>
+<section class="telegram" aria-labelledby="telegram-title">
+<h2 id="telegram-title">PRIVATE ACCESS ONLY</h2>
+<p>All drops are released via Telegram. Members get earlier access, faster replies, and direct updates on stock, orders, and new releases.</p>
+<a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">JOIN NOW</a>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+<h2 id="contact-title">CONTACT</h2>
+<p>Message us via Telegram or Instagram for orders, sizing questions, payment confirmation, and release updates.</p>
+<p>TopTierExotics is built around direct access. If you want the fastest response, use Telegram first.</p>
+
+<div class="contact-links">
+<a class="primary-btn" href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">OPEN TELEGRAM</a>
+<a class="primary-btn secondary-btn" href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">OPEN INSTAGRAM</a>
+</div>
+</section>
 </main>
 
 <footer class="footer">
-  <h2>CONNECT</h2>
-  <p class="footer-copy">Private-access streetwear with limited releases and direct order communication through the channels below.</p>
+<h3>CONNECT</h3>
+<p class="footer-copy">Private-access streetwear with limited releases and direct order communication through the channels below.</p>
 
-  <div class="footer-icons">
-    <a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/></svg>
-    </a>
+<div class="footer-icons">
+<a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/></svg>
+</a>
 
-    <a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
-    </a>
+<a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+</a>
 
-    <a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer" aria-label="PayPal">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/></svg>
-    </a>
-  </div>
-  <p class="footer-legal">&copy; 2026 TopTierExotics. All rights reserved.</p>
+<a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer" aria-label="PayPal">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/></svg>
+</a>
+</div>
+<p class="footer-legal">&copy; 2026 TopTierExotics. All rights reserved.</p>
 </footer>
 
 <div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Expanded product image" aria-hidden="true">
-  <button class="zoom-close" id="zoomClose" type="button" aria-label="Close image zoom">&times;</button>
-  <img id="zoomImg" alt="">
+<button class="zoom-close" id="zoomClose" type="button" aria-label="Close image zoom">&times;</button>
+<img id="zoomImg" alt="">
 </div>
 
 <script>
+
 const loader = document.getElementById("loader");
 const menu = document.getElementById("menu");
 const burger = document.getElementById("burger");
@@ -883,311 +863,263 @@ const zoomImg = document.getElementById("zoomImg");
 const zoomClose = document.getElementById("zoomClose");
 const products = document.querySelectorAll(".product");
 const pageBody = document.body;
-const loaderStartTime = performance.now();
 let lastFocusedElement = null;
 let suppressZoomUntil = 0;
 
 const focusableSelector = [
-  "a[href]",
-  "button:not([disabled])",
-  "[tabindex]:not([tabindex='-1'])"
+"a[href]",
+"button:not([disabled])",
+"[tabindex]:not([tabindex='-1'])"
 ].join(",");
 
-const fallbackImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420'%3E%3Crect width='420' height='420' fill='%230b0b0b'/%3E%3Ccircle cx='210' cy='178' r='72' fill='none' stroke='%2339ff14' stroke-opacity='.55' stroke-width='8'/%3E%3Cpath d='M108 308h204' stroke='%2339ff14' stroke-opacity='.45' stroke-width='10' stroke-linecap='round'/%3E%3Ctext x='210' y='350' text-anchor='middle' fill='%23ffffff' fill-opacity='.72' font-family='Arial,sans-serif' font-size='22' font-weight='700'%3ETOP TIER EXOTICS%3C/text%3E%3C/svg%3E";
-
 const galleries = {
-  hat: {
-    images: ["hat.png"],
-    alts: ["TopTierExotics hat front view"],
-    index: 0,
-    imageEl: document.getElementById("hatImage"),
-    dotsEl: document.getElementById("hatDots")
-  },
-  tracksuit: {
-    images: ["tracksuit.png"],
-    alts: ["TopTierExotics tracksuit front view"],
-    index: 0,
-    imageEl: document.getElementById("tracksuitImage"),
-    dotsEl: document.getElementById("tracksuitDots")
-  }
+hat: {
+images: ["hat.png", "hat1-back.jpg", "hat1-side.jpg"],
+alts: [
+"TopTierExotics hat front view",
+"TopTierExotics hat back view",
+"TopTierExotics hat side view"
+],
+index: 0,
+imageEl: document.getElementById("hatImage"),
+dotsEl: document.getElementById("hatDots")
+},
+tracksuit: {
+images: ["tracksuit.png", "tracksuit-back.jpg", "tracksuit-side.jpg", "tracksuit-detail.jpg"],
+alts: [
+"TopTierExotics tracksuit front view",
+"TopTierExotics tracksuit back view",
+"TopTierExotics tracksuit side view",
+"TopTierExotics tracksuit detail view"
+],
+index: 0,
+imageEl: document.getElementById("tracksuitImage"),
+dotsEl: document.getElementById("tracksuitDots")
+}
 };
 
-function hideLoader() {
-  if (!loader || loader.classList.contains("hidden")) return;
-
-  const minimumDisplay = 500;
-  const elapsed = performance.now() - loaderStartTime;
-  const delay = Math.max(0, minimumDisplay - elapsed);
-
-  window.setTimeout(() => {
-    loader.classList.add("hidden");
-  }, delay);
-}
-
 window.addEventListener("load", () => {
-  window.requestAnimationFrame(hideLoader);
-  revealVisibleProducts();
+window.requestAnimationFrame(() => {
+loader.classList.add("hidden");
+});
+revealVisibleProducts();
 });
 
 function toggleMenu(forceState) {
-  const shouldOpen = typeof forceState === "boolean" ? forceState : !menu.classList.contains("active");
-  menu.classList.toggle("active", shouldOpen);
-  overlay.classList.toggle("active", shouldOpen);
-  overlay.hidden = !shouldOpen;
-  burger.classList.toggle("active", shouldOpen);
-  burger.setAttribute("aria-expanded", String(shouldOpen));
-  burger.setAttribute("aria-label", shouldOpen ? "Close menu" : "Open menu");
-  menu.setAttribute("aria-hidden", String(!shouldOpen));
+const shouldOpen = typeof forceState === "boolean" ? forceState : !menu.classList.contains("active");
+menu.classList.toggle("active", shouldOpen);
+burger.classList.toggle("active", shouldOpen);
+overlay.classList.toggle("active", shouldOpen);
+burger.setAttribute("aria-expanded", String(shouldOpen));
+burger.setAttribute("aria-label", shouldOpen ? "Close menu" : "Open menu");
 
-  if (shouldOpen) {
-    lastFocusedElement = document.activeElement;
-    pageBody.classList.add("menu-open");
-    const firstLink = menu.querySelector("a");
-    if (firstLink) firstLink.focus();
-  } else {
-    pageBody.classList.remove("menu-open");
-    if (lastFocusedElement && typeof lastFocusedElement.focus === "function" && !zoom.classList.contains("active")) {
-      lastFocusedElement.focus();
-    }
-  }
+if (shouldOpen) {
+lastFocusedElement = document.activeElement;
+pageBody.classList.add("menu-open");
+const firstLink = menu.querySelector("a");
+if (firstLink) firstLink.focus();
+} else {
+pageBody.classList.remove("menu-open");
+if (lastFocusedElement && typeof lastFocusedElement.focus === "function" && !zoom.classList.contains("active")) {
+lastFocusedElement.focus();
+}
+}
 }
 
 burger.addEventListener("click", () => toggleMenu());
 overlay.addEventListener("click", () => toggleMenu(false));
 
 menu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => toggleMenu(false));
+link.addEventListener("click", () => toggleMenu(false));
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    if (zoom.classList.contains("active")) {
-      closeZoom();
-      return;
-    }
-    if (menu.classList.contains("active")) {
-      toggleMenu(false);
-      return;
-    }
-  }
+if (event.key === "Escape") {
+if (zoom.classList.contains("active")) {
+closeZoom();
+return;
+}
+if (menu.classList.contains("active")) {
+toggleMenu(false);
+return;
+}
+}
 
-  if (event.key === "Tab" && menu.classList.contains("active")) {
-    trapFocus(event, menu);
-  }
+if (event.key === "Tab" && menu.classList.contains("active")) {
+trapFocus(event, menu);
+}
 
-  if (event.key === "Tab" && zoom.classList.contains("active")) {
-    trapFocus(event, zoom);
-  }
+if (event.key === "Tab" && zoom.classList.contains("active")) {
+trapFocus(event, zoom);
+}
 });
 
 function revealVisibleProducts() {
-  products.forEach((product) => {
-    if (product.getBoundingClientRect().top < window.innerHeight * 0.9) {
-      product.classList.add("show");
-    }
-  });
+products.forEach((product) => {
+if (product.getBoundingClientRect().top < window.innerHeight * 0.9) {
+product.classList.add("show");
+}
+});
 }
 
 if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.18 });
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add("show");
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.18 });
 
-  products.forEach((product) => observer.observe(product));
+products.forEach((product) => observer.observe(product));
 } else {
-  window.addEventListener("scroll", revealVisibleProducts, { passive: true });
-  window.addEventListener("resize", revealVisibleProducts, { passive: true });
+window.addEventListener("scroll", revealVisibleProducts, { passive: true });
+window.addEventListener("resize", revealVisibleProducts, { passive: true });
 }
 
 function createDots(name) {
-  const gallery = galleries[name];
-  gallery.dotsEl.innerHTML = "";
+const gallery = galleries[name];
+gallery.dotsEl.innerHTML = "";
 
-  if (gallery.images.length <= 1) return;
-
-  gallery.images.forEach((_, index) => {
-    const dot = document.createElement("button");
-    dot.type = "button";
-    dot.className = index === gallery.index ? "active" : "";
-    dot.setAttribute("aria-label", "View " + gallery.alts[index]);
-    dot.setAttribute("aria-current", index === gallery.index ? "true" : "false");
-    dot.addEventListener("click", () => setGalleryImage(name, index));
-    gallery.dotsEl.appendChild(dot);
-  });
+gallery.images.forEach((_, index) => {
+const dot = document.createElement("button");
+dot.type = "button";
+dot.className = index === 0 ? "active" : "";
+dot.setAttribute("aria-label", "View image " + (index + 1));
+dot.addEventListener("click", () => setGalleryImage(name, index));
+gallery.dotsEl.appendChild(dot);
+});
 }
 
 function updateDots(name) {
-  const gallery = galleries[name];
-  Array.from(gallery.dotsEl.children).forEach((dot, index) => {
-    const isActive = index === gallery.index;
-    dot.classList.toggle("active", isActive);
-    dot.setAttribute("aria-current", String(isActive));
-  });
-}
-
-function updateGalleryControls(name) {
-  const gallery = galleries[name];
-  const hasMultipleImages = gallery.images.length > 1;
-
-  document.querySelectorAll('[data-gallery="' + name + '"]').forEach((button) => {
-    button.hidden = !hasMultipleImages;
-    button.disabled = !hasMultipleImages;
-  });
+const gallery = galleries[name];
+[...gallery.dotsEl.children].forEach((dot, index) => {
+dot.classList.toggle("active", index === gallery.index);
+});
 }
 
 function setGalleryImage(name, index) {
-  const gallery = galleries[name];
-  gallery.index = index;
-  gallery.imageEl.classList.add("is-loading");
-  gallery.imageEl.classList.remove("is-missing");
-  gallery.imageEl.src = gallery.images[index];
-  gallery.imageEl.alt = gallery.alts[index] || gallery.imageEl.alt;
-  gallery.imageEl.setAttribute("aria-label", "Open larger view of " + gallery.imageEl.alt);
-  updateDots(name);
+const gallery = galleries[name];
+gallery.index = index;
+gallery.imageEl.src = gallery.images[index];
+gallery.imageEl.alt = gallery.alts[index] || gallery.imageEl.alt;
+updateDots(name);
 }
 
 function changeGallery(name, direction) {
-  const gallery = galleries[name];
-  const total = gallery.images.length;
-  if (total <= 1) return;
-
-  const nextIndex = (gallery.index + direction + total) % total;
-  setGalleryImage(name, nextIndex);
+const gallery = galleries[name];
+const total = gallery.images.length;
+const nextIndex = (gallery.index + direction + total) % total;
+setGalleryImage(name, nextIndex);
 }
 
 document.querySelectorAll("[data-gallery]").forEach((button) => {
-  button.addEventListener("click", () => {
-    changeGallery(button.dataset.gallery, Number(button.dataset.direction));
-  });
+button.addEventListener("click", () => {
+changeGallery(button.dataset.gallery, Number(button.dataset.direction));
+});
 });
 
-Object.keys(galleries).forEach((name) => {
-  createDots(name);
-  updateGalleryControls(name);
-
-  galleries[name].images.slice(1).forEach((src) => {
-    const preload = new Image();
-    preload.src = src;
-  });
-});
+Object.keys(galleries).forEach(createDots);
 
 function openZoom(imageElement) {
-  if (Date.now() < suppressZoomUntil || imageElement.classList.contains("is-missing")) {
-    return;
-  }
-
-  lastFocusedElement = document.activeElement;
-  zoomImg.src = imageElement.currentSrc || imageElement.src;
-  zoomImg.alt = imageElement.alt;
-  zoom.classList.add("active");
-  zoom.setAttribute("aria-hidden", "false");
-  pageBody.classList.add("zoom-open");
-  zoomClose.focus();
+if (Date.now() < suppressZoomUntil) {
+return;
+}
+lastFocusedElement = document.activeElement;
+zoomImg.src = imageElement.src;
+zoomImg.alt = imageElement.alt;
+zoom.classList.add("active");
+zoom.setAttribute("aria-hidden", "false");
+pageBody.classList.add("zoom-open");
+zoomClose.focus();
 }
 
 function trapFocus(event, container) {
-  const focusable = Array.from(container.querySelectorAll(focusableSelector)).filter((element) => {
-    return !element.hasAttribute("disabled") && element.offsetParent !== null;
-  });
+const focusable = Array.from(container.querySelectorAll(focusableSelector))
+.filter((element) => !element.hasAttribute("disabled"));
 
-  if (!focusable.length) return;
+if (!focusable.length) {
+return;
+}
 
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
+const first = focusable[0];
+const last = focusable[focusable.length - 1];
 
-  if (event.shiftKey && document.activeElement === first) {
-    event.preventDefault();
-    last.focus();
-  }
+if (event.shiftKey && document.activeElement === first) {
+event.preventDefault();
+last.focus();
+}
 
-  if (!event.shiftKey && document.activeElement === last) {
-    event.preventDefault();
-    first.focus();
-  }
+if (!event.shiftKey && document.activeElement === last) {
+event.preventDefault();
+first.focus();
+}
 }
 
 document.querySelectorAll(".product-image img").forEach((img) => {
-  img.addEventListener("click", () => {
-    openZoom(img);
-  });
+img.addEventListener("click", () => {
+openZoom(img);
+});
 
-  img.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openZoom(img);
-    }
-  });
+img.addEventListener("keydown", (event) => {
+if (event.key === "Enter" || event.key === " ") {
+event.preventDefault();
+openZoom(img);
+}
+});
 
-  img.addEventListener("load", () => {
-    img.classList.remove("is-loading");
-    img.setAttribute("aria-label", "Open larger view of " + img.alt);
-  });
-
-  img.addEventListener("error", () => {
-    img.classList.remove("is-loading");
-    img.classList.add("is-missing");
-
-    if (img.src !== fallbackImage) {
-      img.src = fallbackImage;
-    }
-
-    img.alt = "Product image coming soon";
-    img.setAttribute("aria-label", "Product image coming soon");
-  });
+img.addEventListener("load", () => {
+img.setAttribute("aria-label", "Open larger view of " + img.alt);
+});
 });
 
 document.querySelectorAll("[data-gallery-frame]").forEach((frame) => {
-  let startX = 0;
-  let startY = 0;
+let startX = 0;
+let startY = 0;
 
-  frame.addEventListener("touchstart", (event) => {
-    const touch = event.changedTouches[0];
-    startX = touch.clientX;
-    startY = touch.clientY;
-  }, { passive: true });
+frame.addEventListener("touchstart", (event) => {
+const touch = event.changedTouches[0];
+startX = touch.clientX;
+startY = touch.clientY;
+}, { passive: true });
 
-  frame.addEventListener("touchend", (event) => {
-    const touch = event.changedTouches[0];
-    const deltaX = touch.clientX - startX;
-    const deltaY = touch.clientY - startY;
-    const gallery = galleries[frame.dataset.galleryFrame];
+frame.addEventListener("touchend", (event) => {
+const touch = event.changedTouches[0];
+const deltaX = touch.clientX - startX;
+const deltaY = touch.clientY - startY;
 
-    if (!gallery || gallery.images.length <= 1) return;
-
-    if (Math.abs(deltaX) > 36 && Math.abs(deltaX) > Math.abs(deltaY)) {
-      changeGallery(frame.dataset.galleryFrame, deltaX < 0 ? 1 : -1);
-      suppressZoomUntil = Date.now() + 400;
-    }
-  }, { passive: true });
+if (Math.abs(deltaX) > 36 && Math.abs(deltaX) > Math.abs(deltaY)) {
+changeGallery(frame.dataset.galleryFrame, deltaX < 0 ? 1 : -1);
+suppressZoomUntil = Date.now() + 400;
+}
+}, { passive: true });
 });
 
 function closeZoom() {
-  zoom.classList.remove("active");
-  zoom.setAttribute("aria-hidden", "true");
-  zoomImg.removeAttribute("src");
-  pageBody.classList.remove("zoom-open");
-
-  if (!menu.classList.contains("active")) {
-    pageBody.classList.remove("menu-open");
-  }
-
-  if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
-    lastFocusedElement.focus();
-  }
+zoom.classList.remove("active");
+zoom.setAttribute("aria-hidden", "true");
+zoomImg.removeAttribute("src");
+pageBody.classList.remove("zoom-open");
+if (menu.classList.contains("active")) {
+pageBody.classList.add("menu-open");
+} else {
+pageBody.classList.remove("menu-open");
+}
+if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+lastFocusedElement.focus();
+}
 }
 
 zoom.addEventListener("click", (event) => {
-  if (event.target === zoom || event.target === zoomClose) {
-    closeZoom();
-  }
+if (event.target === zoom || event.target === zoomClose) {
+closeZoom();
+}
 });
 
 zoomClose.addEventListener("click", closeZoom);
+
 </script>
+
 </body>
 </html>

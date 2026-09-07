@@ -74,17 +74,15 @@
 
 html{
   scroll-behavior:smooth;
-  -webkit-text-size-adjust:100%;
   background:#000;
+  -webkit-text-size-adjust:100%;
 }
 
 body{
   min-width:320px;
   overflow-x:hidden;
-  background:
-    radial-gradient(circle at 50% 0,rgba(57,255,20,.05),transparent 32rem),
-    #000;
-  color:var(--white);
+  background:#000;
+  color:#fff;
   font-family:"Montserrat",Arial,sans-serif;
   line-height:1.5;
 }
@@ -121,7 +119,9 @@ a,
   outline-offset:4px;
 }
 
-/* SKIP */
+/* =========================
+   SKIP LINK
+========================= */
 
 .skip-link{
   position:absolute;
@@ -140,7 +140,9 @@ a,
   top:16px;
 }
 
-/* LOADER */
+/* =========================
+   LOADER
+========================= */
 
 .loader{
   position:fixed;
@@ -191,33 +193,39 @@ a,
   }
 }
 
-/* BURGER */
+/* =========================
+   HAMBURGER
+========================= */
 
 .burger{
   position:fixed;
-  top:max(14px,env(safe-area-inset-top));
+  top:max(10px,env(safe-area-inset-top));
   left:max(14px,env(safe-area-inset-left));
   z-index:3000;
+
   width:50px;
   height:50px;
-  border:1px solid rgba(217,180,91,.45);
-  border-radius:12px;
-  background:rgba(0,0,0,.62);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
+
   display:flex;
   flex-direction:column;
+  align-items:center;
   justify-content:center;
   gap:5px;
+
+  border:1px solid rgba(217,180,91,.55);
+  border-radius:7px;
+
+  background:rgba(0,0,0,.62);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+
   cursor:pointer;
 }
 
 .burger span{
-  width:21px;
+  width:20px;
   height:2px;
-  margin:auto;
-  margin-top:0;
-  margin-bottom:0;
   background:#fff;
   border-radius:999px;
   transition:transform .3s ease,opacity .3s ease;
@@ -235,7 +243,9 @@ a,
   transform:translateY(-7px) rotate(-45deg);
 }
 
-/* DESKTOP HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .site-header{
   position:absolute;
@@ -243,39 +253,152 @@ a,
   left:0;
   right:0;
   z-index:1800;
-  height:73px;
-  border-bottom:1px solid rgba(217,180,91,.2);
+
+  height:42px;
+
+  border-bottom:1px solid rgba(217,180,91,.22);
+
   background:linear-gradient(
     180deg,
-    rgba(0,0,0,.52),
-    rgba(0,0,0,.08)
+    rgba(0,0,0,.48),
+    rgba(0,0,0,.04)
   );
-  pointer-events:none;
 }
 
 .site-header-inner{
+  width:100%;
   height:100%;
+
   display:grid;
   grid-template-columns:1fr auto 1fr;
   align-items:center;
-  padding:0 clamp(24px,5vw,80px);
+
+  padding:0 22px;
 }
 
-.header-socials{
+/* NAVIGATION */
+
+.header-nav{
+  grid-column:2;
+
+  height:100%;
+
   display:flex;
   align-items:center;
-  gap:21px;
-  padding-left:125px;
+  justify-content:center;
+
+  gap:42px;
+}
+
+.header-nav a{
+  position:relative;
+
+  height:100%;
+
+  display:flex;
+  align-items:center;
+
+  color:rgba(255,255,255,.88);
+
+  text-decoration:none;
+
+  font-size:.58rem;
+  font-weight:700;
+  letter-spacing:.28em;
+
+  transition:color .25s ease;
+}
+
+.header-nav a::after{
+  content:"";
+
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:1px;
+
+  background:var(--gold);
+
+  transform:scaleX(0);
+  transform-origin:center;
+
+  transition:transform .25s ease;
+}
+
+.header-nav a:hover,
+.header-nav a:focus-visible{
+  color:var(--gold-light);
+}
+
+.header-nav a:hover::after,
+.header-nav a:focus-visible::after{
+  transform:scaleX(1);
+}
+
+/* CENTER TTE */
+
+.header-brand{
+  position:absolute;
+  left:50%;
+  top:0;
+
+  transform:translateX(-50%);
+
+  height:42px;
+
+  display:flex;
+  align-items:center;
+
   pointer-events:auto;
 }
 
+.header-brand a{
+  color:var(--gold-light);
+
+  font-family:"Playfair Display",Georgia,serif;
+
+  font-size:1.05rem;
+  font-weight:800;
+
+  letter-spacing:-.05em;
+
+  text-decoration:none;
+
+  text-shadow:0 0 18px rgba(217,180,91,.18);
+}
+
+/* SOCIALS RIGHT */
+
+.header-socials{
+  grid-column:3;
+
+  justify-self:end;
+
+  display:flex;
+  align-items:center;
+
+  gap:18px;
+
+  padding-right:3px;
+}
+
 .header-socials a{
+  width:18px;
+  height:18px;
+
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  color:rgba(255,255,255,.86);
+
+  color:rgba(255,255,255,.92);
+
   text-decoration:none;
-  transition:color .25s ease,transform .25s ease;
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
 }
 
 .header-socials a:hover,
@@ -290,106 +413,43 @@ a,
   fill:currentColor;
 }
 
-.header-socials .linktree-word{
-  width:auto;
-  font-size:.58rem;
-  font-weight:800;
-  letter-spacing:.04em;
+.header-socials .linktree-icon{
+  font-size:14px;
+  font-weight:900;
+  line-height:1;
 }
 
-.header-nav{
-  height:100%;
-  display:flex;
-  align-items:center;
-  gap:42px;
-  pointer-events:auto;
-}
+/* GOLD DIVIDER */
 
-.header-nav a{
-  position:relative;
-  height:100%;
-  display:flex;
-  align-items:center;
-  color:#fff;
-  text-decoration:none;
-  font-size:.66rem;
-  font-weight:800;
-  letter-spacing:.27em;
-  transition:color .25s ease;
-}
-
-.header-nav a::after{
+.header-socials::after{
   content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:5px;
-  height:1px;
-  background:var(--gold);
-  transform:scaleX(0);
-  transform-origin:center;
-  transition:transform .25s ease;
+
+  width:1px;
+  height:17px;
+
+  margin-left:2px;
+
+  background:rgba(217,180,91,.55);
 }
 
-.header-nav a:hover,
-.header-nav a:focus-visible{
-  color:var(--gold-light);
-}
-
-.header-nav a:hover::after,
-.header-nav a:focus-visible::after{
-  transform:scaleX(1);
-}
-
-.header-brand{
-  justify-self:end;
-  pointer-events:auto;
-}
-
-.header-brand a{
-  color:var(--gold-light);
-  font-family:"Playfair Display",Georgia,serif;
-  font-size:1.1rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-decoration:none;
-}
-
-.header-linktree{
-  position:absolute;
-  top:50%;
-  right:clamp(24px,4vw,65px);
-  transform:translateY(-50%);
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:var(--gold-light);
-  text-decoration:none;
-  font-size:.55rem;
-  font-weight:800;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  transition:color .25s ease,transform .25s ease;
-}
-
-.header-linktree:hover,
-.header-linktree:focus-visible{
-  color:#fff;
-  transform:translateY(-50%) translateX(-2px);
-}
-
-/* OVERLAY */
+/* =========================
+   OVERLAY
+========================= */
 
 .overlay{
   position:fixed;
   inset:0;
   z-index:2200;
-  background:rgba(0,0,0,.72);
+
+  background:rgba(0,0,0,.76);
+
   opacity:0;
   visibility:hidden;
   pointer-events:none;
+
   backdrop-filter:blur(6px);
   -webkit-backdrop-filter:blur(6px);
+
   transition:opacity .3s ease,visibility .3s ease;
 }
 
@@ -399,22 +459,35 @@ a,
   pointer-events:auto;
 }
 
-/* SIDE MENU */
+/* =========================
+   SIDE MENU
+========================= */
 
 .side-menu{
   position:fixed;
   top:0;
   left:0;
   z-index:2500;
+
   width:min(320px,86vw);
   height:100dvh;
-  padding:110px 28px 40px;
+
+  padding:95px 28px 40px;
+
   background:
-    linear-gradient(180deg,rgba(57,255,20,.055),transparent 25%),
+    linear-gradient(
+      180deg,
+      rgba(57,255,20,.055),
+      transparent 25%
+    ),
     #050505;
+
   border-right:1px solid rgba(255,255,255,.08);
+
   box-shadow:25px 0 70px rgba(0,0,0,.75);
+
   transform:translateX(-105%);
+
   transition:transform .35s cubic-bezier(.22,.61,.36,1);
 }
 
@@ -424,15 +497,24 @@ a,
 
 .side-menu a{
   display:block;
+
   padding:15px 16px;
   margin-bottom:10px;
+
   border-radius:13px;
+
   color:#fff;
+
   text-decoration:none;
-  font-size:.88rem;
+
+  font-size:.82rem;
   font-weight:700;
   letter-spacing:.16em;
-  transition:background .25s ease,color .25s ease,transform .25s ease;
+
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .25s ease;
 }
 
 .side-menu a:hover,
@@ -444,7 +526,9 @@ a,
 
 .side-menu .menu-divider{
   height:1px;
+
   margin:20px 16px;
+
   background:rgba(217,180,91,.18);
 }
 
@@ -452,122 +536,157 @@ a,
   color:var(--gold-light);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   position:relative;
+
   min-height:100svh;
   height:100svh;
+
   overflow:hidden;
   isolation:isolate;
+
   background:#000;
 }
+
+/*
+   homepage.png is the ONLY hero artwork.
+   No secondary logo/image is placed above it.
+*/
 
 .hero-art{
   position:absolute;
   inset:0;
+
   z-index:-4;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
   object-position:center center;
+
   user-select:none;
+  pointer-events:none;
+
   -webkit-user-drag:none;
 }
 
+/*
+   Very light overlay.
+   homepage.png already contains the dark left side,
+   so we don't want to wash out the artwork.
+*/
+
 .hero::before{
   content:"";
+
   position:absolute;
   inset:0;
+
   z-index:-3;
+
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.97) 0%,
-      rgba(0,0,0,.90) 25%,
-      rgba(0,0,0,.58) 47%,
-      rgba(0,0,0,.12) 73%,
-      rgba(0,0,0,.08) 100%
+      rgba(0,0,0,.40) 0%,
+      rgba(0,0,0,.18) 42%,
+      rgba(0,0,0,.03) 72%,
+      rgba(0,0,0,.12) 100%
     );
 }
 
 .hero::after{
   content:"";
+
   position:absolute;
   inset:0;
+
   z-index:-2;
+
   background:
     linear-gradient(
       180deg,
-      rgba(0,0,0,.42),
-      transparent 20%,
-      transparent 76%,
-      rgba(0,0,0,.62)
-    ),
-    radial-gradient(
-      circle at 52% 50%,
-      transparent 35%,
-      rgba(0,0,0,.2) 100%
+      rgba(0,0,0,.30) 0%,
+      transparent 17%,
+      transparent 78%,
+      rgba(0,0,0,.64) 100%
     );
+
   pointer-events:none;
 }
+
+/* HERO CONTENT */
 
 .hero-content{
   position:relative;
   z-index:2;
-  width:min(650px,46vw);
+
+  width:min(590px,47vw);
+
   min-height:100%;
-  margin-left:clamp(75px,8.3vw,145px);
-  padding:clamp(110px,14vh,145px) 0 80px;
+
+  margin-left:clamp(70px,6.65vw,100px);
+
+  padding:
+    clamp(100px,16vh,145px)
+    0
+    90px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:flex-start;
 }
 
-/*
-  The hero deliberately uses one clean brand hierarchy.
-  No second logo image is placed above the title.
-*/
+/* BRAND LINE */
 
 .brand-line{
-  position:relative;
   display:flex;
   align-items:center;
+
   gap:13px;
-  margin-bottom:26px;
+
+  margin-bottom:19px;
+
   color:var(--gold-light);
-  font-size:.59rem;
-  font-weight:800;
-  letter-spacing:.34em;
+
+  font-size:.55rem;
+  font-weight:700;
+
+  letter-spacing:.32em;
+
   text-transform:uppercase;
 }
 
 .brand-line::before{
   content:"";
-  width:31px;
+
+  width:25px;
   height:1px;
+
   background:var(--gold);
+
   flex:none;
 }
 
-.hero-eyebrow{
-  margin-bottom:13px;
-  color:rgba(255,255,255,.72);
-  font-size:.66rem;
-  font-weight:700;
-  letter-spacing:.29em;
-  text-transform:uppercase;
-}
+/* TITLE */
 
 .hero-title{
   font-family:"Playfair Display",Georgia,serif;
-  font-size:clamp(4.8rem,7.5vw,8.5rem);
-  line-height:.77;
-  letter-spacing:-.065em;
+
+  font-size:clamp(4.2rem,6.15vw,6.9rem);
+
+  line-height:.78;
+
+  letter-spacing:-.07em;
+
   font-weight:800;
+
   text-transform:uppercase;
-  white-space:nowrap;
 }
 
 .hero-title .top{
@@ -577,85 +696,132 @@ a,
 
 .hero-title .exotics{
   display:block;
-  margin-left:3px;
-  color:#4f9c55;
+
+  margin-left:18px;
+
+  color:#43864a;
+
   font-style:italic;
   font-weight:800;
-  letter-spacing:-.09em;
-  transform:skewX(-7deg);
+
+  letter-spacing:-.105em;
+
+  transform:skewX(-8deg);
+
   transform-origin:left center;
+
+  text-transform:none;
 }
 
+/* DIVIDER */
+
 .hero-divider{
-  width:345px;
-  max-width:72%;
+  position:relative;
+
+  width:395px;
+  max-width:100%;
+
   height:1px;
-  margin:36px 0 27px;
+
+  margin:35px 0 22px;
+
   background:
     linear-gradient(
       90deg,
-      var(--gold) 0,
-      var(--gold) 40%,
-      transparent 40%,
-      transparent 52%,
+      var(--gold) 0%,
+      var(--gold) 43%,
+      transparent 43%,
+      transparent 48%,
+      var(--gold) 48%,
       var(--gold) 52%,
-      var(--gold) 54%,
-      transparent 54%
+      transparent 52%,
+      transparent 57%,
+      var(--gold) 57%,
+      var(--gold) 100%
     );
-  position:relative;
 }
 
 .hero-divider::after{
   content:"♛";
+
   position:absolute;
+
   left:50%;
   top:50%;
+
   transform:translate(-50%,-52%);
-  padding:0 15px;
+
+  padding:0 12px;
+
+  background:rgba(2,3,2,.85);
+
   color:var(--gold);
-  background:#020302;
-  font-size:.8rem;
+
+  font-size:.72rem;
 }
+
+/* SUBTEXT */
 
 .hero-subtitle{
   color:rgba(255,255,255,.9);
-  font-size:.82rem;
+
+  font-size:.68rem;
   font-weight:500;
-  letter-spacing:.18em;
+
+  letter-spacing:.2em;
+
   text-transform:uppercase;
 }
 
 .hero-tagline{
-  margin-top:8px;
+  margin-top:7px;
+
   color:var(--gold-light);
-  font-size:.59rem;
+
+  font-size:.51rem;
   font-weight:700;
-  letter-spacing:.24em;
+
+  letter-spacing:.23em;
+
   text-transform:uppercase;
 }
+
+/* HERO BUTTONS */
 
 .hero-actions{
   display:flex;
   flex-wrap:wrap;
-  gap:18px;
-  margin-top:28px;
+
+  gap:15px;
+
+  margin-top:27px;
 }
 
 .hero-btn{
-  min-width:195px;
-  min-height:49px;
-  padding:14px 22px;
+  min-width:180px;
+  min-height:43px;
+
+  padding:12px 20px;
+
   display:inline-flex;
   align-items:center;
   justify-content:center;
+
   border:1px solid var(--gold);
+
   background:var(--gold);
+
   color:#080808;
-  font-size:.66rem;
+
+  font-size:.58rem;
   font-weight:900;
+
   letter-spacing:.17em;
+
   text-decoration:none;
+
   text-transform:uppercase;
+
   transition:
     transform .25s ease,
     box-shadow .25s ease,
@@ -665,19 +831,25 @@ a,
 
 .hero-btn::after{
   content:"→";
-  margin-left:14px;
-  font-size:.9rem;
+
+  margin-left:13px;
+
+  font-size:.85rem;
 }
 
 .hero-btn:hover,
 .hero-btn:focus-visible{
   transform:translateY(-2px);
-  box-shadow:0 12px 35px rgba(217,180,91,.2);
+
+  box-shadow:
+    0 12px 35px rgba(217,180,91,.2);
 }
 
 .hero-btn.secondary{
-  background:rgba(0,0,0,.2);
-  color:#59a35d;
+  background:rgba(0,0,0,.20);
+
+  color:#559b5c;
+
   border-color:#347d3a;
 }
 
@@ -687,65 +859,106 @@ a,
   color:#7ccf80;
 }
 
+/* TRUST BAR */
+
 .hero-trust{
   position:absolute;
-  bottom:27px;
+
   left:0;
+  bottom:24px;
+
   display:flex;
   align-items:center;
   flex-wrap:wrap;
-  gap:8px;
-  color:rgba(255,255,255,.55);
-  font-size:.5rem;
+
+  gap:7px;
+
+  color:rgba(255,255,255,.58);
+
+  font-size:.43rem;
   font-weight:700;
+
   letter-spacing:.18em;
+
   text-transform:uppercase;
 }
 
 .hero-trust span:not(:last-child)::after{
-  content:"•";
-  margin-left:8px;
+  content:"✦";
+
+  margin-left:10px;
+
   color:var(--gold);
+
+  font-size:.42rem;
 }
+
+/* SCROLL */
 
 .scroll-indicator{
   position:absolute;
-  right:28px;
-  bottom:25px;
+
+  right:27px;
+  bottom:23px;
+
   z-index:3;
+
   display:flex;
   align-items:center;
-  gap:13px;
-  color:rgba(255,255,255,.52);
-  font-size:.55rem;
+
+  gap:12px;
+
+  color:rgba(255,255,255,.58);
+
+  font-size:.48rem;
   font-weight:700;
+
   letter-spacing:.25em;
+
   text-transform:uppercase;
 }
 
 .scroll-indicator::after{
   content:"";
-  width:52px;
+
+  width:48px;
   height:1px;
-  background:linear-gradient(90deg,rgba(255,255,255,.25),var(--gold));
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.2),
+      var(--gold)
+    );
 }
 
-/* GENERAL BUTTON */
+/* =========================
+   GENERAL BUTTON
+========================= */
 
 .primary-btn{
   min-height:50px;
+
   padding:14px 25px;
+
   display:inline-flex;
   align-items:center;
   justify-content:center;
+
   border:1px solid var(--green);
   border-radius:999px;
+
   background:var(--green);
+
   color:#000;
+
   font-weight:800;
+
   text-decoration:none;
   text-align:center;
+
   cursor:pointer;
+
   transition:
     transform .25s ease,
     box-shadow .25s ease,
@@ -756,7 +969,9 @@ a,
 .primary-btn:hover,
 .primary-btn:focus-visible{
   transform:translateY(-2px);
-  box-shadow:0 0 28px rgba(57,255,20,.25);
+
+  box-shadow:
+    0 0 28px rgba(57,255,20,.25);
 }
 
 .secondary-btn{
@@ -764,12 +979,19 @@ a,
   color:var(--green);
 }
 
-/* PRODUCTS */
+/* =========================
+   PRODUCTS
+========================= */
 
 .products{
   padding:110px 8% 95px;
+
   background:
-    radial-gradient(circle at 50% 0,rgba(57,255,20,.05),transparent 32rem),
+    radial-gradient(
+      circle at 50% 0,
+      rgba(57,255,20,.05),
+      transparent 32rem
+    ),
     #030303;
 }
 
@@ -777,90 +999,156 @@ a,
 .telegram h2,
 .contact h2{
   margin-bottom:17px;
+
   text-align:center;
+
   font-family:"Playfair Display",Georgia,serif;
+
   font-size:clamp(2rem,4vw,3.2rem);
+
   letter-spacing:.12em;
+
   text-transform:uppercase;
 }
 
 .section-copy{
   max-width:700px;
+
   margin:0 auto 48px;
+
   color:var(--muted);
+
   text-align:center;
 }
 
 .product-grid{
   max-width:1120px;
+
   margin:auto;
+
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+
   gap:30px;
 }
 
 .product{
   position:relative;
+
   padding:25px 25px 28px;
+
   background:
-    linear-gradient(180deg,rgba(57,255,20,.045),transparent 24%),
+    linear-gradient(
+      180deg,
+      rgba(57,255,20,.045),
+      transparent 24%
+    ),
     #0b0b0b;
+
   border:1px solid var(--border);
+
   border-radius:22px;
+
   box-shadow:var(--shadow);
+
   text-align:center;
-  transition:transform .35s ease,box-shadow .35s ease;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
 }
 
 .product:hover{
   transform:translateY(-7px);
-  box-shadow:0 0 40px rgba(57,255,20,.12),var(--shadow);
+
+  box-shadow:
+    0 0 40px rgba(57,255,20,.12),
+    var(--shadow);
 }
 
 .badge{
   position:absolute;
+
   top:15px;
   left:15px;
+
   z-index:4;
+
   padding:6px 10px;
+
   border-radius:999px;
+
   background:var(--green);
+
   color:#000;
+
   font-size:.64rem;
   font-weight:900;
+
   letter-spacing:.08em;
 }
 
 .product-image{
   position:relative;
+
   height:330px;
+
   margin-bottom:17px;
+
   padding:12px 12px 58px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   overflow:hidden;
+
   border:1px solid rgba(255,255,255,.055);
+
   border-radius:17px;
+
   background:
-    radial-gradient(circle at top,rgba(57,255,20,.07),transparent 40%),
-    linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+    radial-gradient(
+      circle at top,
+      rgba(57,255,20,.07),
+      transparent 40%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.035),
+      rgba(255,255,255,.012)
+    );
+
   touch-action:pan-y pinch-zoom;
+
   user-select:none;
 }
 
 .product-image img{
   max-width:100%;
   max-height:100%;
+
   object-fit:contain;
+
   border-radius:12px;
+
   cursor:zoom-in;
-  transition:transform .3s ease,opacity .2s ease,filter .3s ease;
+
+  transition:
+    transform .3s ease,
+    opacity .2s ease,
+    filter .3s ease;
 }
 
 .product-image img:hover{
   transform:scale(1.025);
-  filter:drop-shadow(0 0 18px rgba(57,255,20,.16));
+
+  filter:
+    drop-shadow(
+      0 0 18px rgba(57,255,20,.16)
+    );
 }
 
 .product-image img.is-loading{
@@ -870,32 +1158,49 @@ a,
 .product-image img.is-missing{
   min-width:170px;
   min-height:170px;
+
   padding:20px;
+
   border:1px dashed rgba(57,255,20,.3);
 }
 
 .arrow{
   position:absolute;
+
   bottom:12px;
+
   z-index:5;
+
   width:43px;
   height:43px;
+
   display:grid;
   place-items:center;
+
   border:1px solid rgba(57,255,20,.3);
+
   border-radius:50%;
+
   background:rgba(0,0,0,.78);
+
   color:var(--green);
+
   cursor:pointer;
+
   font-size:1.3rem;
   line-height:1;
-  transition:transform .25s ease,box-shadow .25s ease;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
 }
 
 .arrow:hover,
 .arrow:focus-visible{
   transform:scale(1.08);
-  box-shadow:0 0 18px rgba(57,255,20,.22);
+
+  box-shadow:
+    0 0 18px rgba(57,255,20,.22);
 }
 
 .arrow-left{
@@ -912,9 +1217,12 @@ a,
 
 .gallery-dots{
   min-height:12px;
+
   margin-bottom:18px;
+
   display:flex;
   justify-content:center;
+
   gap:8px;
 }
 
@@ -925,84 +1233,124 @@ a,
 .gallery-dots button{
   width:9px;
   height:9px;
+
   padding:0;
+
   border:0;
   border-radius:50%;
+
   background:#555;
+
   cursor:pointer;
 }
 
 .gallery-dots button.active{
   background:var(--green);
-  box-shadow:0 0 9px rgba(57,255,20,.7);
+
+  box-shadow:
+    0 0 9px rgba(57,255,20,.7);
+
   transform:scale(1.15);
 }
 
 .product h3{
   margin-bottom:10px;
+
   font-size:1rem;
+
   letter-spacing:.14em;
 }
 
 .product p{
   max-width:36ch;
+
   margin:0 auto 15px;
+
   color:var(--muted);
 }
 
 .product-note{
   display:block;
+
   margin-bottom:18px;
+
   color:var(--soft);
+
   font-size:.72rem;
   font-weight:600;
+
   letter-spacing:.1em;
+
   text-transform:uppercase;
 }
 
-/* TELEGRAM */
+/* =========================
+   TELEGRAM
+========================= */
 
 .telegram{
   position:relative;
+
   padding:105px 8%;
+
   overflow:hidden;
+
   border-top:1px solid rgba(255,255,255,.05);
   border-bottom:1px solid rgba(255,255,255,.05);
+
   background:
-    radial-gradient(circle at 50% 20%,rgba(57,255,20,.08),transparent 28rem),
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(57,255,20,.08),
+      transparent 28rem
+    ),
     #050505;
+
   text-align:center;
 }
 
 .telegram p{
   max-width:650px;
+
   margin:20px auto 28px;
+
   color:var(--muted);
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
   position:relative;
+
   padding:105px 8%;
+
   text-align:center;
 }
 
 .contact p{
   max-width:650px;
+
   margin:0 auto 15px;
+
   color:var(--muted);
 }
 
 .contact-links{
   margin-top:27px;
+
   display:flex;
   justify-content:center;
+
   flex-wrap:wrap;
+
   gap:12px;
 }
 
-/* LINKTREE CONTACT */
+/* =========================
+   LINKTREE
+========================= */
 
 .contact-linktree{
   margin-top:20px;
@@ -1012,17 +1360,28 @@ a,
   display:inline-flex;
   align-items:center;
   justify-content:center;
+
   min-height:46px;
+
   padding:12px 22px;
+
   border:1px solid rgba(217,180,91,.45);
+
   border-radius:999px;
+
   color:var(--gold-light);
+
   background:rgba(217,180,91,.035);
+
   text-decoration:none;
+
   font-size:.68rem;
   font-weight:800;
+
   letter-spacing:.15em;
+
   text-transform:uppercase;
+
   transition:
     transform .25s ease,
     background .25s ease,
@@ -1032,80 +1391,119 @@ a,
 .contact-linktree a:hover,
 .contact-linktree a:focus-visible{
   transform:translateY(-2px);
+
   background:rgba(217,180,91,.08);
+
   border-color:var(--gold);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
-  padding:62px 8% calc(40px + env(safe-area-inset-bottom));
+  padding:
+    62px
+    8%
+    calc(40px + env(safe-area-inset-bottom));
+
   border-top:1px solid rgba(255,255,255,.06);
+
   background:#020202;
+
   text-align:center;
 }
 
 .footer h2{
   margin-bottom:18px;
+
   font-size:.9rem;
+
   letter-spacing:.25em;
 }
 
 .footer-copy{
   max-width:620px;
+
   margin:0 auto 25px;
+
   color:var(--soft);
 }
 
 .footer-icons{
   display:flex;
   justify-content:center;
+
   flex-wrap:wrap;
+
   gap:16px;
 }
 
 .footer-icons a{
   width:52px;
   height:52px;
+
   display:grid;
   place-items:center;
+
   border:1px solid rgba(255,255,255,.1);
+
   border-radius:50%;
+
   background:rgba(255,255,255,.025);
-  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
 }
 
 .footer-icons a:hover,
 .footer-icons a:focus-visible{
   transform:translateY(-3px);
+
   border-color:rgba(57,255,20,.45);
-  box-shadow:0 0 22px rgba(57,255,20,.18);
+
+  box-shadow:
+    0 0 22px rgba(57,255,20,.18);
 }
 
 .footer-icons svg{
   width:25px;
   height:25px;
+
   fill:#fff;
 }
 
 .footer-legal{
   margin-top:25px;
+
   color:rgba(255,255,255,.38);
+
   font-size:.7rem;
+
   letter-spacing:.13em;
+
   text-transform:uppercase;
 }
 
-/* ZOOM */
+/* =========================
+   ZOOM
+========================= */
 
 .zoom{
   position:fixed;
   inset:0;
+
   z-index:4500;
+
   display:none;
+
   align-items:center;
   justify-content:center;
+
   padding:25px;
+
   background:rgba(0,0,0,.96);
 }
 
@@ -1116,222 +1514,270 @@ a,
 .zoom img{
   max-width:min(94vw,1100px);
   max-height:85vh;
+
   border-radius:14px;
-  box-shadow:0 0 55px rgba(0,0,0,.8);
+
+  box-shadow:
+    0 0 55px rgba(0,0,0,.8);
 }
 
 .zoom-close{
   position:absolute;
+
   top:max(18px,env(safe-area-inset-top));
   right:max(18px,env(safe-area-inset-right));
+
   width:48px;
   height:48px;
+
   border:1px solid rgba(255,255,255,.15);
+
   border-radius:50%;
+
   background:rgba(255,255,255,.06);
+
   color:#fff;
+
   font-size:1.6rem;
+
   cursor:pointer;
 }
 
-/* TABLET */
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:1000px){
 
-  .site-header-inner{
-    padding-right:25px;
+  .header-nav{
+    gap:27px;
   }
 
   .header-socials{
-    padding-left:95px;
-  }
-
-  .header-nav{
-    gap:24px;
-  }
-
-  .header-linktree{
-    display:none;
+    gap:14px;
   }
 
   .hero-content{
-    width:56vw;
+    width:53vw;
+
     margin-left:8vw;
   }
 
   .hero-title{
-    font-size:clamp(4rem,8vw,6.5rem);
+    font-size:clamp(3.7rem,7.4vw,6rem);
   }
 
-  .product-grid{
-    gap:22px;
-  }
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
   .site-header{
-    height:64px;
-    background:linear-gradient(
-      180deg,
-      rgba(0,0,0,.68),
-      rgba(0,0,0,.08)
-    );
+    height:48px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,.62),
+        rgba(0,0,0,.08)
+      );
   }
 
   .site-header-inner{
     display:flex;
     justify-content:flex-end;
-    padding:0 18px;
+
+    padding:0 15px;
   }
 
-  .header-socials,
   .header-nav{
     display:none;
   }
 
   .header-brand{
-    display:block;
-    margin-right:5px;
+    left:50%;
+
+    height:48px;
   }
 
   .header-brand a{
-    font-size:.9rem;
+    font-size:.95rem;
   }
 
-  .header-linktree{
-    display:flex;
-    top:auto;
-    right:18px;
-    bottom:13px;
-    transform:none;
-    font-size:.46rem;
-    letter-spacing:.16em;
-    opacity:.75;
+  .header-socials{
+    gap:13px;
+
+    padding-right:1px;
   }
 
-  .header-linktree:hover,
-  .header-linktree:focus-visible{
-    transform:none;
+  .header-socials a{
+    width:16px;
+    height:16px;
+  }
+
+  .header-socials svg{
+    width:15px;
+    height:15px;
+  }
+
+  .header-socials::after{
+    height:15px;
   }
 
   .burger{
-    width:46px;
-    height:46px;
-    top:max(13px,env(safe-area-inset-top));
-    left:max(12px,env(safe-area-inset-left));
+    width:45px;
+    height:45px;
+
+    top:max(8px,env(safe-area-inset-top));
+    left:max(10px,env(safe-area-inset-left));
   }
 
   .side-menu{
     width:100%;
-    padding:92px 20px 35px;
+
+    padding:88px 20px 35px;
   }
+
+  /* HERO */
 
   .hero{
     min-height:100svh;
     height:100svh;
   }
 
+  /*
+     On phones the bear stays visible on the right,
+     while the left remains dark enough for the text.
+  */
+
   .hero-art{
-    object-position:67% center;
+    object-position:63% center;
   }
 
   .hero::before{
     background:
       linear-gradient(
         90deg,
-        rgba(0,0,0,.98) 0%,
-        rgba(0,0,0,.92) 39%,
-        rgba(0,0,0,.58) 67%,
-        rgba(0,0,0,.15) 100%
-      ),
+        rgba(0,0,0,.78) 0%,
+        rgba(0,0,0,.60) 40%,
+        rgba(0,0,0,.18) 72%,
+        rgba(0,0,0,.08) 100%
+      );
+  }
+
+  .hero::after{
+    background:
       linear-gradient(
         180deg,
-        rgba(0,0,0,.42),
-        transparent 38%,
-        rgba(0,0,0,.55)
+        rgba(0,0,0,.34),
+        transparent 22%,
+        transparent 72%,
+        rgba(0,0,0,.7)
       );
   }
 
   .hero-content{
     width:auto;
     max-width:100%;
+
     margin:0;
-    padding:100px 25px 72px;
+
+    padding:
+      100px
+      24px
+      82px;
+
     justify-content:center;
   }
 
   .brand-line{
-    margin-bottom:19px;
-    font-size:.49rem;
-    letter-spacing:.25em;
+    margin-bottom:17px;
+
+    font-size:.45rem;
+
+    letter-spacing:.23em;
   }
 
   .brand-line::before{
-    width:22px;
-  }
-
-  .hero-eyebrow{
-    margin-bottom:11px;
-    font-size:.56rem;
-    letter-spacing:.17em;
+    width:20px;
   }
 
   .hero-title{
-    font-size:clamp(3.35rem,15.5vw,5.8rem);
-    line-height:.81;
-    white-space:normal;
+    font-size:clamp(3.1rem,15vw,5rem);
+
+    line-height:.82;
+
+    letter-spacing:-.07em;
   }
 
   .hero-title .exotics{
-    font-size:.91em;
+    margin-left:8px;
+
+    font-size:.92em;
   }
 
   .hero-divider{
-    width:280px;
-    max-width:90%;
-    margin:27px 0 22px;
+    width:290px;
+
+    margin:27px 0 20px;
   }
 
   .hero-subtitle{
-    font-size:.65rem;
-    line-height:1.5;
+    max-width:320px;
+
+    font-size:.59rem;
+
+    line-height:1.55;
+
     letter-spacing:.11em;
   }
 
   .hero-tagline{
-    font-size:.51rem;
-    letter-spacing:.14em;
+    font-size:.45rem;
+
+    letter-spacing:.13em;
   }
 
   .hero-actions{
     width:100%;
-    max-width:330px;
-    margin-top:23px;
+    max-width:315px;
+
+    margin-top:22px;
+
     flex-direction:column;
-    gap:9px;
+
+    gap:8px;
   }
 
   .hero-btn{
     width:100%;
-    min-height:47px;
-    font-size:.59rem;
+
+    min-height:45px;
+
+    font-size:.55rem;
   }
 
   .hero-trust{
-    left:25px;
-    right:25px;
-    bottom:23px;
+    left:24px;
+    right:24px;
+
+    bottom:22px;
+
     gap:5px;
-    font-size:.43rem;
-    letter-spacing:.11em;
+
+    font-size:.38rem;
+
+    letter-spacing:.09em;
   }
 
   .scroll-indicator{
     display:none;
   }
+
+  /* PRODUCTS */
 
   .products,
   .telegram,
@@ -1347,6 +1793,7 @@ a,
 
   .product-grid{
     grid-template-columns:1fr;
+
     gap:24px;
   }
 
@@ -1383,11 +1830,18 @@ a,
     padding-left:20px;
     padding-right:20px;
   }
+
 }
 
-/* SMALL PHONES */
+/* =========================
+   SMALL PHONES
+========================= */
 
 @media(max-width:380px){
+
+  .header-socials{
+    gap:10px;
+  }
 
   .hero-content{
     padding-left:18px;
@@ -1395,29 +1849,29 @@ a,
   }
 
   .hero-title{
-    font-size:clamp(3rem,15.8vw,4.5rem);
-  }
-
-  .hero-eyebrow{
-    font-size:.51rem;
+    font-size:clamp(2.8rem,15.2vw,4.3rem);
   }
 
   .hero-subtitle{
-    font-size:.6rem;
+    font-size:.55rem;
   }
 
   .hero-tagline{
-    font-size:.45rem;
+    font-size:.41rem;
   }
 
   .hero-trust{
     left:18px;
     right:18px;
-    font-size:.38rem;
+
+    font-size:.34rem;
   }
+
 }
 
-/* REDUCED MOTION */
+/* =========================
+   REDUCED MOTION
+========================= */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1431,6 +1885,7 @@ a,
     animation:none!important;
     transition:none!important;
   }
+
 }
 
 </style>
@@ -1438,7 +1893,11 @@ a,
 
 <body>
 
-<a class="skip-link" href="#main-content">Skip to content</a>
+<a class="skip-link" href="#main-content">
+  Skip to content
+</a>
+
+<!-- LOADER -->
 
 <div class="loader" id="loader" aria-hidden="true">
   <div class="loader-mark">
@@ -1446,6 +1905,8 @@ a,
     <span>TOP TIER EXOTICS</span>
   </div>
 </div>
+
+<!-- OVERLAY -->
 
 <div class="overlay" id="overlay" hidden></div>
 
@@ -1464,13 +1925,48 @@ a,
   <span></span>
 </button>
 
-<!-- DESKTOP HEADER -->
+<!-- HEADER -->
 
 <header class="site-header">
 
   <div class="site-header-inner">
 
+    <!-- NAV -->
+
+    <nav class="header-nav" aria-label="Primary navigation">
+
+      <a href="#home">
+        HOME
+      </a>
+
+      <a href="#products">
+        COLLECTION
+      </a>
+
+      <a href="#contact">
+        CONTACT
+      </a>
+
+    </nav>
+
+    <!-- CENTER BRAND -->
+
+    <div class="header-brand">
+
+      <a
+        href="#home"
+        aria-label="TopTierExotics home"
+      >
+        TTE
+      </a>
+
+    </div>
+
+    <!-- SOCIAL LINKS -->
+
     <div class="header-socials">
+
+      <!-- TELEGRAM -->
 
       <a
         href="https://t.me/TTE_V2"
@@ -1478,10 +1974,15 @@ a,
         rel="noopener noreferrer"
         aria-label="Telegram"
       >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
           <path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/>
         </svg>
       </a>
+
+      <!-- INSTAGRAM -->
 
       <a
         href="https://www.instagram.com/toptierexotics.2k25"
@@ -1489,46 +1990,49 @@ a,
         rel="noopener noreferrer"
         aria-label="Instagram"
       >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
           <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
         </svg>
       </a>
 
+      <!-- PAYPAL -->
+
       <a
-        class="linktree-word"
+        href="https://www.paypal.me/TopTierExotics"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="PayPal"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/>
+        </svg>
+      </a>
+
+      <!-- LINKTREE -->
+
+      <a
         href="https://linktr.ee/TopTierExotics"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="TopTierExotics Linktree"
       >
-        Linktree
+        <span
+          class="linktree-icon"
+          aria-hidden="true"
+        >
+          ✦
+        </span>
       </a>
 
     </div>
 
-    <nav class="header-nav" aria-label="Primary navigation">
-
-      <a href="#home">HOME</a>
-      <a href="#products">COLLECTION</a>
-      <a href="#contact">CONTACT</a>
-
-    </nav>
-
-    <div class="header-brand">
-      <a href="#home" aria-label="TopTierExotics home">TTE</a>
-    </div>
-
   </div>
-
-  <a
-    class="header-linktree"
-    href="https://linktr.ee/TopTierExotics"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="TopTierExotics Linktree"
-  >
-    LINKTREE&nbsp;&nbsp; @TOPTIEREEXOTICS
-  </a>
 
 </header>
 
@@ -1542,9 +2046,17 @@ a,
   inert
 >
 
-  <a href="#home">HOME</a>
-  <a href="#products">COLLECTION</a>
-  <a href="#contact">CONTACT</a>
+  <a href="#home">
+    HOME
+  </a>
+
+  <a href="#products">
+    COLLECTION
+  </a>
+
+  <a href="#contact">
+    CONTACT
+  </a>
 
   <div class="menu-divider"></div>
 
@@ -1585,9 +2097,16 @@ a,
 
 <main id="main-content" tabindex="-1">
 
-<!-- HOMEPAGE -->
+<!-- =========================
+     HOMEPAGE
+========================= -->
 
-<section class="hero" id="home">
+<section
+  class="hero"
+  id="home"
+>
+
+  <!-- SINGLE HOMEPAGE ARTWORK -->
 
   <img
     class="hero-art"
@@ -1598,25 +2117,30 @@ a,
     decoding="async"
   >
 
+  <!-- HERO TEXT -->
+
   <div class="hero-content">
 
     <div class="brand-line">
       TOP TIER EXOTICS CLOTHING CO.
     </div>
 
-    <p class="hero-eyebrow">
-      PREMIUM CLOTHING • EXOTIC LIFESTYLE
-    </p>
-
     <h1 class="hero-title">
-      <span class="top">TOP TIER</span>
-      <span class="exotics">EXOTICS</span>
+
+      <span class="top">
+        TOP TIER
+      </span>
+
+      <span class="exotics">
+        Exotics
+      </span>
+
     </h1>
 
     <div class="hero-divider"></div>
 
     <p class="hero-subtitle">
-      PREMIUM CLOTHING. EXOTIC LIFESTYLE.
+      PREMIUM CLOTHING • EXOTIC LIFESTYLE.
     </p>
 
     <p class="hero-tagline">
@@ -1625,20 +2149,36 @@ a,
 
     <div class="hero-actions">
 
-      <a class="hero-btn" href="#products">
+      <a
+        class="hero-btn"
+        href="#products"
+      >
         SHOP COLLECTION
       </a>
 
-      <a class="hero-btn secondary" href="#products">
+      <a
+        class="hero-btn secondary"
+        href="#products"
+      >
         NEW DROPS
       </a>
 
     </div>
 
     <div class="hero-trust">
-      <span>TOP QUALITY</span>
-      <span>EXCLUSIVE DESIGNS</span>
-      <span>LIMITED DROPS</span>
+
+      <span>
+        TOP QUALITY
+      </span>
+
+      <span>
+        EXCLUSIVE DESIGNS
+      </span>
+
+      <span>
+        LIMITED DROPS
+      </span>
+
     </div>
 
   </div>
@@ -1649,11 +2189,19 @@ a,
 
 </section>
 
-<!-- COLLECTION -->
+<!-- =========================
+     COLLECTION
+========================= -->
 
-<section class="products" id="products" aria-labelledby="products-title">
+<section
+  class="products"
+  id="products"
+  aria-labelledby="products-title"
+>
 
-  <h2 id="products-title">Featured Collection</h2>
+  <h2 id="products-title">
+    Featured Collection
+  </h2>
 
   <p class="section-copy">
     Exclusive TopTierExotics pieces with limited availability and direct private-access ordering.
@@ -1665,9 +2213,14 @@ a,
 
     <article class="product">
 
-      <div class="badge">LIMITED</div>
+      <div class="badge">
+        LIMITED
+      </div>
 
-      <div class="product-image" data-gallery-frame="hat">
+      <div
+        class="product-image"
+        data-gallery-frame="hat"
+      >
 
         <button
           class="arrow arrow-left"
@@ -1708,7 +2261,9 @@ a,
         aria-label="Hat image gallery navigation"
       ></div>
 
-      <h3>TOPTIEREXOTICS HAT</h3>
+      <h3>
+        TOPTIEREXOTICS HAT
+      </h3>
 
       <p>
         Structured fit with a clean luxury-streetwear finish and stronger visual presence.
@@ -1733,9 +2288,14 @@ a,
 
     <article class="product">
 
-      <div class="badge">LIMITED</div>
+      <div class="badge">
+        LIMITED
+      </div>
 
-      <div class="product-image" data-gallery-frame="tracksuit">
+      <div
+        class="product-image"
+        data-gallery-frame="tracksuit"
+      >
 
         <button
           class="arrow arrow-left"
@@ -1776,7 +2336,9 @@ a,
         aria-label="Tracksuit image gallery navigation"
       ></div>
 
-      <h3>TOPTIEREXOTICS TRACKSUIT</h3>
+      <h3>
+        TOPTIEREXOTICS TRACKSUIT
+      </h3>
 
       <p>
         Premium hoodie and tapered joggers with a clean tailored luxury-streetwear look.
@@ -1801,11 +2363,18 @@ a,
 
 </section>
 
-<!-- TELEGRAM -->
+<!-- =========================
+     TELEGRAM
+========================= -->
 
-<section class="telegram" aria-labelledby="telegram-title">
+<section
+  class="telegram"
+  aria-labelledby="telegram-title"
+>
 
-  <h2 id="telegram-title">Private Access Only</h2>
+  <h2 id="telegram-title">
+    Private Access Only
+  </h2>
 
   <p>
     All drops are released through Telegram. Members receive earlier access,
@@ -1823,11 +2392,19 @@ a,
 
 </section>
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
-<section class="contact" id="contact" aria-labelledby="contact-title">
+<section
+  class="contact"
+  id="contact"
+  aria-labelledby="contact-title"
+>
 
-  <h2 id="contact-title">Contact</h2>
+  <h2 id="contact-title">
+    Contact
+  </h2>
 
   <p>
     Message us via Telegram or Instagram for orders, sizing,
@@ -1876,11 +2453,15 @@ a,
 
 </main>
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="footer">
 
-  <h2>CONNECT</h2>
+  <h2>
+    CONNECT
+  </h2>
 
   <p class="footer-copy">
     Private-access streetwear with limited releases and direct ordering through the channels below.
@@ -1888,16 +2469,23 @@ a,
 
   <div class="footer-icons">
 
+    <!-- TELEGRAM -->
+
     <a
       href="https://t.me/TTE_V2"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Telegram"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
         <path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/>
       </svg>
     </a>
+
+    <!-- INSTAGRAM -->
 
     <a
       href="https://www.instagram.com/toptierexotics.2k25"
@@ -1905,10 +2493,15 @@ a,
       rel="noopener noreferrer"
       aria-label="Instagram"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
         <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
       </svg>
     </a>
+
+    <!-- PAYPAL -->
 
     <a
       href="https://www.paypal.me/TopTierExotics"
@@ -1916,10 +2509,15 @@ a,
       rel="noopener noreferrer"
       aria-label="PayPal"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
         <path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/>
       </svg>
     </a>
+
+    <!-- LINKTREE -->
 
     <a
       href="https://linktr.ee/TopTierExotics"
@@ -1927,7 +2525,10 @@ a,
       rel="noopener noreferrer"
       aria-label="Linktree"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
         <path d="M11 3h2v5.3l3.7-3.7 1.4 1.4L14.4 10H20v2h-5.6l3.7 3.7-1.4 1.4L13 13.4V21h-2v-7.6l-3.7 3.7-1.4-1.4L9.6 12H4v-2h5.6L5.9 6l1.4-1.4L11 8.3V3Z"/>
       </svg>
     </a>
@@ -1940,7 +2541,9 @@ a,
 
 </footer>
 
-<!-- IMAGE ZOOM -->
+<!-- =========================
+     IMAGE ZOOM
+========================= -->
 
 <div
   class="zoom"
@@ -1960,13 +2563,20 @@ a,
     &times;
   </button>
 
-  <img id="zoomImg" alt="">
+  <img
+    id="zoomImg"
+    alt=""
+  >
 
 </div>
 
 <script>
 
 "use strict";
+
+/* =========================
+   ELEMENTS
+========================= */
 
 const loader = document.getElementById("loader");
 const menu = document.getElementById("menu");
@@ -1978,7 +2588,6 @@ const zoomImg = document.getElementById("zoomImg");
 const zoomClose = document.getElementById("zoomClose");
 
 const pageBody = document.body;
-const products = document.querySelectorAll(".product");
 
 let lastFocusedElement = null;
 let suppressZoomUntil = 0;
@@ -1992,6 +2601,10 @@ const focusableSelector = [
 const fallbackImage =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420'%3E%3Crect width='420' height='420' fill='%230b0b0b'/%3E%3Ccircle cx='210' cy='178' r='72' fill='none' stroke='%2339ff14' stroke-opacity='.55' stroke-width='8'/%3E%3Cpath d='M108 308h204' stroke='%2339ff14' stroke-opacity='.45' stroke-width='10' stroke-linecap='round'/%3E%3Ctext x='210' y='350' text-anchor='middle' fill='%23ffffff' fill-opacity='.72' font-family='Arial,sans-serif' font-size='22' font-weight='700'%3ETOP TIER EXOTICS%3C/text%3E%3C/svg%3E";
 
+/* =========================
+   GALLERIES
+========================= */
+
 const galleries = {
 
   hat:{
@@ -2000,14 +2613,20 @@ const galleries = {
       "hat1-back.jpg",
       "hat1-side.jpg"
     ],
+
     alts:[
       "TopTierExotics hat front view",
       "TopTierExotics hat back view",
       "TopTierExotics hat side view"
     ],
+
     index:0,
-    imageEl:document.getElementById("hatImage"),
-    dotsEl:document.getElementById("hatDots")
+
+    imageEl:
+      document.getElementById("hatImage"),
+
+    dotsEl:
+      document.getElementById("hatDots")
   },
 
   tracksuit:{
@@ -2017,36 +2636,54 @@ const galleries = {
       "tracksuit-side.jpg",
       "tracksuit-detail.jpg"
     ],
+
     alts:[
       "TopTierExotics tracksuit front view",
       "TopTierExotics tracksuit back view",
       "TopTierExotics tracksuit side view",
       "TopTierExotics tracksuit detail view"
     ],
+
     index:0,
-    imageEl:document.getElementById("tracksuitImage"),
-    dotsEl:document.getElementById("tracksuitDots")
+
+    imageEl:
+      document.getElementById("tracksuitImage"),
+
+    dotsEl:
+      document.getElementById("tracksuitDots")
   }
 
 };
 
-/* LOADER */
+/* =========================
+   LOADER
+========================= */
 
 function hideLoader(){
 
-  if(!loader || loader.classList.contains("hidden")){
+  if(
+    !loader ||
+    loader.classList.contains("hidden")
+  ){
     return;
   }
 
   loader.classList.add("hidden");
-
 }
 
-window.addEventListener("load",hideLoader);
+window.addEventListener(
+  "load",
+  hideLoader
+);
 
-window.setTimeout(hideLoader,2500);
+window.setTimeout(
+  hideLoader,
+  2500
+);
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
 
 function toggleMenu(forceState){
 
@@ -2055,26 +2692,20 @@ function toggleMenu(forceState){
       ? forceState
       : !menu.classList.contains("active");
 
-  menu.classList.toggle("active",shouldOpen);
-  overlay.classList.toggle("active",shouldOpen);
+  menu.classList.toggle(
+    "active",
+    shouldOpen
+  );
 
-  if(shouldOpen){
+  overlay.classList.toggle(
+    "active",
+    shouldOpen
+  );
 
-    overlay.hidden = false;
-
-  }else{
-
-    window.setTimeout(()=>{
-
-      if(!menu.classList.contains("active")){
-        overlay.hidden = true;
-      }
-
-    },320);
-
-  }
-
-  burger.classList.toggle("active",shouldOpen);
+  burger.classList.toggle(
+    "active",
+    shouldOpen
+  );
 
   burger.setAttribute(
     "aria-expanded",
@@ -2083,7 +2714,9 @@ function toggleMenu(forceState){
 
   burger.setAttribute(
     "aria-label",
-    shouldOpen ? "Close menu" : "Open menu"
+    shouldOpen
+      ? "Close menu"
+      : "Open menu"
   );
 
   menu.setAttribute(
@@ -2095,23 +2728,42 @@ function toggleMenu(forceState){
     menu.inert = !shouldOpen;
   }
 
-  pageBody.classList.toggle("menu-open",shouldOpen);
+  pageBody.classList.toggle(
+    "menu-open",
+    shouldOpen
+  );
 
   if(shouldOpen){
 
-    lastFocusedElement = document.activeElement;
+    overlay.hidden = false;
 
-    const firstLink = menu.querySelector("a");
+    lastFocusedElement =
+      document.activeElement;
+
+    const firstLink =
+      menu.querySelector("a");
 
     if(firstLink){
 
-      window.setTimeout(()=>{
-        firstLink.focus();
-      },50);
+      window.setTimeout(
+        ()=>{
+          firstLink.focus();
+        },
+        50
+      );
 
     }
 
   }else{
+
+    window.setTimeout(
+      ()=>{
+        if(!menu.classList.contains("active")){
+          overlay.hidden = true;
+        }
+      },
+      320
+    );
 
     if(
       lastFocusedElement &&
@@ -2120,424 +2772,601 @@ function toggleMenu(forceState){
     ){
 
       lastFocusedElement.focus();
-
     }
 
   }
-
 }
 
-burger.addEventListener("click",()=>{
-  toggleMenu();
-});
+burger.addEventListener(
+  "click",
+  ()=>{
+    toggleMenu();
+  }
+);
 
-overlay.addEventListener("click",()=>{
-  toggleMenu(false);
-});
-
-menu.querySelectorAll("a").forEach(link=>{
-
-  link.addEventListener("click",()=>{
+overlay.addEventListener(
+  "click",
+  ()=>{
     toggleMenu(false);
-  });
+  }
+);
 
-});
+menu.querySelectorAll("a").forEach(
+  link=>{
 
-/* KEYBOARD */
-
-document.addEventListener("keydown",event=>{
-
-  if(event.key === "Escape"){
-
-    if(zoom.classList.contains("active")){
-
-      closeZoom();
-      return;
-
-    }
-
-    if(menu.classList.contains("active")){
-
-      toggleMenu(false);
-      return;
-
-    }
+    link.addEventListener(
+      "click",
+      ()=>{
+        toggleMenu(false);
+      }
+    );
 
   }
+);
 
-  if(event.key === "Tab"){
+/* =========================
+   KEYBOARD
+========================= */
 
-    if(menu.classList.contains("active")){
-      trapFocus(event,menu);
-    }
+document.addEventListener(
+  "keydown",
+  event=>{
 
-    if(zoom.classList.contains("active")){
-      trapFocus(event,zoom);
-    }
+    if(event.key === "Escape"){
 
-  }
+      if(
+        zoom.classList.contains("active")
+      ){
 
-});
+        closeZoom();
 
-/* PRODUCT REVEAL */
-
-function revealVisibleProducts(){
-
-  products.forEach(product=>{
-
-    const rect = product.getBoundingClientRect();
-
-    if(rect.top < window.innerHeight * .92){
-
-      product.classList.add("show");
-
-    }
-
-  });
-
-}
-
-if("IntersectionObserver" in window){
-
-  const observer = new IntersectionObserver(entries=>{
-
-    entries.forEach(entry=>{
-
-      if(entry.isIntersecting){
-
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-
+        return;
       }
 
-    });
+      if(
+        menu.classList.contains("active")
+      ){
 
-  },{
-    threshold:.12
-  });
+        toggleMenu(false);
 
-  products.forEach(product=>observer.observe(product));
+        return;
+      }
 
-}else{
+    }
 
-  products.forEach(product=>product.classList.add("show"));
+    if(event.key === "Tab"){
 
-}
+      if(
+        menu.classList.contains("active")
+      ){
 
-/* GALLERIES */
+        trapFocus(
+          event,
+          menu
+        );
+      }
+
+      if(
+        zoom.classList.contains("active")
+      ){
+
+        trapFocus(
+          event,
+          zoom
+        );
+      }
+
+    }
+
+  }
+);
+
+/* =========================
+   GALLERIES
+========================= */
 
 function createDots(name){
 
-  const gallery = galleries[name];
+  const gallery =
+    galleries[name];
 
-  if(!gallery || !gallery.dotsEl){
+  if(
+    !gallery ||
+    !gallery.dotsEl
+  ){
     return;
   }
 
   gallery.dotsEl.innerHTML = "";
 
-  if(gallery.images.length <= 1){
+  if(
+    gallery.images.length <= 1
+  ){
     return;
   }
 
-  gallery.images.forEach((_,index)=>{
+  gallery.images.forEach(
+    (_,index)=>{
 
-    const dot = document.createElement("button");
+      const dot =
+        document.createElement("button");
 
-    dot.type = "button";
-    dot.className = index === gallery.index ? "active" : "";
+      dot.type = "button";
 
-    dot.setAttribute(
-      "aria-label",
-      "View " + gallery.alts[index]
-    );
+      dot.className =
+        index === gallery.index
+          ? "active"
+          : "";
 
-    dot.setAttribute(
-      "aria-current",
-      index === gallery.index ? "true" : "false"
-    );
+      dot.setAttribute(
+        "aria-label",
+        "View " +
+        gallery.alts[index]
+      );
 
-    dot.addEventListener("click",()=>{
-      setGalleryImage(name,index);
-    });
+      dot.setAttribute(
+        "aria-current",
+        index === gallery.index
+          ? "true"
+          : "false"
+      );
 
-    gallery.dotsEl.appendChild(dot);
+      dot.addEventListener(
+        "click",
+        ()=>{
+          setGalleryImage(
+            name,
+            index
+          );
+        }
+      );
 
-  });
+      gallery.dotsEl.appendChild(
+        dot
+      );
+
+    }
+  );
 
 }
 
 function updateDots(name){
 
-  const gallery = galleries[name];
+  const gallery =
+    galleries[name];
 
-  if(!gallery || !gallery.dotsEl){
+  if(
+    !gallery ||
+    !gallery.dotsEl
+  ){
     return;
   }
 
-  Array.from(gallery.dotsEl.children).forEach((dot,index)=>{
+  Array.from(
+    gallery.dotsEl.children
+  ).forEach(
+    (dot,index)=>{
 
-    const active = index === gallery.index;
+      const active =
+        index === gallery.index;
 
-    dot.classList.toggle("active",active);
-    dot.setAttribute("aria-current",String(active));
+      dot.classList.toggle(
+        "active",
+        active
+      );
 
-  });
+      dot.setAttribute(
+        "aria-current",
+        String(active)
+      );
+
+    }
+  );
 
 }
 
 function updateGalleryControls(name){
 
-  const gallery = galleries[name];
+  const gallery =
+    galleries[name];
 
   if(!gallery){
     return;
   }
 
-  const multiple = gallery.images.length > 1;
+  const multiple =
+    gallery.images.length > 1;
 
   document
-    .querySelectorAll('[data-gallery="' + name + '"]')
-    .forEach(button=>{
+    .querySelectorAll(
+      '[data-gallery="' +
+      name +
+      '"]'
+    )
+    .forEach(
+      button=>{
 
-      button.hidden = !multiple;
-      button.disabled = !multiple;
+        button.hidden =
+          !multiple;
 
-    });
+        button.disabled =
+          !multiple;
+
+      }
+    );
 
 }
 
-function setGalleryImage(name,index){
+function setGalleryImage(
+  name,
+  index
+){
 
-  const gallery = galleries[name];
+  const gallery =
+    galleries[name];
 
-  if(!gallery || !gallery.imageEl){
+  if(
+    !gallery ||
+    !gallery.imageEl
+  ){
     return;
   }
 
-  gallery.index = index;
+  gallery.index =
+    Math.max(
+      0,
+      Math.min(
+        index,
+        gallery.images.length - 1
+      )
+    );
 
-  const image = gallery.imageEl;
+  const image =
+    gallery.imageEl;
 
-  image.classList.add("is-loading");
-  image.classList.remove("is-missing");
+  image.classList.add(
+    "is-loading"
+  );
 
-  image.src = gallery.images[index];
-  image.alt = gallery.alts[index];
+  image.classList.remove(
+    "is-missing"
+  );
+
+  image.src =
+    gallery.images[
+      gallery.index
+    ];
+
+  image.alt =
+    gallery.alts[
+      gallery.index
+    ];
 
   image.setAttribute(
     "aria-label",
-    "Open larger view of " + gallery.alts[index]
+    "Open larger view of " +
+    gallery.alts[
+      gallery.index
+    ]
   );
 
   updateDots(name);
-
 }
 
-function changeGallery(name,direction){
+function changeGallery(
+  name,
+  direction
+){
 
-  const gallery = galleries[name];
+  const gallery =
+    galleries[name];
 
   if(!gallery){
     return;
   }
 
-  const total = gallery.images.length;
+  const total =
+    gallery.images.length;
 
   if(total <= 1){
     return;
   }
 
   const next =
-    (gallery.index + direction + total) % total;
+    (
+      gallery.index +
+      direction +
+      total
+    ) % total;
 
-  setGalleryImage(name,next);
-
+  setGalleryImage(
+    name,
+    next
+  );
 }
 
 document
-  .querySelectorAll("[data-gallery]")
-  .forEach(button=>{
+  .querySelectorAll(
+    "[data-gallery]"
+  )
+  .forEach(
+    button=>{
 
-    button.addEventListener("click",()=>{
-
-      changeGallery(
-        button.dataset.gallery,
-        Number(button.dataset.direction)
+      button.addEventListener(
+        "click",
+        ()=>{
+          changeGallery(
+            button.dataset.gallery,
+            Number(
+              button.dataset.direction
+            )
+          );
+        }
       );
 
-    });
+    }
+  );
 
-  });
+Object.keys(galleries).forEach(
+  name=>{
 
-Object.keys(galleries).forEach(name=>{
+    createDots(name);
 
-  createDots(name);
-  updateGalleryControls(name);
+    updateGalleryControls(name);
 
-  galleries[name].images.slice(1).forEach(src=>{
+    galleries[name]
+      .images
+      .slice(1)
+      .forEach(
+        src=>{
 
-    const preload = new Image();
-    preload.src = src;
+          const preload =
+            new Image();
 
-  });
-
-});
-
-/* IMAGE HANDLING */
-
-document
-  .querySelectorAll(".product-image img")
-  .forEach(img=>{
-
-    img.addEventListener("click",()=>{
-
-      openZoom(img);
-
-    });
-
-    img.addEventListener("keydown",event=>{
-
-      if(
-        event.key === "Enter" ||
-        event.key === " "
-      ){
-
-        event.preventDefault();
-        openZoom(img);
-
-      }
-
-    });
-
-    img.addEventListener("load",()=>{
-
-      img.classList.remove("is-loading");
-      img.classList.remove("is-missing");
-
-    });
-
-    img.addEventListener("error",()=>{
-
-      img.classList.remove("is-loading");
-      img.classList.add("is-missing");
-
-      if(img.src !== fallbackImage){
-
-        img.src = fallbackImage;
-
-      }
-
-      img.alt = "Product image unavailable";
-
-    });
-
-  });
-
-/* MOBILE SWIPE */
-
-document
-  .querySelectorAll("[data-gallery-frame]")
-  .forEach(frame=>{
-
-    let startX = 0;
-    let startY = 0;
-
-    frame.addEventListener(
-      "touchstart",
-      event=>{
-
-        const touch = event.changedTouches[0];
-
-        startX = touch.clientX;
-        startY = touch.clientY;
-
-      },
-      {passive:true}
-    );
-
-    frame.addEventListener(
-      "touchend",
-      event=>{
-
-        const touch = event.changedTouches[0];
-
-        const deltaX = touch.clientX - startX;
-        const deltaY = touch.clientY - startY;
-
-        const name = frame.dataset.galleryFrame;
-        const gallery = galleries[name];
-
-        if(!gallery || gallery.images.length <= 1){
-          return;
-        }
-
-        if(
-          Math.abs(deltaX) > 36 &&
-          Math.abs(deltaX) > Math.abs(deltaY)
-        ){
-
-          changeGallery(
-            name,
-            deltaX < 0 ? 1 : -1
-          );
-
-          suppressZoomUntil = Date.now() + 450;
+          preload.src = src;
 
         }
-
-      },
-      {passive:true}
-    );
-
-  });
-
-/* ZOOM */
-
-function openZoom(imageElement){
-
-  if(
-    Date.now() < suppressZoomUntil ||
-    imageElement.classList.contains("is-missing")
-  ){
-
-    return;
+      );
 
   }
+);
 
-  lastFocusedElement = document.activeElement;
+/* =========================
+   PRODUCT IMAGE HANDLING
+========================= */
+
+document
+  .querySelectorAll(
+    ".product-image img"
+  )
+  .forEach(
+    img=>{
+
+      img.addEventListener(
+        "click",
+        ()=>{
+          openZoom(img);
+        }
+      );
+
+      img.addEventListener(
+        "keydown",
+        event=>{
+
+          if(
+            event.key === "Enter" ||
+            event.key === " "
+          ){
+
+            event.preventDefault();
+
+            openZoom(img);
+
+          }
+
+        }
+      );
+
+      img.addEventListener(
+        "load",
+        ()=>{
+
+          img.classList.remove(
+            "is-loading"
+          );
+
+          img.classList.remove(
+            "is-missing"
+          );
+
+        }
+      );
+
+      img.addEventListener(
+        "error",
+        ()=>{
+
+          img.classList.remove(
+            "is-loading"
+          );
+
+          img.classList.add(
+            "is-missing"
+          );
+
+          if(
+            img.src !== fallbackImage
+          ){
+
+            img.src =
+              fallbackImage;
+
+          }
+
+          img.alt =
+            "Product image unavailable";
+
+        }
+      );
+
+    }
+  );
+
+/* =========================
+   MOBILE SWIPE
+========================= */
+
+document
+  .querySelectorAll(
+    "[data-gallery-frame]"
+  )
+  .forEach(
+    frame=>{
+
+      let startX = 0;
+      let startY = 0;
+
+      frame.addEventListener(
+        "touchstart",
+        event=>{
+
+          const touch =
+            event.changedTouches[0];
+
+          startX =
+            touch.clientX;
+
+          startY =
+            touch.clientY;
+
+        },
+        {
+          passive:true
+        }
+      );
+
+      frame.addEventListener(
+        "touchend",
+        event=>{
+
+          const touch =
+            event.changedTouches[0];
+
+          const deltaX =
+            touch.clientX -
+            startX;
+
+          const deltaY =
+            touch.clientY -
+            startY;
+
+          const name =
+            frame.dataset.galleryFrame;
+
+          const gallery =
+            galleries[name];
+
+          if(
+            !gallery ||
+            gallery.images.length <= 1
+          ){
+            return;
+          }
+
+          if(
+            Math.abs(deltaX) > 36 &&
+            Math.abs(deltaX) >
+            Math.abs(deltaY)
+          ){
+
+            changeGallery(
+              name,
+              deltaX < 0
+                ? 1
+                : -1
+            );
+
+            suppressZoomUntil =
+              Date.now() + 450;
+
+          }
+
+        },
+        {
+          passive:true
+        }
+      );
+
+    }
+  );
+
+/* =========================
+   ZOOM
+========================= */
+
+function openZoom(
+  imageElement
+){
+
+  if(
+    Date.now() <
+    suppressZoomUntil
+  ){
+    return;
+  }
+
+  if(
+    imageElement.classList.contains(
+      "is-missing"
+    )
+  ){
+    return;
+  }
+
+  lastFocusedElement =
+    document.activeElement;
 
   zoomImg.src =
     imageElement.currentSrc ||
     imageElement.src;
 
-  zoomImg.alt = imageElement.alt;
+  zoomImg.alt =
+    imageElement.alt;
 
-  zoom.classList.add("active");
+  zoom.classList.add(
+    "active"
+  );
 
   zoom.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  pageBody.classList.add("zoom-open");
+  pageBody.classList.add(
+    "zoom-open"
+  );
 
   zoomClose.focus();
-
 }
 
 function closeZoom(){
 
-  zoom.classList.remove("active");
+  zoom.classList.remove(
+    "active"
+  );
 
   zoom.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  zoomImg.removeAttribute("src");
+  zoomImg.removeAttribute(
+    "src"
+  );
 
-  pageBody.classList.remove("zoom-open");
+  pageBody.classList.remove(
+    "zoom-open"
+  );
 
   if(
     lastFocusedElement &&
@@ -2550,26 +3379,38 @@ function closeZoom(){
 
 }
 
-function trapFocus(event,container){
+function trapFocus(
+  event,
+  container
+){
 
   const focusable =
     Array.from(
-      container.querySelectorAll(focusableSelector)
-    ).filter(element=>{
+      container.querySelectorAll(
+        focusableSelector
+      )
+    ).filter(
+      element=>{
 
-      return(
-        !element.disabled &&
-        element.offsetParent !== null
-      );
+        return(
+          !element.disabled &&
+          element.offsetParent !== null
+        );
 
-    });
+      }
+    );
 
   if(!focusable.length){
     return;
   }
 
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
+  const first =
+    focusable[0];
+
+  const last =
+    focusable[
+      focusable.length - 1
+    ];
 
   if(
     event.shiftKey &&
@@ -2577,6 +3418,7 @@ function trapFocus(event,container){
   ){
 
     event.preventDefault();
+
     last.focus();
 
   }
@@ -2587,6 +3429,7 @@ function trapFocus(event,container){
   ){
 
     event.preventDefault();
+
     first.focus();
 
   }
@@ -2602,29 +3445,36 @@ zoom.addEventListener(
   "click",
   event=>{
 
-    if(event.target === zoom){
+    if(
+      event.target === zoom
+    ){
+
       closeZoom();
+
     }
 
   }
 );
 
-/* RESPONSIVE MENU */
+/* =========================
+   RESPONSIVE MENU
+========================= */
 
-window.addEventListener("resize",()=>{
+window.addEventListener(
+  "resize",
+  ()=>{
 
-  if(
-    window.innerWidth > 700 &&
-    menu.classList.contains("active")
-  ){
+    if(
+      window.innerWidth > 700 &&
+      menu.classList.contains("active")
+    ){
 
-    toggleMenu(false);
+      toggleMenu(false);
+
+    }
 
   }
-
-});
-
-revealVisibleProducts();
+);
 
 </script>
 

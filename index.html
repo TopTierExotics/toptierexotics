@@ -5,40 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>TopTierExotics | Private Access Luxury Streetwear</title>
-  <meta name="description" content="TopTierExotics — private access luxury streetwear, exclusive designs and limited drops.">
+  <meta name="description" content="TopTierExotics — premium clothing and exotic lifestyle. Exclusive designs, limited drops and private Telegram access.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#050806">
+  <meta name="theme-color" content="#050706">
 
   <link rel="canonical" href="https://toptierexotics.github.io/toptierexotics/">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
 
-  <link rel="preload" as="image" href="hero-mascot.png" fetchpriority="high">
-  <link rel="preload" as="image" href="logo.png">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="TopTierExotics | Private Access Luxury Streetwear">
-  <meta property="og:description" content="Exclusive luxury streetwear. Limited drops. Private access.">
+  <meta property="og:description" content="Premium clothing. Exotic lifestyle. Exclusive designs and limited drops.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toptierexotics.github.io/toptierexotics/">
   <meta property="og:image" content="https://toptierexotics.github.io/toptierexotics/logo.png">
   <meta property="og:site_name" content="TopTierExotics">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TopTierExotics | Private Access Luxury Streetwear">
-  <meta name="twitter:description" content="Exclusive luxury streetwear. Limited drops. Private access.">
+  <meta name="twitter:description" content="Premium clothing. Exotic lifestyle. Exclusive designs and limited drops.">
   <meta name="twitter:image" content="https://toptierexotics.github.io/toptierexotics/logo.png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,33 +40,31 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --black: #020302;
-      --black-2: #050806;
-      --green: #17482c;
-      --green-light: #2d7545;
-      --green-bright: #3f8f59;
-      --gold: #d2b15d;
-      --gold-light: #ead58a;
-      --white: #f7f7f3;
-      --muted: rgba(247, 247, 243, 0.68);
-      --soft: rgba(247, 247, 243, 0.45);
-      --line: rgba(210, 177, 93, 0.26);
-      --shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-      --radius: 18px;
+      --black: #020303;
+      --black-soft: #050706;
+      --green: #173524;
+      --green-mid: #244c32;
+      --green-light: #3b704b;
+      --cream: #f1efe8;
+      --white: #ffffff;
+      --gold: #c9a653;
+      --gold-light: #dfc477;
+      --muted: rgba(241,239,232,.68);
+      --faint: rgba(241,239,232,.42);
+      --line: rgba(201,166,83,.38);
+      --shadow: rgba(0,0,0,.72);
     }
 
-    /* =========================
-       RESET
-    ========================= */
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -89,27 +73,11 @@
     }
 
     body {
-      min-height: 100%;
+      min-height: 100vh;
       overflow-x: hidden;
-      background:
-        radial-gradient(
-          circle at 75% 20%,
-          rgba(45, 117, 69, 0.18),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 15% 70%,
-          rgba(23, 72, 44, 0.16),
-          transparent 28%
-        ),
-        linear-gradient(
-          180deg,
-          #020302 0%,
-          #050806 42%,
-          #020302 100%
-        );
-      color: var(--white);
-      font-family: "Montserrat", Arial, sans-serif;
+      background: var(--black);
+      color: var(--cream);
+      font-family: "Montserrat", sans-serif;
       line-height: 1.5;
     }
 
@@ -144,27 +112,9 @@
       outline-offset: 4px;
     }
 
-    .skip-link {
-      position: fixed;
-      top: -70px;
-      left: 18px;
-      z-index: 5000;
-      padding: 12px 18px;
-      background: var(--gold);
-      color: #000;
-      border-radius: 999px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus {
-      top: 18px;
-    }
-
-    /* =========================
+    /* =========================================================
        LOADER
-    ========================= */
+    ========================================================= */
 
     .loader {
       position: fixed;
@@ -173,12 +123,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #020302;
+      background: #020303;
       opacity: 1;
       visibility: visible;
-      transition:
-        opacity 0.45s ease,
-        visibility 0.45s ease;
+      transition: opacity .55s ease, visibility .55s ease;
     }
 
     .loader.hidden {
@@ -187,68 +135,48 @@
       pointer-events: none;
     }
 
-    .loader-inner {
-      text-align: center;
-    }
-
     .loader img {
-      width: min(170px, 45vw);
+      width: min(170px, 42vw);
       height: auto;
-      filter:
-        drop-shadow(0 0 20px rgba(63, 143, 89, 0.35))
-        drop-shadow(0 0 35px rgba(210, 177, 93, 0.1));
-      animation: loaderPulse 1.7s ease-in-out infinite;
+      object-fit: contain;
+      filter: drop-shadow(0 0 24px rgba(201,166,83,.18));
     }
 
-    .loader-line {
-      width: 90px;
-      height: 1px;
-      margin: 22px auto 0;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.1);
-    }
+    /* =========================================================
+       SKIP LINK
+    ========================================================= */
 
-    .loader-line::after {
-      content: "";
-      display: block;
-      width: 45%;
-      height: 100%;
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -60px;
+      z-index: 6000;
+      padding: 12px 18px;
       background: var(--gold);
-      animation: loaderLine 1.2s ease-in-out infinite;
+      color: #000;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
-    @keyframes loaderPulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.045);
-      }
+    .skip-link:focus {
+      top: 16px;
     }
 
-    @keyframes loaderLine {
-      0% {
-        transform: translateX(-120%);
-      }
-
-      100% {
-        transform: translateX(330%);
-      }
-    }
-
-    /* =========================
-       HEADER / BURGER
-    ========================= */
+    /* =========================================================
+       HAMBURGER
+    ========================================================= */
 
     .burger {
       position: fixed;
       top: 22px;
       left: 22px;
-      z-index: 3000;
+      z-index: 4100;
 
-      width: 50px;
-      height: 50px;
+      width: 46px;
+      height: 46px;
 
       display: flex;
       flex-direction: column;
@@ -256,41 +184,39 @@
       justify-content: center;
       gap: 5px;
 
-      border: 1px solid rgba(210, 177, 93, 0.25);
-      border-radius: 4px;
+      padding: 0;
 
-      background: rgba(2, 3, 2, 0.72);
-      backdrop-filter: blur(14px);
+      border: 1px solid rgba(201,166,83,.35);
+      background: rgba(2,3,3,.72);
+      color: var(--cream);
 
       cursor: pointer;
 
-      box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.35),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
 
       transition:
-        border-color 0.25s ease,
-        background 0.25s ease;
+        border-color .25s ease,
+        background .25s ease;
     }
 
-    .burger:hover,
-    .burger:focus-visible {
-      border-color: rgba(210, 177, 93, 0.65);
-      background: rgba(10, 16, 11, 0.9);
+    .burger:hover {
+      border-color: rgba(201,166,83,.75);
+      background: rgba(10,14,11,.9);
     }
 
     .burger-line {
-      display: block;
-      width: 21px;
-      height: 2px;
-      background: #fff;
+      width: 20px;
+      height: 1.5px;
+      background: var(--cream);
       transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
+        transform .3s ease,
+        opacity .3s ease,
+        background .3s ease;
     }
 
     .burger.active .burger-line:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
+      transform: translateY(6.5px) rotate(45deg);
     }
 
     .burger.active .burger-line:nth-child(2) {
@@ -298,260 +224,229 @@
     }
 
     .burger.active .burger-line:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
+      transform: translateY(-6.5px) rotate(-45deg);
     }
 
-    /* =========================
-       SIDE MENU
-    ========================= */
+    /* =========================================================
+       OVERLAY
+    ========================================================= */
 
     .overlay {
       position: fixed;
       inset: 0;
-      z-index: 1800;
+      z-index: 3900;
 
-      background: rgba(0, 0, 0, 0.74);
+      background: rgba(0,0,0,.74);
       backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
 
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
 
-      transition: opacity 0.3s ease;
+      transition:
+        opacity .35s ease,
+        visibility .35s ease;
     }
 
     .overlay.active {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
     }
+
+    /* =========================================================
+       SIDE MENU
+    ========================================================= */
 
     .side-menu {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 2000;
+      z-index: 4000;
 
-      width: min(330px, 86vw);
-      height: 100%;
+      width: min(340px, 88vw);
+      height: 100dvh;
 
       padding:
         110px
-        30px
+        34px
         40px;
 
       background:
         linear-gradient(
-          150deg,
-          rgba(45, 117, 69, 0.15),
-          transparent 30%
-        ),
-        linear-gradient(
-          180deg,
-          #060907 0%,
-          #020302 100%
+          160deg,
+          rgba(36,76,50,.28),
+          rgba(3,5,4,.98) 42%,
+          #020303 100%
         );
 
-      border-right: 1px solid rgba(210, 177, 93, 0.18);
+      border-right: 1px solid rgba(201,166,83,.18);
 
       transform: translateX(-105%);
-      transition: transform 0.38s cubic-bezier(.22, .8, .25, 1);
+      transition: transform .42s cubic-bezier(.22,.61,.36,1);
 
-      box-shadow: 30px 0 80px rgba(0, 0, 0, 0.7);
+      box-shadow: 30px 0 80px rgba(0,0,0,.65);
+
+      overflow-y: auto;
     }
 
     .side-menu.active {
       transform: translateX(0);
     }
 
-    .side-menu::before {
-      content: "TOP TIER EXOTICS";
-      position: absolute;
-      top: 62px;
-      left: 30px;
+    .menu-brand {
+      margin-bottom: 52px;
+    }
 
-      color: rgba(210, 177, 93, 0.6);
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.28em;
+    .menu-brand img {
+      width: 175px;
+      height: auto;
+      object-fit: contain;
+      opacity: .92;
+    }
+
+    .menu-label {
+      margin-top: 14px;
+      color: var(--gold);
+      font-size: .6rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
     }
 
     .side-menu a {
       display: block;
+      width: 100%;
 
-      margin-bottom: 9px;
-      padding: 15px 16px;
+      padding: 15px 0;
 
-      color: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+
+      color: var(--cream);
       text-decoration: none;
 
-      border-left: 2px solid transparent;
-
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
 
       transition:
-        color 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+        color .25s ease,
+        padding-left .25s ease;
     }
 
     .side-menu a:hover,
     .side-menu a:focus-visible {
       color: var(--gold-light);
-      background: rgba(255, 255, 255, 0.035);
-      border-left-color: var(--gold);
-      transform: translateX(5px);
+      padding-left: 8px;
     }
 
-    /* =========================
+    /* =========================================================
        HERO
-    ========================= */
+    ========================================================= */
 
     .hero {
       position: relative;
       min-height: 100svh;
-      isolation: isolate;
+      height: 100vh;
+
+      display: grid;
+      grid-template-columns: minmax(430px, 44%) minmax(0, 56%);
+
       overflow: hidden;
 
-      display: flex;
-      align-items: center;
-
-      padding:
-        80px
-        clamp(24px, 5vw, 80px)
-        60px;
+      background:
+        radial-gradient(
+          ellipse 55% 75% at 72% 50%,
+          rgba(39,87,55,.40) 0%,
+          rgba(19,48,30,.20) 36%,
+          transparent 72%
+        ),
+        linear-gradient(
+          90deg,
+          #010202 0%,
+          #020403 46%,
+          #071109 70%,
+          #0c1b11 100%
+        );
     }
-
-    /*
-      Large atmospheric lighting behind mascot.
-    */
 
     .hero::before {
       content: "";
       position: absolute;
-      z-index: -3;
-
-      top: -15%;
-      right: 5%;
-
-      width: 70vw;
-      height: 90vh;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
 
       background:
-        radial-gradient(
-          ellipse at center,
-          rgba(48, 109, 64, 0.38),
-          rgba(16, 40, 24, 0.18) 35%,
-          transparent 70%
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.5),
+          transparent 48%,
+          rgba(0,0,0,.08)
         );
-
-      filter: blur(15px);
-      pointer-events: none;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      z-index: -4;
       inset: 0;
+      z-index: 8;
+      pointer-events: none;
 
       background:
-        linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.92) 0%,
-          rgba(0, 0, 0, 0.75) 29%,
-          rgba(0, 0, 0, 0.18) 61%,
-          rgba(0, 0, 0, 0.34) 100%
-        );
-
-      pointer-events: none;
-    }
-
-    .hero-noise {
-      position: absolute;
-      z-index: -2;
-      inset: 0;
-      opacity: 0.045;
-      pointer-events: none;
-
-      background-image:
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 3px,
-          rgba(255, 255, 255, 0.08) 4px
+        radial-gradient(
+          ellipse at center,
+          transparent 45%,
+          rgba(0,0,0,.38) 100%
         );
     }
 
-    .hero-inner {
+    /* =========================================================
+       HERO LEFT
+    ========================================================= */
+
+    .hero-content {
       position: relative;
-      z-index: 3;
-
-      width: min(1380px, 100%);
-      min-height: calc(100svh - 140px);
-
-      margin: 0 auto;
+      z-index: 20;
 
       display: flex;
-      align-items: center;
-    }
+      flex-direction: column;
+      justify-content: center;
 
-    /* LEFT SIDE */
+      padding:
+        100px
+        clamp(34px, 5vw, 86px)
+        90px
+        clamp(42px, 7vw, 110px);
 
-    .hero-copy {
-      position: relative;
-      z-index: 10;
-
-      width: min(650px, 54vw);
-
-      padding-top: 10px;
+      max-width: 800px;
     }
 
     .hero-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      width: 190px;
+      height: auto;
 
-      margin-bottom: 28px;
+      margin-bottom: 34px;
 
-      opacity: 0.92;
-    }
-
-    .hero-brand img {
-      width: 42px;
-      height: 42px;
       object-fit: contain;
+      object-position: left center;
+
+      filter: drop-shadow(0 0 14px rgba(201,166,83,.08));
     }
 
-    .hero-brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .hero-kicker {
+      margin-bottom: 8px;
 
-    .hero-brand-text strong {
-      color: var(--gold-light);
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
+      color: var(--cream);
+
+      font-size: clamp(.58rem, .7vw, .78rem);
       font-weight: 700;
-    }
-
-    .hero-brand-text span {
-      color: rgba(255, 255, 255, 0.48);
-      font-size: 0.55rem;
-      letter-spacing: 0.25em;
-    }
-
-    .eyebrow {
-      margin-bottom: 12px;
-
-      color: rgba(255, 255, 255, 0.62);
-
-      font-size: clamp(0.58rem, 0.8vw, 0.75rem);
-      font-weight: 700;
-      letter-spacing: 0.38em;
+      letter-spacing: .42em;
       text-transform: uppercase;
+
+      opacity: .84;
     }
 
     .hero-title {
@@ -559,85 +454,64 @@
 
       margin: 0;
 
-      font-family: "Anton", "Bebas Neue", Impact, sans-serif;
-      font-size: clamp(4.2rem, 8.7vw, 9.5rem);
-      font-weight: 400;
-      line-height: 0.82;
-      letter-spacing: 0.025em;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(5.8rem, 9.3vw, 10.5rem);
+      font-weight: 900;
+      line-height: .72;
+      letter-spacing: -.025em;
       text-transform: uppercase;
 
-      color: #f4f4ef;
+      color: #f1f0eb;
+
+      white-space: nowrap;
 
       text-shadow:
-        2px 3px 0 rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(255, 255, 255, 0.04);
+        0 8px 35px rgba(0,0,0,.48);
     }
 
-    .hero-title span {
+    .hero-title .top {
       display: block;
     }
 
-    /*
-      The reference image uses a painted / graffiti-style
-      treatment for EXOTICS.
-    */
-
     .hero-title .exotics {
-      position: relative;
+      display: block;
 
-      margin-top: 8px;
-      margin-left: -5px;
+      margin-top: 7px;
+      margin-left: -8px;
 
-      font-family: "Bebas Neue", "Anton", sans-serif;
-      font-size: 0.92em;
-      font-style: italic;
+      font-family: "Playfair Display", serif;
+      font-size: .56em;
       font-weight: 700;
-      letter-spacing: -0.015em;
+      font-style: italic;
+      line-height: .82;
 
-      color: #356f47;
+      letter-spacing: -.055em;
 
-      transform: skewX(-8deg) rotate(-2deg);
-      transform-origin: left center;
+      color: #386c48;
+
+      transform: skewX(-7deg);
 
       text-shadow:
-        2px 3px 0 #07140b,
-        0 0 14px rgba(53, 111, 71, 0.18);
-    }
-
-    .hero-title .exotics::after {
-      content: "";
-      position: absolute;
-
-      left: 0;
-      right: 15%;
-
-      bottom: -12px;
-
-      height: 7px;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(45, 117, 69, 0.85),
-          rgba(45, 117, 69, 0.25),
-          transparent
-        );
-
-      transform: skewX(-25deg);
-      filter: blur(0.3px);
+        2px 3px 0 rgba(0,0,0,.35),
+        0 0 25px rgba(38,93,54,.18);
     }
 
     .hero-divider {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
 
-      width: min(390px, 82%);
+      width: min(360px, 90%);
 
-      margin: 26px 0 16px;
+      margin:
+        20px 0
+        18px;
     }
 
-    .hero-divider-line {
+    .hero-divider::before,
+    .hero-divider::after {
+      content: "";
+      display: block;
       height: 1px;
       flex: 1;
 
@@ -645,100 +519,154 @@
         linear-gradient(
           90deg,
           transparent,
-          rgba(210, 177, 93, 0.9)
+          var(--gold)
         );
     }
 
-    .hero-divider-line:last-child {
+    .hero-divider::after {
       background:
         linear-gradient(
           90deg,
-          rgba(210, 177, 93, 0.9),
+          var(--gold),
           transparent
         );
     }
 
     .crown {
       color: var(--gold);
-      font-size: 1.35rem;
+      font-size: 1.15rem;
       line-height: 1;
-      filter: drop-shadow(0 0 8px rgba(210, 177, 93, 0.18));
+      text-shadow: 0 0 12px rgba(201,166,83,.25);
     }
 
-    .hero-tagline {
-      max-width: 500px;
+    .hero-description {
+      max-width: 420px;
 
-      color: rgba(255, 255, 255, 0.86);
+      margin-bottom: 7px;
 
-      font-size: clamp(0.72rem, 1vw, 0.9rem);
+      color: var(--cream);
+
+      font-size: clamp(.74rem, .9vw, .95rem);
       font-weight: 500;
-      letter-spacing: 0.2em;
-      line-height: 1.9;
 
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
-    .hero-tagline strong {
-      display: block;
+    .hero-tagline {
+      margin-bottom: 25px;
 
-      margin-top: 2px;
+      color: var(--gold);
 
-      color: rgba(210, 177, 93, 0.65);
+      font-size: clamp(.52rem, .6vw, .65rem);
+      font-weight: 700;
 
-      font-size: 0.58rem;
-      letter-spacing: 0.32em;
+      letter-spacing: .28em;
+      text-transform: uppercase;
     }
 
     .hero-actions {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
-
-      margin-top: 27px;
+      gap: 11px;
     }
 
-    .hero-actions .btn {
-      min-width: 150px;
+    .hero-btn {
+      min-width: 165px;
+      min-height: 50px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 13px 22px;
+
+      border: 1px solid var(--gold);
+
+      font-family: "Montserrat", sans-serif;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
     }
 
-    /* RIGHT MASCOT */
+    .hero-btn-primary {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .hero-btn-primary:hover,
+    .hero-btn-primary:focus-visible {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(201,166,83,.18);
+    }
+
+    .hero-btn-secondary {
+      background: rgba(0,0,0,.22);
+      color: var(--green-light);
+
+      border-color: rgba(73,128,86,.75);
+    }
+
+    .hero-btn-secondary:hover,
+    .hero-btn-secondary:focus-visible {
+      background: rgba(38,76,49,.25);
+      color: #5e9a6d;
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       HERO ART
+    ========================================================= */
 
     .hero-art {
       position: absolute;
-      z-index: 4;
+      z-index: 5;
 
-      top: 50%;
-      right: -2%;
+      top: 0;
+      right: 0;
 
-      width: min(830px, 64vw);
-      height: 96%;
-
-      transform: translateY(-50%);
+      width: 67%;
+      height: 100%;
 
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      align-items: center;
+      justify-content: flex-end;
 
       pointer-events: none;
     }
 
     .hero-art::before {
       content: "";
-
       position: absolute;
-      inset: 7% 0 0 8%;
+
+      left: -10%;
+      top: 15%;
+
+      width: 75%;
+      height: 70%;
 
       background:
         radial-gradient(
-          ellipse at center,
-          rgba(49, 103, 63, 0.2),
-          transparent 66%
+          ellipse,
+          rgba(53,104,66,.35),
+          transparent 70%
         );
 
-      filter: blur(10px);
+      filter: blur(25px);
     }
 
-    .hero-art img {
+    .hero-mascot {
       position: relative;
       z-index: 2;
 
@@ -746,326 +674,285 @@
       height: 100%;
 
       object-fit: contain;
-      object-position: center bottom;
+      object-position: center right;
+
+      transform:
+        scale(1.06)
+        translateX(1%);
 
       filter:
-        drop-shadow(0 28px 45px rgba(0, 0, 0, 0.55))
-        drop-shadow(0 0 30px rgba(39, 92, 53, 0.16));
+        drop-shadow(0 20px 45px rgba(0,0,0,.45))
+        saturate(.92)
+        contrast(1.03);
 
       user-select: none;
+      -webkit-user-drag: none;
     }
 
-    .hero-badge {
+    .hero-art-fade {
       position: absolute;
-      z-index: 5;
-
-      right: 3%;
-      bottom: 7%;
-
-      padding: 10px 15px;
-
-      border: 1px solid rgba(210, 177, 93, 0.25);
-      background: rgba(2, 3, 2, 0.65);
-      backdrop-filter: blur(8px);
-
-      color: rgba(255, 255, 255, 0.65);
-
-      font-size: 0.53rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       BUTTONS
-    ========================= */
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 50px;
-      padding: 13px 24px;
-
-      border: 1px solid transparent;
-      border-radius: 2px;
-
-      background: var(--gold);
-      color: #111;
-
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-decoration: none;
-      text-transform: uppercase;
-
-      cursor: pointer;
-
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px);
-      background: var(--gold-light);
-      box-shadow: 0 12px 28px rgba(210, 177, 93, 0.18);
-    }
-
-    .btn-outline {
-      border-color: rgba(63, 143, 89, 0.75);
-      background: rgba(2, 3, 2, 0.52);
-      color: var(--green-bright);
-    }
-
-    .btn-outline:hover,
-    .btn-outline:focus-visible {
-      border-color: var(--gold);
-      background: rgba(10, 19, 12, 0.9);
-      color: var(--gold-light);
-      box-shadow: 0 12px 28px rgba(45, 117, 69, 0.14);
-    }
-
-    /* =========================
-       HERO FOOTER / TRUST
-    ========================= */
-
-    .hero-bottom {
-      position: absolute;
-      z-index: 12;
-
-      left: clamp(24px, 5vw, 80px);
-      bottom: 30px;
-
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 20px;
-
-      color: rgba(255, 255, 255, 0.4);
-
-      font-size: 0.53rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .hero-bottom span::before {
-      content: "•";
-      margin-right: 9px;
-      color: var(--gold);
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      z-index: 12;
-
-      right: clamp(24px, 5vw, 80px);
-      bottom: 28px;
-
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      color: rgba(255, 255, 255, 0.35);
-
-      font-size: 0.52rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .scroll-line {
-      width: 42px;
-      height: 1px;
-      background: rgba(210, 177, 93, 0.5);
-    }
-
-    /* =========================
-       SECTION SHARED
-    ========================= */
-
-    section:not(.hero) {
-      position: relative;
-    }
-
-    .section-shell {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-eyebrow {
-      margin-bottom: 9px;
-
-      color: var(--gold);
-
-      font-size: 0.58rem;
-      font-weight: 800;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-    }
-
-    .section-heading h2 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .section-heading p {
-      max-width: 650px;
-      margin: 18px auto 0;
-
-      color: var(--muted);
-
-      font-size: 0.88rem;
-      line-height: 1.8;
-    }
-
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .products {
-      padding: 120px 0 110px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #020302,
-          #07100a 48%,
-          #020302
-        );
-
-      border-top: 1px solid rgba(210, 177, 93, 0.08);
-    }
-
-    .products::before {
-      content: "";
-
-      position: absolute;
-      top: 0;
-      left: 50%;
-
-      width: min(700px, 90vw);
-      height: 1px;
-
-      transform: translateX(-50%);
+      z-index: 4;
+      inset: 0;
+      pointer-events: none;
 
       background:
         linear-gradient(
           90deg,
-          transparent,
-          rgba(210, 177, 93, 0.35),
+          #010202 0%,
+          rgba(1,2,2,.88) 7%,
+          rgba(1,2,2,.28) 22%,
+          transparent 48%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(1,2,2,.72) 0%,
+          transparent 24%,
+          transparent 80%,
+          rgba(1,2,2,.3) 100%
+        );
+    }
+
+    /* If the mascot image cannot load */
+    .hero-art-fallback {
+      position: absolute;
+      inset: 0;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        radial-gradient(
+          circle at 55% 45%,
+          rgba(44,91,57,.34),
+          transparent 55%
+        );
+    }
+
+    .hero-art-fallback span {
+      padding: 10px 16px;
+
+      border: 1px solid rgba(201,166,83,.25);
+
+      color: rgba(241,239,232,.52);
+
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+       HERO FOOTER DETAILS
+    ========================================================= */
+
+    .hero-bottom-left {
+      position: absolute;
+      z-index: 30;
+
+      left: clamp(28px, 3.5vw, 58px);
+      bottom: 30px;
+
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      color: rgba(241,239,232,.5);
+
+      font-size: .53rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .hero-bottom-left span:not(:last-child)::after {
+      content: "•";
+      margin-left: 12px;
+      color: var(--gold);
+    }
+
+    .scroll-cue {
+      position: absolute;
+      z-index: 30;
+
+      right: 3.5vw;
+      bottom: 30px;
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: rgba(241,239,232,.42);
+
+      font-size: .5rem;
+      font-weight: 700;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+    }
+
+    .scroll-cue::after {
+      content: "";
+
+      width: 48px;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--gold),
           transparent
         );
     }
 
+    /* =========================================================
+       COLLECTION
+    ========================================================= */
+
+    .products {
+      position: relative;
+
+      padding: 130px 7vw 120px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(36,76,50,.16),
+          transparent 45%
+        ),
+        #030504;
+    }
+
+    .section-heading {
+      max-width: 800px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .section-eyebrow {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: var(--gold);
+
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 800;
+      line-height: .82;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
+
+      color: var(--cream);
+    }
+
+    .section-heading p {
+      max-width: 600px;
+      margin: 22px auto 0;
+
+      color: var(--muted);
+
+      font-size: .82rem;
+      line-height: 1.8;
+      letter-spacing: .06em;
+    }
+
     .product-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
+      gap: 30px;
     }
 
     .product {
       position: relative;
 
-      padding: 16px 16px 28px;
+      padding: 14px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(45, 117, 69, 0.12),
-          transparent 30%
-        ),
-        rgba(5, 8, 6, 0.95);
+          rgba(255,255,255,.035),
+          rgba(255,255,255,.008)
+        );
 
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 4px;
-
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(201,166,83,.12);
 
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
 
       transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
     }
 
-    .js-enabled .product.reveal {
+    .js-enabled .product {
       opacity: 0;
       transform: translateY(25px);
     }
 
-    .js-enabled .product.reveal.show {
+    .js-enabled .product.show {
       opacity: 1;
       transform: translateY(0);
     }
 
     .product:hover {
-      transform: translateY(-7px);
-      border-color: rgba(210, 177, 93, 0.22);
-      box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.7),
-        0 0 40px rgba(45, 117, 69, 0.08);
+      transform: translateY(-6px);
+      border-color: rgba(201,166,83,.32);
+      box-shadow: 0 25px 60px rgba(0,0,0,.38);
     }
 
     .badge {
       position: absolute;
-      z-index: 5;
+      z-index: 10;
 
       top: 28px;
       left: 28px;
 
-      padding: 6px 10px;
+      padding: 7px 11px;
 
       background: var(--gold);
-      color: #080808;
+      color: #111;
 
-      font-size: 0.54rem;
+      font-size: .52rem;
       font-weight: 800;
-      letter-spacing: 0.18em;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
     .product-image {
       position: relative;
 
-      height: 390px;
+      height: 430px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      margin-bottom: 20px;
-
       overflow: hidden;
 
       background:
         radial-gradient(
-          circle at 50% 25%,
-          rgba(45, 117, 69, 0.16),
-          transparent 42%
+          circle at 50% 40%,
+          rgba(38,78,50,.18),
+          transparent 55%
         ),
-        linear-gradient(
-          180deg,
-          #0a100c,
-          #030503
-        );
+        #070a08;
 
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,.045);
+
+      touch-action: pan-y;
+      user-select: none;
     }
 
     .product-image img {
@@ -1074,27 +961,25 @@
 
       object-fit: contain;
 
-      padding: 20px 20px 55px;
+      padding: 30px;
 
       cursor: zoom-in;
 
       transition:
-        transform 0.35s ease,
-        filter 0.35s ease;
+        transform .4s ease,
+        filter .4s ease;
     }
 
     .product-image img:hover {
       transform: scale(1.035);
-      filter:
-        drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5))
-        drop-shadow(0 0 18px rgba(45, 117, 69, 0.12));
+      filter: drop-shadow(0 15px 25px rgba(0,0,0,.5));
     }
 
     .arrow {
       position: absolute;
-      z-index: 4;
+      z-index: 10;
 
-      bottom: 15px;
+      bottom: 16px;
 
       width: 42px;
       height: 42px;
@@ -1102,10 +987,8 @@
       display: grid;
       place-items: center;
 
-      border: 1px solid rgba(210, 177, 93, 0.28);
-      border-radius: 50%;
-
-      background: rgba(0, 0, 0, 0.72);
+      border: 1px solid rgba(201,166,83,.3);
+      background: rgba(0,0,0,.72);
       color: var(--gold);
 
       cursor: pointer;
@@ -1114,82 +997,83 @@
       line-height: 1;
 
       transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease;
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
     }
 
     .arrow:hover,
     .arrow:focus-visible {
-      transform: scale(1.08);
-      background: rgba(14, 28, 18, 0.95);
+      background: rgba(201,166,83,.1);
       border-color: var(--gold);
+      transform: translateY(-2px);
     }
 
     .arrow-left {
-      left: 15px;
+      left: 16px;
     }
 
     .arrow-right {
-      right: 15px;
+      right: 16px;
     }
 
     .gallery-dots {
-      min-height: 12px;
+      min-height: 16px;
 
       display: flex;
       justify-content: center;
       gap: 8px;
 
-      margin: -4px 0 20px;
+      margin: 14px 0 22px;
     }
 
     .gallery-dots button {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
 
       padding: 0;
 
-      border: 0;
+      border: 1px solid rgba(201,166,83,.4);
       border-radius: 50%;
 
-      background: rgba(255, 255, 255, 0.2);
+      background: transparent;
 
       cursor: pointer;
 
       transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+        transform .25s ease,
+        background .25s ease;
     }
 
     .gallery-dots button.active {
       background: var(--gold);
-      transform: scale(1.3);
+      transform: scale(1.35);
     }
 
-    .product-content {
-      padding: 0 12px;
+    .product-info {
+      padding: 0 16px 20px;
       text-align: center;
     }
 
-    .product h3 {
-      margin-bottom: 9px;
+    .product-info h3 {
+      margin-bottom: 10px;
 
-      color: var(--white);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
 
-      font-size: 0.9rem;
-      font-weight: 800;
-      letter-spacing: 0.2em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
     }
 
-    .product p {
-      max-width: 440px;
+    .product-info p {
+      max-width: 450px;
       margin: 0 auto 13px;
 
       color: var(--muted);
 
-      font-size: 0.78rem;
-      line-height: 1.75;
+      font-size: .76rem;
+      line-height: 1.7;
     }
 
     .product-note {
@@ -1199,223 +1083,317 @@
 
       color: var(--gold);
 
-      font-size: 0.55rem;
+      font-size: .55rem;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: .18em;
       text-transform: uppercase;
     }
 
-    .product .btn {
+    .product-btn {
       width: 100%;
+      min-height: 48px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #111;
+
+      font-size: .6rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
     }
 
-    /* =========================
+    .product-btn:hover,
+    .product-btn:focus-visible {
+      background: var(--gold-light);
+    }
+
+    /* =========================================================
        TELEGRAM
-    ========================= */
+    ========================================================= */
 
     .telegram {
-      padding: 120px 20px;
+      position: relative;
 
-      overflow: hidden;
+      padding: 120px 7vw;
 
       text-align: center;
 
       background:
-        radial-gradient(
-          circle at center,
-          rgba(45, 117, 69, 0.16),
-          transparent 48%
-        ),
-        #030503;
+        linear-gradient(
+          180deg,
+          #050806,
+          #0a130d
+        );
 
-      border-top: 1px solid rgba(210, 177, 93, 0.08);
-      border-bottom: 1px solid rgba(210, 177, 93, 0.08);
+      border-top: 1px solid rgba(201,166,83,.12);
+      border-bottom: 1px solid rgba(201,166,83,.12);
+
+      overflow: hidden;
     }
 
     .telegram::before {
-      content: "PRIVATE ACCESS";
+      content: "";
 
       position: absolute;
-      top: 50%;
+
+      top: -200px;
       left: 50%;
 
-      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 500px;
 
-      color: rgba(255, 255, 255, 0.018);
+      transform: translateX(-50%);
 
-      font-family: "Anton", Impact, sans-serif;
-      font-size: clamp(5rem, 15vw, 14rem);
-      white-space: nowrap;
+      background:
+        radial-gradient(
+          circle,
+          rgba(38,88,53,.22),
+          transparent 70%
+        );
+
       pointer-events: none;
     }
 
-    .telegram .section-shell {
+    .telegram-inner {
       position: relative;
       z-index: 2;
+
+      max-width: 720px;
+      margin: auto;
     }
 
-    .telegram h2 {
-      margin-bottom: 15px;
+    .telegram h2,
+    .contact h2 {
+      margin-bottom: 18px;
 
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.7rem);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: .85;
+
+      letter-spacing: -.01em;
       text-transform: uppercase;
     }
 
-    .telegram p {
-      max-width: 640px;
+    .telegram p,
+    .contact p {
+      max-width: 620px;
       margin: 0 auto 28px;
 
       color: var(--muted);
 
-      font-size: 0.88rem;
-      line-height: 1.9;
+      font-size: .78rem;
+      line-height: 1.8;
+      letter-spacing: .05em;
     }
 
-    /* =========================
+    .gold-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 170px;
+      min-height: 50px;
+
+      padding: 13px 24px;
+
+      background: var(--gold);
+      color: #111;
+
+      border: 1px solid var(--gold);
+
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      transition:
+        background .25s ease,
+        transform .25s ease;
+    }
+
+    .gold-btn:hover,
+    .gold-btn:focus-visible {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
        CONTACT
-    ========================= */
+    ========================================================= */
 
     .contact {
-      padding: 110px 20px;
+      position: relative;
+
+      padding: 120px 7vw;
 
       text-align: center;
 
-      background: #020302;
-    }
-
-    .contact-copy {
-      max-width: 640px;
-      margin: 0 auto;
-
-      color: var(--muted);
-
-      font-size: 0.86rem;
-      line-height: 1.9;
-    }
-
-    .contact-copy + .contact-copy {
-      margin-top: 8px;
+      background: #030504;
     }
 
     .contact-links {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 12px;
-
-      margin-top: 30px;
     }
 
-    /* =========================
+    .outline-btn {
+      min-height: 50px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 13px 24px;
+
+      border: 1px solid rgba(201,166,83,.55);
+      background: transparent;
+      color: var(--cream);
+
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      transition:
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease;
+    }
+
+    .outline-btn:hover,
+    .outline-btn:focus-visible {
+      background: rgba(201,166,83,.08);
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    /* =========================================================
        FOOTER
-    ========================= */
+    ========================================================= */
 
     .footer {
-      padding: 65px 20px 40px;
+      padding: 60px 7vw 36px;
 
       text-align: center;
 
-      background: #010201;
+      background: #010202;
 
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(201,166,83,.1);
     }
 
     .footer-logo {
-      width: 70px;
-      margin: 0 auto 18px;
-
-      opacity: 0.8;
-    }
-
-    .footer h3 {
-      margin-bottom: 12px;
-
-      color: var(--gold);
-
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.32em;
+      width: 170px;
+      margin: 0 auto 20px;
+      opacity: .85;
     }
 
     .footer-copy {
       max-width: 580px;
-      margin: 0 auto 25px;
+      margin: 0 auto 28px;
 
-      color: var(--soft);
+      color: var(--faint);
 
-      font-size: 0.72rem;
+      font-size: .68rem;
       line-height: 1.8;
+      letter-spacing: .08em;
     }
 
     .footer-icons {
       display: flex;
       justify-content: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     .footer-icons a {
-      width: 48px;
-      height: 48px;
+      width: 46px;
+      height: 46px;
 
       display: grid;
       place-items: center;
 
-      border: 1px solid rgba(210, 177, 93, 0.17);
-      border-radius: 50%;
-
-      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(201,166,83,.18);
+      background: rgba(255,255,255,.015);
 
       transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
+        border-color .25s ease,
+        transform .25s ease;
     }
 
     .footer-icons a:hover,
     .footer-icons a:focus-visible {
+      border-color: var(--gold);
       transform: translateY(-3px);
-      border-color: rgba(210, 177, 93, 0.6);
-      background: rgba(210, 177, 93, 0.05);
     }
 
     .footer-icons svg {
-      width: 22px;
-      height: 22px;
-      fill: #eee;
+      width: 21px;
+      height: 21px;
+      fill: var(--cream);
     }
 
     .footer-legal {
-      margin-top: 25px;
+      margin-top: 30px;
 
-      color: rgba(255, 255, 255, 0.27);
+      color: rgba(241,239,232,.3);
 
-      font-size: 0.54rem;
-      letter-spacing: 0.16em;
+      font-size: .5rem;
+      font-weight: 600;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
-    /* =========================
+    /* =========================================================
        ZOOM MODAL
-    ========================= */
+    ========================================================= */
 
     .zoom {
       position: fixed;
       inset: 0;
-      z-index: 4500;
+      z-index: 6000;
 
       display: none;
       align-items: center;
       justify-content: center;
 
-      padding: 24px;
+      padding: 30px;
 
-      background: rgba(0, 0, 0, 0.96);
-      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,.96);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity .25s ease,
+        visibility .25s ease;
     }
 
     .zoom.active {
       display: flex;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .zoom[aria-hidden="true"] {
+      pointer-events: none;
     }
 
     .zoom img {
@@ -1424,229 +1402,260 @@
 
       object-fit: contain;
 
-      border: 1px solid rgba(210, 177, 93, 0.14);
+      border: 1px solid rgba(201,166,83,.16);
 
-      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 30px 100px rgba(0,0,0,.8);
     }
 
     .zoom-close {
       position: absolute;
-      top: 20px;
-      right: 20px;
 
-      width: 50px;
-      height: 50px;
+      top: 22px;
+      right: 22px;
+
+      width: 48px;
+      height: 48px;
 
       display: grid;
       place-items: center;
 
-      border: 1px solid rgba(210, 177, 93, 0.25);
-      border-radius: 50%;
-
-      background: rgba(255, 255, 255, 0.04);
-      color: #fff;
-
-      font-size: 1.6rem;
+      border: 1px solid rgba(201,166,83,.3);
+      background: rgba(0,0,0,.55);
+      color: var(--cream);
 
       cursor: pointer;
+
+      font-size: 1.5rem;
+
+      transition:
+        border-color .25s ease,
+        background .25s ease;
     }
 
     .zoom-close:hover,
     .zoom-close:focus-visible {
       border-color: var(--gold);
+      background: rgba(201,166,83,.08);
     }
 
-    /* =========================
-       RESPONSIVE — TABLET
-    ========================= */
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
 
-    @media (max-width: 1050px) {
+    @media (max-width: 1200px) {
       .hero {
-        padding-left: 38px;
-        padding-right: 38px;
+        grid-template-columns: 48% 52%;
       }
 
-      .hero-copy {
-        width: 55%;
-      }
-
-      .hero-art {
-        right: -10%;
-        width: 68vw;
+      .hero-content {
+        padding-left: 50px;
+        padding-right: 20px;
       }
 
       .hero-title {
-        font-size: clamp(4rem, 9vw, 7rem);
+        font-size: clamp(5.3rem, 10vw, 8.4rem);
       }
 
-      .hero-bottom {
-        left: 38px;
-      }
-
-      .scroll-indicator {
-        right: 38px;
+      .hero-art {
+        width: 64%;
       }
     }
 
-    /* =========================
-       RESPONSIVE — MOBILE
-    ========================= */
+    @media (max-width: 900px) {
+      .hero {
+        min-height: 900px;
+        height: auto;
 
-    @media (max-width: 760px) {
-      .burger {
-        top: max(16px, env(safe-area-inset-top));
-        left: max(16px, env(safe-area-inset-left));
+        display: block;
+
+        background:
+          radial-gradient(
+            ellipse 80% 65% at 70% 48%,
+            rgba(39,87,55,.38),
+            transparent 68%
+          ),
+          #020303;
       }
 
-      .hero {
-        min-height: 100svh;
+      .hero-content {
+        min-height: 900px;
 
         padding:
-          82px
-          20px
-          80px;
+          120px 38px 180px;
 
-        align-items: flex-start;
-      }
-
-      .hero::before {
-        top: 5%;
-        right: -30%;
-        width: 130vw;
-        height: 80vh;
-
-        opacity: 0.8;
-      }
-
-      .hero::after {
-        background:
-          linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.8) 0%,
-            rgba(0, 0, 0, 0.55) 38%,
-            rgba(0, 0, 0, 0.2) 100%
-          );
-      }
-
-      .hero-inner {
-        min-height: calc(100svh - 162px);
-        display: block;
-      }
-
-      .hero-copy {
-        width: 100%;
-        padding-top: 0;
+        justify-content: center;
       }
 
       .hero-brand {
-        margin-bottom: 22px;
-      }
-
-      .hero-brand img {
-        width: 37px;
-        height: 37px;
-      }
-
-      .hero-brand-text strong {
-        font-size: 0.61rem;
-      }
-
-      .hero-brand-text span {
-        font-size: 0.48rem;
-      }
-
-      .eyebrow {
-        font-size: 0.52rem;
-        letter-spacing: 0.27em;
+        width: 170px;
+        margin-bottom: 30px;
       }
 
       .hero-title {
-        font-size: clamp(4.2rem, 20vw, 7rem);
-        line-height: 0.8;
-      }
-
-      .hero-title .exotics {
-        margin-top: 7px;
-      }
-
-      .hero-divider {
-        width: min(330px, 88%);
-        margin-top: 23px;
-      }
-
-      .hero-tagline {
-        max-width: 310px;
-        font-size: 0.58rem;
-        letter-spacing: 0.15em;
-        line-height: 1.75;
-      }
-
-      .hero-tagline strong {
-        font-size: 0.47rem;
-        letter-spacing: 0.2em;
-      }
-
-      .hero-actions {
-        position: relative;
-        z-index: 20;
-
-        width: min(330px, 100%);
-
-        margin-top: 22px;
-      }
-
-      .hero-actions .btn {
-        flex: 1 1 140px;
-        min-width: 0;
+        font-size: clamp(5.2rem, 15vw, 8rem);
       }
 
       .hero-art {
+        z-index: 4;
+
+        width: 78%;
+        height: 72%;
+
         top: auto;
-        right: -30%;
+        bottom: 0;
+        right: -5%;
 
-        bottom: -3%;
+        opacity: .72;
 
-        width: 100vw;
-        height: 66vh;
-
-        transform: none;
-
-        opacity: 0.82;
+        align-items: flex-end;
       }
 
-      .hero-art::before {
-        inset: 0;
+      .hero-art-fade {
+        background:
+          linear-gradient(
+            180deg,
+            #020303 0%,
+            rgba(2,3,3,.55) 24%,
+            transparent 52%,
+            rgba(2,3,3,.45) 100%
+          ),
+          linear-gradient(
+            90deg,
+            rgba(2,3,3,.9),
+            transparent 50%
+          );
       }
 
-      .hero-art img {
-        object-position: center bottom;
+      .hero-content {
+        z-index: 20;
       }
 
-      .hero-badge {
+      .hero-bottom-left {
+        bottom: 22px;
+      }
+
+      .scroll-cue {
         display: none;
       }
 
-      .hero-bottom {
-        left: 20px;
-        right: 20px;
-        bottom: 23px;
+      .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+      }
+    }
 
-        gap: 7px 12px;
+    @media (max-width: 640px) {
+      .burger {
+        top: max(16px, env(safe-area-inset-top));
+        left: max(16px, env(safe-area-inset-left));
 
-        font-size: 0.42rem;
-        letter-spacing: 0.12em;
+        width: 44px;
+        height: 44px;
       }
 
-      .scroll-indicator {
-        display: none;
+      .side-menu {
+        width: 100%;
+
+        padding:
+          calc(95px + env(safe-area-inset-top))
+          26px
+          calc(35px + env(safe-area-inset-bottom));
       }
 
-      .section-shell {
-        width: min(100% - 32px, 1180px);
+      .hero {
+        min-height: 820px;
+      }
+
+      .hero-content {
+        min-height: 820px;
+
+        padding:
+          105px 22px 180px;
+      }
+
+      .hero-brand {
+        width: 155px;
+        margin-bottom: 25px;
+      }
+
+      .hero-kicker {
+        font-size: .53rem;
+        letter-spacing: .28em;
+      }
+
+      .hero-title {
+        font-size: clamp(4.3rem, 19vw, 6.7rem);
+        line-height: .73;
+      }
+
+      .hero-title .exotics {
+        margin-left: -4px;
+      }
+
+      .hero-divider {
+        width: 88%;
+        margin-top: 17px;
+        margin-bottom: 16px;
+      }
+
+      .hero-description {
+        max-width: 340px;
+        font-size: .65rem;
+        line-height: 1.7;
+        letter-spacing: .14em;
+      }
+
+      .hero-tagline {
+        font-size: .48rem;
+        letter-spacing: .18em;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        width: 100%;
+        max-width: 330px;
+        gap: 8px;
+      }
+
+      .hero-btn {
+        flex: 1 1 100%;
+        min-height: 49px;
+      }
+
+      .hero-art {
+        width: 105%;
+        height: 62%;
+
+        right: -17%;
+
+        opacity: .6;
+      }
+
+      .hero-bottom-left {
+        left: 18px;
+        right: 18px;
+        bottom: 17px;
+
+        gap: 8px;
+
+        font-size: .43rem;
+        letter-spacing: .14em;
+      }
+
+      .hero-bottom-left span:not(:last-child)::after {
+        margin-left: 8px;
+      }
+
+      .products,
+      .telegram,
+      .contact {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
       .products {
-        padding: 85px 0 80px;
+        padding-top: 90px;
+        padding-bottom: 90px;
       }
 
       .section-heading {
@@ -1654,91 +1663,78 @@
       }
 
       .section-heading h2 {
-        font-size: clamp(1.8rem, 9vw, 2.6rem);
+        font-size: clamp(3.3rem, 15vw, 5rem);
       }
 
       .section-heading p {
-        font-size: 0.78rem;
+        font-size: .7rem;
       }
 
-      .product-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
+      .product {
+        padding: 9px;
       }
 
       .product-image {
-        height: 330px;
+        height: 340px;
       }
 
-      .telegram {
-        padding: 90px 18px;
+      .product-image img {
+        padding: 20px;
       }
 
-      .telegram h2 {
-        font-size: clamp(1.9rem, 10vw, 3rem);
+      .badge {
+        top: 20px;
+        left: 20px;
       }
 
-      .telegram p {
-        font-size: 0.78rem;
-      }
-
+      .telegram,
       .contact {
-        padding: 85px 18px;
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+
+      .telegram h2,
+      .contact h2 {
+        font-size: clamp(3.3rem, 15vw, 5rem);
       }
 
       .contact-links {
-        width: min(360px, 100%);
-        margin-left: auto;
-        margin-right: auto;
+        flex-direction: column;
+        max-width: 340px;
+        margin: 0 auto;
       }
 
-      .contact-links .btn {
+      .gold-btn,
+      .outline-btn {
         width: 100%;
+      }
+
+      .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: calc(30px + env(safe-area-inset-bottom));
       }
     }
 
-    /* =========================
-       VERY SMALL PHONES
-    ========================= */
-
-    @media (max-width: 390px) {
-      .hero {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
+    @media (max-width: 380px) {
       .hero-title {
-        font-size: clamp(3.8rem, 19vw, 5.5rem);
+        font-size: 4rem;
       }
 
-      .hero-actions {
-        width: 100%;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-        flex: 1 1 100%;
+      .hero-content {
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
       .hero-art {
-        right: -36%;
-        height: 59vh;
-        opacity: 0.72;
-      }
-
-      .hero-bottom {
-        left: 16px;
-        right: 16px;
-      }
-
-      .product-image {
-        height: 300px;
+        right: -25%;
+        width: 115%;
       }
     }
 
-    /* =========================
+    /* =========================================================
        REDUCED MOTION
-    ========================= */
+    ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -1748,24 +1744,15 @@
       *,
       *::before,
       *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-        scroll-behavior: auto !important;
+        animation: none !important;
+        transition-duration: .01ms !important;
+        transition-delay: 0ms !important;
       }
-    }
 
-    /* =========================
-       NO JAVASCRIPT FALLBACK
-    ========================= */
-
-    html.no-js .loader {
-      display: none;
-    }
-
-    html.no-js .product {
-      opacity: 1 !important;
-      transform: none !important;
+      .js-enabled .product {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
@@ -1774,18 +1761,20 @@
 
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- LOADER -->
+  <!-- =======================================================
+       LOADER
+  ======================================================== -->
+
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-inner">
-      <img src="logo.png" alt="TopTierExotics">
-      <div class="loader-line"></div>
-    </div>
+    <img src="logo.png" alt="TopTierExotics">
   </div>
 
-  <!-- MENU OVERLAY -->
-  <div class="overlay" id="overlay"></div>
+  <!-- =======================================================
+       MENU
+  ======================================================== -->
 
-  <!-- HAMBURGER -->
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
   <button
     class="burger"
     id="burger"
@@ -1799,25 +1788,24 @@
     <span class="burger-line"></span>
   </button>
 
-  <!-- SIDE MENU -->
-  <nav
-    class="side-menu"
-    id="menu"
-    aria-label="Main navigation"
-    aria-hidden="true"
-    inert
-  >
-    <a href="#home">HOME</a>
-    <a href="#products">COLLECTION</a>
-    <a href="#telegram">PRIVATE ACCESS</a>
-    <a href="#contact">CONTACT</a>
+  <nav class="side-menu" id="menu" aria-label="Main navigation" inert>
+
+    <div class="menu-brand">
+      <img src="logo.png" alt="TopTierExotics">
+      <div class="menu-label">Private Access / Clothing Co.</div>
+    </div>
+
+    <a href="#home">Home</a>
+    <a href="#products">Collection</a>
+    <a href="#telegram">Private Access</a>
+    <a href="#contact">Contact</a>
 
     <a
       href="https://t.me/TTE_V2"
       target="_blank"
       rel="noopener noreferrer"
     >
-      TELEGRAM
+      Telegram
     </a>
 
     <a
@@ -1825,7 +1813,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      INSTAGRAM
+      Instagram
     </a>
 
     <a
@@ -1833,113 +1821,109 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      PAYPAL
+      PayPal
     </a>
+
   </nav>
 
   <main id="main-content" tabindex="-1">
 
-    <!-- =========================
+    <!-- =====================================================
          HERO
-    ========================= -->
+    ====================================================== -->
 
-    <section class="hero" id="home" aria-labelledby="hero-title">
+    <section class="hero" id="home" aria-label="TopTierExotics introduction">
 
-      <div class="hero-noise"></div>
+      <div class="hero-content">
 
-      <div class="hero-inner">
+        <img
+          class="hero-brand"
+          src="logo.png"
+          alt="Top Tier Exotics Clothing Co."
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        >
 
-        <div class="hero-copy">
-
-          <div class="hero-brand">
-            <img
-              src="logo.png"
-              alt=""
-              width="42"
-              height="42"
-              loading="eager"
-            >
-
-            <div class="hero-brand-text">
-              <strong>TOP TIER EXOTICS</strong>
-              <span>CLOTHING CO.</span>
-            </div>
-          </div>
-
-          <div class="eyebrow">
-            Premium Clothing • Exotic Lifestyle
-          </div>
-
-          <h1 class="hero-title" id="hero-title">
-            <span>TOP TIER</span>
-            <span class="exotics">EXOTICS</span>
-          </h1>
-
-          <div class="hero-divider" aria-hidden="true">
-            <span class="hero-divider-line"></span>
-            <span class="crown">♛</span>
-            <span class="hero-divider-line"></span>
-          </div>
-
-          <p class="hero-tagline">
-            Premium clothing. Exotic lifestyle.
-            <strong>Made for those who set the standard.</strong>
-          </p>
-
-          <div class="hero-actions">
-
-            <a class="btn" href="#products">
-              Shop Collection
-            </a>
-
-            <a
-              class="btn btn-outline"
-              href="https://t.me/TTE_V2"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              New Drops
-            </a>
-
-          </div>
-
+        <div class="hero-kicker">
+          Premium Clothing • Exotic Lifestyle
         </div>
 
-        <!-- MASCOT -->
-        <div class="hero-art" aria-hidden="true">
-          <img
-            src="hero-mascot.png"
-            alt=""
-            width="900"
-            height="900"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
+        <h1 class="hero-title">
+          <span class="top">TOP TIER</span>
+          <span class="exotics">EXOTICS</span>
+        </h1>
+
+        <div class="hero-divider" aria-hidden="true">
+          <span class="crown">♛</span>
+        </div>
+
+        <p class="hero-description">
+          Premium Clothing. Exotic Lifestyle.
+        </p>
+
+        <p class="hero-tagline">
+          Made For Those Who Set The Standard.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            class="hero-btn hero-btn-primary"
+            href="#products"
           >
-        </div>
+            Shop Collection
+          </a>
 
-        <div class="hero-badge">
-          Private Access • Limited Releases
+          <a
+            class="hero-btn hero-btn-secondary"
+            href="https://t.me/TTE_V2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            New Drops
+          </a>
+
         </div>
 
       </div>
 
-      <div class="hero-bottom" aria-hidden="true">
+      <!-- RIGHT-SIDE MASCOT ART -->
+      <div class="hero-art" aria-hidden="true">
+
+        <img
+          class="hero-mascot"
+          id="heroMascot"
+          src="hero-mascot.png"
+          alt=""
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        >
+
+        <div class="hero-art-fallback" id="heroFallback">
+          <span>Private Access • Limited Releases</span>
+        </div>
+
+        <div class="hero-art-fade"></div>
+
+      </div>
+
+      <div class="hero-bottom-left">
         <span>Top Quality</span>
         <span>Exclusive Designs</span>
         <span>Limited Drops</span>
       </div>
 
-      <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-cue">
         Scroll
-        <span class="scroll-line"></span>
       </div>
 
     </section>
 
-    <!-- =========================
+    <!-- =====================================================
          COLLECTION
-    ========================= -->
+    ====================================================== -->
 
     <section
       class="products"
@@ -1947,195 +1931,184 @@
       aria-labelledby="products-title"
     >
 
-      <div class="section-shell">
+      <div class="section-heading">
 
-        <div class="section-heading">
+        <span class="section-eyebrow">
+          The Collection
+        </span>
 
-          <div class="section-eyebrow">
-            The Collection
+        <h2 id="products-title">
+          Featured Drops
+        </h2>
+
+        <p>
+          Exclusive TopTierExotics pieces built around a cleaner
+          luxury-streetwear identity. Limited releases. Direct access.
+        </p>
+
+      </div>
+
+      <div class="product-grid">
+
+        <!-- HAT -->
+
+        <article class="product">
+
+          <div class="badge">Limited</div>
+
+          <div
+            class="product-image"
+            data-gallery-frame="hat"
+          >
+
+            <button
+              class="arrow arrow-left"
+              type="button"
+              data-gallery="hat"
+              data-direction="-1"
+              aria-label="Previous hat image"
+            >
+              &#8249;
+            </button>
+
+            <img
+              src="hat.png"
+              id="hatImage"
+              loading="lazy"
+              decoding="async"
+              alt="TopTierExotics hat front view"
+              tabindex="0"
+              role="button"
+              aria-label="Open larger view of TopTierExotics hat"
+            >
+
+            <button
+              class="arrow arrow-right"
+              type="button"
+              data-gallery="hat"
+              data-direction="1"
+              aria-label="Next hat image"
+            >
+              &#8250;
+            </button>
+
           </div>
 
-          <h2 id="products-title">
-            Featured Drops
-          </h2>
+          <div
+            class="gallery-dots"
+            id="hatDots"
+            aria-label="Hat image gallery navigation"
+          ></div>
 
-          <p>
-            Exclusive TopTierExotics pieces presented with the
-            same premium attitude as the brand. Limited availability
-            and direct access through Telegram.
-          </p>
+          <div class="product-info">
 
-        </div>
+            <h3>TopTierExotics Hat</h3>
 
-        <div class="product-grid">
+            <p>
+              Structured fit. Breathable fabric. Everyday essential
+              finished with the TopTierExotics identity.
+            </p>
 
-          <!-- HAT -->
-          <article class="product reveal">
+            <span class="product-note">
+              DM for size and drop availability
+            </span>
 
-            <div class="badge">
-              LIMITED
-            </div>
+            <a
+              class="product-btn"
+              href="https://t.me/TTE_V2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Secure Via Telegram
+            </a>
 
-            <div
-              class="product-image"
-              data-gallery-frame="hat"
+          </div>
+
+        </article>
+
+        <!-- TRACKSUIT -->
+
+        <article class="product">
+
+          <div class="badge">Limited</div>
+
+          <div
+            class="product-image"
+            data-gallery-frame="tracksuit"
+          >
+
+            <button
+              class="arrow arrow-left"
+              type="button"
+              data-gallery="tracksuit"
+              data-direction="-1"
+              aria-label="Previous tracksuit image"
+            >
+              &#8249;
+            </button>
+
+            <img
+              src="tracksuit.png"
+              id="tracksuitImage"
+              loading="lazy"
+              decoding="async"
+              alt="TopTierExotics tracksuit front view"
+              tabindex="0"
+              role="button"
+              aria-label="Open larger view of TopTierExotics tracksuit"
             >
 
-              <button
-                class="arrow arrow-left"
-                type="button"
-                data-gallery="hat"
-                data-direction="-1"
-                aria-label="Previous hat image"
-              >
-                &#8249;
-              </button>
-
-              <img
-                src="hat.png"
-                id="hatImage"
-                loading="lazy"
-                decoding="async"
-                alt="TopTierExotics hat front view"
-                tabindex="0"
-                role="button"
-                aria-label="Open larger view of TopTierExotics hat"
-              >
-
-              <button
-                class="arrow arrow-right"
-                type="button"
-                data-gallery="hat"
-                data-direction="1"
-                aria-label="Next hat image"
-              >
-                &#8250;
-              </button>
-
-            </div>
-
-            <div
-              class="gallery-dots"
-              id="hatDots"
-              aria-label="Hat image gallery navigation"
-            ></div>
-
-            <div class="product-content">
-
-              <h3>
-                TOPTIEREXOTICS HAT
-              </h3>
-
-              <p>
-                Structured fit, clean branding and an everyday
-                luxury-streetwear finish.
-              </p>
-
-              <span class="product-note">
-                DM for size and drop availability
-              </span>
-
-              <a
-                class="btn"
-                href="https://t.me/TTE_V2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Secure Via Telegram
-              </a>
-
-            </div>
-
-          </article>
-
-          <!-- TRACKSUIT -->
-          <article class="product reveal">
-
-            <div class="badge">
-              LIMITED
-            </div>
-
-            <div
-              class="product-image"
-              data-gallery-frame="tracksuit"
+            <button
+              class="arrow arrow-right"
+              type="button"
+              data-gallery="tracksuit"
+              data-direction="1"
+              aria-label="Next tracksuit image"
             >
+              &#8250;
+            </button>
 
-              <button
-                class="arrow arrow-left"
-                type="button"
-                data-gallery="tracksuit"
-                data-direction="-1"
-                aria-label="Previous tracksuit image"
-              >
-                &#8249;
-              </button>
+          </div>
 
-              <img
-                src="tracksuit.png"
-                id="tracksuitImage"
-                loading="lazy"
-                decoding="async"
-                alt="TopTierExotics tracksuit front view"
-                tabindex="0"
-                role="button"
-                aria-label="Open larger view of TopTierExotics tracksuit"
-              >
+          <div
+            class="gallery-dots"
+            id="tracksuitDots"
+            aria-label="Tracksuit image gallery navigation"
+          ></div>
 
-              <button
-                class="arrow arrow-right"
-                type="button"
-                data-gallery="tracksuit"
-                data-direction="1"
-                aria-label="Next tracksuit image"
-              >
-                &#8250;
-              </button>
+          <div class="product-info">
 
-            </div>
+            <h3>TopTierExotics Tracksuit</h3>
 
-            <div
-              class="gallery-dots"
-              id="tracksuitDots"
-              aria-label="Tracksuit image gallery navigation"
-            ></div>
+            <p>
+              Premium hoodie and tapered joggers. A cleaner,
+              heavier luxury-streetwear silhouette.
+            </p>
 
-            <div class="product-content">
+            <span class="product-note">
+              Message first for stock and sizing
+            </span>
 
-              <h3>
-                TOPTIEREXOTICS TRACKSUIT
-              </h3>
+            <a
+              class="product-btn"
+              href="https://t.me/TTE_V2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Secure Via Telegram
+            </a>
 
-              <p>
-                Premium hoodie and tapered joggers with a cleaner,
-                stronger luxury-streetwear silhouette.
-              </p>
+          </div>
 
-              <span class="product-note">
-                Message first for stock and sizing
-              </span>
-
-              <a
-                class="btn"
-                href="https://t.me/TTE_V2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Secure Via Telegram
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
+        </article>
 
       </div>
 
     </section>
 
-    <!-- =========================
+    <!-- =====================================================
          TELEGRAM
-    ========================= -->
+    ====================================================== -->
 
     <section
       class="telegram"
@@ -2143,24 +2116,24 @@
       aria-labelledby="telegram-title"
     >
 
-      <div class="section-shell">
+      <div class="telegram-inner">
 
-        <div class="section-eyebrow">
-          Private Channel
-        </div>
+        <span class="section-eyebrow">
+          Private Access
+        </span>
 
         <h2 id="telegram-title">
-          Private Access Only
+          Limited Releases
         </h2>
 
         <p>
-          New drops, stock updates and direct ordering are handled
-          through Telegram. Join the private channel to stay closest
-          to every release.
+          Drops, stock updates and direct order communication are
+          released through Telegram. Get closer to the brand and
+          stay ahead of the next release.
         </p>
 
         <a
-          class="btn"
+          class="gold-btn"
           href="https://t.me/TTE_V2"
           target="_blank"
           rel="noopener noreferrer"
@@ -2172,9 +2145,9 @@
 
     </section>
 
-    <!-- =========================
+    <!-- =====================================================
          CONTACT
-    ========================= -->
+    ====================================================== -->
 
     <section
       class="contact"
@@ -2182,50 +2155,42 @@
       aria-labelledby="contact-title"
     >
 
-      <div class="section-shell">
+      <span class="section-eyebrow">
+        Direct Access
+      </span>
 
-        <div class="section-heading">
+      <h2 id="contact-title">
+        Contact
+      </h2>
 
-          <div class="section-eyebrow">
-            Direct Access
-          </div>
+      <p>
+        For orders, sizing questions, payment confirmation and
+        release updates, contact TopTierExotics directly.
+      </p>
 
-          <h2 id="contact-title">
-            Contact
-          </h2>
+      <p>
+        Telegram is the fastest route for direct communication.
+      </p>
 
-        </div>
+      <div class="contact-links">
 
-        <p class="contact-copy">
-          Message us via Telegram or Instagram for orders,
-          sizing questions, payment confirmation and release updates.
-        </p>
+        <a
+          class="gold-btn"
+          href="https://t.me/TTE_V2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Telegram
+        </a>
 
-        <p class="contact-copy">
-          For the fastest response, use Telegram first.
-        </p>
-
-        <div class="contact-links">
-
-          <a
-            class="btn"
-            href="https://t.me/TTE_V2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open Telegram
-          </a>
-
-          <a
-            class="btn btn-outline"
-            href="https://www.instagram.com/toptierexotics.2k25"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open Instagram
-          </a>
-
-        </div>
+        <a
+          class="outline-btn"
+          href="https://www.instagram.com/toptierexotics.2k25"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Instagram
+        </a>
 
       </div>
 
@@ -2233,9 +2198,9 @@
 
   </main>
 
-  <!-- =========================
+  <!-- =======================================================
        FOOTER
-  ========================= -->
+  ======================================================== -->
 
   <footer class="footer">
 
@@ -2243,63 +2208,51 @@
       class="footer-logo"
       src="logo.png"
       alt="TopTierExotics"
-      width="70"
-      height="70"
       loading="lazy"
     >
 
-    <h3>
-      TOPTIEREXOTICS
-    </h3>
-
     <p class="footer-copy">
-      Private-access streetwear. Exclusive designs.
-      Limited releases. Direct communication.
+      Premium clothing. Exotic lifestyle. Exclusive designs,
+      limited drops and private access.
     </p>
 
     <div class="footer-icons">
 
       <!-- TELEGRAM -->
+
       <a
         href="https://t.me/TTE_V2"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Telegram"
+        aria-label="TopTierExotics Telegram"
       >
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/>
         </svg>
       </a>
 
       <!-- INSTAGRAM -->
+
       <a
         href="https://www.instagram.com/toptierexotics.2k25"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Instagram"
+        aria-label="TopTierExotics Instagram"
       >
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
         </svg>
       </a>
 
       <!-- PAYPAL -->
+
       <a
         href="https://www.paypal.me/TopTierExotics"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="PayPal"
+        aria-label="TopTierExotics PayPal"
       >
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/>
         </svg>
       </a>
@@ -2307,14 +2260,14 @@
     </div>
 
     <p class="footer-legal">
-      © 2026 TopTierExotics. All rights reserved.
+      &copy; 2026 TopTierExotics. All rights reserved.
     </p>
 
   </footer>
 
-  <!-- =========================
-       ZOOM MODAL
-  ========================= -->
+  <!-- =======================================================
+       ZOOM
+  ======================================================== -->
 
   <div
     class="zoom"
@@ -2336,23 +2289,19 @@
 
     <img
       id="zoomImg"
-      src=""
       alt=""
     >
 
   </div>
 
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
   <script>
-    /* ==========================================
-       ENABLE JS ENHANCEMENTS
-    ========================================== */
+    "use strict";
 
     document.documentElement.classList.add("js-enabled");
-    document.documentElement.classList.remove("no-js");
-
-    /* ==========================================
-       ELEMENTS
-    ========================================== */
 
     const loader = document.getElementById("loader");
     const burger = document.getElementById("burger");
@@ -2363,36 +2312,18 @@
     const zoomImg = document.getElementById("zoomImg");
     const zoomClose = document.getElementById("zoomClose");
 
+    const heroMascot = document.getElementById("heroMascot");
+    const heroFallback = document.getElementById("heroFallback");
+
     const pageBody = document.body;
-    const products = document.querySelectorAll(".product");
 
-    let menuLastFocus = null;
-    let zoomLastFocus = null;
+    let menuOpen = false;
+    let zoomOpen = false;
+
+    let previousFocus = null;
+    let zoomPreviousFocus = null;
+
     let suppressZoomUntil = 0;
-
-    /* ==========================================
-       LOADER
-    ========================================== */
-
-    function hideLoader() {
-      if (!loader) return;
-      loader.classList.add("hidden");
-    }
-
-    window.addEventListener("load", () => {
-      window.requestAnimationFrame(hideLoader);
-    });
-
-    /*
-      Hard failsafe.
-      Even if another script/resource behaves badly,
-      the loader cannot permanently trap the visitor.
-    */
-    window.setTimeout(hideLoader, 4500);
-
-    /* ==========================================
-       FOCUSABLE ELEMENTS
-    ========================================== */
 
     const focusableSelector = [
       "a[href]",
@@ -2400,18 +2331,141 @@
       "[tabindex]:not([tabindex='-1'])"
     ].join(",");
 
-    function getFocusable(container) {
-      return Array.from(
-        container.querySelectorAll(focusableSelector)
-      ).filter((element) => {
-        return !element.hasAttribute("disabled") &&
-          !element.hasAttribute("inert") &&
-          element.getAttribute("aria-hidden") !== "true";
+    /* =========================================================
+       LOADER
+    ========================================================= */
+
+    function hideLoader() {
+      if (!loader) return;
+
+      loader.classList.add("hidden");
+    }
+
+    window.addEventListener("load", () => {
+      requestAnimationFrame(hideLoader);
+    });
+
+    /*
+      Real JavaScript failsafe.
+      The loader cannot remain forever if a resource hangs.
+    */
+    window.setTimeout(hideLoader, 4500);
+
+    /* =========================================================
+       HERO IMAGE FALLBACK
+    ========================================================= */
+
+    if (heroMascot) {
+      heroMascot.addEventListener("error", () => {
+        heroMascot.style.display = "none";
+
+        if (heroFallback) {
+          heroFallback.style.display = "flex";
+        }
       });
     }
 
+    /* =========================================================
+       MENU
+    ========================================================= */
+
+    function getMenuFocusable() {
+      if (!menu) return [];
+
+      return Array.from(
+        menu.querySelectorAll(focusableSelector)
+      ).filter((element) => {
+        return !element.hasAttribute("disabled") &&
+               element.offsetParent !== null;
+      });
+    }
+
+    function openMenu() {
+      if (!menu || menuOpen) return;
+
+      previousFocus = document.activeElement;
+      menuOpen = true;
+
+      menu.classList.add("active");
+      overlay.classList.add("active");
+      burger.classList.add("active");
+
+      burger.setAttribute("aria-expanded", "true");
+      burger.setAttribute("aria-label", "Close menu");
+
+      menu.removeAttribute("inert");
+      overlay.setAttribute("aria-hidden", "false");
+
+      pageBody.classList.add("menu-open");
+
+      const links = getMenuFocusable();
+
+      if (links.length) {
+        window.setTimeout(() => {
+          links[0].focus();
+        }, 50);
+      }
+    }
+
+    function closeMenu(restoreFocus = true) {
+      if (!menu || !menuOpen) return;
+
+      menuOpen = false;
+
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+      burger.classList.remove("active");
+
+      burger.setAttribute("aria-expanded", "false");
+      burger.setAttribute("aria-label", "Open menu");
+
+      menu.setAttribute("inert", "");
+      overlay.setAttribute("aria-hidden", "true");
+
+      if (!zoomOpen) {
+        pageBody.classList.remove("menu-open");
+      }
+
+      if (
+        restoreFocus &&
+        previousFocus &&
+        typeof previousFocus.focus === "function"
+      ) {
+        previousFocus.focus();
+      }
+
+      previousFocus = null;
+    }
+
+    burger.addEventListener("click", () => {
+      if (menuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    overlay.addEventListener("click", () => {
+      closeMenu();
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu(false);
+      });
+    });
+
+    /* =========================================================
+       FOCUS TRAP
+    ========================================================= */
+
     function trapFocus(event, container) {
-      const focusable = getFocusable(container);
+      const focusable = Array.from(
+        container.querySelectorAll(focusableSelector)
+      ).filter((element) => {
+        return !element.hasAttribute("disabled") &&
+               element.offsetParent !== null;
+      });
 
       if (!focusable.length) return;
 
@@ -2429,171 +2483,47 @@
       }
     }
 
-    /* ==========================================
-       MENU
-    ========================================== */
-
-    function openMenu() {
-      if (!menu || !burger || !overlay) return;
-
-      menuLastFocus = document.activeElement;
-
-      menu.classList.add("active");
-      burger.classList.add("active");
-      overlay.classList.add("active");
-
-      pageBody.classList.add("menu-open");
-
-      burger.setAttribute("aria-expanded", "true");
-      burger.setAttribute("aria-label", "Close menu");
-
-      menu.setAttribute("aria-hidden", "false");
-      menu.removeAttribute("inert");
-
-      const firstFocusable = getFocusable(menu)[0];
-
-      if (firstFocusable) {
-        window.requestAnimationFrame(() => {
-          firstFocusable.focus();
-        });
-      }
-    }
-
-    function closeMenu(restoreFocus = true) {
-      if (!menu || !burger || !overlay) return;
-
-      menu.classList.remove("active");
-      burger.classList.remove("active");
-      overlay.classList.remove("active");
-
-      pageBody.classList.remove("menu-open");
-
-      burger.setAttribute("aria-expanded", "false");
-      burger.setAttribute("aria-label", "Open menu");
-
-      menu.setAttribute("aria-hidden", "true");
-      menu.setAttribute("inert", "");
-
-      if (
-        restoreFocus &&
-        menuLastFocus &&
-        typeof menuLastFocus.focus === "function"
-      ) {
-        menuLastFocus.focus();
-      }
-    }
-
-    burger.addEventListener("click", () => {
-      const isOpen = menu.classList.contains("active");
-
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    overlay.addEventListener("click", () => {
-      closeMenu();
-    });
-
-    menu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        closeMenu(false);
-      });
-    });
-
-    /* ==========================================
-       GLOBAL KEYBOARD CONTROLS
-    ========================================== */
-
     document.addEventListener("keydown", (event) => {
 
       if (event.key === "Escape") {
 
-        if (zoom.classList.contains("active")) {
+        if (zoomOpen) {
           closeZoom();
           return;
         }
 
-        if (menu.classList.contains("active")) {
+        if (menuOpen) {
           closeMenu();
           return;
         }
       }
 
-      if (
-        event.key === "Tab" &&
-        menu.classList.contains("active")
-      ) {
+      if (event.key === "Tab" && menuOpen) {
         trapFocus(event, menu);
       }
 
-      if (
-        event.key === "Tab" &&
-        zoom.classList.contains("active")
-      ) {
+      if (event.key === "Tab" && zoomOpen) {
         trapFocus(event, zoom);
       }
     });
 
-    /* ==========================================
-       PRODUCT REVEAL
-    ========================================== */
-
-    function revealProductsImmediately() {
-      products.forEach((product) => {
-        product.classList.add("show");
-      });
-    }
-
-    if ("IntersectionObserver" in window) {
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-              observer.unobserve(entry.target);
-            }
-
-          });
-        },
-        {
-          threshold: 0.15
-        }
-      );
-
-      products.forEach((product) => {
-        observer.observe(product);
-      });
-
-    } else {
-      revealProductsImmediately();
-    }
-
-    /* ==========================================
+    /* =========================================================
        GALLERIES
-    ========================================== */
+    ========================================================= */
 
     const galleries = {
-
       hat: {
         images: [
           "hat.png",
           "hat1-back.jpg",
           "hat1-side.jpg"
         ],
-
         alts: [
           "TopTierExotics hat front view",
           "TopTierExotics hat back view",
           "TopTierExotics hat side view"
         ],
-
         index: 0,
-
         imageEl: document.getElementById("hatImage"),
         dotsEl: document.getElementById("hatDots")
       },
@@ -2605,24 +2535,19 @@
           "tracksuit-side.jpg",
           "tracksuit-detail.jpg"
         ],
-
         alts: [
           "TopTierExotics tracksuit front view",
           "TopTierExotics tracksuit back view",
           "TopTierExotics tracksuit side view",
           "TopTierExotics tracksuit detail view"
         ],
-
         index: 0,
-
         imageEl: document.getElementById("tracksuitImage"),
         dotsEl: document.getElementById("tracksuitDots")
       }
-
     };
 
     function createDots(name) {
-
       const gallery = galleries[name];
 
       if (!gallery || !gallery.dotsEl) return;
@@ -2634,16 +2559,12 @@
         const dot = document.createElement("button");
 
         dot.type = "button";
-
-        dot.className =
-          index === gallery.index
-            ? "active"
-            : "";
-
         dot.setAttribute(
           "aria-label",
-          `View image ${index + 1}`
+          "View " + name + " image " + (index + 1)
         );
+
+        dot.className = index === 0 ? "active" : "";
 
         dot.addEventListener("click", () => {
           setGalleryImage(name, index);
@@ -2651,47 +2572,24 @@
 
         gallery.dotsEl.appendChild(dot);
       });
-
-      /*
-        If there is only one image,
-        navigation dots aren't useful.
-      */
-      if (gallery.images.length <= 1) {
-        gallery.dotsEl.style.display = "none";
-
-        const frame = gallery.imageEl.closest(
-          "[data-gallery-frame]"
-        );
-
-        if (frame) {
-          frame
-            .querySelectorAll(".arrow")
-            .forEach((arrow) => {
-              arrow.style.display = "none";
-            });
-        }
-      }
     }
 
     function updateDots(name) {
-
       const gallery = galleries[name];
 
       if (!gallery || !gallery.dotsEl) return;
 
-      Array.from(gallery.dotsEl.children)
-        .forEach((dot, index) => {
-
-          dot.classList.toggle(
-            "active",
-            index === gallery.index
-          );
-
-        });
+      Array.from(
+        gallery.dotsEl.children
+      ).forEach((dot, index) => {
+        dot.classList.toggle(
+          "active",
+          index === gallery.index
+        );
+      });
     }
 
     function setGalleryImage(name, index) {
-
       const gallery = galleries[name];
 
       if (!gallery || !gallery.imageEl) return;
@@ -2705,8 +2603,9 @@
 
       gallery.index = index;
 
-      gallery.imageEl.src =
-        gallery.images[index];
+      const newSrc = gallery.images[index];
+
+      gallery.imageEl.src = newSrc;
 
       gallery.imageEl.alt =
         gallery.alts[index] ||
@@ -2714,15 +2613,13 @@
 
       gallery.imageEl.setAttribute(
         "aria-label",
-        "Open larger view of " +
-        gallery.imageEl.alt
+        "Open larger view of " + gallery.imageEl.alt
       );
 
       updateDots(name);
     }
 
     function changeGallery(name, direction) {
-
       const gallery = galleries[name];
 
       if (!gallery) return;
@@ -2732,167 +2629,135 @@
       if (total <= 1) return;
 
       const nextIndex =
-        (gallery.index + direction + total) %
-        total;
+        (gallery.index + direction + total) % total;
 
       setGalleryImage(name, nextIndex);
     }
 
-    document
-      .querySelectorAll("[data-gallery]")
-      .forEach((button) => {
+    document.querySelectorAll("[data-gallery]").forEach((button) => {
 
-        button.addEventListener("click", () => {
+      button.addEventListener("click", () => {
 
-          changeGallery(
-            button.dataset.gallery,
-            Number(button.dataset.direction)
-          );
+        const name = button.dataset.gallery;
+        const direction =
+          Number(button.dataset.direction);
 
-        });
-
+        changeGallery(name, direction);
       });
+    });
 
     Object.keys(galleries).forEach(createDots);
 
-    /* ==========================================
-       BROKEN IMAGE FALLBACK
-    ========================================== */
+    /* =========================================================
+       IMAGE ERROR HANDLING
+    ========================================================= */
 
     Object.values(galleries).forEach((gallery) => {
 
       if (!gallery.imageEl) return;
 
-      gallery.imageEl.addEventListener(
-        "error",
-        () => {
+      gallery.imageEl.addEventListener("error", () => {
 
-          /*
-            Prevent repeated error loops.
-          */
-          if (
-            gallery.imageEl.dataset.failed === "true"
-          ) {
-            return;
-          }
+        gallery.imageEl.removeAttribute("src");
 
-          gallery.imageEl.dataset.failed = "true";
+        gallery.imageEl.alt =
+          "Product image currently unavailable";
 
-          gallery.imageEl.alt =
-            "TopTierExotics product image unavailable";
+        gallery.imageEl.style.opacity = ".3";
+      });
 
-          gallery.imageEl.style.opacity = "0.18";
-
-        }
-      );
-
-      gallery.imageEl.addEventListener(
-        "load",
-        () => {
-          gallery.imageEl.dataset.failed = "false";
-          gallery.imageEl.style.opacity = "";
-        }
-      );
+      gallery.imageEl.addEventListener("load", () => {
+        gallery.imageEl.style.opacity = "1";
+      });
     });
 
-    /* ==========================================
+    /* =========================================================
        ZOOM
-    ========================================== */
+    ========================================================= */
 
     function openZoom(imageElement) {
 
-      if (!imageElement) return;
+      if (!imageElement || !imageElement.src) return;
 
       if (Date.now() < suppressZoomUntil) {
         return;
       }
 
-      zoomLastFocus = imageElement;
+      zoomPreviousFocus = imageElement;
 
-      zoomImg.src = imageElement.currentSrc ||
-        imageElement.src;
-
-      zoomImg.alt = imageElement.alt || "";
+      zoomImg.src = imageElement.src;
+      zoomImg.alt = imageElement.alt;
 
       zoom.classList.add("active");
+      zoom.setAttribute("aria-hidden", "false");
 
-      zoom.setAttribute(
-        "aria-hidden",
-        "false"
-      );
+      zoomOpen = true;
 
       pageBody.classList.add("zoom-open");
 
-      window.requestAnimationFrame(() => {
-        zoomClose.focus();
-      });
+      zoomClose.focus();
     }
 
     function closeZoom() {
 
+      if (!zoomOpen) return;
+
       zoom.classList.remove("active");
+      zoom.setAttribute("aria-hidden", "true");
 
-      zoom.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      pageBody.classList.remove("zoom-open");
+      zoomOpen = false;
 
       zoomImg.removeAttribute("src");
       zoomImg.alt = "";
 
-      if (
-        zoomLastFocus &&
-        typeof zoomLastFocus.focus === "function"
-      ) {
-        zoomLastFocus.focus();
+      pageBody.classList.remove("zoom-open");
+
+      if (menuOpen) {
+        pageBody.classList.add("menu-open");
       }
+
+      if (
+        zoomPreviousFocus &&
+        typeof zoomPreviousFocus.focus === "function"
+      ) {
+        zoomPreviousFocus.focus();
+      }
+
+      zoomPreviousFocus = null;
     }
 
     document
       .querySelectorAll(".product-image img")
-      .forEach((image) => {
+      .forEach((img) => {
 
-        image.addEventListener("click", () => {
-          openZoom(image);
+        img.addEventListener("click", () => {
+          openZoom(img);
         });
 
-        image.addEventListener(
-          "keydown",
-          (event) => {
+        img.addEventListener("keydown", (event) => {
 
-            if (
-              event.key === "Enter" ||
-              event.key === " "
-            ) {
-              event.preventDefault();
-              openZoom(image);
-            }
-
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+            event.preventDefault();
+            openZoom(img);
           }
-        );
+        });
       });
+
+    zoomClose.addEventListener("click", closeZoom);
 
     zoom.addEventListener("click", (event) => {
 
-      if (
-        event.target === zoom ||
-        event.target === zoomClose
-      ) {
+      if (event.target === zoom) {
         closeZoom();
       }
-
     });
 
-    zoomClose.addEventListener(
-      "click",
-      closeZoom
-    );
-
-    /* ==========================================
+    /* =========================================================
        MOBILE SWIPE
-    ========================================== */
+    ========================================================= */
 
     document
       .querySelectorAll("[data-gallery-frame]")
@@ -2912,9 +2777,7 @@
             startY = touch.clientY;
 
           },
-          {
-            passive: true
-          }
+          { passive: true }
         );
 
         frame.addEventListener(
@@ -2931,9 +2794,8 @@
               touch.clientY - startY;
 
             if (
-              Math.abs(deltaX) > 40 &&
-              Math.abs(deltaX) >
-                Math.abs(deltaY)
+              Math.abs(deltaX) > 38 &&
+              Math.abs(deltaX) > Math.abs(deltaY)
             ) {
 
               changeGallery(
@@ -2946,86 +2808,81 @@
             }
 
           },
-          {
-            passive: true
-          }
+          { passive: true }
         );
       });
 
-    /* ==========================================
-       SMOOTH INTERNAL NAVIGATION
-    ========================================== */
+    /* =========================================================
+       PRODUCT REVEAL
+    ========================================================= */
 
-    document
-      .querySelectorAll('a[href^="#"]')
-      .forEach((link) => {
+    const products =
+      document.querySelectorAll(".product");
 
-        link.addEventListener("click", (event) => {
+    function showAllProducts() {
+      products.forEach((product) => {
+        product.classList.add("show");
+      });
+    }
 
-          const targetId =
-            link.getAttribute("href");
+    if (
+      "IntersectionObserver" in window &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
 
-          if (
-            !targetId ||
-            targetId === "#"
-          ) {
-            return;
+      const observer =
+        new IntersectionObserver(
+          (entries) => {
+
+            entries.forEach((entry) => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+              }
+
+            });
+
+          },
+          {
+            threshold: .15
           }
+        );
 
-          const target =
-            document.querySelector(targetId);
-
-          if (!target) return;
-
-          event.preventDefault();
-
-          target.scrollIntoView({
-            behavior:
-              window.matchMedia(
-                "(prefers-reduced-motion: reduce)"
-              ).matches
-                ? "auto"
-                : "smooth",
-            block: "start"
-          });
-
-          if (
-            targetId === "#home"
-          ) {
-            window.history.replaceState(
-              null,
-              "",
-              window.location.pathname +
-              window.location.search
-            );
-          } else {
-            window.history.replaceState(
-              null,
-              "",
-              targetId
-            );
-          }
-        });
+      products.forEach((product) => {
+        observer.observe(product);
       });
 
-    /* ==========================================
-       IMAGE PRELOAD GALLERY
-    ========================================== */
+      window.addEventListener(
+        "load",
+        () => {
+          products.forEach((product) => {
 
-    Object.values(galleries).forEach((gallery) => {
+            const rect =
+              product.getBoundingClientRect();
 
-      gallery.images
-        .slice(1)
-        .forEach((src) => {
+            if (rect.top < window.innerHeight * .9) {
+              product.classList.add("show");
+            }
 
-          const image =
-            new Image();
+          });
+        }
+      );
 
-          image.src = src;
+    } else {
+      showAllProducts();
+    }
 
-        });
+    /* =========================================================
+       SAFETY FALLBACK
+    ========================================================= */
 
-    });
+    window.setTimeout(() => {
+      showAllProducts();
+    }, 2500);
+
   </script>
 
 </body>

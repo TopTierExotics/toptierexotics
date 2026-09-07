@@ -50,6 +50,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
   --black:#000;
   --black-soft:#050505;
@@ -120,9 +121,7 @@ a,
   outline-offset:4px;
 }
 
-/* ================================
-   SKIP LINK
-================================ */
+/* SKIP */
 
 .skip-link{
   position:absolute;
@@ -141,9 +140,7 @@ a,
   top:16px;
 }
 
-/* ================================
-   LOADER
-================================ */
+/* LOADER */
 
 .loader{
   position:fixed;
@@ -194,137 +191,7 @@ a,
   }
 }
 
-/* ================================
-   HERO HEADER
-================================ */
-
-.hero-header{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  z-index:20;
-  height:72px;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  padding:0 28px 0 88px;
-  border-bottom:1px solid rgba(217,180,91,.18);
-  background:linear-gradient(
-    180deg,
-    rgba(0,0,0,.62),
-    rgba(0,0,0,.08)
-  );
-}
-
-.hero-nav{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:42px;
-  height:100%;
-}
-
-.hero-nav a{
-  position:relative;
-  height:100%;
-  display:flex;
-  align-items:center;
-  color:rgba(255,255,255,.84);
-  text-decoration:none;
-  font-size:.67rem;
-  font-weight:800;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  transition:color .25s ease;
-}
-
-.hero-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:1px;
-  background:var(--gold);
-  transform:scaleX(0);
-  transform-origin:center;
-  transition:transform .25s ease;
-}
-
-.hero-nav a:hover,
-.hero-nav a:focus-visible{
-  color:#fff;
-}
-
-.hero-nav a:hover::after,
-.hero-nav a:focus-visible::after{
-  transform:scaleX(1);
-}
-
-.hero-header-right{
-  min-width:0;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:22px;
-}
-
-.linktree-top{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  min-height:36px;
-  padding:8px 13px;
-  border:1px solid rgba(217,180,91,.5);
-  border-radius:5px;
-  background:rgba(0,0,0,.34);
-  color:var(--gold-light);
-  text-decoration:none;
-  white-space:nowrap;
-  font-size:.58rem;
-  font-weight:900;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  transition:
-    background .25s ease,
-    border-color .25s ease,
-    color .25s ease,
-    transform .25s ease,
-    box-shadow .25s ease;
-}
-
-.linktree-top::before{
-  content:"↗";
-  font-size:.8rem;
-  line-height:1;
-}
-
-.linktree-top:hover,
-.linktree-top:focus-visible{
-  color:#fff;
-  background:rgba(217,180,91,.1);
-  border-color:var(--gold-light);
-  box-shadow:0 0 24px rgba(217,180,91,.12);
-  transform:translateY(-1px);
-}
-
-.header-mark{
-  flex:0 0 auto;
-  color:var(--gold-light);
-  font-family:"Playfair Display",Georgia,serif;
-  font-size:1.15rem;
-  font-weight:700;
-  letter-spacing:.03em;
-  text-decoration:none;
-  text-shadow:0 2px 20px rgba(217,180,91,.18);
-}
-
-/* ================================
-   BURGER
-================================ */
+/* BURGER */
 
 .burger{
   position:fixed;
@@ -333,9 +200,9 @@ a,
   z-index:3000;
   width:50px;
   height:50px;
-  border:1px solid rgba(57,255,20,.25);
-  border-radius:14px;
-  background:rgba(0,0,0,.56);
+  border:1px solid rgba(217,180,91,.45);
+  border-radius:12px;
+  background:rgba(0,0,0,.62);
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
   display:flex;
@@ -346,10 +213,11 @@ a,
 }
 
 .burger span{
-  display:block;
   width:21px;
   height:2px;
   margin:auto;
+  margin-top:0;
+  margin-bottom:0;
   background:#fff;
   border-radius:999px;
   transition:transform .3s ease,opacity .3s ease;
@@ -367,9 +235,150 @@ a,
   transform:translateY(-7px) rotate(-45deg);
 }
 
-/* ================================
-   OVERLAY
-================================ */
+/* DESKTOP HEADER */
+
+.site-header{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1800;
+  height:73px;
+  border-bottom:1px solid rgba(217,180,91,.2);
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.52),
+    rgba(0,0,0,.08)
+  );
+  pointer-events:none;
+}
+
+.site-header-inner{
+  height:100%;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:0 clamp(24px,5vw,80px);
+}
+
+.header-socials{
+  display:flex;
+  align-items:center;
+  gap:21px;
+  padding-left:125px;
+  pointer-events:auto;
+}
+
+.header-socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,.86);
+  text-decoration:none;
+  transition:color .25s ease,transform .25s ease;
+}
+
+.header-socials a:hover,
+.header-socials a:focus-visible{
+  color:var(--gold-light);
+  transform:translateY(-1px);
+}
+
+.header-socials svg{
+  width:17px;
+  height:17px;
+  fill:currentColor;
+}
+
+.header-socials .linktree-word{
+  width:auto;
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.header-nav{
+  height:100%;
+  display:flex;
+  align-items:center;
+  gap:42px;
+  pointer-events:auto;
+}
+
+.header-nav a{
+  position:relative;
+  height:100%;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  text-decoration:none;
+  font-size:.66rem;
+  font-weight:800;
+  letter-spacing:.27em;
+  transition:color .25s ease;
+}
+
+.header-nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:5px;
+  height:1px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .25s ease;
+}
+
+.header-nav a:hover,
+.header-nav a:focus-visible{
+  color:var(--gold-light);
+}
+
+.header-nav a:hover::after,
+.header-nav a:focus-visible::after{
+  transform:scaleX(1);
+}
+
+.header-brand{
+  justify-self:end;
+  pointer-events:auto;
+}
+
+.header-brand a{
+  color:var(--gold-light);
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:1.1rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-decoration:none;
+}
+
+.header-linktree{
+  position:absolute;
+  top:50%;
+  right:clamp(24px,4vw,65px);
+  transform:translateY(-50%);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--gold-light);
+  text-decoration:none;
+  font-size:.55rem;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  transition:color .25s ease,transform .25s ease;
+}
+
+.header-linktree:hover,
+.header-linktree:focus-visible{
+  color:#fff;
+  transform:translateY(-50%) translateX(-2px);
+}
+
+/* OVERLAY */
 
 .overlay{
   position:fixed;
@@ -390,19 +399,16 @@ a,
   pointer-events:auto;
 }
 
-/* ================================
-   SIDE MENU
-================================ */
+/* SIDE MENU */
 
 .side-menu{
   position:fixed;
   top:0;
   left:0;
   z-index:2500;
-  width:min(340px,88vw);
+  width:min(320px,86vw);
   height:100dvh;
   padding:110px 28px 40px;
-  overflow-y:auto;
   background:
     linear-gradient(180deg,rgba(57,255,20,.055),transparent 25%),
     #050505;
@@ -426,10 +432,7 @@ a,
   font-size:.88rem;
   font-weight:700;
   letter-spacing:.16em;
-  transition:
-    background .25s ease,
-    color .25s ease,
-    transform .25s ease;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
 }
 
 .side-menu a:hover,
@@ -439,15 +442,17 @@ a,
   transform:translateX(5px);
 }
 
-.side-menu .menu-linktree{
-  color:var(--gold-light);
-  border:1px solid rgba(217,180,91,.12);
-  background:rgba(217,180,91,.025);
+.side-menu .menu-divider{
+  height:1px;
+  margin:20px 16px;
+  background:rgba(217,180,91,.18);
 }
 
-/* ================================
-   HERO
-================================ */
+.side-menu .linktree-menu{
+  color:var(--gold-light);
+}
+
+/* HERO */
 
 .hero{
   position:relative;
@@ -478,11 +483,11 @@ a,
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.98) 0%,
-      rgba(0,0,0,.91) 25%,
-      rgba(0,0,0,.57) 46%,
-      rgba(0,0,0,.08) 72%,
-      rgba(0,0,0,.12) 100%
+      rgba(0,0,0,.97) 0%,
+      rgba(0,0,0,.90) 25%,
+      rgba(0,0,0,.58) 47%,
+      rgba(0,0,0,.12) 73%,
+      rgba(0,0,0,.08) 100%
     );
 }
 
@@ -494,15 +499,15 @@ a,
   background:
     linear-gradient(
       180deg,
-      rgba(0,0,0,.48),
+      rgba(0,0,0,.42),
       transparent 20%,
-      transparent 77%,
-      rgba(0,0,0,.68)
+      transparent 76%,
+      rgba(0,0,0,.62)
     ),
     radial-gradient(
-      circle at 50% 50%,
-      transparent 36%,
-      rgba(0,0,0,.25) 100%
+      circle at 52% 50%,
+      transparent 35%,
+      rgba(0,0,0,.2) 100%
     );
   pointer-events:none;
 }
@@ -510,28 +515,30 @@ a,
 .hero-content{
   position:relative;
   z-index:2;
-  width:min(620px,48vw);
+  width:min(650px,46vw);
   min-height:100%;
-  margin-left:clamp(70px,10vw,175px);
-  padding:
-    clamp(120px,15vh,165px)
-    0
-    80px;
+  margin-left:clamp(75px,8.3vw,145px);
+  padding:clamp(110px,14vh,145px) 0 80px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:flex-start;
 }
 
+/*
+  The hero deliberately uses one clean brand hierarchy.
+  No second logo image is placed above the title.
+*/
+
 .brand-line{
   position:relative;
   display:flex;
   align-items:center;
   gap:13px;
-  margin-bottom:25px;
+  margin-bottom:26px;
   color:var(--gold-light);
-  font-size:.63rem;
-  font-weight:700;
+  font-size:.59rem;
+  font-weight:800;
   letter-spacing:.34em;
   text-transform:uppercase;
 }
@@ -541,23 +548,24 @@ a,
   width:31px;
   height:1px;
   background:var(--gold);
+  flex:none;
 }
 
 .hero-eyebrow{
   margin-bottom:13px;
-  color:rgba(255,255,255,.78);
-  font-size:.78rem;
+  color:rgba(255,255,255,.72);
+  font-size:.66rem;
   font-weight:700;
-  letter-spacing:.31em;
+  letter-spacing:.29em;
   text-transform:uppercase;
 }
 
 .hero-title{
-  font-family:"Montserrat",Arial,sans-serif;
-  font-size:clamp(4.5rem,7.1vw,8.2rem);
-  line-height:.79;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:clamp(4.8rem,7.5vw,8.5rem);
+  line-height:.77;
   letter-spacing:-.065em;
-  font-weight:900;
+  font-weight:800;
   text-transform:uppercase;
   white-space:nowrap;
 }
@@ -569,19 +577,20 @@ a,
 
 .hero-title .exotics{
   display:block;
+  margin-left:3px;
   color:#4f9c55;
   font-style:italic;
-  font-weight:900;
-  letter-spacing:-.085em;
-  transform:skewX(-8deg);
+  font-weight:800;
+  letter-spacing:-.09em;
+  transform:skewX(-7deg);
   transform-origin:left center;
 }
 
 .hero-divider{
-  width:340px;
-  max-width:70%;
+  width:345px;
+  max-width:72%;
   height:1px;
-  margin:35px 0 28px;
+  margin:36px 0 27px;
   background:
     linear-gradient(
       90deg,
@@ -610,30 +619,30 @@ a,
 
 .hero-subtitle{
   color:rgba(255,255,255,.9);
-  font-size:.94rem;
+  font-size:.82rem;
   font-weight:500;
-  letter-spacing:.19em;
+  letter-spacing:.18em;
   text-transform:uppercase;
 }
 
 .hero-tagline{
   margin-top:8px;
   color:var(--gold-light);
-  font-size:.66rem;
+  font-size:.59rem;
   font-weight:700;
-  letter-spacing:.25em;
+  letter-spacing:.24em;
   text-transform:uppercase;
 }
 
 .hero-actions{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
-  margin-top:27px;
+  gap:18px;
+  margin-top:28px;
 }
 
 .hero-btn{
-  min-width:192px;
+  min-width:195px;
   min-height:49px;
   padding:14px 22px;
   display:inline-flex;
@@ -642,9 +651,9 @@ a,
   border:1px solid var(--gold);
   background:var(--gold);
   color:#080808;
-  font-size:.68rem;
+  font-size:.66rem;
   font-weight:900;
-  letter-spacing:.18em;
+  letter-spacing:.17em;
   text-decoration:none;
   text-transform:uppercase;
   transition:
@@ -652,6 +661,12 @@ a,
     box-shadow .25s ease,
     background .25s ease,
     color .25s ease;
+}
+
+.hero-btn::after{
+  content:"→";
+  margin-left:14px;
+  font-size:.9rem;
 }
 
 .hero-btn:hover,
@@ -681,9 +696,9 @@ a,
   flex-wrap:wrap;
   gap:8px;
   color:rgba(255,255,255,.55);
-  font-size:.55rem;
+  font-size:.5rem;
   font-weight:700;
-  letter-spacing:.19em;
+  letter-spacing:.18em;
   text-transform:uppercase;
 }
 
@@ -712,16 +727,10 @@ a,
   content:"";
   width:52px;
   height:1px;
-  background:linear-gradient(
-    90deg,
-    rgba(255,255,255,.25),
-    var(--gold)
-  );
+  background:linear-gradient(90deg,rgba(255,255,255,.25),var(--gold));
 }
 
-/* ================================
-   GENERAL BUTTONS
-================================ */
+/* GENERAL BUTTON */
 
 .primary-btn{
   min-height:50px;
@@ -755,9 +764,7 @@ a,
   color:var(--green);
 }
 
-/* ================================
-   PRODUCTS
-================================ */
+/* PRODUCTS */
 
 .products{
   padding:110px 8% 95px;
@@ -802,16 +809,12 @@ a,
   border-radius:22px;
   box-shadow:var(--shadow);
   text-align:center;
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease;
+  transition:transform .35s ease,box-shadow .35s ease;
 }
 
 .product:hover{
   transform:translateY(-7px);
-  box-shadow:
-    0 0 40px rgba(57,255,20,.12),
-    var(--shadow);
+  box-shadow:0 0 40px rgba(57,255,20,.12),var(--shadow);
 }
 
 .badge{
@@ -852,10 +855,7 @@ a,
   object-fit:contain;
   border-radius:12px;
   cursor:zoom-in;
-  transition:
-    transform .3s ease,
-    opacity .2s ease,
-    filter .3s ease;
+  transition:transform .3s ease,opacity .2s ease,filter .3s ease;
 }
 
 .product-image img:hover{
@@ -889,9 +889,7 @@ a,
   cursor:pointer;
   font-size:1.3rem;
   line-height:1;
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease;
+  transition:transform .25s ease,box-shadow .25s ease;
 }
 
 .arrow:hover,
@@ -962,9 +960,7 @@ a,
   text-transform:uppercase;
 }
 
-/* ================================
-   TELEGRAM
-================================ */
+/* TELEGRAM */
 
 .telegram{
   position:relative;
@@ -984,9 +980,7 @@ a,
   color:var(--muted);
 }
 
-/* ================================
-   CONTACT
-================================ */
+/* CONTACT */
 
 .contact{
   position:relative;
@@ -1008,21 +1002,41 @@ a,
   gap:12px;
 }
 
+/* LINKTREE CONTACT */
+
 .contact-linktree{
-  border-color:var(--gold);
+  margin-top:20px;
+}
+
+.contact-linktree a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:12px 22px;
+  border:1px solid rgba(217,180,91,.45);
+  border-radius:999px;
   color:var(--gold-light);
+  background:rgba(217,180,91,.035);
+  text-decoration:none;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease;
 }
 
-.contact-linktree:hover,
-.contact-linktree:focus-visible{
+.contact-linktree a:hover,
+.contact-linktree a:focus-visible{
+  transform:translateY(-2px);
   background:rgba(217,180,91,.08);
-  color:#fff;
-  box-shadow:0 0 28px rgba(217,180,91,.16);
+  border-color:var(--gold);
 }
 
-/* ================================
-   FOOTER
-================================ */
+/* FOOTER */
 
 .footer{
   padding:62px 8% calc(40px + env(safe-area-inset-bottom));
@@ -1058,10 +1072,7 @@ a,
   border:1px solid rgba(255,255,255,.1);
   border-radius:50%;
   background:rgba(255,255,255,.025);
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
 }
 
 .footer-icons a:hover,
@@ -1085,9 +1096,7 @@ a,
   text-transform:uppercase;
 }
 
-/* ================================
-   ZOOM
-================================ */
+/* ZOOM */
 
 .zoom{
   position:fixed;
@@ -1125,28 +1134,24 @@ a,
   cursor:pointer;
 }
 
-/* ================================
-   TABLET
-================================ */
+/* TABLET */
 
-@media(max-width:1100px){
+@media(max-width:1000px){
 
-  .hero-header{
-    padding-left:82px;
-    padding-right:22px;
+  .site-header-inner{
+    padding-right:25px;
   }
 
-  .hero-nav{
-    gap:26px;
+  .header-socials{
+    padding-left:95px;
   }
 
-  .hero-header-right{
-    gap:12px;
+  .header-nav{
+    gap:24px;
   }
 
-  .linktree-top{
-    padding-left:10px;
-    padding-right:10px;
+  .header-linktree{
+    display:none;
   }
 
   .hero-content{
@@ -1163,52 +1168,59 @@ a,
   }
 }
 
-/* ================================
-   MOBILE
-================================ */
+/* MOBILE */
 
 @media(max-width:700px){
 
-  .hero-header{
+  .site-header{
     height:64px;
-    grid-template-columns:1fr auto;
-    padding:
-      0
-      max(14px,env(safe-area-inset-right))
-      0
-      70px;
-    border-bottom-color:rgba(217,180,91,.14);
+    background:linear-gradient(
+      180deg,
+      rgba(0,0,0,.68),
+      rgba(0,0,0,.08)
+    );
   }
 
-  .hero-nav{
+  .site-header-inner{
+    display:flex;
+    justify-content:flex-end;
+    padding:0 18px;
+  }
+
+  .header-socials,
+  .header-nav{
     display:none;
   }
 
-  .hero-header-right{
-    gap:9px;
+  .header-brand{
+    display:block;
+    margin-right:5px;
   }
 
-  .linktree-top{
-    min-height:34px;
-    padding:7px 9px;
-    gap:5px;
-    font-size:.49rem;
-    letter-spacing:.1em;
+  .header-brand a{
+    font-size:.9rem;
   }
 
-  .linktree-top::before{
-    font-size:.68rem;
+  .header-linktree{
+    display:flex;
+    top:auto;
+    right:18px;
+    bottom:13px;
+    transform:none;
+    font-size:.46rem;
+    letter-spacing:.16em;
+    opacity:.75;
   }
 
-  .header-mark{
-    padding-left:4px;
-    font-size:1rem;
+  .header-linktree:hover,
+  .header-linktree:focus-visible{
+    transform:none;
   }
 
   .burger{
     width:46px;
     height:46px;
-    top:max(9px,env(safe-area-inset-top));
+    top:max(13px,env(safe-area-inset-top));
     left:max(12px,env(safe-area-inset-left));
   }
 
@@ -1223,23 +1235,23 @@ a,
   }
 
   .hero-art{
-    object-position:62% center;
+    object-position:67% center;
   }
 
   .hero::before{
     background:
       linear-gradient(
         90deg,
-        rgba(0,0,0,.97) 0%,
-        rgba(0,0,0,.91) 42%,
-        rgba(0,0,0,.48) 72%,
-        rgba(0,0,0,.08) 100%
+        rgba(0,0,0,.98) 0%,
+        rgba(0,0,0,.92) 39%,
+        rgba(0,0,0,.58) 67%,
+        rgba(0,0,0,.15) 100%
       ),
       linear-gradient(
         180deg,
         rgba(0,0,0,.42),
-        transparent 35%,
-        rgba(0,0,0,.48)
+        transparent 38%,
+        rgba(0,0,0,.55)
       );
   }
 
@@ -1247,18 +1259,14 @@ a,
     width:auto;
     max-width:100%;
     margin:0;
-    padding:
-      105px
-      25px
-      82px;
+    padding:100px 25px 72px;
     justify-content:center;
   }
 
   .brand-line{
     margin-bottom:19px;
-    font-size:.51rem;
-    letter-spacing:.24em;
-    gap:9px;
+    font-size:.49rem;
+    letter-spacing:.25em;
   }
 
   .brand-line::before{
@@ -1267,12 +1275,12 @@ a,
 
   .hero-eyebrow{
     margin-bottom:11px;
-    font-size:.57rem;
+    font-size:.56rem;
     letter-spacing:.17em;
   }
 
   .hero-title{
-    font-size:clamp(3.35rem,15.8vw,5.7rem);
+    font-size:clamp(3.35rem,15.5vw,5.8rem);
     line-height:.81;
     white-space:normal;
   }
@@ -1288,7 +1296,7 @@ a,
   }
 
   .hero-subtitle{
-    font-size:.66rem;
+    font-size:.65rem;
     line-height:1.5;
     letter-spacing:.11em;
   }
@@ -1303,21 +1311,22 @@ a,
     max-width:330px;
     margin-top:23px;
     flex-direction:column;
+    gap:9px;
   }
 
   .hero-btn{
     width:100%;
     min-height:47px;
-    font-size:.6rem;
+    font-size:.59rem;
   }
 
   .hero-trust{
     left:25px;
     right:25px;
-    bottom:22px;
+    bottom:23px;
     gap:5px;
     font-size:.43rem;
-    letter-spacing:.1em;
+    letter-spacing:.11em;
   }
 
   .scroll-indicator{
@@ -1365,32 +1374,20 @@ a,
     max-width:340px;
   }
 
+  .contact-linktree a{
+    width:100%;
+    max-width:340px;
+  }
+
   .footer{
     padding-left:20px;
     padding-right:20px;
   }
 }
 
-/* ================================
-   SMALL PHONES
-================================ */
+/* SMALL PHONES */
 
-@media(max-width:420px){
-
-  .hero-header{
-    padding-left:67px;
-    padding-right:10px;
-  }
-
-  .linktree-top{
-    padding:7px 8px;
-    font-size:.44rem;
-    letter-spacing:.07em;
-  }
-
-  .header-mark{
-    font-size:.9rem;
-  }
+@media(max-width:380px){
 
   .hero-content{
     padding-left:18px;
@@ -1398,7 +1395,7 @@ a,
   }
 
   .hero-title{
-    font-size:clamp(3rem,15.6vw,4.6rem);
+    font-size:clamp(3rem,15.8vw,4.5rem);
   }
 
   .hero-eyebrow{
@@ -1410,7 +1407,7 @@ a,
   }
 
   .hero-tagline{
-    font-size:.46rem;
+    font-size:.45rem;
   }
 
   .hero-trust{
@@ -1420,44 +1417,7 @@ a,
   }
 }
 
-/* VERY SMALL DEVICES */
-
-@media(max-width:350px){
-
-  .hero-header{
-    padding-left:64px;
-  }
-
-  .linktree-top{
-    min-height:31px;
-    padding:6px 7px;
-    font-size:.39rem;
-  }
-
-  .header-mark{
-    font-size:.82rem;
-  }
-
-  .hero-content{
-    padding-top:100px;
-  }
-
-  .hero-title{
-    font-size:clamp(2.8rem,15.5vw,4.2rem);
-  }
-
-  .hero-actions{
-    margin-top:18px;
-  }
-
-  .hero-btn{
-    min-height:44px;
-  }
-}
-
-/* ================================
-   REDUCED MOTION
-================================ */
+/* REDUCED MOTION */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1472,6 +1432,7 @@ a,
     transition:none!important;
   }
 }
+
 </style>
 </head>
 
@@ -1488,6 +1449,8 @@ a,
 
 <div class="overlay" id="overlay" hidden></div>
 
+<!-- HAMBURGER -->
+
 <button
   class="burger"
   id="burger"
@@ -1501,6 +1464,76 @@ a,
   <span></span>
 </button>
 
+<!-- DESKTOP HEADER -->
+
+<header class="site-header">
+
+  <div class="site-header-inner">
+
+    <div class="header-socials">
+
+      <a
+        href="https://t.me/TTE_V2"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Telegram"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/>
+        </svg>
+      </a>
+
+      <a
+        href="https://www.instagram.com/toptierexotics.2k25"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+        </svg>
+      </a>
+
+      <a
+        class="linktree-word"
+        href="https://linktr.ee/TopTierExotics"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TopTierExotics Linktree"
+      >
+        Linktree
+      </a>
+
+    </div>
+
+    <nav class="header-nav" aria-label="Primary navigation">
+
+      <a href="#home">HOME</a>
+      <a href="#products">COLLECTION</a>
+      <a href="#contact">CONTACT</a>
+
+    </nav>
+
+    <div class="header-brand">
+      <a href="#home" aria-label="TopTierExotics home">TTE</a>
+    </div>
+
+  </div>
+
+  <a
+    class="header-linktree"
+    href="https://linktr.ee/TopTierExotics"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="TopTierExotics Linktree"
+  >
+    LINKTREE&nbsp;&nbsp; @TOPTIEREEXOTICS
+  </a>
+
+</header>
+
+<!-- SIDE MENU -->
+
 <nav
   class="side-menu"
   id="menu"
@@ -1510,10 +1543,10 @@ a,
 >
 
   <a href="#home">HOME</a>
-
   <a href="#products">COLLECTION</a>
-
   <a href="#contact">CONTACT</a>
+
+  <div class="menu-divider"></div>
 
   <a
     href="https://t.me/TTE_V2"
@@ -1540,21 +1573,19 @@ a,
   </a>
 
   <a
-    class="menu-linktree"
-    href="https://linktr.ee/TopTierExotics?utm_source=linktree_profile_share&ltsid=e9bbd15e-7d48-4a10-b2ec-08607d963d3e"
+    class="linktree-menu"
+    href="https://linktr.ee/TopTierExotics"
     target="_blank"
     rel="noopener noreferrer"
   >
-    LINKTREE ↗
+    LINKTREE
   </a>
 
 </nav>
 
 <main id="main-content" tabindex="-1">
 
-<!-- ================================
-     HOMEPAGE
-================================ -->
+<!-- HOMEPAGE -->
 
 <section class="hero" id="home">
 
@@ -1567,46 +1598,6 @@ a,
     decoding="async"
   >
 
-  <!-- PREMIUM TOP NAV -->
-
-  <header class="hero-header">
-
-    <div></div>
-
-    <nav class="hero-nav" aria-label="Homepage navigation">
-
-      <a href="#home">HOME</a>
-
-      <a href="#products">COLLECTION</a>
-
-      <a href="#contact">CONTACT</a>
-
-    </nav>
-
-    <div class="hero-header-right">
-
-      <a
-        class="linktree-top"
-        href="https://linktr.ee/TopTierExotics?utm_source=linktree_profile_share&ltsid=e9bbd15e-7d48-4a10-b2ec-08607d963d3e"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit TopTierExotics Linktree"
-      >
-        LINKTREE
-      </a>
-
-      <a
-        class="header-mark"
-        href="#home"
-        aria-label="TopTierExotics home"
-      >
-        TTE
-      </a>
-
-    </div>
-
-  </header>
-
   <div class="hero-content">
 
     <div class="brand-line">
@@ -1618,15 +1609,8 @@ a,
     </p>
 
     <h1 class="hero-title">
-
-      <span class="top">
-        TOP TIER
-      </span>
-
-      <span class="exotics">
-        EXOTICS
-      </span>
-
+      <span class="top">TOP TIER</span>
+      <span class="exotics">EXOTICS</span>
     </h1>
 
     <div class="hero-divider"></div>
@@ -1641,30 +1625,20 @@ a,
 
     <div class="hero-actions">
 
-      <a
-        class="hero-btn"
-        href="#products"
-      >
+      <a class="hero-btn" href="#products">
         SHOP COLLECTION
       </a>
 
-      <a
-        class="hero-btn secondary"
-        href="#products"
-      >
+      <a class="hero-btn secondary" href="#products">
         NEW DROPS
       </a>
 
     </div>
 
     <div class="hero-trust">
-
       <span>TOP QUALITY</span>
-
       <span>EXCLUSIVE DESIGNS</span>
-
       <span>LIMITED DROPS</span>
-
     </div>
 
   </div>
@@ -1675,19 +1649,11 @@ a,
 
 </section>
 
-<!-- ================================
-     COLLECTION
-================================ -->
+<!-- COLLECTION -->
 
-<section
-  class="products"
-  id="products"
-  aria-labelledby="products-title"
->
+<section class="products" id="products" aria-labelledby="products-title">
 
-  <h2 id="products-title">
-    Featured Collection
-  </h2>
+  <h2 id="products-title">Featured Collection</h2>
 
   <p class="section-copy">
     Exclusive TopTierExotics pieces with limited availability and direct private-access ordering.
@@ -1699,14 +1665,9 @@ a,
 
     <article class="product">
 
-      <div class="badge">
-        LIMITED
-      </div>
+      <div class="badge">LIMITED</div>
 
-      <div
-        class="product-image"
-        data-gallery-frame="hat"
-      >
+      <div class="product-image" data-gallery-frame="hat">
 
         <button
           class="arrow arrow-left"
@@ -1747,9 +1708,7 @@ a,
         aria-label="Hat image gallery navigation"
       ></div>
 
-      <h3>
-        TOPTIEREXOTICS HAT
-      </h3>
+      <h3>TOPTIEREXOTICS HAT</h3>
 
       <p>
         Structured fit with a clean luxury-streetwear finish and stronger visual presence.
@@ -1774,14 +1733,9 @@ a,
 
     <article class="product">
 
-      <div class="badge">
-        LIMITED
-      </div>
+      <div class="badge">LIMITED</div>
 
-      <div
-        class="product-image"
-        data-gallery-frame="tracksuit"
-      >
+      <div class="product-image" data-gallery-frame="tracksuit">
 
         <button
           class="arrow arrow-left"
@@ -1822,9 +1776,7 @@ a,
         aria-label="Tracksuit image gallery navigation"
       ></div>
 
-      <h3>
-        TOPTIEREXOTICS TRACKSUIT
-      </h3>
+      <h3>TOPTIEREXOTICS TRACKSUIT</h3>
 
       <p>
         Premium hoodie and tapered joggers with a clean tailored luxury-streetwear look.
@@ -1849,18 +1801,11 @@ a,
 
 </section>
 
-<!-- ================================
-     TELEGRAM
-================================ -->
+<!-- TELEGRAM -->
 
-<section
-  class="telegram"
-  aria-labelledby="telegram-title"
->
+<section class="telegram" aria-labelledby="telegram-title">
 
-  <h2 id="telegram-title">
-    Private Access Only
-  </h2>
+  <h2 id="telegram-title">Private Access Only</h2>
 
   <p>
     All drops are released through Telegram. Members receive earlier access,
@@ -1878,19 +1823,11 @@ a,
 
 </section>
 
-<!-- ================================
-     CONTACT
-================================ -->
+<!-- CONTACT -->
 
-<section
-  class="contact"
-  id="contact"
-  aria-labelledby="contact-title"
->
+<section class="contact" id="contact" aria-labelledby="contact-title">
 
-  <h2 id="contact-title">
-    Contact
-  </h2>
+  <h2 id="contact-title">Contact</h2>
 
   <p>
     Message us via Telegram or Instagram for orders, sizing,
@@ -1921,13 +1858,16 @@ a,
       OPEN INSTAGRAM
     </a>
 
+  </div>
+
+  <div class="contact-linktree">
+
     <a
-      class="primary-btn secondary-btn contact-linktree"
-      href="https://linktr.ee/TopTierExotics?utm_source=linktree_profile_share&ltsid=e9bbd15e-7d48-4a10-b2ec-08607d963d3e"
+      href="https://linktr.ee/TopTierExotics"
       target="_blank"
       rel="noopener noreferrer"
     >
-      OPEN LINKTREE ↗
+      VISIT @TOPTIEREEXOTICS ON LINKTREE
     </a>
 
   </div>
@@ -1936,15 +1876,11 @@ a,
 
 </main>
 
-<!-- ================================
-     FOOTER
-================================ -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
-  <h2>
-    CONNECT
-  </h2>
+  <h2>CONNECT</h2>
 
   <p class="footer-copy">
     Private-access streetwear with limited releases and direct ordering through the channels below.
@@ -1952,25 +1888,16 @@ a,
 
   <div class="footer-icons">
 
-    <!-- TELEGRAM -->
-
     <a
       href="https://t.me/TTE_V2"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Telegram"
     >
-
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/>
       </svg>
-
     </a>
-
-    <!-- INSTAGRAM -->
 
     <a
       href="https://www.instagram.com/toptierexotics.2k25"
@@ -1978,17 +1905,10 @@ a,
       rel="noopener noreferrer"
       aria-label="Instagram"
     >
-
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-0-6Z"/>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
       </svg>
-
     </a>
-
-    <!-- PAYPAL -->
 
     <a
       href="https://www.paypal.me/TopTierExotics"
@@ -1996,32 +1916,20 @@ a,
       rel="noopener noreferrer"
       aria-label="PayPal"
     >
-
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/>
       </svg>
-
     </a>
 
-    <!-- LINKTREE -->
-
     <a
-      href="https://linktr.ee/TopTierExotics?utm_source=linktree_profile_share&ltsid=e9bbd15e-7d48-4a10-b2ec-08607d963d3e"
+      href="https://linktr.ee/TopTierExotics"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Linktree"
     >
-
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path d="M12 2.5 9.3 5.2l1.45 1.45H7.1v2.1h3.65L7.9 11.6l1.48 1.48L11 11.46V15h2v-3.54l1.62 1.62 1.48-1.48-2.85-2.85h3.65v-2.1h-3.65L14.7 5.2 12 2.5Zm-1 14.4h2V21.5h-2v-4.6Z"/>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M11 3h2v5.3l3.7-3.7 1.4 1.4L14.4 10H20v2h-5.6l3.7 3.7-1.4 1.4L13 13.4V21h-2v-7.6l-3.7 3.7-1.4-1.4L9.6 12H4v-2h5.6L5.9 6l1.4-1.4L11 8.3V3Z"/>
       </svg>
-
     </a>
 
   </div>
@@ -2032,9 +1940,7 @@ a,
 
 </footer>
 
-<!-- ================================
-     IMAGE ZOOM
-================================ -->
+<!-- IMAGE ZOOM -->
 
 <div
   class="zoom"
@@ -2054,19 +1960,13 @@ a,
     &times;
   </button>
 
-  <img
-    id="zoomImg"
-    alt=""
-  >
+  <img id="zoomImg" alt="">
 
 </div>
 
 <script>
-"use strict";
 
-/* ================================
-   CORE ELEMENTS
-================================ */
+"use strict";
 
 const loader = document.getElementById("loader");
 const menu = document.getElementById("menu");
@@ -2092,10 +1992,6 @@ const focusableSelector = [
 const fallbackImage =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420'%3E%3Crect width='420' height='420' fill='%230b0b0b'/%3E%3Ccircle cx='210' cy='178' r='72' fill='none' stroke='%2339ff14' stroke-opacity='.55' stroke-width='8'/%3E%3Cpath d='M108 308h204' stroke='%2339ff14' stroke-opacity='.45' stroke-width='10' stroke-linecap='round'/%3E%3Ctext x='210' y='350' text-anchor='middle' fill='%23ffffff' fill-opacity='.72' font-family='Arial,sans-serif' font-size='22' font-weight='700'%3ETOP TIER EXOTICS%3C/text%3E%3C/svg%3E";
 
-/* ================================
-   GALLERIES
-================================ */
-
 const galleries = {
 
   hat:{
@@ -2104,17 +2000,13 @@ const galleries = {
       "hat1-back.jpg",
       "hat1-side.jpg"
     ],
-
     alts:[
       "TopTierExotics hat front view",
       "TopTierExotics hat back view",
       "TopTierExotics hat side view"
     ],
-
     index:0,
-
     imageEl:document.getElementById("hatImage"),
-
     dotsEl:document.getElementById("hatDots")
   },
 
@@ -2125,26 +2017,20 @@ const galleries = {
       "tracksuit-side.jpg",
       "tracksuit-detail.jpg"
     ],
-
     alts:[
       "TopTierExotics tracksuit front view",
       "TopTierExotics tracksuit back view",
       "TopTierExotics tracksuit side view",
       "TopTierExotics tracksuit detail view"
     ],
-
     index:0,
-
     imageEl:document.getElementById("tracksuitImage"),
-
     dotsEl:document.getElementById("tracksuitDots")
   }
 
 };
 
-/* ================================
-   LOADER
-================================ */
+/* LOADER */
 
 function hideLoader(){
 
@@ -2160,9 +2046,7 @@ window.addEventListener("load",hideLoader);
 
 window.setTimeout(hideLoader,2500);
 
-/* ================================
-   MENU
-================================ */
+/* MENU */
 
 function toggleMenu(forceState){
 
@@ -2172,7 +2056,6 @@ function toggleMenu(forceState){
       : !menu.classList.contains("active");
 
   menu.classList.toggle("active",shouldOpen);
-
   overlay.classList.toggle("active",shouldOpen);
 
   if(shouldOpen){
@@ -2200,9 +2083,7 @@ function toggleMenu(forceState){
 
   burger.setAttribute(
     "aria-label",
-    shouldOpen
-      ? "Close menu"
-      : "Open menu"
+    shouldOpen ? "Close menu" : "Open menu"
   );
 
   menu.setAttribute(
@@ -2214,10 +2095,7 @@ function toggleMenu(forceState){
     menu.inert = !shouldOpen;
   }
 
-  pageBody.classList.toggle(
-    "menu-open",
-    shouldOpen
-  );
+  pageBody.classList.toggle("menu-open",shouldOpen);
 
   if(shouldOpen){
 
@@ -2249,115 +2127,104 @@ function toggleMenu(forceState){
 
 }
 
-burger.addEventListener(
-  "click",
-  ()=>{
-    toggleMenu();
-  }
-);
+burger.addEventListener("click",()=>{
+  toggleMenu();
+});
 
-overlay.addEventListener(
-  "click",
-  ()=>{
-    toggleMenu(false);
-  }
-);
+overlay.addEventListener("click",()=>{
+  toggleMenu(false);
+});
 
 menu.querySelectorAll("a").forEach(link=>{
 
-  link.addEventListener(
-    "click",
-    ()=>{
-      toggleMenu(false);
-    }
-  );
+  link.addEventListener("click",()=>{
+    toggleMenu(false);
+  });
 
 });
 
-/* ================================
-   KEYBOARD
-================================ */
+/* KEYBOARD */
 
-document.addEventListener(
-  "keydown",
-  event=>{
+document.addEventListener("keydown",event=>{
 
-    if(event.key === "Escape"){
+  if(event.key === "Escape"){
 
-      if(zoom.classList.contains("active")){
+    if(zoom.classList.contains("active")){
 
-        closeZoom();
-        return;
-
-      }
-
-      if(menu.classList.contains("active")){
-
-        toggleMenu(false);
-        return;
-
-      }
+      closeZoom();
+      return;
 
     }
 
-    if(event.key === "Tab"){
+    if(menu.classList.contains("active")){
 
-      if(menu.classList.contains("active")){
-        trapFocus(event,menu);
-      }
-
-      if(zoom.classList.contains("active")){
-        trapFocus(event,zoom);
-      }
+      toggleMenu(false);
+      return;
 
     }
 
   }
-);
 
-/* ================================
-   PRODUCT REVEAL
-================================ */
+  if(event.key === "Tab"){
 
-if("IntersectionObserver" in window){
+    if(menu.classList.contains("active")){
+      trapFocus(event,menu);
+    }
 
-  const observer =
-    new IntersectionObserver(
-      entries=>{
+    if(zoom.classList.contains("active")){
+      trapFocus(event,zoom);
+    }
 
-        entries.forEach(entry=>{
+  }
 
-          if(entry.isIntersecting){
+});
 
-            entry.target.classList.add("show");
+/* PRODUCT REVEAL */
 
-            observer.unobserve(entry.target);
-
-          }
-
-        });
-
-      },
-      {
-        threshold:.12
-      }
-    );
+function revealVisibleProducts(){
 
   products.forEach(product=>{
-    observer.observe(product);
-  });
 
-}else{
+    const rect = product.getBoundingClientRect();
 
-  products.forEach(product=>{
-    product.classList.add("show");
+    if(rect.top < window.innerHeight * .92){
+
+      product.classList.add("show");
+
+    }
+
   });
 
 }
 
-/* ================================
-   GALLERY DOTS
-================================ */
+if("IntersectionObserver" in window){
+
+  const observer = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  },{
+    threshold:.12
+  });
+
+  products.forEach(product=>observer.observe(product));
+
+}else{
+
+  products.forEach(product=>product.classList.add("show"));
+
+}
+
+/* GALLERIES */
 
 function createDots(name){
 
@@ -2375,15 +2242,10 @@ function createDots(name){
 
   gallery.images.forEach((_,index)=>{
 
-    const dot =
-      document.createElement("button");
+    const dot = document.createElement("button");
 
     dot.type = "button";
-
-    dot.className =
-      index === gallery.index
-        ? "active"
-        : "";
+    dot.className = index === gallery.index ? "active" : "";
 
     dot.setAttribute(
       "aria-label",
@@ -2392,17 +2254,12 @@ function createDots(name){
 
     dot.setAttribute(
       "aria-current",
-      index === gallery.index
-        ? "true"
-        : "false"
+      index === gallery.index ? "true" : "false"
     );
 
-    dot.addEventListener(
-      "click",
-      ()=>{
-        setGalleryImage(name,index);
-      }
-    );
+    dot.addEventListener("click",()=>{
+      setGalleryImage(name,index);
+    });
 
     gallery.dotsEl.appendChild(dot);
 
@@ -2418,22 +2275,12 @@ function updateDots(name){
     return;
   }
 
-  Array.from(
-    gallery.dotsEl.children
-  ).forEach((dot,index)=>{
+  Array.from(gallery.dotsEl.children).forEach((dot,index)=>{
 
-    const active =
-      index === gallery.index;
+    const active = index === gallery.index;
 
-    dot.classList.toggle(
-      "active",
-      active
-    );
-
-    dot.setAttribute(
-      "aria-current",
-      String(active)
-    );
+    dot.classList.toggle("active",active);
+    dot.setAttribute("aria-current",String(active));
 
   });
 
@@ -2447,17 +2294,13 @@ function updateGalleryControls(name){
     return;
   }
 
-  const multiple =
-    gallery.images.length > 1;
+  const multiple = gallery.images.length > 1;
 
   document
-    .querySelectorAll(
-      '[data-gallery="' + name + '"]'
-    )
+    .querySelectorAll('[data-gallery="' + name + '"]')
     .forEach(button=>{
 
       button.hidden = !multiple;
-
       button.disabled = !multiple;
 
     });
@@ -2477,19 +2320,14 @@ function setGalleryImage(name,index){
   const image = gallery.imageEl;
 
   image.classList.add("is-loading");
-
   image.classList.remove("is-missing");
 
-  image.src =
-    gallery.images[index];
-
-  image.alt =
-    gallery.alts[index];
+  image.src = gallery.images[index];
+  image.alt = gallery.alts[index];
 
   image.setAttribute(
     "aria-label",
-    "Open larger view of " +
-    gallery.alts[index]
+    "Open larger view of " + gallery.alts[index]
   );
 
   updateDots(name);
@@ -2504,24 +2342,16 @@ function changeGallery(name,direction){
     return;
   }
 
-  const total =
-    gallery.images.length;
+  const total = gallery.images.length;
 
   if(total <= 1){
     return;
   }
 
   const next =
-    (
-      gallery.index +
-      direction +
-      total
-    ) % total;
+    (gallery.index + direction + total) % total;
 
-  setGalleryImage(
-    name,
-    next
-  );
+  setGalleryImage(name,next);
 
 }
 
@@ -2529,123 +2359,85 @@ document
   .querySelectorAll("[data-gallery]")
   .forEach(button=>{
 
-    button.addEventListener(
-      "click",
-      ()=>{
-        changeGallery(
-          button.dataset.gallery,
-          Number(
-            button.dataset.direction
-          )
-        );
-      }
-    );
+    button.addEventListener("click",()=>{
+
+      changeGallery(
+        button.dataset.gallery,
+        Number(button.dataset.direction)
+      );
+
+    });
 
   });
 
 Object.keys(galleries).forEach(name=>{
 
   createDots(name);
-
   updateGalleryControls(name);
 
-  galleries[name]
-    .images
-    .slice(1)
-    .forEach(src=>{
+  galleries[name].images.slice(1).forEach(src=>{
 
-      const preload =
-        new Image();
+    const preload = new Image();
+    preload.src = src;
 
-      preload.src = src;
-
-    });
+  });
 
 });
 
-/* ================================
-   IMAGE HANDLING
-================================ */
+/* IMAGE HANDLING */
 
 document
   .querySelectorAll(".product-image img")
   .forEach(img=>{
 
-    img.addEventListener(
-      "click",
-      ()=>{
+    img.addEventListener("click",()=>{
+
+      openZoom(img);
+
+    });
+
+    img.addEventListener("keydown",event=>{
+
+      if(
+        event.key === "Enter" ||
+        event.key === " "
+      ){
+
+        event.preventDefault();
         openZoom(img);
-      }
-    );
-
-    img.addEventListener(
-      "keydown",
-      event=>{
-
-        if(
-          event.key === "Enter" ||
-          event.key === " "
-        ){
-
-          event.preventDefault();
-
-          openZoom(img);
-
-        }
 
       }
-    );
 
-    img.addEventListener(
-      "load",
-      ()=>{
+    });
 
-        img.classList.remove(
-          "is-loading"
-        );
+    img.addEventListener("load",()=>{
 
-        img.classList.remove(
-          "is-missing"
-        );
+      img.classList.remove("is-loading");
+      img.classList.remove("is-missing");
 
-      }
-    );
+    });
 
-    img.addEventListener(
-      "error",
-      ()=>{
+    img.addEventListener("error",()=>{
 
-        img.classList.remove(
-          "is-loading"
-        );
+      img.classList.remove("is-loading");
+      img.classList.add("is-missing");
 
-        img.classList.add(
-          "is-missing"
-        );
+      if(img.src !== fallbackImage){
 
-        if(img.src !== fallbackImage){
-
-          img.src =
-            fallbackImage;
-
-        }
-
-        img.alt =
-          "Product image unavailable";
+        img.src = fallbackImage;
 
       }
-    );
+
+      img.alt = "Product image unavailable";
+
+    });
 
   });
 
-/* ================================
-   MOBILE SWIPE
-================================ */
+/* MOBILE SWIPE */
 
 document
-  .querySelectorAll(
-    "[data-gallery-frame]"
-  )
+  .querySelectorAll("[data-gallery-frame]")
   .forEach(frame=>{
 
     let startX = 0;
@@ -2655,97 +2447,71 @@ document
       "touchstart",
       event=>{
 
-        const touch =
-          event.changedTouches[0];
+        const touch = event.changedTouches[0];
 
-        startX =
-          touch.clientX;
-
-        startY =
-          touch.clientY;
+        startX = touch.clientX;
+        startY = touch.clientY;
 
       },
-      {
-        passive:true
-      }
+      {passive:true}
     );
 
     frame.addEventListener(
       "touchend",
       event=>{
 
-        const touch =
-          event.changedTouches[0];
+        const touch = event.changedTouches[0];
 
-        const deltaX =
-          touch.clientX - startX;
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
 
-        const deltaY =
-          touch.clientY - startY;
+        const name = frame.dataset.galleryFrame;
+        const gallery = galleries[name];
 
-        const name =
-          frame.dataset.galleryFrame;
-
-        const gallery =
-          galleries[name];
-
-        if(
-          !gallery ||
-          gallery.images.length <= 1
-        ){
+        if(!gallery || gallery.images.length <= 1){
           return;
         }
 
         if(
           Math.abs(deltaX) > 36 &&
-          Math.abs(deltaX) >
-          Math.abs(deltaY)
+          Math.abs(deltaX) > Math.abs(deltaY)
         ){
 
           changeGallery(
             name,
-            deltaX < 0
-              ? 1
-              : -1
+            deltaX < 0 ? 1 : -1
           );
 
-          suppressZoomUntil =
-            Date.now() + 450;
+          suppressZoomUntil = Date.now() + 450;
 
         }
 
       },
-      {
-        passive:true
-      }
+      {passive:true}
     );
 
   });
 
-/* ================================
-   ZOOM
-================================ */
+/* ZOOM */
 
 function openZoom(imageElement){
 
   if(
     Date.now() < suppressZoomUntil ||
-    imageElement.classList.contains(
-      "is-missing"
-    )
+    imageElement.classList.contains("is-missing")
   ){
+
     return;
+
   }
 
-  lastFocusedElement =
-    document.activeElement;
+  lastFocusedElement = document.activeElement;
 
   zoomImg.src =
     imageElement.currentSrc ||
     imageElement.src;
 
-  zoomImg.alt =
-    imageElement.alt;
+  zoomImg.alt = imageElement.alt;
 
   zoom.classList.add("active");
 
@@ -2754,9 +2520,7 @@ function openZoom(imageElement){
     "false"
   );
 
-  pageBody.classList.add(
-    "zoom-open"
-  );
+  pageBody.classList.add("zoom-open");
 
   zoomClose.focus();
 
@@ -2764,27 +2528,20 @@ function openZoom(imageElement){
 
 function closeZoom(){
 
-  zoom.classList.remove(
-    "active"
-  );
+  zoom.classList.remove("active");
 
   zoom.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  zoomImg.removeAttribute(
-    "src"
-  );
+  zoomImg.removeAttribute("src");
 
-  pageBody.classList.remove(
-    "zoom-open"
-  );
+  pageBody.classList.remove("zoom-open");
 
   if(
     lastFocusedElement &&
-    typeof lastFocusedElement.focus ===
-    "function"
+    typeof lastFocusedElement.focus === "function"
   ){
 
     lastFocusedElement.focus();
@@ -2793,19 +2550,14 @@ function closeZoom(){
 
 }
 
-function trapFocus(
-  event,
-  container
-){
+function trapFocus(event,container){
 
   const focusable =
     Array.from(
-      container.querySelectorAll(
-        focusableSelector
-      )
+      container.querySelectorAll(focusableSelector)
     ).filter(element=>{
 
-      return (
+      return(
         !element.disabled &&
         element.offsetParent !== null
       );
@@ -2816,13 +2568,8 @@ function trapFocus(
     return;
   }
 
-  const first =
-    focusable[0];
-
-  const last =
-    focusable[
-      focusable.length - 1
-    ];
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
 
   if(
     event.shiftKey &&
@@ -2830,7 +2577,6 @@ function trapFocus(
   ){
 
     event.preventDefault();
-
     last.focus();
 
   }
@@ -2841,7 +2587,6 @@ function trapFocus(
   ){
 
     event.preventDefault();
-
     first.focus();
 
   }
@@ -2864,33 +2609,22 @@ zoom.addEventListener(
   }
 );
 
-/* ================================
-   RESPONSIVE MENU
-================================ */
+/* RESPONSIVE MENU */
 
-window.addEventListener(
-  "resize",
-  ()=>{
+window.addEventListener("resize",()=>{
 
-    if(
-      window.innerWidth > 700 &&
-      menu.classList.contains("active")
-    ){
+  if(
+    window.innerWidth > 700 &&
+    menu.classList.contains("active")
+  ){
 
-      toggleMenu(false);
-
-    }
+    toggleMenu(false);
 
   }
-);
 
-/* ================================
-   INITIAL STATE
-================================ */
-
-products.forEach(product=>{
-  product.classList.add("show");
 });
+
+revealVisibleProducts();
 
 </script>
 

@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>TopTierExotics | Private Access Luxury Streetwear</title>
-<meta name="description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
+
+<meta name="description" content="TopTierExotics — premium clothing and exotic lifestyle. Exclusive designs, limited drops and private access.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
 
 <link rel="canonical" href="https://toptierexotics.github.io/toptierexotics/">
-<link rel="icon" href="logo.png" type="image/png">
-<link rel="apple-touch-icon" href="logo.png">
 
+<link rel="icon" href="homepage.png" type="image/png">
+<link rel="apple-touch-icon" href="homepage.png">
 <link rel="preload" as="image" href="homepage.png" fetchpriority="high">
-<link rel="preload" as="image" href="logo.png">
 
 <meta property="og:title" content="TopTierExotics | Private Access Luxury Streetwear">
-<meta property="og:description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
+<meta property="og:description" content="Premium clothing. Exotic lifestyle. Exclusive designs and limited drops.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://toptierexotics.github.io/toptierexotics/">
 <meta property="og:image" content="https://toptierexotics.github.io/toptierexotics/homepage.png">
@@ -25,17 +26,17 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TopTierExotics | Private Access Luxury Streetwear">
-<meta name="twitter:description" content="Private access luxury streetwear. Limited drops. Members get early access via Telegram.">
+<meta name="twitter:description" content="Premium clothing. Exotic lifestyle. Exclusive designs and limited drops.">
 <meta name="twitter:image" content="https://toptierexotics.github.io/toptierexotics/homepage.png">
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "TopTierExotics",
-  "url": "https://toptierexotics.github.io/toptierexotics/",
-  "logo": "https://toptierexotics.github.io/toptierexotics/logo.png",
-  "sameAs": [
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"TopTierExotics",
+  "url":"https://toptierexotics.github.io/toptierexotics/",
+  "logo":"https://toptierexotics.github.io/toptierexotics/homepage.png",
+  "sameAs":[
     "https://t.me/TTE_V2",
     "https://www.instagram.com/toptierexotics.2k25",
     "https://www.paypal.me/TopTierExotics"
@@ -45,27 +46,22 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-  rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#000;
-  --bg-soft:#050505;
-  --panel:#0d0d0d;
-  --panel-border:rgba(255,255,255,.08);
-  --text:#fff;
+  --black:#000;
+  --black-soft:#050505;
+  --panel:#0b0b0b;
+  --white:#fff;
   --muted:rgba(255,255,255,.72);
-  --soft:rgba(255,255,255,.55);
-  --accent:#39ff14;
-  --accent-glow:rgba(57,255,20,.35);
-  --deep-green:#0e2c19;
-  --gold:#d6b05d;
-  --shadow:0 24px 70px rgba(0,0,0,.6);
-  --radius:20px;
+  --soft:rgba(255,255,255,.52);
+  --green:#39ff14;
+  --green-dark:#173d18;
+  --gold:#d9b45b;
+  --gold-light:#f0d58b;
+  --border:rgba(255,255,255,.09);
+  --shadow:0 25px 70px rgba(0,0,0,.65);
 }
 
 *{
@@ -77,13 +73,17 @@
 html{
   scroll-behavior:smooth;
   -webkit-text-size-adjust:100%;
+  background:#000;
 }
 
 body{
-  font-family:'Montserrat',Arial,sans-serif;
-  background:#000;
-  color:var(--text);
+  min-width:320px;
   overflow-x:hidden;
+  background:
+    radial-gradient(circle at 50% 0,rgba(57,255,20,.05),transparent 32rem),
+    #000;
+  color:var(--white);
+  font-family:"Montserrat",Arial,sans-serif;
   line-height:1.5;
 }
 
@@ -109,25 +109,28 @@ a{
 }
 
 button,
-a{
+a,
+[role="button"]{
   -webkit-tap-highlight-color:transparent;
 }
 
 :focus-visible{
-  outline:2px solid var(--accent);
+  outline:2px solid var(--green);
   outline-offset:4px;
 }
 
+/* SKIP LINK */
+
 .skip-link{
   position:absolute;
+  top:-70px;
   left:16px;
-  top:-60px;
-  z-index:5000;
+  z-index:6000;
   padding:12px 18px;
-  border-radius:999px;
-  background:var(--accent);
+  background:var(--green);
   color:#000;
-  font-weight:700;
+  border-radius:999px;
+  font-weight:800;
   text-decoration:none;
 }
 
@@ -135,155 +138,132 @@ a{
   top:16px;
 }
 
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 
 .loader{
   position:fixed;
   inset:0;
-  z-index:3000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  z-index:5000;
+  display:grid;
+  place-items:center;
   background:#000;
-  opacity:1;
-  visibility:visible;
-  pointer-events:auto;
   transition:opacity .45s ease,visibility .45s ease;
-  animation:loaderFailsafe 8s forwards;
 }
 
 .loader.hidden{
   opacity:0;
   visibility:hidden;
   pointer-events:none;
-  animation:none;
 }
 
-.loader img{
-  width:min(160px,44vw);
-  filter:drop-shadow(0 0 34px rgba(57,255,20,.45));
-  animation:pulse 1.9s ease-in-out infinite;
+.loader-mark{
+  text-align:center;
+  animation:loaderPulse 1.8s ease-in-out infinite;
 }
 
-@keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.05)}
+.loader-mark strong{
+  display:block;
+  font-size:clamp(1.3rem,4vw,2rem);
+  font-weight:900;
+  letter-spacing:.18em;
 }
 
-@keyframes loaderFailsafe{
-  0%,84%{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-  }
-  100%{
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-  }
+.loader-mark span{
+  display:block;
+  margin-top:7px;
+  color:var(--green);
+  font-size:.58rem;
+  font-weight:700;
+  letter-spacing:.3em;
 }
 
-/* =========================
-   BURGER
-========================= */
+@keyframes loaderPulse{
+  0%,100%{opacity:.65;transform:scale(.98)}
+  50%{opacity:1;transform:scale(1)}
+}
+
+/* BURGER */
 
 .burger{
   position:fixed;
-  top:22px;
-  left:22px;
-  z-index:2000;
-  width:48px;
-  height:48px;
-  padding:0;
-  border:1px solid rgba(57,255,20,.16);
+  top:max(14px,env(safe-area-inset-top));
+  left:max(14px,env(safe-area-inset-left));
+  z-index:3000;
+  width:50px;
+  height:50px;
+  border:1px solid rgba(57,255,20,.25);
   border-radius:14px;
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.06),
-    rgba(255,255,255,.02)
-  );
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  cursor:pointer;
+  background:rgba(0,0,0,.56);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
   gap:5px;
+  cursor:pointer;
 }
 
-.burger-line{
-  display:block;
-  width:20px;
+.burger span{
+  width:21px;
   height:2px;
+  margin:auto;
+  margin-top:0;
+  margin-bottom:0;
   background:#fff;
-  transition:
-    transform .3s ease,
-    opacity .3s ease,
-    background .3s ease;
+  border-radius:999px;
+  transition:transform .3s ease,opacity .3s ease;
 }
 
-.burger:hover,
-.burger:focus-visible{
-  border-color:rgba(57,255,20,.35);
-  box-shadow:0 0 22px rgba(57,255,20,.12);
-}
-
-.burger.active .burger-line:nth-child(1){
+.burger.active span:nth-child(1){
   transform:translateY(7px) rotate(45deg);
 }
 
-.burger.active .burger-line:nth-child(2){
+.burger.active span:nth-child(2){
   opacity:0;
 }
 
-.burger.active .burger-line:nth-child(3){
+.burger.active span:nth-child(3){
   transform:translateY(-7px) rotate(-45deg);
 }
 
-/* =========================
-   OVERLAY
-========================= */
+/* OVERLAY */
 
 .overlay{
   position:fixed;
   inset:0;
-  z-index:1400;
-  background:rgba(0,0,0,.76);
+  z-index:2200;
+  background:rgba(0,0,0,.72);
   opacity:0;
+  visibility:hidden;
   pointer-events:none;
-  transition:opacity .3s ease;
-  backdrop-filter:blur(5px);
-  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  transition:opacity .3s ease,visibility .3s ease;
 }
 
 .overlay.active{
   opacity:1;
+  visibility:visible;
   pointer-events:auto;
 }
 
-/* =========================
-   SIDE MENU
-========================= */
+/* SIDE MENU */
 
 .side-menu{
   position:fixed;
   top:0;
   left:0;
-  z-index:1500;
-  width:min(320px,84vw);
+  z-index:2500;
+  width:min(320px,86vw);
   height:100dvh;
-  padding:110px 30px 40px;
+  padding:110px 28px 40px;
   background:
-    radial-gradient(circle at top left,rgba(57,255,20,.08),transparent 32%),
+    linear-gradient(180deg,rgba(57,255,20,.055),transparent 25%),
     #050505;
-  border-right:1px solid rgba(255,255,255,.07);
-  box-shadow:20px 0 60px rgba(0,0,0,.8);
+  border-right:1px solid rgba(255,255,255,.08);
+  box-shadow:25px 0 70px rgba(0,0,0,.75);
   transform:translateX(-105%);
-  transition:transform .35s ease;
-  overflow-y:auto;
+  transition:transform .35s cubic-bezier(.22,.61,.36,1);
 }
 
 .side-menu.active{
@@ -292,179 +272,174 @@ a{
 
 .side-menu a{
   display:block;
-  margin-bottom:12px;
   padding:15px 16px;
-  border-radius:14px;
+  margin-bottom:10px;
+  border-radius:13px;
   color:#fff;
   text-decoration:none;
-  letter-spacing:2px;
-  font-size:.9rem;
-  transition:
-    transform .25s ease,
-    color .25s ease,
-    background .25s ease;
+  font-size:.88rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  transition:background .25s ease,color .25s ease,transform .25s ease;
 }
 
 .side-menu a:hover,
 .side-menu a:focus-visible{
-  color:var(--accent);
-  background:rgba(255,255,255,.035);
-  transform:translateX(6px);
+  color:var(--green);
+  background:rgba(255,255,255,.045);
+  transform:translateX(5px);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   position:relative;
   min-height:100svh;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
+  height:100svh;
   overflow:hidden;
   isolation:isolate;
-  background:#000 url("homepage.png") center center / cover no-repeat;
+  background:#000;
 }
 
-/* Dark readability layer */
+.hero-art{
+  position:absolute;
+  inset:0;
+  z-index:-4;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+
 .hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.98) 0%,
+      rgba(0,0,0,.91) 25%,
+      rgba(0,0,0,.57) 46%,
+      rgba(0,0,0,.08) 72%,
+      rgba(0,0,0,.12) 100%
+    );
+}
+
+.hero::after{
   content:"";
   position:absolute;
   inset:0;
   z-index:-2;
   background:
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.94) 0%,
-      rgba(0,0,0,.82) 27%,
-      rgba(0,0,0,.40) 50%,
-      rgba(0,0,0,.04) 78%,
-      rgba(0,0,0,.16) 100%
-    );
-}
-
-/* Green atmospheric glow */
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
+    linear-gradient(180deg,rgba(0,0,0,.35),transparent 22%,transparent 78%,rgba(0,0,0,.6)),
+    radial-gradient(circle at 50% 50%,transparent 38%,rgba(0,0,0,.24) 100%);
   pointer-events:none;
-  background:
-    radial-gradient(
-      circle at 62% 48%,
-      rgba(57,255,20,.12),
-      transparent 34%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.12),
-      rgba(0,0,0,.38)
-    );
-  mix-blend-mode:screen;
 }
 
 .hero-content{
   position:relative;
-  width:min(720px,50%);
-  margin-left:clamp(7%,10vw,13%);
-  padding:90px 0 70px;
   z-index:2;
-}
-
-.hero-brand{
+  width:min(620px,48vw);
+  min-height:100%;
+  margin-left:clamp(70px,10vw,175px);
+  padding:clamp(110px,13vh,150px) 0 70px;
   display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:34px;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
 }
 
-.hero-brand img{
-  width:190px;
-  max-width:52vw;
-  filter:drop-shadow(0 0 18px rgba(57,255,20,.2));
-}
-
-.hero-kicker{
-  margin-bottom:14px;
-  color:rgba(255,255,255,.76);
-  font-size:.76rem;
-  font-weight:600;
-  letter-spacing:4px;
-}
-
-.hero h1{
-  max-width:620px;
-  font-family:'Montserrat',Arial,sans-serif;
-  font-size:clamp(3.8rem,7vw,7.6rem);
+.brand-line{
+  margin-bottom:25px;
+  color:rgba(255,255,255,.8);
+  font-size:.66rem;
   font-weight:700;
-  line-height:.84;
-  letter-spacing:-.045em;
+  letter-spacing:.38em;
   text-transform:uppercase;
-  text-shadow:0 10px 40px rgba(0,0,0,.65);
 }
 
-.hero h1 span{
-  display:block;
-  margin-left:-5px;
-  color:#3d8650;
-  font-size:1.02em;
-  font-style:italic;
+.hero-eyebrow{
+  margin-bottom:13px;
+  color:rgba(255,255,255,.78);
+  font-size:.78rem;
   font-weight:700;
-  letter-spacing:-.075em;
-  text-shadow:
-    0 3px 0 rgba(0,0,0,.6),
-    0 0 30px rgba(57,255,20,.12);
+  letter-spacing:.31em;
+  text-transform:uppercase;
 }
 
-.hero-rule{
-  display:flex;
-  align-items:center;
-  width:min(360px,85%);
-  gap:12px;
-  margin:28px 0 24px;
+.hero-title{
+  font-family:"Montserrat",Arial,sans-serif;
+  font-size:clamp(4.5rem,7.1vw,8.2rem);
+  line-height:.79;
+  letter-spacing:-.065em;
+  font-weight:900;
+  text-transform:uppercase;
+  white-space:nowrap;
 }
 
-.hero-rule::before,
-.hero-rule::after{
-  content:"";
+.hero-title .top{
+  display:block;
+  color:#fff;
+}
+
+.hero-title .exotics{
+  display:block;
+  color:#4f9c55;
+  font-style:italic;
+  font-weight:900;
+  letter-spacing:-.085em;
+  transform:skewX(-8deg);
+  transform-origin:left center;
+}
+
+.hero-divider{
+  width:340px;
+  max-width:70%;
   height:1px;
-  flex:1;
+  margin:35px 0 28px;
   background:linear-gradient(
     90deg,
-    transparent,
-    rgba(214,176,93,.75)
+    var(--gold) 0,
+    var(--gold) 40%,
+    transparent 40%,
+    transparent 52%,
+    var(--gold) 52%,
+    var(--gold) 54%,
+    transparent 54%
   );
+  position:relative;
 }
 
-.hero-rule::after{
-  background:linear-gradient(
-    90deg,
-    rgba(214,176,93,.75),
-    transparent
-  );
-}
-
-.hero-crown{
+.hero-divider::after{
+  content:"♛";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-52%);
+  padding:0 15px;
   color:var(--gold);
-  font-size:1.15rem;
+  background:#020302;
+  font-size:.8rem;
 }
 
 .hero-subtitle{
-  margin-bottom:8px;
-  font-size:1rem;
-  letter-spacing:2.8px;
-  color:#fff;
+  color:rgba(255,255,255,.9);
+  font-size:.94rem;
+  font-weight:500;
+  letter-spacing:.19em;
   text-transform:uppercase;
 }
 
 .hero-tagline{
-  margin-bottom:28px;
-  color:var(--gold);
+  margin-top:8px;
+  color:var(--gold-light);
   font-size:.66rem;
-  font-weight:600;
-  letter-spacing:3px;
+  font-weight:700;
+  letter-spacing:.25em;
   text-transform:uppercase;
 }
 
@@ -472,266 +447,274 @@ a{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
+  margin-top:27px;
 }
 
-.primary-btn{
-  min-height:52px;
+.hero-btn{
+  min-width:192px;
+  min-height:49px;
+  padding:14px 22px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:14px 28px;
-  border:1px solid transparent;
-  border-radius:2px;
+  border:1px solid var(--gold);
   background:var(--gold);
-  color:#050505;
-  font-size:.75rem;
-  font-weight:700;
-  letter-spacing:2px;
+  color:#080808;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.18em;
   text-decoration:none;
+  text-transform:uppercase;
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;
+}
+
+.hero-btn:hover,
+.hero-btn:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 12px 35px rgba(217,180,91,.2);
+}
+
+.hero-btn.secondary{
+  background:rgba(0,0,0,.2);
+  color:#59a35d;
+  border-color:#347d3a;
+}
+
+.hero-btn.secondary:hover,
+.hero-btn.secondary:focus-visible{
+  background:rgba(57,255,20,.08);
+  color:#7ccf80;
+}
+
+.hero-trust{
+  position:absolute;
+  bottom:27px;
+  left:0;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  color:rgba(255,255,255,.55);
+  font-size:.55rem;
+  font-weight:700;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+}
+
+.hero-trust span:not(:last-child)::after{
+  content:"•";
+  margin-left:8px;
+  color:var(--gold);
+}
+
+.scroll-indicator{
+  position:absolute;
+  right:28px;
+  bottom:25px;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  color:rgba(255,255,255,.52);
+  font-size:.55rem;
+  font-weight:700;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+}
+
+.scroll-indicator::after{
+  content:"";
+  width:52px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(255,255,255,.25),var(--gold));
+}
+
+/* GENERAL BUTTON */
+
+.primary-btn{
+  min-height:50px;
+  padding:14px 25px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--green);
+  border-radius:999px;
+  background:var(--green);
+  color:#000;
+  font-weight:800;
+  text-decoration:none;
+  text-align:center;
   cursor:pointer;
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    background .25s ease,
-    color .25s ease;
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;
 }
 
 .primary-btn:hover,
 .primary-btn:focus-visible{
   transform:translateY(-2px);
-  box-shadow:0 12px 28px rgba(214,176,93,.2);
+  box-shadow:0 0 28px rgba(57,255,20,.25);
 }
 
 .secondary-btn{
-  background:rgba(0,0,0,.28);
-  color:#4f9f62;
-  border-color:rgba(57,255,20,.5);
+  background:transparent;
+  color:var(--green);
 }
 
-.secondary-btn:hover,
-.secondary-btn:focus-visible{
-  color:var(--accent);
-  background:rgba(0,0,0,.5);
-  box-shadow:0 0 25px rgba(57,255,20,.15);
-}
-
-.hero-bottom{
-  position:absolute;
-  left:clamp(7%,10vw,13%);
-  right:40px;
-  bottom:34px;
-  z-index:3;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-
-.hero-trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:22px;
-  color:rgba(255,255,255,.48);
-  font-size:.56rem;
-  font-weight:600;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.hero-trust span::before{
-  content:"•";
-  margin-right:8px;
-  color:var(--gold);
-}
-
-.scroll-label{
-  color:rgba(255,255,255,.45);
-  font-size:.55rem;
-  font-weight:600;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  white-space:nowrap;
-}
-
-.scroll-label::after{
-  content:"";
-  display:inline-block;
-  width:48px;
-  height:1px;
-  margin-left:12px;
-  vertical-align:middle;
-  background:var(--gold);
-}
-
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 .products{
-  position:relative;
-  padding:110px 10% 90px;
+  padding:110px 8% 95px;
   background:
-    radial-gradient(circle at 50% 0,rgba(57,255,20,.07),transparent 28%),
-    linear-gradient(180deg,#000,#050505);
+    radial-gradient(circle at 50% 0,rgba(57,255,20,.05),transparent 32rem),
+    #030303;
 }
 
 .products h2,
 .telegram h2,
 .contact h2{
+  margin-bottom:17px;
   text-align:center;
-  margin-bottom:18px;
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(2rem,4vw,3rem);
-  letter-spacing:5px;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:clamp(2rem,4vw,3.2rem);
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
 
 .section-copy{
   max-width:700px;
-  margin:0 auto 46px;
-  text-align:center;
+  margin:0 auto 48px;
   color:var(--muted);
+  text-align:center;
 }
 
 .product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:34px;
-  max-width:1100px;
+  max-width:1120px;
   margin:auto;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:30px;
 }
 
-/*
-Products are visible by default.
-JS adds .js-ready to body before enabling reveal animations.
-This means failed JS never hides the products.
-*/
 .product{
   position:relative;
-  padding:26px 26px 28px;
+  padding:25px 25px 28px;
   background:
-    linear-gradient(180deg,rgba(57,255,20,.04),transparent 22%),
-    var(--panel);
-  border:1px solid var(--panel-border);
-  border-radius:24px;
-  text-align:center;
+    linear-gradient(180deg,rgba(57,255,20,.045),transparent 24%),
+    #0b0b0b;
+  border:1px solid var(--border);
+  border-radius:22px;
   box-shadow:var(--shadow);
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    opacity .45s ease;
-}
-
-body.js-ready .product{
-  opacity:0;
-  transform:translateY(35px);
-}
-
-body.js-ready .product.show{
-  opacity:1;
-  transform:translateY(0);
+  text-align:center;
+  transition:transform .35s ease,box-shadow .35s ease;
 }
 
 .product:hover{
-  transform:translateY(-8px);
-  box-shadow:
-    0 0 40px rgba(57,255,20,.14),
-    var(--shadow);
+  transform:translateY(-7px);
+  box-shadow:0 0 40px rgba(57,255,20,.12),var(--shadow);
 }
 
 .badge{
   position:absolute;
-  top:16px;
-  left:16px;
-  z-index:3;
-  padding:6px 11px;
-  border-radius:20px;
-  background:var(--accent);
+  top:15px;
+  left:15px;
+  z-index:4;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--green);
   color:#000;
-  font-size:.68rem;
-  font-weight:700;
-  letter-spacing:1px;
+  font-size:.64rem;
+  font-weight:900;
+  letter-spacing:.08em;
 }
 
 .product-image{
   position:relative;
-  height:300px;
+  height:330px;
+  margin-bottom:17px;
+  padding:12px 12px 58px;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:16px;
-  padding:12px 12px 64px;
-  border:1px solid rgba(255,255,255,.05);
-  border-radius:18px;
-  background:
-    radial-gradient(circle at top,rgba(57,255,20,.08),transparent 38%),
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.03),
-      rgba(255,255,255,.015)
-    );
   overflow:hidden;
-  touch-action:pan-y;
+  border:1px solid rgba(255,255,255,.055);
+  border-radius:17px;
+  background:
+    radial-gradient(circle at top,rgba(57,255,20,.07),transparent 40%),
+    linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+  touch-action:pan-y pinch-zoom;
   user-select:none;
 }
 
 .product-image img{
-  width:auto;
-  height:auto;
-  max-width:108%;
+  max-width:100%;
   max-height:100%;
-  border-radius:12px;
   object-fit:contain;
+  border-radius:12px;
   cursor:zoom-in;
-  transition:transform .3s ease,filter .3s ease;
+  transition:transform .3s ease,opacity .2s ease,filter .3s ease;
 }
 
 .product-image img:hover{
-  transform:scale(1.03);
-  filter:drop-shadow(0 0 18px rgba(57,255,20,.18));
+  transform:scale(1.025);
+  filter:drop-shadow(0 0 18px rgba(57,255,20,.16));
+}
+
+.product-image img.is-loading{
+  opacity:.45;
+}
+
+.product-image img.is-missing{
+  min-width:170px;
+  min-height:170px;
+  padding:20px;
+  border:1px dashed rgba(57,255,20,.3);
 }
 
 .arrow{
   position:absolute;
-  bottom:14px;
-  z-index:4;
-  width:40px;
-  height:40px;
+  bottom:12px;
+  z-index:5;
+  width:43px;
+  height:43px;
   display:grid;
   place-items:center;
-  border:1px solid rgba(57,255,20,.25);
+  border:1px solid rgba(57,255,20,.3);
   border-radius:50%;
-  background:rgba(0,0,0,.72);
-  color:var(--accent);
-  font-size:1.15rem;
-  line-height:1;
+  background:rgba(0,0,0,.78);
+  color:var(--green);
   cursor:pointer;
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    background .25s ease;
+  font-size:1.3rem;
+  line-height:1;
+  transition:transform .25s ease,box-shadow .25s ease;
 }
 
 .arrow:hover,
 .arrow:focus-visible{
   transform:scale(1.08);
-  background:rgba(10,10,10,.94);
-  box-shadow:0 0 14px rgba(57,255,20,.3);
+  box-shadow:0 0 18px rgba(57,255,20,.22);
 }
 
 .arrow-left{
-  left:14px;
+  left:13px;
 }
 
 .arrow-right{
-  right:14px;
+  right:13px;
+}
+
+.arrow[hidden]{
+  display:none;
 }
 
 .gallery-dots{
+  min-height:12px;
+  margin-bottom:18px;
   display:flex;
   justify-content:center;
-  gap:9px;
-  min-height:14px;
-  margin:0 0 18px;
+  gap:8px;
+}
+
+.gallery-dots:empty{
+  display:none;
 }
 
 .gallery-dots button{
@@ -742,126 +725,96 @@ body.js-ready .product.show{
   border-radius:50%;
   background:#555;
   cursor:pointer;
-  transition:
-    transform .25s ease,
-    background .25s ease,
-    box-shadow .25s ease;
 }
 
 .gallery-dots button.active{
-  background:var(--accent);
-  box-shadow:0 0 8px rgba(57,255,20,.8);
-  transform:scale(1.1);
+  background:var(--green);
+  box-shadow:0 0 9px rgba(57,255,20,.7);
+  transform:scale(1.15);
 }
 
 .product h3{
-  margin:4px 0 10px;
-  font-size:1.05rem;
-  letter-spacing:2px;
+  margin-bottom:10px;
+  font-size:1rem;
+  letter-spacing:.14em;
 }
 
 .product p{
-  max-width:32ch;
-  margin:0 auto 16px;
+  max-width:36ch;
+  margin:0 auto 15px;
   color:var(--muted);
 }
 
 .product-note{
   display:block;
-  margin:0 auto 18px;
+  margin-bottom:18px;
   color:var(--soft);
-  font-size:.76rem;
-  letter-spacing:.12em;
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.1em;
   text-transform:uppercase;
 }
 
-/* =========================
-   TELEGRAM
-========================= */
+/* TELEGRAM */
 
 .telegram{
   position:relative;
+  padding:105px 8%;
   overflow:hidden;
-  padding:100px 10%;
-  text-align:center;
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
   background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.02),
-      rgba(255,255,255,.01)
-    ),
+    radial-gradient(circle at 50% 20%,rgba(57,255,20,.08),transparent 28rem),
     #050505;
-  border-top:1px solid rgba(255,255,255,.04);
-  border-bottom:1px solid rgba(255,255,255,.04);
-}
-
-.telegram::before,
-.contact::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:0;
-  width:min(460px,72vw);
-  height:1px;
-  transform:translateX(-50%);
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(57,255,20,.3),
-    transparent
-  );
+  text-align:center;
 }
 
 .telegram p{
-  max-width:620px;
+  max-width:650px;
   margin:20px auto 28px;
   color:var(--muted);
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact{
   position:relative;
-  padding:100px 10%;
+  padding:105px 8%;
   text-align:center;
 }
 
 .contact p{
-  max-width:620px;
-  margin:0 auto 16px;
+  max-width:650px;
+  margin:0 auto 15px;
   color:var(--muted);
 }
 
 .contact-links{
+  margin-top:27px;
   display:flex;
-  flex-wrap:wrap;
   justify-content:center;
+  flex-wrap:wrap;
   gap:12px;
-  margin-top:26px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 .footer{
-  padding:60px 10%;
-  text-align:center;
-  border-top:1px solid rgba(255,255,255,.05);
+  padding:62px 8% calc(40px + env(safe-area-inset-bottom));
+  border-top:1px solid rgba(255,255,255,.06);
   background:#020202;
+  text-align:center;
 }
 
-.footer h3{
-  margin-bottom:20px;
+.footer h2{
+  margin-bottom:18px;
   font-size:.9rem;
-  letter-spacing:4px;
+  letter-spacing:.25em;
 }
 
 .footer-copy{
   max-width:620px;
-  margin:0 auto 24px;
+  margin:0 auto 25px;
   color:var(--soft);
 }
 
@@ -869,7 +822,7 @@ body.js-ready .product.show{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:18px;
+  gap:16px;
 }
 
 .footer-icons a{
@@ -877,338 +830,291 @@ body.js-ready .product.show{
   height:52px;
   display:grid;
   place-items:center;
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.1);
   border-radius:50%;
-  background:rgba(255,255,255,.02);
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
+  background:rgba(255,255,255,.025);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
 }
 
 .footer-icons a:hover,
 .footer-icons a:focus-visible{
   transform:translateY(-3px);
   border-color:rgba(57,255,20,.45);
-  box-shadow:0 0 22px rgba(57,255,20,.22);
+  box-shadow:0 0 22px rgba(57,255,20,.18);
 }
 
 .footer-icons svg{
-  width:26px;
-  height:26px;
-  fill:#f4f4f4;
+  width:25px;
+  height:25px;
+  fill:#fff;
 }
 
 .footer-legal{
-  margin-top:26px;
-  color:rgba(255,255,255,.42);
-  font-size:.78rem;
-  letter-spacing:.12em;
+  margin-top:25px;
+  color:rgba(255,255,255,.38);
+  font-size:.7rem;
+  letter-spacing:.13em;
   text-transform:uppercase;
 }
 
-/* =========================
-   ZOOM
-========================= */
+/* ZOOM */
 
 .zoom{
   position:fixed;
   inset:0;
-  z-index:2200;
+  z-index:4500;
   display:none;
   align-items:center;
   justify-content:center;
-  padding:24px;
+  padding:25px;
   background:rgba(0,0,0,.96);
-  opacity:0;
 }
 
 .zoom.active{
   display:flex;
-  opacity:1;
 }
 
 .zoom img{
-  max-width:min(92vw,1100px);
-  max-height:84vh;
-  border-radius:16px;
-  object-fit:contain;
-  box-shadow:0 0 45px rgba(0,0,0,.75);
+  max-width:min(94vw,1100px);
+  max-height:85vh;
+  border-radius:14px;
+  box-shadow:0 0 55px rgba(0,0,0,.8);
 }
 
 .zoom-close{
   position:absolute;
-  top:20px;
-  right:20px;
+  top:max(18px,env(safe-area-inset-top));
+  right:max(18px,env(safe-area-inset-right));
   width:48px;
   height:48px;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.15);
   border-radius:50%;
-  background:rgba(255,255,255,.05);
+  background:rgba(255,255,255,.06);
   color:#fff;
   font-size:1.6rem;
   cursor:pointer;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* TABLET */
 
-@media (max-width:1100px){
+@media(max-width:1000px){
+
   .hero-content{
-    width:55%;
-    margin-left:7%;
+    width:56vw;
+    margin-left:8vw;
   }
 
-  .hero{
-    background-position:60% center;
+  .hero-title{
+    font-size:clamp(4rem,8vw,6.5rem);
+  }
+
+  .product-grid{
+    gap:22px;
   }
 }
 
-@media (max-width:900px){
-  .products,
-  .telegram,
-  .contact,
-  .footer{
-    padding-left:20px;
-    padding-right:20px;
-  }
+/* MOBILE */
 
-  .products{
-    padding-top:90px;
-  }
+@media(max-width:700px){
 
-  .hero{
-    background-position:62% center;
-  }
-
-  .hero-content{
-    width:62%;
-    margin-left:6%;
-  }
-
-  .hero h1{
-    font-size:clamp(3.3rem,8vw,6rem);
-  }
-
-  .hero-bottom{
-    left:6%;
-  }
-}
-
-@media (max-width:640px){
   .burger{
-    top:max(16px,env(safe-area-inset-top));
-    left:max(16px,env(safe-area-inset-left));
-    width:52px;
-    height:52px;
+    width:46px;
+    height:46px;
+    top:max(13px,env(safe-area-inset-top));
+    left:max(12px,env(safe-area-inset-left));
   }
 
   .side-menu{
     width:100%;
-    padding:
-      calc(92px + env(safe-area-inset-top))
-      20px
-      calc(32px + env(safe-area-inset-bottom));
+    padding:92px 20px 35px;
   }
 
   .hero{
     min-height:100svh;
-    align-items:flex-end;
-    background-position:67% center;
+    height:100svh;
+  }
+
+  .hero-art{
+    object-position:62% center;
   }
 
   .hero::before{
     background:
       linear-gradient(
-        180deg,
-        rgba(0,0,0,.35) 0%,
-        rgba(0,0,0,.45) 24%,
-        rgba(0,0,0,.84) 57%,
-        rgba(0,0,0,.98) 100%
-      ),
-      linear-gradient(
         90deg,
-        rgba(0,0,0,.75),
-        rgba(0,0,0,.08)
-      );
+        rgba(0,0,0,.97) 0%,
+        rgba(0,0,0,.91) 42%,
+        rgba(0,0,0,.48) 72%,
+        rgba(0,0,0,.08) 100%
+      ),
+      linear-gradient(180deg,rgba(0,0,0,.35),transparent 35%,rgba(0,0,0,.42));
   }
 
   .hero-content{
-    width:100%;
+    width:auto;
+    max-width:100%;
     margin:0;
-    padding:0 20px 105px;
+    padding:95px 25px 70px;
+    justify-content:center;
   }
 
-  .hero-brand{
-    margin-bottom:22px;
+  .brand-line{
+    margin-bottom:19px;
+    font-size:.53rem;
+    letter-spacing:.28em;
   }
 
-  .hero-brand img{
-    width:175px;
+  .hero-eyebrow{
+    margin-bottom:11px;
+    font-size:.59rem;
+    letter-spacing:.19em;
   }
 
-  .hero-kicker{
-    font-size:.62rem;
-    letter-spacing:2.5px;
+  .hero-title{
+    font-size:clamp(3.45rem,16vw,5.8rem);
+    line-height:.81;
+    white-space:normal;
   }
 
-  .hero h1{
-    font-size:clamp(3rem,15vw,5rem);
-    line-height:.83;
+  .hero-title .exotics{
+    font-size:.91em;
   }
 
-  .hero-rule{
-    margin:22px 0 18px;
+  .hero-divider{
+    width:280px;
+    max-width:90%;
+    margin:27px 0 22px;
   }
 
   .hero-subtitle{
-    font-size:.8rem;
+    font-size:.68rem;
     line-height:1.5;
-    letter-spacing:1.8px;
+    letter-spacing:.12em;
   }
 
   .hero-tagline{
-    font-size:.58rem;
-    letter-spacing:2px;
-    margin-bottom:22px;
+    font-size:.53rem;
+    letter-spacing:.16em;
   }
 
   .hero-actions{
     width:100%;
+    max-width:330px;
+    margin-top:23px;
+    flex-direction:column;
   }
 
-  .hero-actions .primary-btn{
+  .hero-btn{
     width:100%;
-    min-height:54px;
-  }
-
-  .hero-bottom{
-    left:20px;
-    right:20px;
-    bottom:30px;
-    align-items:flex-end;
+    min-height:47px;
+    font-size:.61rem;
   }
 
   .hero-trust{
-    gap:7px 14px;
-    max-width:75%;
-    font-size:.48rem;
-    line-height:1.5;
+    left:25px;
+    right:25px;
+    bottom:23px;
+    gap:5px;
+    font-size:.45rem;
+    letter-spacing:.12em;
   }
 
-  .scroll-label{
+  .scroll-indicator{
     display:none;
   }
 
   .products,
   .telegram,
   .contact{
-    padding-top:78px;
-    padding-bottom:72px;
+    padding-left:20px;
+    padding-right:20px;
   }
 
-  .section-copy{
-    margin-bottom:34px;
-    font-size:.94rem;
+  .products{
+    padding-top:78px;
+    padding-bottom:75px;
   }
 
   .product-grid{
+    grid-template-columns:1fr;
     gap:24px;
   }
 
   .product{
-    padding:22px 16px 24px;
+    padding:20px 15px 23px;
   }
 
   .product-image{
-    height:280px;
-    padding:10px 10px 70px;
+    height:285px;
   }
 
-  .product-image img{
-    max-width:100%;
-  }
-
-  .gallery-dots{
-    gap:12px;
-    margin-bottom:16px;
-  }
-
-  .gallery-dots button{
-    width:12px;
-    height:12px;
-  }
-
-  .arrow{
-    width:44px;
-    height:44px;
-    bottom:12px;
-  }
-
-  .primary-btn{
-    width:100%;
-    min-height:56px;
+  .telegram,
+  .contact{
+    padding-top:78px;
+    padding-bottom:75px;
   }
 
   .contact-links{
-    width:100%;
+    flex-direction:column;
+    align-items:center;
   }
 
   .contact-links .primary-btn{
+    width:100%;
     max-width:340px;
   }
 
   .footer{
-    padding-bottom:
-      calc(36px + env(safe-area-inset-bottom));
+    padding-left:20px;
+    padding-right:20px;
   }
 }
 
-@media (max-width:380px){
-  .hero{
-    background-position:70% center;
-  }
+/* SMALL PHONES */
+
+@media(max-width:380px){
 
   .hero-content{
-    padding-left:16px;
-    padding-right:16px;
-    padding-bottom:98px;
+    padding-left:18px;
+    padding-right:18px;
   }
 
-  .hero h1{
-    font-size:clamp(2.7rem,15vw,4rem);
+  .hero-title{
+    font-size:clamp(3rem,15.8vw,4.5rem);
   }
 
-  .hero-brand img{
-    width:155px;
+  .hero-eyebrow{
+    font-size:.53rem;
   }
 
   .hero-subtitle{
-    font-size:.72rem;
+    font-size:.62rem;
+  }
+
+  .hero-tagline{
+    font-size:.47rem;
   }
 
   .hero-trust{
-    font-size:.43rem;
+    left:18px;
+    right:18px;
+    font-size:.4rem;
   }
 }
 
-@media (prefers-reduced-motion:reduce){
+/* REDUCED MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
   html{
     scroll-behavior:auto;
   }
 
-  *{
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.01ms!important;
-    scroll-behavior:auto!important;
-  }
-
-  .loader{
-    animation:loaderFailsafe 8s forwards!important;
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
   }
 }
 </style>
@@ -1219,10 +1125,13 @@ body.js-ready .product.show{
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="loader" id="loader" aria-hidden="true">
-  <img src="logo.png" alt="TopTierExotics">
+  <div class="loader-mark">
+    <strong>TTE</strong>
+    <span>TOP TIER EXOTICS</span>
+  </div>
 </div>
 
-<div class="overlay" id="overlay" aria-hidden="true"></div>
+<div class="overlay" id="overlay" hidden></div>
 
 <button
   class="burger"
@@ -1232,333 +1141,240 @@ body.js-ready .product.show{
   aria-expanded="false"
   aria-controls="menu"
 >
-  <span class="burger-line"></span>
-  <span class="burger-line"></span>
-  <span class="burger-line"></span>
+  <span></span>
+  <span></span>
+  <span></span>
 </button>
 
-<nav
-  class="side-menu"
-  id="menu"
-  aria-label="Main navigation"
-  aria-hidden="true"
-  inert
->
+<nav class="side-menu" id="menu" aria-label="Main navigation" aria-hidden="true" inert>
   <a href="#home">HOME</a>
   <a href="#products">COLLECTION</a>
   <a href="#contact">CONTACT</a>
-  <a
-    href="https://t.me/TTE_V2"
-    target="_blank"
-    rel="noopener noreferrer"
-  >TELEGRAM</a>
-  <a
-    href="https://www.instagram.com/toptierexotics.2k25"
-    target="_blank"
-    rel="noopener noreferrer"
-  >INSTAGRAM</a>
-  <a
-    href="https://www.paypal.me/TopTierExotics"
-    target="_blank"
-    rel="noopener noreferrer"
-  >PAYPAL</a>
+  <a href="https://t.me/TTE_V2" target="_blank" rel="noopener noreferrer">TELEGRAM</a>
+  <a href="https://www.instagram.com/toptierexotics.2k25" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+  <a href="https://www.paypal.me/TopTierExotics" target="_blank" rel="noopener noreferrer">PAYPAL</a>
 </nav>
 
 <main id="main-content" tabindex="-1">
 
-<!-- =========================
-     HOMEPAGE
-========================= -->
+  <!-- HOMEPAGE -->
+  <section class="hero" id="home">
 
-<section class="hero" id="home">
+    <img
+      class="hero-art"
+      src="homepage.png"
+      alt=""
+      aria-hidden="true"
+      fetchpriority="high"
+      decoding="async"
+    >
 
-  <div class="hero-content">
+    <div class="hero-content">
 
-    <div class="hero-brand">
-      <img
-        src="logo.png"
-        alt="TopTierExotics Clothing Co."
-        width="190"
-        height="auto"
-      >
+      <div class="brand-line">
+        TOP TIER EXOTICS CLOTHING CO.
+      </div>
+
+      <p class="hero-eyebrow">
+        PREMIUM CLOTHING • EXOTIC LIFESTYLE
+      </p>
+
+      <h1 class="hero-title">
+        <span class="top">TOP TIER</span>
+        <span class="exotics">EXOTICS</span>
+      </h1>
+
+      <div class="hero-divider"></div>
+
+      <p class="hero-subtitle">
+        PREMIUM CLOTHING. EXOTIC LIFESTYLE.
+      </p>
+
+      <p class="hero-tagline">
+        MADE FOR THOSE WHO SET THE STANDARD.
+      </p>
+
+      <div class="hero-actions">
+        <a class="hero-btn" href="#products">
+          SHOP COLLECTION
+        </a>
+
+        <a class="hero-btn secondary" href="#products">
+          NEW DROPS
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <span>TOP QUALITY</span>
+        <span>EXCLUSIVE DESIGNS</span>
+        <span>LIMITED DROPS</span>
+      </div>
+
     </div>
 
-    <div class="hero-kicker">
-      PREMIUM CLOTHING • EXOTIC LIFESTYLE
-    </div>
-
-    <h1>
-      TOP TIER
-      <span>EXOTICS</span>
-    </h1>
-
-    <div class="hero-rule" aria-hidden="true">
-      <span></span>
-      <span class="hero-crown">♛</span>
-      <span></span>
-    </div>
-
-    <p class="hero-subtitle">
-      PREMIUM CLOTHING. EXOTIC LIFESTYLE.
-    </p>
-
-    <p class="hero-tagline">
-      MADE FOR THOSE WHO SET THE STANDARD.
-    </p>
-
-    <div class="hero-actions">
-      <a class="primary-btn" href="#products">
-        SHOP COLLECTION
-      </a>
-
-      <a
-        class="primary-btn secondary-btn"
-        href="https://t.me/TTE_V2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        NEW DROPS
-      </a>
-    </div>
-
-  </div>
-
-  <div class="hero-bottom">
-
-    <div class="hero-trust">
-      <span>TOP QUALITY</span>
-      <span>EXCLUSIVE DESIGNS</span>
-      <span>LIMITED DROPS</span>
-    </div>
-
-    <div class="scroll-label">
+    <div class="scroll-indicator">
       SCROLL
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- COLLECTION -->
+  <section class="products" id="products" aria-labelledby="products-title">
 
-<!-- =========================
-     COLLECTION
-========================= -->
+    <h2 id="products-title">Featured Collection</h2>
 
-<section
-  class="products"
-  id="products"
-  aria-labelledby="products-title"
->
+    <p class="section-copy">
+      Exclusive TopTierExotics pieces with limited availability and direct private-access ordering.
+    </p>
 
-  <h2 id="products-title">
-    FEATURED COLLECTION
-  </h2>
+    <div class="product-grid">
 
-  <p class="section-copy">
-    Exclusive TopTierExotics pieces released in limited quantities.
-    Browse the collection and contact us directly through Telegram.
-  </p>
+      <!-- HAT -->
+      <article class="product">
 
-  <div class="product-grid">
+        <div class="badge">LIMITED</div>
 
-    <!-- HAT -->
+        <div class="product-image" data-gallery-frame="hat">
 
-    <article class="product">
+          <button
+            class="arrow arrow-left"
+            type="button"
+            data-gallery="hat"
+            data-direction="-1"
+            aria-label="Previous hat image"
+          >
+            &#8249;
+          </button>
 
-      <div class="badge">LIMITED</div>
+          <img
+            src="hat.png"
+            id="hatImage"
+            loading="lazy"
+            decoding="async"
+            alt="TopTierExotics hat front view"
+            tabindex="0"
+            role="button"
+            aria-label="Open larger view of TopTierExotics hat front view"
+          >
 
-      <div
-        class="product-image"
-        data-gallery-frame="hat"
-      >
+          <button
+            class="arrow arrow-right"
+            type="button"
+            data-gallery="hat"
+            data-direction="1"
+            aria-label="Next hat image"
+          >
+            &#8250;
+          </button>
 
-        <button
-          class="arrow arrow-left"
-          type="button"
-          data-gallery="hat"
-          data-direction="-1"
-          aria-label="Previous hat image"
+        </div>
+
+        <div
+          class="gallery-dots"
+          id="hatDots"
+          aria-label="Hat image gallery navigation"
+        ></div>
+
+        <h3>TOPTIEREXOTICS HAT</h3>
+
+        <p>
+          Structured fit with a clean luxury-streetwear finish and stronger visual presence.
+        </p>
+
+        <span class="product-note">
+          DM for size and drop availability
+        </span>
+
+        <a
+          class="primary-btn"
+          href="https://t.me/TTE_V2"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          &#8249;
-        </button>
+          SECURE VIA TELEGRAM
+        </a>
 
-        <img
-          src="hat.png"
-          id="hatImage"
-          loading="lazy"
-          decoding="async"
-          alt="TopTierExotics hat front view"
-          tabindex="0"
+      </article>
+
+      <!-- TRACKSUIT -->
+      <article class="product">
+
+        <div class="badge">LIMITED</div>
+
+        <div class="product-image" data-gallery-frame="tracksuit">
+
+          <button
+            class="arrow arrow-left"
+            type="button"
+            data-gallery="tracksuit"
+            data-direction="-1"
+            aria-label="Previous tracksuit image"
+          >
+            &#8249;
+          </button>
+
+          <img
+            src="tracksuit.png"
+            id="tracksuitImage"
+            loading="lazy"
+            decoding="async"
+            alt="TopTierExotics tracksuit front view"
+            tabindex="0"
+            role="button"
+            aria-label="Open larger view of TopTierExotics tracksuit front view"
+          >
+
+          <button
+            class="arrow arrow-right"
+            type="button"
+            data-gallery="tracksuit"
+            data-direction="1"
+            aria-label="Next tracksuit image"
+          >
+            &#8250;
+          </button>
+
+        </div>
+
+        <div
+          class="gallery-dots"
+          id="tracksuitDots"
+          aria-label="Tracksuit image gallery navigation"
+        ></div>
+
+        <h3>TOPTIEREXOTICS TRACKSUIT</h3>
+
+        <p>
+          Premium hoodie and tapered joggers with a clean tailored luxury-streetwear look.
+        </p>
+
+        <span class="product-note">
+          Message first for stock and sizing
+        </span>
+
+        <a
+          class="primary-btn"
+          href="https://t.me/TTE_V2"
+          target="_blank"
+          rel="noopener noreferrer"
         >
+          SECURE VIA TELEGRAM
+        </a>
 
-        <button
-          class="arrow arrow-right"
-          type="button"
-          data-gallery="hat"
-          data-direction="1"
-          aria-label="Next hat image"
-        >
-          &#8250;
-        </button>
+      </article>
 
-      </div>
+    </div>
+  </section>
 
-      <div
-        class="gallery-dots"
-        id="hatDots"
-        aria-label="Hat image gallery navigation"
-      ></div>
+  <!-- TELEGRAM -->
+  <section class="telegram" aria-labelledby="telegram-title">
 
-      <h3>TOPTIEREXOTICS HAT</h3>
+    <h2 id="telegram-title">Private Access Only</h2>
 
-      <p>
-        Structured fit. Breathable fabric. Everyday essential
-        with a cleaner finish and stronger visual presence.
-      </p>
-
-      <span class="product-note">
-        DM for size and drop availability
-      </span>
-
-      <a
-        class="primary-btn"
-        href="https://t.me/TTE_V2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        SECURE VIA TELEGRAM
-      </a>
-
-    </article>
-
-    <!-- TRACKSUIT -->
-
-    <article class="product">
-
-      <div class="badge">LIMITED</div>
-
-      <div
-        class="product-image"
-        data-gallery-frame="tracksuit"
-      >
-
-        <button
-          class="arrow arrow-left"
-          type="button"
-          data-gallery="tracksuit"
-          data-direction="-1"
-          aria-label="Previous tracksuit image"
-        >
-          &#8249;
-        </button>
-
-        <img
-          src="tracksuit.png"
-          id="tracksuitImage"
-          loading="lazy"
-          decoding="async"
-          alt="TopTierExotics tracksuit front view"
-          tabindex="0"
-        >
-
-        <button
-          class="arrow arrow-right"
-          type="button"
-          data-gallery="tracksuit"
-          data-direction="1"
-          aria-label="Next tracksuit image"
-        >
-          &#8250;
-        </button>
-
-      </div>
-
-      <div
-        class="gallery-dots"
-        id="tracksuitDots"
-        aria-label="Tracksuit image gallery navigation"
-      ></div>
-
-      <h3>TOPTIEREXOTICS TRACKSUIT</h3>
-
-      <p>
-        Premium hoodie and tapered joggers. Clean tailored
-        fit with a stronger luxury-streetwear look.
-      </p>
-
-      <span class="product-note">
-        Message first for stock and sizing
-      </span>
-
-      <a
-        class="primary-btn"
-        href="https://t.me/TTE_V2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        SECURE VIA TELEGRAM
-      </a>
-
-    </article>
-
-  </div>
-
-</section>
-
-<!-- =========================
-     TELEGRAM
-========================= -->
-
-<section
-  class="telegram"
-  aria-labelledby="telegram-title"
->
-
-  <h2 id="telegram-title">
-    PRIVATE ACCESS ONLY
-  </h2>
-
-  <p>
-    All drops are released via Telegram. Members get earlier
-    access, faster replies, and direct updates on stock,
-    orders, and new releases.
-  </p>
-
-  <a
-    class="primary-btn"
-    href="https://t.me/TTE_V2"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    JOIN NOW
-  </a>
-
-</section>
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section
-  class="contact"
-  id="contact"
-  aria-labelledby="contact-title"
->
-
-  <h2 id="contact-title">
-    CONTACT
-  </h2>
-
-  <p>
-    Message us via Telegram or Instagram for orders,
-    sizing questions, payment confirmation, and release updates.
-  </p>
-
-  <p>
-    TopTierExotics is built around direct access.
-    For the fastest response, use Telegram first.
-  </p>
-
-  <div class="contact-links">
+    <p>
+      All drops are released through Telegram. Members receive earlier access,
+      stock updates and direct communication.
+    </p>
 
     <a
       class="primary-btn"
@@ -1566,35 +1382,57 @@ body.js-ready .product.show{
       target="_blank"
       rel="noopener noreferrer"
     >
-      OPEN TELEGRAM
+      JOIN NOW
     </a>
 
-    <a
-      class="primary-btn secondary-btn"
-      href="https://www.instagram.com/toptierexotics.2k25"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      OPEN INSTAGRAM
-    </a>
+  </section>
 
-  </div>
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
 
-</section>
+    <h2 id="contact-title">Contact</h2>
+
+    <p>
+      Message us via Telegram or Instagram for orders, sizing,
+      payment confirmation and release updates.
+    </p>
+
+    <p>
+      For the fastest response, use Telegram first.
+    </p>
+
+    <div class="contact-links">
+
+      <a
+        class="primary-btn"
+        href="https://t.me/TTE_V2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        OPEN TELEGRAM
+      </a>
+
+      <a
+        class="primary-btn secondary-btn"
+        href="https://www.instagram.com/toptierexotics.2k25"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        OPEN INSTAGRAM
+      </a>
+
+    </div>
+
+  </section>
 
 </main>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer class="footer">
 
-  <h3>CONNECT</h3>
+  <h2>CONNECT</h2>
 
   <p class="footer-copy">
-    Private-access streetwear with limited releases and
-    direct order communication through the channels below.
+    Private-access streetwear with limited releases and direct ordering through the channels below.
   </p>
 
   <div class="footer-icons">
@@ -1640,9 +1478,7 @@ body.js-ready .product.show{
 
 </footer>
 
-<!-- =========================
-     ZOOM MODAL
-========================= -->
+<!-- IMAGE ZOOM -->
 
 <div
   class="zoom"
@@ -1651,9 +1487,7 @@ body.js-ready .product.show{
   aria-modal="true"
   aria-label="Expanded product image"
   aria-hidden="true"
-  tabindex="-1"
 >
-
   <button
     class="zoom-close"
     id="zoomClose"
@@ -1663,599 +1497,441 @@ body.js-ready .product.show{
     &times;
   </button>
 
-  <img
-    id="zoomImg"
-    alt=""
-  >
-
+  <img id="zoomImg" alt="">
 </div>
 
 <script>
-(function(){
+"use strict";
 
-  "use strict";
+const loader = document.getElementById("loader");
+const menu = document.getElementById("menu");
+const burger = document.getElementById("burger");
+const overlay = document.getElementById("overlay");
 
-  document.body.classList.add("js-ready");
+const zoom = document.getElementById("zoom");
+const zoomImg = document.getElementById("zoomImg");
+const zoomClose = document.getElementById("zoomClose");
 
-  const loader = document.getElementById("loader");
-  const menu = document.getElementById("menu");
-  const burger = document.getElementById("burger");
-  const overlay = document.getElementById("overlay");
-  const zoom = document.getElementById("zoom");
-  const zoomImg = document.getElementById("zoomImg");
-  const zoomClose = document.getElementById("zoomClose");
+const pageBody = document.body;
+const products = document.querySelectorAll(".product");
 
-  let menuPreviousFocus = null;
-  let zoomPreviousFocus = null;
-  let suppressZoomUntil = 0;
+let lastFocusedElement = null;
+let suppressZoomUntil = 0;
 
-  const focusableSelector = [
-    "a[href]",
-    "button:not([disabled])",
-    "input:not([disabled])",
-    "select:not([disabled])",
-    "textarea:not([disabled])",
-    "[tabindex]:not([tabindex='-1'])"
-  ].join(",");
+const focusableSelector = [
+  "a[href]",
+  "button:not([disabled])",
+  "[tabindex]:not([tabindex='-1'])"
+].join(",");
 
-  /* =========================
-     LOADER
-  ========================= */
+const fallbackImage =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420'%3E%3Crect width='420' height='420' fill='%230b0b0b'/%3E%3Ccircle cx='210' cy='178' r='72' fill='none' stroke='%2339ff14' stroke-opacity='.55' stroke-width='8'/%3E%3Cpath d='M108 308h204' stroke='%2339ff14' stroke-opacity='.45' stroke-width='10' stroke-linecap='round'/%3E%3Ctext x='210' y='350' text-anchor='middle' fill='%23ffffff' fill-opacity='.72' font-family='Arial,sans-serif' font-size='22' font-weight='700'%3ETOP TIER EXOTICS%3C/text%3E%3C/svg%3E";
 
-  function hideLoader(){
-    if(!loader) return;
+const galleries = {
 
-    requestAnimationFrame(function(){
-      loader.classList.add("hidden");
-    });
+  hat:{
+    images:[
+      "hat.png",
+      "hat1-back.jpg",
+      "hat1-side.jpg"
+    ],
+    alts:[
+      "TopTierExotics hat front view",
+      "TopTierExotics hat back view",
+      "TopTierExotics hat side view"
+    ],
+    index:0,
+    imageEl:document.getElementById("hatImage"),
+    dotsEl:document.getElementById("hatDots")
+  },
+
+  tracksuit:{
+    images:[
+      "tracksuit.png",
+      "tracksuit-back.jpg",
+      "tracksuit-side.jpg",
+      "tracksuit-detail.jpg"
+    ],
+    alts:[
+      "TopTierExotics tracksuit front view",
+      "TopTierExotics tracksuit back view",
+      "TopTierExotics tracksuit side view",
+      "TopTierExotics tracksuit detail view"
+    ],
+    index:0,
+    imageEl:document.getElementById("tracksuitImage"),
+    dotsEl:document.getElementById("tracksuitDots")
   }
 
-  if(document.readyState === "complete"){
-    hideLoader();
+};
+
+/* LOADER */
+
+function hideLoader(){
+  if(!loader || loader.classList.contains("hidden")) return;
+  loader.classList.add("hidden");
+}
+
+window.addEventListener("load",hideLoader);
+
+window.setTimeout(hideLoader,2500);
+
+/* MENU */
+
+function toggleMenu(forceState){
+
+  const shouldOpen =
+    typeof forceState === "boolean"
+      ? forceState
+      : !menu.classList.contains("active");
+
+  menu.classList.toggle("active",shouldOpen);
+  overlay.classList.toggle("active",shouldOpen);
+
+  if(shouldOpen){
+    overlay.hidden = false;
   }else{
-    window.addEventListener("load",hideLoader,{once:true});
+    window.setTimeout(()=>{
+      if(!menu.classList.contains("active")){
+        overlay.hidden = true;
+      }
+    },320);
   }
 
-  setTimeout(hideLoader,6500);
+  burger.classList.toggle("active",shouldOpen);
 
-  /* =========================
-     MENU
-  ========================= */
+  burger.setAttribute(
+    "aria-expanded",
+    String(shouldOpen)
+  );
 
-  function setMenu(open){
+  burger.setAttribute(
+    "aria-label",
+    shouldOpen ? "Close menu" : "Open menu"
+  );
 
-    if(!menu || !burger || !overlay) return;
+  menu.setAttribute(
+    "aria-hidden",
+    String(!shouldOpen)
+  );
 
-    if(open){
-
-      if(zoom.classList.contains("active")){
-        closeZoom();
-      }
-
-      menuPreviousFocus = document.activeElement;
-
-      menu.classList.add("active");
-      overlay.classList.add("active");
-
-      menu.setAttribute("aria-hidden","false");
-      menu.removeAttribute("inert");
-
-      burger.classList.add("active");
-      burger.setAttribute("aria-expanded","true");
-      burger.setAttribute("aria-label","Close menu");
-
-      overlay.setAttribute("aria-hidden","false");
-
-      document.body.classList.add("menu-open");
-
-      const firstFocusable =
-        menu.querySelector(focusableSelector);
-
-      if(firstFocusable){
-        requestAnimationFrame(function(){
-          firstFocusable.focus();
-        });
-      }
-
-    }else{
-
-      menu.classList.remove("active");
-      overlay.classList.remove("active");
-
-      menu.setAttribute("aria-hidden","true");
-      menu.setAttribute("inert","");
-
-      burger.classList.remove("active");
-      burger.setAttribute("aria-expanded","false");
-      burger.setAttribute("aria-label","Open menu");
-
-      overlay.setAttribute("aria-hidden","true");
-
-      document.body.classList.remove("menu-open");
-
-      if(
-        menuPreviousFocus &&
-        document.contains(menuPreviousFocus) &&
-        typeof menuPreviousFocus.focus === "function"
-      ){
-        requestAnimationFrame(function(){
-          menuPreviousFocus.focus();
-        });
-      }
-
-      menuPreviousFocus = null;
-    }
+  if("inert" in menu){
+    menu.inert = !shouldOpen;
   }
 
-  burger.addEventListener("click",function(){
-    setMenu(!menu.classList.contains("active"));
-  });
+  pageBody.classList.toggle("menu-open",shouldOpen);
 
-  overlay.addEventListener("click",function(){
-    setMenu(false);
-  });
+  if(shouldOpen){
 
-  menu.querySelectorAll("a").forEach(function(link){
-    link.addEventListener("click",function(){
-      setMenu(false);
-    });
-  });
+    lastFocusedElement = document.activeElement;
 
-  /* =========================
-     FOCUS TRAP
-  ========================= */
+    const firstLink = menu.querySelector("a");
 
-  function trapFocus(event,container){
-
-    const focusable = Array.from(
-      container.querySelectorAll(focusableSelector)
-    ).filter(function(el){
-      return !el.hasAttribute("disabled") &&
-             el.getAttribute("aria-hidden") !== "true";
-    });
-
-    if(!focusable.length) return;
-
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-
-    if(event.shiftKey && document.activeElement === first){
-      event.preventDefault();
-      last.focus();
-    }else if(!event.shiftKey && document.activeElement === last){
-      event.preventDefault();
-      first.focus();
+    if(firstLink){
+      window.setTimeout(()=>firstLink.focus(),50);
     }
-  }
 
-  /* =========================
-     KEYBOARD
-  ========================= */
-
-  document.addEventListener("keydown",function(event){
-
-    if(event.key === "Escape"){
-
-      if(zoom.classList.contains("active")){
-        closeZoom();
-        return;
-      }
-
-      if(menu.classList.contains("active")){
-        setMenu(false);
-        return;
-      }
-    }
+  }else{
 
     if(
-      event.key === "Tab" &&
-      menu.classList.contains("active")
+      lastFocusedElement &&
+      typeof lastFocusedElement.focus === "function" &&
+      !zoom.classList.contains("active")
     ){
+      lastFocusedElement.focus();
+    }
+
+  }
+}
+
+burger.addEventListener("click",()=>{
+  toggleMenu();
+});
+
+overlay.addEventListener("click",()=>{
+  toggleMenu(false);
+});
+
+menu.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    toggleMenu(false);
+  });
+});
+
+/* KEYBOARD */
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key === "Escape"){
+
+    if(zoom.classList.contains("active")){
+      closeZoom();
+      return;
+    }
+
+    if(menu.classList.contains("active")){
+      toggleMenu(false);
+      return;
+    }
+
+  }
+
+  if(event.key === "Tab"){
+
+    if(menu.classList.contains("active")){
       trapFocus(event,menu);
     }
 
-    if(
-      event.key === "Tab" &&
-      zoom.classList.contains("active")
-    ){
+    if(zoom.classList.contains("active")){
       trapFocus(event,zoom);
     }
-  });
 
-  /* =========================
-     PRODUCT REVEAL
-  ========================= */
-
-  const products = document.querySelectorAll(".product");
-
-  function revealVisibleProducts(){
-
-    products.forEach(function(product){
-
-      const rect = product.getBoundingClientRect();
-
-      if(rect.top < window.innerHeight * .92){
-        product.classList.add("show");
-      }
-    });
   }
 
-  if("IntersectionObserver" in window){
+});
 
-    const observer = new IntersectionObserver(
-      function(entries){
+/* PRODUCT REVEAL */
 
-        entries.forEach(function(entry){
+function revealVisibleProducts(){
 
-          if(entry.isIntersecting){
+  products.forEach(product=>{
 
-            entry.target.classList.add("show");
+    const rect = product.getBoundingClientRect();
 
-            observer.unobserve(entry.target);
-          }
-        });
-
-      },
-      {
-        threshold:.12
-      }
-    );
-
-    products.forEach(function(product){
-      observer.observe(product);
-    });
-
-  }else{
-
-    revealVisibleProducts();
-
-    window.addEventListener(
-      "scroll",
-      revealVisibleProducts,
-      {passive:true}
-    );
-
-    window.addEventListener(
-      "resize",
-      revealVisibleProducts,
-      {passive:true}
-    );
-  }
-
-  /* =========================
-     GALLERIES
-  ========================= */
-
-  const galleries = {
-
-    hat:{
-      images:[
-        "hat.png",
-        "hat1-back.jpg",
-        "hat1-side.jpg"
-      ],
-      alts:[
-        "TopTierExotics hat front view",
-        "TopTierExotics hat back view",
-        "TopTierExotics hat side view"
-      ],
-      index:0,
-      imageEl:document.getElementById("hatImage"),
-      dotsEl:document.getElementById("hatDots")
-    },
-
-    tracksuit:{
-      images:[
-        "tracksuit.png",
-        "tracksuit-back.jpg",
-        "tracksuit-side.jpg",
-        "tracksuit-detail.jpg"
-      ],
-      alts:[
-        "TopTierExotics tracksuit front view",
-        "TopTierExotics tracksuit back view",
-        "TopTierExotics tracksuit side view",
-        "TopTierExotics tracksuit detail view"
-      ],
-      index:0,
-      imageEl:document.getElementById("tracksuitImage"),
-      dotsEl:document.getElementById("tracksuitDots")
-    }
-
-  };
-
-  function createDots(name){
-
-    const gallery = galleries[name];
-
-    if(
-      !gallery ||
-      !gallery.dotsEl ||
-      gallery.images.length <= 1
-    ){
-      return;
-    }
-
-    gallery.dotsEl.innerHTML = "";
-
-    gallery.images.forEach(function(_,index){
-
-      const dot = document.createElement("button");
-
-      dot.type = "button";
-      dot.setAttribute(
-        "aria-label",
-        "View image " + (index + 1)
-      );
-
-      if(index === 0){
-        dot.classList.add("active");
-      }
-
-      dot.addEventListener("click",function(){
-        setGalleryImage(name,index);
-      });
-
-      gallery.dotsEl.appendChild(dot);
-    });
-  }
-
-  function updateDots(name){
-
-    const gallery = galleries[name];
-
-    if(!gallery || !gallery.dotsEl) return;
-
-    Array.from(
-      gallery.dotsEl.children
-    ).forEach(function(dot,index){
-
-      dot.classList.toggle(
-        "active",
-        index === gallery.index
-      );
-    });
-  }
-
-  function updateGalleryControls(name){
-
-    const gallery = galleries[name];
-
-    if(!gallery) return;
-
-    const frame =
-      document.querySelector(
-        '[data-gallery-frame="' + name + '"]'
-      );
-
-    if(!frame) return;
-
-    const arrows =
-      frame.querySelectorAll(".arrow");
-
-    const dots =
-      gallery.dotsEl;
-
-    if(gallery.images.length <= 1){
-
-      arrows.forEach(function(arrow){
-        arrow.hidden = true;
-      });
-
-      if(dots){
-        dots.hidden = true;
-      }
-
-    }else{
-
-      arrows.forEach(function(arrow){
-        arrow.hidden = false;
-      });
-
-      if(dots){
-        dots.hidden = false;
-      }
-    }
-  }
-
-  function handleImageError(event){
-
-    const image = event.currentTarget;
-
-    image.dataset.failed = "true";
-
-    image.style.objectFit = "contain";
-
-    image.alt =
-      image.alt ||
-      "TopTierExotics product image unavailable";
-  }
-
-  function setGalleryImage(name,index){
-
-    const gallery = galleries[name];
-
-    if(
-      !gallery ||
-      !gallery.imageEl ||
-      !gallery.images.length
-    ){
-      return;
-    }
-
-    const total = gallery.images.length;
-
-    gallery.index =
-      ((index % total) + total) % total;
-
-    gallery.imageEl.dataset.failed = "false";
-
-    gallery.imageEl.src =
-      gallery.images[gallery.index];
-
-    gallery.imageEl.alt =
-      gallery.alts[gallery.index] ||
-      "TopTierExotics product image";
-
-    updateDots(name);
-  }
-
-  function changeGallery(name,direction){
-
-    const gallery = galleries[name];
-
-    if(!gallery) return;
-
-    setGalleryImage(
-      name,
-      gallery.index + direction
-    );
-  }
-
-  Object.keys(galleries).forEach(function(name){
-
-    createDots(name);
-    updateGalleryControls(name);
-
-    const gallery = galleries[name];
-
-    if(gallery.imageEl){
-
-      gallery.imageEl.addEventListener(
-        "error",
-        handleImageError
-      );
+    if(rect.top < window.innerHeight * .92){
+      product.classList.add("show");
     }
 
   });
 
-  document.querySelectorAll("[data-gallery]").forEach(
-    function(button){
+}
 
-      button.addEventListener("click",function(){
+if("IntersectionObserver" in window){
 
-        changeGallery(
-          button.dataset.gallery,
-          Number(button.dataset.direction)
-        );
-      });
+  const observer = new IntersectionObserver(entries=>{
 
-    }
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  },{
+    threshold:.12
+  });
+
+  products.forEach(product=>observer.observe(product));
+
+}else{
+
+  products.forEach(product=>product.classList.add("show"));
+
+}
+
+/* GALLERIES */
+
+function createDots(name){
+
+  const gallery = galleries[name];
+
+  if(!gallery || !gallery.dotsEl) return;
+
+  gallery.dotsEl.innerHTML = "";
+
+  if(gallery.images.length <= 1) return;
+
+  gallery.images.forEach((_,index)=>{
+
+    const dot = document.createElement("button");
+
+    dot.type = "button";
+    dot.className = index === gallery.index ? "active" : "";
+
+    dot.setAttribute(
+      "aria-label",
+      "View " + gallery.alts[index]
+    );
+
+    dot.setAttribute(
+      "aria-current",
+      index === gallery.index ? "true" : "false"
+    );
+
+    dot.addEventListener("click",()=>{
+      setGalleryImage(name,index);
+    });
+
+    gallery.dotsEl.appendChild(dot);
+
+  });
+
+}
+
+function updateDots(name){
+
+  const gallery = galleries[name];
+
+  if(!gallery || !gallery.dotsEl) return;
+
+  Array.from(gallery.dotsEl.children).forEach((dot,index)=>{
+
+    const active = index === gallery.index;
+
+    dot.classList.toggle("active",active);
+    dot.setAttribute("aria-current",String(active));
+
+  });
+
+}
+
+function updateGalleryControls(name){
+
+  const gallery = galleries[name];
+
+  if(!gallery) return;
+
+  const multiple = gallery.images.length > 1;
+
+  document
+    .querySelectorAll('[data-gallery="' + name + '"]')
+    .forEach(button=>{
+      button.hidden = !multiple;
+      button.disabled = !multiple;
+    });
+
+}
+
+function setGalleryImage(name,index){
+
+  const gallery = galleries[name];
+
+  if(!gallery || !gallery.imageEl) return;
+
+  gallery.index = index;
+
+  const image = gallery.imageEl;
+
+  image.classList.add("is-loading");
+  image.classList.remove("is-missing");
+
+  image.src = gallery.images[index];
+  image.alt = gallery.alts[index];
+
+  image.setAttribute(
+    "aria-label",
+    "Open larger view of " + gallery.alts[index]
   );
 
-  /* =========================
-     ZOOM
-  ========================= */
+  updateDots(name);
+}
 
-  function openZoom(imageElement){
+function changeGallery(name,direction){
 
-    if(
-      !imageElement ||
-      imageElement.dataset.failed === "true"
-    ){
-      return;
-    }
+  const gallery = galleries[name];
 
-    if(Date.now() < suppressZoomUntil){
-      return;
-    }
+  if(!gallery) return;
 
-    zoomPreviousFocus = imageElement;
+  const total = gallery.images.length;
 
-    zoomImg.src = imageElement.currentSrc ||
-                  imageElement.src;
+  if(total <= 1) return;
 
-    zoomImg.alt = imageElement.alt || "";
+  const next =
+    (gallery.index + direction + total) % total;
 
-    zoom.classList.add("active");
-    zoom.setAttribute("aria-hidden","false");
+  setGalleryImage(name,next);
+}
 
-    document.body.classList.add("zoom-open");
+document
+  .querySelectorAll("[data-gallery]")
+  .forEach(button=>{
 
-    requestAnimationFrame(function(){
-      zoomClose.focus();
+    button.addEventListener("click",()=>{
+
+      changeGallery(
+        button.dataset.gallery,
+        Number(button.dataset.direction)
+      );
+
     });
-  }
 
-  function closeZoom(){
+  });
 
-    if(!zoom.classList.contains("active")){
-      return;
-    }
+Object.keys(galleries).forEach(name=>{
 
-    zoom.classList.remove("active");
-    zoom.setAttribute("aria-hidden","true");
+  createDots(name);
+  updateGalleryControls(name);
 
-    zoomImg.removeAttribute("src");
-    zoomImg.alt = "";
+  galleries[name].images.slice(1).forEach(src=>{
 
-    document.body.classList.remove("zoom-open");
+    const preload = new Image();
+    preload.src = src;
 
-    if(
-      zoomPreviousFocus &&
-      document.contains(zoomPreviousFocus)
-    ){
-      requestAnimationFrame(function(){
-        zoomPreviousFocus.focus();
-      });
-    }
+  });
 
-    zoomPreviousFocus = null;
-  }
+});
 
-  document.querySelectorAll(".product-image img").forEach(
-    function(img){
+/* IMAGE HANDLING */
 
-      img.addEventListener("click",function(){
+document
+  .querySelectorAll(".product-image img")
+  .forEach(img=>{
+
+    img.addEventListener("click",()=>{
+      openZoom(img);
+    });
+
+    img.addEventListener("keydown",event=>{
+
+      if(event.key === "Enter" || event.key === " "){
+
+        event.preventDefault();
         openZoom(img);
-      });
 
-      img.addEventListener("keydown",function(event){
+      }
 
-        if(
-          event.key === "Enter" ||
-          event.key === " "
-        ){
-          event.preventDefault();
-          openZoom(img);
-        }
-      });
+    });
 
-    }
-  );
+    img.addEventListener("load",()=>{
 
-  zoom.addEventListener("click",function(event){
+      img.classList.remove("is-loading");
+      img.classList.remove("is-missing");
 
-    if(
-      event.target === zoom ||
-      event.target === zoomClose
-    ){
-      closeZoom();
-    }
+    });
+
+    img.addEventListener("error",()=>{
+
+      img.classList.remove("is-loading");
+      img.classList.add("is-missing");
+
+      if(img.src !== fallbackImage){
+        img.src = fallbackImage;
+      }
+
+      img.alt = "Product image unavailable";
+
+    });
+
   });
 
-  zoomClose.addEventListener(
-    "click",
-    closeZoom
-  );
+/* MOBILE SWIPE */
 
-  /* =========================
-     SWIPE
-  ========================= */
-
-  document.querySelectorAll(
-    "[data-gallery-frame]"
-  ).forEach(function(frame){
+document
+  .querySelectorAll("[data-gallery-frame]")
+  .forEach(frame=>{
 
     let startX = 0;
     let startY = 0;
 
     frame.addEventListener(
       "touchstart",
-      function(event){
+      event=>{
 
-        const touch =
-          event.changedTouches[0];
+        const touch = event.changedTouches[0];
 
         startX = touch.clientX;
         startY = touch.clientY;
@@ -2266,16 +1942,17 @@ body.js-ready .product.show{
 
     frame.addEventListener(
       "touchend",
-      function(event){
+      event=>{
 
-        const touch =
-          event.changedTouches[0];
+        const touch = event.changedTouches[0];
 
-        const deltaX =
-          touch.clientX - startX;
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
 
-        const deltaY =
-          touch.clientY - startY;
+        const name = frame.dataset.galleryFrame;
+        const gallery = galleries[name];
+
+        if(!gallery || gallery.images.length <= 1) return;
 
         if(
           Math.abs(deltaX) > 36 &&
@@ -2283,12 +1960,12 @@ body.js-ready .product.show{
         ){
 
           changeGallery(
-            frame.dataset.galleryFrame,
+            name,
             deltaX < 0 ? 1 : -1
           );
 
-          suppressZoomUntil =
-            Date.now() + 500;
+          suppressZoomUntil = Date.now() + 450;
+
         }
 
       },
@@ -2297,26 +1974,110 @@ body.js-ready .product.show{
 
   });
 
-  /* =========================
-     BROKEN HOMEPAGE IMAGE
-  ========================= */
+/* ZOOM */
 
-  const hero = document.querySelector(".hero");
+function openZoom(imageElement){
 
-  if(hero){
-
-    const preload = new Image();
-
-    preload.src = "homepage.png";
-
-    preload.onerror = function(){
-
-      hero.style.backgroundImage =
-        "linear-gradient(180deg,#000,#050505)";
-    };
+  if(
+    Date.now() < suppressZoomUntil ||
+    imageElement.classList.contains("is-missing")
+  ){
+    return;
   }
 
-})();
+  lastFocusedElement = document.activeElement;
+
+  zoomImg.src =
+    imageElement.currentSrc ||
+    imageElement.src;
+
+  zoomImg.alt = imageElement.alt;
+
+  zoom.classList.add("active");
+  zoom.setAttribute("aria-hidden","false");
+
+  pageBody.classList.add("zoom-open");
+
+  zoomClose.focus();
+}
+
+function closeZoom(){
+
+  zoom.classList.remove("active");
+  zoom.setAttribute("aria-hidden","true");
+
+  zoomImg.removeAttribute("src");
+
+  pageBody.classList.remove("zoom-open");
+
+  if(
+    lastFocusedElement &&
+    typeof lastFocusedElement.focus === "function"
+  ){
+    lastFocusedElement.focus();
+  }
+
+}
+
+function trapFocus(event,container){
+
+  const focusable =
+    Array.from(
+      container.querySelectorAll(focusableSelector)
+    ).filter(element=>{
+
+      return (
+        !element.disabled &&
+        element.offsetParent !== null
+      );
+
+    });
+
+  if(!focusable.length) return;
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if(
+    event.shiftKey &&
+    document.activeElement === first
+  ){
+
+    event.preventDefault();
+    last.focus();
+
+  }
+
+  if(
+    !event.shiftKey &&
+    document.activeElement === last
+  ){
+
+    event.preventDefault();
+    first.focus();
+
+  }
+
+}
+
+zoomClose.addEventListener("click",closeZoom);
+
+zoom.addEventListener("click",event=>{
+
+  if(event.target === zoom){
+    closeZoom();
+  }
+
+});
+
+window.addEventListener("resize",()=>{
+  if(window.innerWidth > 700 && menu.classList.contains("active")){
+    toggleMenu(false);
+  }
+});
+
+revealVisibleProducts();
+
 </script>
 
 </body>

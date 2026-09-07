@@ -47,22 +47,24 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
   --black:#000;
-  --black-soft:#050505;
-  --panel:#0b0b0b;
+  --black-soft:#030504;
   --white:#fff;
   --muted:rgba(255,255,255,.72);
-  --soft:rgba(255,255,255,.52);
-  --green:#39ff14;
-  --green-dark:#173d18;
+  --soft:rgba(255,255,255,.48);
+
+  --green:#4b9951;
+  --green-bright:#6ab66f;
   --gold:#d9b45b;
   --gold-light:#f0d58b;
-  --border:rgba(255,255,255,.09);
+
+  --border:rgba(217,180,91,.24);
   --shadow:0 25px 70px rgba(0,0,0,.65);
 }
 
@@ -109,40 +111,35 @@ a{
 }
 
 button,
-a,
-[role="button"]{
+a{
   -webkit-tap-highlight-color:transparent;
 }
 
 :focus-visible{
-  outline:2px solid var(--green);
+  outline:2px solid var(--gold);
   outline-offset:4px;
 }
 
-/* =========================
-   SKIP LINK
-========================= */
+/* SKIP */
 
 .skip-link{
   position:absolute;
   top:-70px;
-  left:16px;
+  left:15px;
   z-index:6000;
   padding:12px 18px;
-  background:var(--green);
-  color:#000;
   border-radius:999px;
+  background:var(--gold);
+  color:#000;
   font-weight:800;
   text-decoration:none;
 }
 
 .skip-link:focus{
-  top:16px;
+  top:15px;
 }
 
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 
 .loader{
   position:fixed;
@@ -162,90 +159,25 @@ a,
 
 .loader-mark{
   text-align:center;
-  animation:loaderPulse 1.8s ease-in-out infinite;
 }
 
 .loader-mark strong{
   display:block;
-  font-size:clamp(1.3rem,4vw,2rem);
-  font-weight:900;
-  letter-spacing:.18em;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:2rem;
+  letter-spacing:.12em;
 }
 
 .loader-mark span{
   display:block;
-  margin-top:7px;
-  color:var(--green);
-  font-size:.58rem;
-  font-weight:700;
+  margin-top:6px;
+  color:var(--gold);
+  font-size:.52rem;
+  font-weight:800;
   letter-spacing:.3em;
 }
 
-@keyframes loaderPulse{
-  0%,100%{
-    opacity:.65;
-    transform:scale(.98);
-  }
-
-  50%{
-    opacity:1;
-    transform:scale(1);
-  }
-}
-
-/* =========================
-   HAMBURGER
-========================= */
-
-.burger{
-  position:fixed;
-  top:max(10px,env(safe-area-inset-top));
-  left:max(14px,env(safe-area-inset-left));
-  z-index:3000;
-
-  width:50px;
-  height:50px;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-
-  border:1px solid rgba(217,180,91,.55);
-  border-radius:7px;
-
-  background:rgba(0,0,0,.62);
-
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-
-  cursor:pointer;
-}
-
-.burger span{
-  width:20px;
-  height:2px;
-  background:#fff;
-  border-radius:999px;
-  transition:transform .3s ease,opacity .3s ease;
-}
-
-.burger.active span:nth-child(1){
-  transform:translateY(7px) rotate(45deg);
-}
-
-.burger.active span:nth-child(2){
-  opacity:0;
-}
-
-.burger.active span:nth-child(3){
-  transform:translateY(-7px) rotate(-45deg);
-}
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .site-header{
   position:absolute;
@@ -253,77 +185,153 @@ a,
   left:0;
   right:0;
   z-index:1800;
-
-  height:42px;
-
+  height:62px;
   border-bottom:1px solid rgba(217,180,91,.22);
-
   background:linear-gradient(
     180deg,
-    rgba(0,0,0,.48),
-    rgba(0,0,0,.04)
+    rgba(0,0,0,.78),
+    rgba(0,0,0,.22)
   );
+  pointer-events:none;
 }
 
 .site-header-inner{
+  position:relative;
   width:100%;
   height:100%;
-
   display:grid;
   grid-template-columns:1fr auto 1fr;
   align-items:center;
-
-  padding:0 22px;
+  padding:0 28px;
 }
 
-/* NAVIGATION */
+/* BURGER */
+
+.burger{
+  position:fixed;
+  top:max(7px,env(safe-area-inset-top));
+  left:max(8px,env(safe-area-inset-left));
+  z-index:3000;
+
+  width:45px;
+  height:45px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+
+  border:1px solid rgba(217,180,91,.48);
+  border-radius:9px;
+
+  background:rgba(0,0,0,.68);
+
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  cursor:pointer;
+}
+
+.burger span{
+  display:block;
+  width:18px;
+  height:1.5px;
+  background:#fff;
+  border-radius:999px;
+  transition:transform .3s ease,opacity .3s ease;
+}
+
+.burger.active span:nth-child(1){
+  transform:translateY(6.5px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2){
+  opacity:0;
+}
+
+.burger.active span:nth-child(3){
+  transform:translateY(-6.5px) rotate(-45deg);
+}
+
+/* LEFT HEADER SOCIALS */
+
+.header-socials{
+  display:flex;
+  align-items:center;
+  gap:19px;
+  padding-left:125px;
+  pointer-events:auto;
+}
+
+.header-socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-decoration:none;
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+.header-socials a:hover,
+.header-socials a:focus-visible{
+  color:var(--gold-light);
+  transform:translateY(-1px);
+}
+
+.header-socials svg{
+  width:15px;
+  height:15px;
+  fill:currentColor;
+}
+
+.header-socials .linktree-word{
+  font-size:.55rem;
+  font-weight:900;
+  letter-spacing:.03em;
+}
+
+/* CENTER NAV */
 
 .header-nav{
-  grid-column:2;
-
   height:100%;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
-  gap:42px;
+  gap:39px;
+  pointer-events:auto;
 }
 
 .header-nav a{
   position:relative;
-
   height:100%;
 
   display:flex;
   align-items:center;
 
-  color:rgba(255,255,255,.88);
-
+  color:#fff;
   text-decoration:none;
 
-  font-size:.58rem;
-  font-weight:700;
-  letter-spacing:.28em;
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.25em;
 
   transition:color .25s ease;
 }
 
 .header-nav a::after{
   content:"";
-
   position:absolute;
   left:0;
   right:0;
-  bottom:0;
+  bottom:4px;
 
   height:1px;
-
   background:var(--gold);
 
   transform:scaleX(0);
-  transform-origin:center;
-
   transition:transform .25s ease;
 }
 
@@ -337,63 +345,63 @@ a,
   transform:scaleX(1);
 }
 
-/* CENTER TTE */
+/* CENTER TTE MARK */
 
 .header-brand{
   position:absolute;
   left:50%;
-  top:0;
-
-  transform:translateX(-50%);
-
-  height:42px;
-
-  display:flex;
-  align-items:center;
-
+  top:50%;
+  transform:translate(-50%,-50%);
   pointer-events:auto;
 }
 
 .header-brand a{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   color:var(--gold-light);
-
-  font-family:"Playfair Display",Georgia,serif;
-
-  font-size:1.05rem;
-  font-weight:800;
-
-  letter-spacing:-.05em;
-
   text-decoration:none;
 
-  text-shadow:0 0 18px rgba(217,180,91,.18);
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:1.1rem;
+  font-weight:800;
+  letter-spacing:-.08em;
 }
 
-/* SOCIALS RIGHT */
+.header-brand a::before{
+  content:"♛";
+  position:absolute;
+  top:-14px;
+  left:50%;
+  transform:translateX(-50%);
 
-.header-socials{
-  grid-column:3;
+  color:var(--gold);
+  font-size:.52rem;
+}
 
+/* RIGHT LINKS */
+
+.header-right{
   justify-self:end;
 
   display:flex;
   align-items:center;
+  gap:17px;
 
-  gap:18px;
+  padding-right:4px;
 
-  padding-right:3px;
+  pointer-events:auto;
 }
 
-.header-socials a{
-  width:18px;
-  height:18px;
-
+.header-right a{
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
-  color:rgba(255,255,255,.92);
-
+  color:#fff;
   text-decoration:none;
 
   transition:
@@ -401,56 +409,52 @@ a,
     transform .25s ease;
 }
 
-.header-socials a:hover,
-.header-socials a:focus-visible{
+.header-right a:hover,
+.header-right a:focus-visible{
   color:var(--gold-light);
   transform:translateY(-1px);
 }
 
-.header-socials svg{
-  width:17px;
-  height:17px;
+.header-right svg{
+  width:16px;
+  height:16px;
   fill:currentColor;
 }
 
-.header-socials .linktree-icon{
-  font-size:14px;
+.header-right .linktree{
+  color:var(--gold-light);
+  font-size:.52rem;
   font-weight:900;
-  line-height:1;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 
-/* GOLD DIVIDER */
-
-.header-socials::after{
-  content:"";
-
+.header-divider{
   width:1px;
-  height:17px;
-
-  margin-left:2px;
-
-  background:rgba(217,180,91,.55);
+  height:19px;
+  background:var(--gold);
+  opacity:.6;
 }
 
-/* =========================
-   OVERLAY
-========================= */
+/* OVERLAY */
 
 .overlay{
   position:fixed;
   inset:0;
   z-index:2200;
 
-  background:rgba(0,0,0,.76);
+  background:rgba(0,0,0,.78);
 
   opacity:0;
   visibility:hidden;
   pointer-events:none;
 
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
 
-  transition:opacity .3s ease,visibility .3s ease;
+  transition:
+    opacity .3s ease,
+    visibility .3s ease;
 }
 
 .overlay.active{
@@ -459,9 +463,7 @@ a,
   pointer-events:auto;
 }
 
-/* =========================
-   SIDE MENU
-========================= */
+/* SIDE MENU */
 
 .side-menu{
   position:fixed;
@@ -472,22 +474,21 @@ a,
   width:min(320px,86vw);
   height:100dvh;
 
-  padding:95px 28px 40px;
+  padding:100px 25px 35px;
 
   background:
     linear-gradient(
       180deg,
-      rgba(57,255,20,.055),
-      transparent 25%
+      rgba(57,110,60,.12),
+      transparent 30%
     ),
     #050505;
 
-  border-right:1px solid rgba(255,255,255,.08);
+  border-right:1px solid rgba(217,180,91,.2);
 
-  box-shadow:25px 0 70px rgba(0,0,0,.75);
+  box-shadow:25px 0 70px rgba(0,0,0,.8);
 
   transform:translateX(-105%);
-
   transition:transform .35s cubic-bezier(.22,.61,.36,1);
 }
 
@@ -499,17 +500,16 @@ a,
   display:block;
 
   padding:15px 16px;
-  margin-bottom:10px;
+  margin-bottom:8px;
 
-  border-radius:13px;
+  border-radius:10px;
 
   color:#fff;
-
   text-decoration:none;
 
-  font-size:.82rem;
-  font-weight:700;
-  letter-spacing:.16em;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.18em;
 
   transition:
     background .25s ease,
@@ -519,30 +519,27 @@ a,
 
 .side-menu a:hover,
 .side-menu a:focus-visible{
-  color:var(--green);
-  background:rgba(255,255,255,.045);
+  color:var(--gold-light);
+  background:rgba(217,180,91,.045);
   transform:translateX(5px);
 }
 
-.side-menu .menu-divider{
+.menu-divider{
   height:1px;
-
   margin:20px 16px;
-
-  background:rgba(217,180,91,.18);
+  background:rgba(217,180,91,.2);
 }
 
 .side-menu .linktree-menu{
   color:var(--gold-light);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   position:relative;
 
+  width:100%;
   min-height:100svh;
   height:100svh;
 
@@ -553,8 +550,8 @@ a,
 }
 
 /*
-   homepage.png is the ONLY hero artwork.
-   No secondary logo/image is placed above it.
+  homepage.png is the actual hero artwork.
+  It is the only large image used in the homepage hero.
 */
 
 .hero-art{
@@ -571,30 +568,24 @@ a,
 
   user-select:none;
   pointer-events:none;
-
-  -webkit-user-drag:none;
 }
 
-/*
-   Very light overlay.
-   homepage.png already contains the dark left side,
-   so we don't want to wash out the artwork.
-*/
+/* Darken only where necessary while preserving the bear */
 
 .hero::before{
   content:"";
 
   position:absolute;
   inset:0;
-
   z-index:-3;
 
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.40) 0%,
-      rgba(0,0,0,.18) 42%,
-      rgba(0,0,0,.03) 72%,
+      rgba(0,0,0,.93) 0%,
+      rgba(0,0,0,.82) 27%,
+      rgba(0,0,0,.38) 52%,
+      rgba(0,0,0,.05) 76%,
       rgba(0,0,0,.12) 100%
     );
 }
@@ -604,16 +595,15 @@ a,
 
   position:absolute;
   inset:0;
-
   z-index:-2;
 
   background:
     linear-gradient(
       180deg,
-      rgba(0,0,0,.30) 0%,
-      transparent 17%,
+      rgba(0,0,0,.48) 0%,
+      transparent 20%,
       transparent 78%,
-      rgba(0,0,0,.64) 100%
+      rgba(0,0,0,.7) 100%
     );
 
   pointer-events:none;
@@ -625,40 +615,37 @@ a,
   position:relative;
   z-index:2;
 
-  width:min(590px,47vw);
+  width:min(520px,44vw);
+
+  margin-left:clamp(80px,7.1vw,115px);
 
   min-height:100%;
 
-  margin-left:clamp(70px,6.65vw,100px);
-
-  padding:
-    clamp(100px,16vh,145px)
-    0
-    90px;
+  padding-top:clamp(125px,17vh,160px);
+  padding-bottom:95px;
 
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   align-items:flex-start;
 }
 
-/* BRAND LINE */
+/* SMALL GOLD BRAND LINE */
 
 .brand-line{
+  position:relative;
+
   display:flex;
   align-items:center;
-
   gap:13px;
 
-  margin-bottom:19px;
+  margin-bottom:24px;
 
   color:var(--gold-light);
 
-  font-size:.55rem;
-  font-weight:700;
-
+  font-size:.56rem;
+  font-weight:800;
   letter-spacing:.32em;
-
   text-transform:uppercase;
 }
 
@@ -669,20 +656,32 @@ a,
   height:1px;
 
   background:var(--gold);
-
-  flex:none;
 }
 
-/* TITLE */
+/* EYEBROW */
+
+.hero-eyebrow{
+  margin-bottom:14px;
+
+  color:rgba(255,255,255,.76);
+
+  font-size:.61rem;
+  font-weight:700;
+  letter-spacing:.23em;
+
+  text-transform:uppercase;
+}
+
+/* MAIN TITLE */
 
 .hero-title{
   font-family:"Playfair Display",Georgia,serif;
 
-  font-size:clamp(4.2rem,6.15vw,6.9rem);
+  font-size:clamp(4rem,6.3vw,7rem);
 
-  line-height:.78;
+  line-height:.82;
 
-  letter-spacing:-.07em;
+  letter-spacing:-.065em;
 
   font-weight:800;
 
@@ -697,20 +696,17 @@ a,
 .hero-title .exotics{
   display:block;
 
-  margin-left:18px;
+  margin-left:-2px;
 
-  color:#43864a;
+  color:#438b49;
 
   font-style:italic;
   font-weight:800;
 
-  letter-spacing:-.105em;
+  letter-spacing:-.1em;
 
-  transform:skewX(-8deg);
-
+  transform:skewX(-7deg);
   transform-origin:left center;
-
-  text-transform:none;
 }
 
 /* DIVIDER */
@@ -723,20 +719,16 @@ a,
 
   height:1px;
 
-  margin:35px 0 22px;
+  margin:34px 0 20px;
 
   background:
     linear-gradient(
       90deg,
       var(--gold) 0%,
-      var(--gold) 43%,
-      transparent 43%,
-      transparent 48%,
-      var(--gold) 48%,
-      var(--gold) 52%,
-      transparent 52%,
-      transparent 57%,
-      var(--gold) 57%,
+      var(--gold) 44%,
+      transparent 44%,
+      transparent 50%,
+      var(--gold) 50%,
       var(--gold) 100%
     );
 }
@@ -749,26 +741,26 @@ a,
   left:50%;
   top:50%;
 
-  transform:translate(-50%,-52%);
+  transform:translate(-50%,-50%);
 
-  padding:0 12px;
-
-  background:rgba(2,3,2,.85);
+  padding:0 13px;
 
   color:var(--gold);
+
+  background:#030503;
 
   font-size:.72rem;
 }
 
-/* SUBTEXT */
+/* SUBTITLE */
 
 .hero-subtitle{
   color:rgba(255,255,255,.9);
 
-  font-size:.68rem;
+  font-size:.7rem;
   font-weight:500;
 
-  letter-spacing:.2em;
+  letter-spacing:.16em;
 
   text-transform:uppercase;
 }
@@ -778,30 +770,29 @@ a,
 
   color:var(--gold-light);
 
-  font-size:.51rem;
-  font-weight:700;
+  font-size:.52rem;
+  font-weight:800;
 
-  letter-spacing:.23em;
+  letter-spacing:.21em;
 
   text-transform:uppercase;
 }
 
-/* HERO BUTTONS */
+/* BUTTONS */
 
 .hero-actions{
   display:flex;
+  gap:14px;
   flex-wrap:wrap;
 
-  gap:15px;
-
-  margin-top:27px;
+  margin-top:26px;
 }
 
 .hero-btn{
-  min-width:180px;
-  min-height:43px;
+  min-width:181px;
+  min-height:47px;
 
-  padding:12px 20px;
+  padding:13px 20px;
 
   display:inline-flex;
   align-items:center;
@@ -811,15 +802,14 @@ a,
 
   background:var(--gold);
 
-  color:#080808;
+  color:#090909;
 
-  font-size:.58rem;
+  font-size:.59rem;
   font-weight:900;
 
-  letter-spacing:.17em;
+  letter-spacing:.16em;
 
   text-decoration:none;
-
   text-transform:uppercase;
 
   transition:
@@ -831,32 +821,26 @@ a,
 
 .hero-btn::after{
   content:"→";
-
   margin-left:13px;
-
-  font-size:.85rem;
+  font-size:.8rem;
 }
 
 .hero-btn:hover,
 .hero-btn:focus-visible{
   transform:translateY(-2px);
-
-  box-shadow:
-    0 12px 35px rgba(217,180,91,.2);
+  box-shadow:0 10px 30px rgba(217,180,91,.2);
 }
 
 .hero-btn.secondary{
-  background:rgba(0,0,0,.20);
-
-  color:#559b5c;
-
-  border-color:#347d3a;
+  background:rgba(0,0,0,.28);
+  color:#4e9955;
+  border-color:#34733a;
 }
 
 .hero-btn.secondary:hover,
 .hero-btn.secondary:focus-visible{
-  background:rgba(57,255,20,.08);
-  color:#7ccf80;
+  color:#75bf7a;
+  background:rgba(57,255,20,.06);
 }
 
 /* TRUST BAR */
@@ -870,27 +854,22 @@ a,
   display:flex;
   align-items:center;
   flex-wrap:wrap;
+  gap:8px;
 
-  gap:7px;
+  color:rgba(255,255,255,.62);
 
-  color:rgba(255,255,255,.58);
-
-  font-size:.43rem;
+  font-size:.45rem;
   font-weight:700;
 
-  letter-spacing:.18em;
+  letter-spacing:.17em;
 
   text-transform:uppercase;
 }
 
 .hero-trust span:not(:last-child)::after{
-  content:"✦";
-
-  margin-left:10px;
-
+  content:"•";
+  margin-left:8px;
   color:var(--gold);
-
-  font-size:.42rem;
 }
 
 /* SCROLL */
@@ -898,22 +877,21 @@ a,
 .scroll-indicator{
   position:absolute;
 
-  right:27px;
-  bottom:23px;
+  right:26px;
+  bottom:24px;
 
   z-index:3;
 
   display:flex;
   align-items:center;
-
   gap:12px;
 
   color:rgba(255,255,255,.58);
 
-  font-size:.48rem;
+  font-size:.49rem;
   font-weight:700;
 
-  letter-spacing:.25em;
+  letter-spacing:.23em;
 
   text-transform:uppercase;
 }
@@ -921,31 +899,29 @@ a,
 .scroll-indicator::after{
   content:"";
 
-  width:48px;
+  width:42px;
   height:1px;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.2),
-      var(--gold)
-    );
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,.25),
+    var(--gold)
+  );
 }
 
-/* =========================
-   GENERAL BUTTON
-========================= */
+/* GENERAL BUTTON */
 
 .primary-btn{
-  min-height:50px;
+  min-height:49px;
 
-  padding:14px 25px;
+  padding:13px 23px;
 
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
   border:1px solid var(--green);
+
   border-radius:999px;
 
   background:var(--green);
@@ -953,7 +929,6 @@ a,
   color:#000;
 
   font-weight:800;
-
   text-decoration:none;
   text-align:center;
 
@@ -961,27 +936,21 @@ a,
 
   transition:
     transform .25s ease,
-    box-shadow .25s ease,
-    background .25s ease,
-    color .25s ease;
+    box-shadow .25s ease;
 }
 
 .primary-btn:hover,
 .primary-btn:focus-visible{
   transform:translateY(-2px);
-
-  box-shadow:
-    0 0 28px rgba(57,255,20,.25);
+  box-shadow:0 0 25px rgba(75,153,81,.3);
 }
 
 .secondary-btn{
   background:transparent;
-  color:var(--green);
+  color:var(--green-bright);
 }
 
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 .products{
   padding:110px 8% 95px;
@@ -989,7 +958,7 @@ a,
   background:
     radial-gradient(
       circle at 50% 0,
-      rgba(57,255,20,.05),
+      rgba(57,255,20,.045),
       transparent 32rem
     ),
     #030303;
@@ -1013,7 +982,6 @@ a,
 
 .section-copy{
   max-width:700px;
-
   margin:0 auto 48px;
 
   color:var(--muted);
@@ -1023,13 +991,10 @@ a,
 
 .product-grid{
   max-width:1120px;
-
   margin:auto;
 
   display:grid;
-
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
+  grid-template-columns:repeat(2,minmax(0,1fr));
 
   gap:30px;
 }
@@ -1047,8 +1012,7 @@ a,
     ),
     #0b0b0b;
 
-  border:1px solid var(--border);
-
+  border:1px solid rgba(255,255,255,.08);
   border-radius:22px;
 
   box-shadow:var(--shadow);
@@ -1086,7 +1050,6 @@ a,
 
   font-size:.64rem;
   font-weight:900;
-
   letter-spacing:.08em;
 }
 
@@ -1106,7 +1069,6 @@ a,
   overflow:hidden;
 
   border:1px solid rgba(255,255,255,.055);
-
   border-radius:17px;
 
   background:
@@ -1122,7 +1084,6 @@ a,
     );
 
   touch-action:pan-y pinch-zoom;
-
   user-select:none;
 }
 
@@ -1145,10 +1106,9 @@ a,
 .product-image img:hover{
   transform:scale(1.025);
 
-  filter:
-    drop-shadow(
-      0 0 18px rgba(57,255,20,.16)
-    );
+  filter:drop-shadow(
+    0 0 18px rgba(57,255,20,.16)
+  );
 }
 
 .product-image img.is-loading{
@@ -1166,9 +1126,7 @@ a,
 
 .arrow{
   position:absolute;
-
   bottom:12px;
-
   z-index:5;
 
   width:43px;
@@ -1178,7 +1136,6 @@ a,
   place-items:center;
 
   border:1px solid rgba(57,255,20,.3);
-
   border-radius:50%;
 
   background:rgba(0,0,0,.78);
@@ -1188,7 +1145,6 @@ a,
   cursor:pointer;
 
   font-size:1.3rem;
-  line-height:1;
 
   transition:
     transform .25s ease,
@@ -1198,9 +1154,7 @@ a,
 .arrow:hover,
 .arrow:focus-visible{
   transform:scale(1.08);
-
-  box-shadow:
-    0 0 18px rgba(57,255,20,.22);
+  box-shadow:0 0 18px rgba(57,255,20,.22);
 }
 
 .arrow-left{
@@ -1247,8 +1201,7 @@ a,
 .gallery-dots button.active{
   background:var(--green);
 
-  box-shadow:
-    0 0 9px rgba(57,255,20,.7);
+  box-shadow:0 0 9px rgba(57,255,20,.7);
 
   transform:scale(1.15);
 }
@@ -1284,9 +1237,7 @@ a,
   text-transform:uppercase;
 }
 
-/* =========================
-   TELEGRAM
-========================= */
+/* TELEGRAM */
 
 .telegram{
   position:relative;
@@ -1317,9 +1268,7 @@ a,
   color:var(--muted);
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact{
   position:relative;
@@ -1342,15 +1291,10 @@ a,
 
   display:flex;
   justify-content:center;
-
   flex-wrap:wrap;
 
   gap:12px;
 }
-
-/* =========================
-   LINKTREE
-========================= */
 
 .contact-linktree{
   margin-top:20px;
@@ -1358,6 +1302,7 @@ a,
 
 .contact-linktree a{
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
 
@@ -1366,7 +1311,6 @@ a,
   padding:12px 22px;
 
   border:1px solid rgba(217,180,91,.45);
-
   border-radius:999px;
 
   color:var(--gold-light);
@@ -1397,15 +1341,10 @@ a,
   border-color:var(--gold);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 .footer{
-  padding:
-    62px
-    8%
-    calc(40px + env(safe-area-inset-bottom));
+  padding:62px 8% calc(40px + env(safe-area-inset-bottom));
 
   border-top:1px solid rgba(255,255,255,.06);
 
@@ -1432,8 +1371,8 @@ a,
 
 .footer-icons{
   display:flex;
-  justify-content:center;
 
+  justify-content:center;
   flex-wrap:wrap;
 
   gap:16px;
@@ -1447,7 +1386,6 @@ a,
   place-items:center;
 
   border:1px solid rgba(255,255,255,.1);
-
   border-radius:50%;
 
   background:rgba(255,255,255,.025);
@@ -1464,14 +1402,12 @@ a,
 
   border-color:rgba(57,255,20,.45);
 
-  box-shadow:
-    0 0 22px rgba(57,255,20,.18);
+  box-shadow:0 0 22px rgba(57,255,20,.18);
 }
 
 .footer-icons svg{
   width:25px;
   height:25px;
-
   fill:#fff;
 }
 
@@ -1487,9 +1423,7 @@ a,
   text-transform:uppercase;
 }
 
-/* =========================
-   ZOOM
-========================= */
+/* ZOOM */
 
 .zoom{
   position:fixed;
@@ -1517,8 +1451,7 @@ a,
 
   border-radius:14px;
 
-  box-shadow:
-    0 0 55px rgba(0,0,0,.8);
+  box-shadow:0 0 55px rgba(0,0,0,.8);
 }
 
 .zoom-close{
@@ -1531,7 +1464,6 @@ a,
   height:48px;
 
   border:1px solid rgba(255,255,255,.15);
-
   border-radius:50%;
 
   background:rgba(255,255,255,.06);
@@ -1543,54 +1475,53 @@ a,
   cursor:pointer;
 }
 
-/* =========================
-   TABLET
-========================= */
+/* TABLET */
 
 @media(max-width:1000px){
 
-  .header-nav{
-    gap:27px;
+  .site-header-inner{
+    padding-right:20px;
   }
 
   .header-socials{
-    gap:14px;
+    padding-left:85px;
+    gap:15px;
+  }
+
+  .header-nav{
+    gap:25px;
+  }
+
+  .header-right{
+    gap:12px;
   }
 
   .hero-content{
-    width:53vw;
-
-    margin-left:8vw;
+    width:52vw;
+    margin-left:7.5vw;
   }
 
   .hero-title{
-    font-size:clamp(3.7rem,7.4vw,6rem);
+    font-size:clamp(3.6rem,7.4vw,6rem);
   }
-
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:700px){
 
   .site-header{
-    height:48px;
-
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0,0,0,.62),
-        rgba(0,0,0,.08)
-      );
+    height:59px;
   }
 
   .site-header-inner{
     display:flex;
     justify-content:flex-end;
-
     padding:0 15px;
+  }
+
+  .header-socials{
+    display:none;
   }
 
   .header-nav{
@@ -1598,50 +1529,44 @@ a,
   }
 
   .header-brand{
-    left:50%;
-
-    height:48px;
+    right:17px;
+    left:auto;
+    transform:translateY(-50%);
   }
 
   .header-brand a{
-    font-size:.95rem;
+    font-size:.92rem;
   }
 
-  .header-socials{
+  .header-right{
+    display:flex;
+
+    position:absolute;
+    left:74px;
+    top:50%;
+
+    transform:translateY(-50%);
+
     gap:13px;
-
-    padding-right:1px;
   }
 
-  .header-socials a{
-    width:16px;
-    height:16px;
+  .header-right .linktree{
+    display:none;
   }
 
-  .header-socials svg{
-    width:15px;
-    height:15px;
-  }
-
-  .header-socials::after{
-    height:15px;
+  .header-divider{
+    display:none;
   }
 
   .burger{
     width:45px;
     height:45px;
-
-    top:max(8px,env(safe-area-inset-top));
-    left:max(10px,env(safe-area-inset-left));
   }
 
   .side-menu{
     width:100%;
-
-    padding:88px 20px 35px;
+    padding:92px 20px 35px;
   }
-
-  /* HERO */
 
   .hero{
     min-height:100svh;
@@ -1649,33 +1574,28 @@ a,
   }
 
   /*
-     On phones the bear stays visible on the right,
-     while the left remains dark enough for the text.
+    On mobile the artwork moves slightly right so the bear
+    remains visible without destroying the left-side text.
   */
 
   .hero-art{
-    object-position:63% center;
+    object-position:68% center;
   }
 
   .hero::before{
     background:
       linear-gradient(
         90deg,
-        rgba(0,0,0,.78) 0%,
-        rgba(0,0,0,.60) 40%,
-        rgba(0,0,0,.18) 72%,
-        rgba(0,0,0,.08) 100%
-      );
-  }
-
-  .hero::after{
-    background:
+        rgba(0,0,0,.97) 0%,
+        rgba(0,0,0,.9) 42%,
+        rgba(0,0,0,.58) 70%,
+        rgba(0,0,0,.18) 100%
+      ),
       linear-gradient(
         180deg,
-        rgba(0,0,0,.34),
-        transparent 22%,
-        transparent 72%,
-        rgba(0,0,0,.7)
+        rgba(0,0,0,.45),
+        transparent 38%,
+        rgba(0,0,0,.6)
       );
   }
 
@@ -1686,9 +1606,9 @@ a,
     margin:0;
 
     padding:
-      100px
-      24px
-      82px;
+      110px
+      23px
+      78px;
 
     justify-content:center;
   }
@@ -1697,55 +1617,55 @@ a,
     margin-bottom:17px;
 
     font-size:.45rem;
-
-    letter-spacing:.23em;
+    letter-spacing:.21em;
   }
 
   .brand-line::before{
     width:20px;
   }
 
+  .hero-eyebrow{
+    margin-bottom:10px;
+
+    font-size:.51rem;
+    letter-spacing:.14em;
+  }
+
   .hero-title{
-    font-size:clamp(3.1rem,15vw,5rem);
+    font-size:clamp(3rem,15vw,5.4rem);
 
     line-height:.82;
 
-    letter-spacing:-.07em;
+    white-space:normal;
   }
 
   .hero-title .exotics{
-    margin-left:8px;
-
-    font-size:.92em;
+    font-size:.9em;
   }
 
   .hero-divider{
-    width:290px;
+    width:285px;
 
-    margin:27px 0 20px;
+    margin:24px 0 18px;
   }
 
   .hero-subtitle{
-    max-width:320px;
+    font-size:.58rem;
 
-    font-size:.59rem;
-
-    line-height:1.55;
-
-    letter-spacing:.11em;
+    letter-spacing:.09em;
   }
 
   .hero-tagline{
     font-size:.45rem;
 
-    letter-spacing:.13em;
+    letter-spacing:.11em;
   }
 
   .hero-actions{
     width:100%;
-    max-width:315px;
+    max-width:310px;
 
-    margin-top:22px;
+    margin-top:20px;
 
     flex-direction:column;
 
@@ -1761,10 +1681,9 @@ a,
   }
 
   .hero-trust{
-    left:24px;
-    right:24px;
-
-    bottom:22px;
+    left:23px;
+    right:23px;
+    bottom:20px;
 
     gap:5px;
 
@@ -1776,8 +1695,6 @@ a,
   .scroll-indicator{
     display:none;
   }
-
-  /* PRODUCTS */
 
   .products,
   .telegram,
@@ -1793,7 +1710,6 @@ a,
 
   .product-grid{
     grid-template-columns:1fr;
-
     gap:24px;
   }
 
@@ -1830,16 +1746,14 @@ a,
     padding-left:20px;
     padding-right:20px;
   }
-
 }
 
-/* =========================
-   SMALL PHONES
-========================= */
+/* SMALL PHONES */
 
 @media(max-width:380px){
 
-  .header-socials{
+  .header-right{
+    left:69px;
     gap:10px;
   }
 
@@ -1849,11 +1763,15 @@ a,
   }
 
   .hero-title{
-    font-size:clamp(2.8rem,15.2vw,4.3rem);
+    font-size:clamp(2.8rem,15.5vw,4.5rem);
+  }
+
+  .hero-eyebrow{
+    font-size:.48rem;
   }
 
   .hero-subtitle{
-    font-size:.55rem;
+    font-size:.54rem;
   }
 
   .hero-tagline{
@@ -1866,12 +1784,9 @@ a,
 
     font-size:.34rem;
   }
-
 }
 
-/* =========================
-   REDUCED MOTION
-========================= */
+/* REDUCED MOTION */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -1885,7 +1800,6 @@ a,
     animation:none!important;
     transition:none!important;
   }
-
 }
 
 </style>
@@ -1893,9 +1807,7 @@ a,
 
 <body>
 
-<a class="skip-link" href="#main-content">
-  Skip to content
-</a>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <!-- LOADER -->
 
@@ -1905,8 +1817,6 @@ a,
     <span>TOP TIER EXOTICS</span>
   </div>
 </div>
-
-<!-- OVERLAY -->
 
 <div class="overlay" id="overlay" hidden></div>
 
@@ -1931,42 +1841,9 @@ a,
 
   <div class="site-header-inner">
 
-    <!-- NAV -->
-
-    <nav class="header-nav" aria-label="Primary navigation">
-
-      <a href="#home">
-        HOME
-      </a>
-
-      <a href="#products">
-        COLLECTION
-      </a>
-
-      <a href="#contact">
-        CONTACT
-      </a>
-
-    </nav>
-
-    <!-- CENTER BRAND -->
-
-    <div class="header-brand">
-
-      <a
-        href="#home"
-        aria-label="TopTierExotics home"
-      >
-        TTE
-      </a>
-
-    </div>
-
-    <!-- SOCIAL LINKS -->
+    <!-- Left social area -->
 
     <div class="header-socials">
-
-      <!-- TELEGRAM -->
 
       <a
         href="https://t.me/TTE_V2"
@@ -1974,15 +1851,10 @@ a,
         rel="noopener noreferrer"
         aria-label="Telegram"
       >
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/>
         </svg>
       </a>
-
-      <!-- INSTAGRAM -->
 
       <a
         href="https://www.instagram.com/toptierexotics.2k25"
@@ -1990,15 +1862,62 @@ a,
         rel="noopener noreferrer"
         aria-label="Instagram"
       >
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3-3Z"/>
         </svg>
       </a>
 
-      <!-- PAYPAL -->
+      <a
+        class="linktree-word"
+        href="https://linktr.ee/TopTierExotics"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TopTierExotics Linktree"
+      >
+        Linktree
+      </a>
+
+    </div>
+
+    <!-- Navigation -->
+
+    <nav class="header-nav" aria-label="Primary navigation">
+      <a href="#home">HOME</a>
+      <a href="#products">COLLECTION</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <!-- Center TTE -->
+
+    <div class="header-brand">
+      <a href="#home" aria-label="TopTierExotics home">TTE</a>
+    </div>
+
+    <!-- Right social area -->
+
+    <div class="header-right">
+
+      <a
+        href="https://t.me/TTE_V2"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Telegram"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/>
+        </svg>
+      </a>
+
+      <a
+        href="https://www.instagram.com/toptierexotics.2k25"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+        </svg>
+      </a>
 
       <a
         href="https://www.paypal.me/TopTierExotics"
@@ -2006,29 +1925,22 @@ a,
         rel="noopener noreferrer"
         aria-label="PayPal"
       >
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/>
         </svg>
       </a>
 
-      <!-- LINKTREE -->
-
       <a
+        class="linktree"
         href="https://linktr.ee/TopTierExotics"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="TopTierExotics Linktree"
       >
-        <span
-          class="linktree-icon"
-          aria-hidden="true"
-        >
-          ✦
-        </span>
+        LINKTREE
       </a>
+
+      <span class="header-divider" aria-hidden="true"></span>
 
     </div>
 
@@ -2046,17 +1958,9 @@ a,
   inert
 >
 
-  <a href="#home">
-    HOME
-  </a>
-
-  <a href="#products">
-    COLLECTION
-  </a>
-
-  <a href="#contact">
-    CONTACT
-  </a>
+  <a href="#home">HOME</a>
+  <a href="#products">COLLECTION</a>
+  <a href="#contact">CONTACT</a>
 
   <div class="menu-divider"></div>
 
@@ -2097,16 +2001,9 @@ a,
 
 <main id="main-content" tabindex="-1">
 
-<!-- =========================
-     HOMEPAGE
-========================= -->
+<!-- HOMEPAGE -->
 
-<section
-  class="hero"
-  id="home"
->
-
-  <!-- SINGLE HOMEPAGE ARTWORK -->
+<section class="hero" id="home">
 
   <img
     class="hero-art"
@@ -2117,30 +2014,25 @@ a,
     decoding="async"
   >
 
-  <!-- HERO TEXT -->
-
   <div class="hero-content">
 
     <div class="brand-line">
       TOP TIER EXOTICS CLOTHING CO.
     </div>
 
+    <p class="hero-eyebrow">
+      PREMIUM CLOTHING • EXOTIC LIFESTYLE
+    </p>
+
     <h1 class="hero-title">
-
-      <span class="top">
-        TOP TIER
-      </span>
-
-      <span class="exotics">
-        Exotics
-      </span>
-
+      <span class="top">TOP TIER</span>
+      <span class="exotics">EXOTICS</span>
     </h1>
 
     <div class="hero-divider"></div>
 
     <p class="hero-subtitle">
-      PREMIUM CLOTHING • EXOTIC LIFESTYLE.
+      PREMIUM CLOTHING. EXOTIC LIFESTYLE.
     </p>
 
     <p class="hero-tagline">
@@ -2149,36 +2041,20 @@ a,
 
     <div class="hero-actions">
 
-      <a
-        class="hero-btn"
-        href="#products"
-      >
+      <a class="hero-btn" href="#products">
         SHOP COLLECTION
       </a>
 
-      <a
-        class="hero-btn secondary"
-        href="#products"
-      >
+      <a class="hero-btn secondary" href="#products">
         NEW DROPS
       </a>
 
     </div>
 
     <div class="hero-trust">
-
-      <span>
-        TOP QUALITY
-      </span>
-
-      <span>
-        EXCLUSIVE DESIGNS
-      </span>
-
-      <span>
-        LIMITED DROPS
-      </span>
-
+      <span>TOP QUALITY</span>
+      <span>EXCLUSIVE DESIGNS</span>
+      <span>LIMITED DROPS</span>
     </div>
 
   </div>
@@ -2189,19 +2065,11 @@ a,
 
 </section>
 
-<!-- =========================
-     COLLECTION
-========================= -->
+<!-- COLLECTION -->
 
-<section
-  class="products"
-  id="products"
-  aria-labelledby="products-title"
->
+<section class="products" id="products" aria-labelledby="products-title">
 
-  <h2 id="products-title">
-    Featured Collection
-  </h2>
+  <h2 id="products-title">Featured Collection</h2>
 
   <p class="section-copy">
     Exclusive TopTierExotics pieces with limited availability and direct private-access ordering.
@@ -2213,14 +2081,9 @@ a,
 
     <article class="product">
 
-      <div class="badge">
-        LIMITED
-      </div>
+      <div class="badge">LIMITED</div>
 
-      <div
-        class="product-image"
-        data-gallery-frame="hat"
-      >
+      <div class="product-image" data-gallery-frame="hat">
 
         <button
           class="arrow arrow-left"
@@ -2261,9 +2124,7 @@ a,
         aria-label="Hat image gallery navigation"
       ></div>
 
-      <h3>
-        TOPTIEREXOTICS HAT
-      </h3>
+      <h3>TOPTIEREXOTICS HAT</h3>
 
       <p>
         Structured fit with a clean luxury-streetwear finish and stronger visual presence.
@@ -2288,14 +2149,9 @@ a,
 
     <article class="product">
 
-      <div class="badge">
-        LIMITED
-      </div>
+      <div class="badge">LIMITED</div>
 
-      <div
-        class="product-image"
-        data-gallery-frame="tracksuit"
-      >
+      <div class="product-image" data-gallery-frame="tracksuit">
 
         <button
           class="arrow arrow-left"
@@ -2336,9 +2192,7 @@ a,
         aria-label="Tracksuit image gallery navigation"
       ></div>
 
-      <h3>
-        TOPTIEREXOTICS TRACKSUIT
-      </h3>
+      <h3>TOPTIEREXOTICS TRACKSUIT</h3>
 
       <p>
         Premium hoodie and tapered joggers with a clean tailored luxury-streetwear look.
@@ -2363,18 +2217,11 @@ a,
 
 </section>
 
-<!-- =========================
-     TELEGRAM
-========================= -->
+<!-- TELEGRAM -->
 
-<section
-  class="telegram"
-  aria-labelledby="telegram-title"
->
+<section class="telegram" aria-labelledby="telegram-title">
 
-  <h2 id="telegram-title">
-    Private Access Only
-  </h2>
+  <h2 id="telegram-title">Private Access Only</h2>
 
   <p>
     All drops are released through Telegram. Members receive earlier access,
@@ -2392,19 +2239,11 @@ a,
 
 </section>
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 
-<section
-  class="contact"
-  id="contact"
-  aria-labelledby="contact-title"
->
+<section class="contact" id="contact" aria-labelledby="contact-title">
 
-  <h2 id="contact-title">
-    Contact
-  </h2>
+  <h2 id="contact-title">Contact</h2>
 
   <p>
     Message us via Telegram or Instagram for orders, sizing,
@@ -2453,15 +2292,11 @@ a,
 
 </main>
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
-  <h2>
-    CONNECT
-  </h2>
+  <h2>CONNECT</h2>
 
   <p class="footer-copy">
     Private-access streetwear with limited releases and direct ordering through the channels below.
@@ -2469,23 +2304,16 @@ a,
 
   <div class="footer-icons">
 
-    <!-- TELEGRAM -->
-
     <a
       href="https://t.me/TTE_V2"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Telegram"
     >
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M21.62 4.01a1 1 0 0 0-1.06-.14L2.82 11.68a1 1 0 0 0 .09 1.87l4.57 1.65 1.83 5.89a1 1 0 0 0 1.77.28l2.62-3.57 4.84 3.53a1 1 0 0 0 1.58-.58l2.49-15.56a1 1 0 0 0-.99-1.18ZM9.2 15.06l-.77 3.17-.98-3.14 8.49-6.96-6.74 6.93Z"/>
       </svg>
     </a>
-
-    <!-- INSTAGRAM -->
 
     <a
       href="https://www.instagram.com/toptierexotics.2k25"
@@ -2493,15 +2321,10 @@ a,
       rel="noopener noreferrer"
       aria-label="Instagram"
     >
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11.5 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3-3Z"/>
       </svg>
     </a>
-
-    <!-- PAYPAL -->
 
     <a
       href="https://www.paypal.me/TopTierExotics"
@@ -2509,15 +2332,10 @@ a,
       rel="noopener noreferrer"
       aria-label="PayPal"
     >
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7.5 3h7.46c3.4 0 5.54 2.01 5.04 5.08-.55 3.39-3.17 5.17-6.48 5.17H11.2l-.86 5.25H6L8.5 3Zm4.09 6.9h2.16c1.54 0 2.44-.75 2.66-2.03.19-1.18-.54-1.87-2.06-1.87h-2.18L11.59 9.9Zm-1.04 4.59h3.08c2.94 0 4.81 1.73 4.38 4.38-.47 2.86-2.72 4.63-5.92 4.63H7.54l3.01-8.91Z"/>
       </svg>
     </a>
-
-    <!-- LINKTREE -->
 
     <a
       href="https://linktr.ee/TopTierExotics"
@@ -2525,10 +2343,7 @@ a,
       rel="noopener noreferrer"
       aria-label="Linktree"
     >
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M11 3h2v5.3l3.7-3.7 1.4 1.4L14.4 10H20v2h-5.6l3.7 3.7-1.4 1.4L13 13.4V21h-2v-7.6l-3.7 3.7-1.4-1.4L9.6 12H4v-2h5.6L5.9 6l1.4-1.4L11 8.3V3Z"/>
       </svg>
     </a>
@@ -2541,9 +2356,7 @@ a,
 
 </footer>
 
-<!-- =========================
-     IMAGE ZOOM
-========================= -->
+<!-- ZOOM -->
 
 <div
   class="zoom"
@@ -2563,20 +2376,13 @@ a,
     &times;
   </button>
 
-  <img
-    id="zoomImg"
-    alt=""
-  >
+  <img id="zoomImg" alt="">
 
 </div>
 
 <script>
 
 "use strict";
-
-/* =========================
-   ELEMENTS
-========================= */
 
 const loader = document.getElementById("loader");
 const menu = document.getElementById("menu");
@@ -2588,6 +2394,7 @@ const zoomImg = document.getElementById("zoomImg");
 const zoomClose = document.getElementById("zoomClose");
 
 const pageBody = document.body;
+const products = document.querySelectorAll(".product");
 
 let lastFocusedElement = null;
 let suppressZoomUntil = 0;
@@ -2600,10 +2407,6 @@ const focusableSelector = [
 
 const fallbackImage =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420'%3E%3Crect width='420' height='420' fill='%230b0b0b'/%3E%3Ccircle cx='210' cy='178' r='72' fill='none' stroke='%2339ff14' stroke-opacity='.55' stroke-width='8'/%3E%3Cpath d='M108 308h204' stroke='%2339ff14' stroke-opacity='.45' stroke-width='10' stroke-linecap='round'/%3E%3Ctext x='210' y='350' text-anchor='middle' fill='%23ffffff' fill-opacity='.72' font-family='Arial,sans-serif' font-size='22' font-weight='700'%3ETOP TIER EXOTICS%3C/text%3E%3C/svg%3E";
-
-/* =========================
-   GALLERIES
-========================= */
 
 const galleries = {
 
@@ -2622,11 +2425,8 @@ const galleries = {
 
     index:0,
 
-    imageEl:
-      document.getElementById("hatImage"),
-
-    dotsEl:
-      document.getElementById("hatDots")
+    imageEl:document.getElementById("hatImage"),
+    dotsEl:document.getElementById("hatDots")
   },
 
   tracksuit:{
@@ -2646,44 +2446,28 @@ const galleries = {
 
     index:0,
 
-    imageEl:
-      document.getElementById("tracksuitImage"),
-
-    dotsEl:
-      document.getElementById("tracksuitDots")
+    imageEl:document.getElementById("tracksuitImage"),
+    dotsEl:document.getElementById("tracksuitDots")
   }
 
 };
 
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 
 function hideLoader(){
 
-  if(
-    !loader ||
-    loader.classList.contains("hidden")
-  ){
+  if(!loader){
     return;
   }
 
   loader.classList.add("hidden");
 }
 
-window.addEventListener(
-  "load",
-  hideLoader
-);
+window.addEventListener("load",hideLoader);
 
-window.setTimeout(
-  hideLoader,
-  2500
-);
+window.setTimeout(hideLoader,2200);
 
-/* =========================
-   MENU
-========================= */
+/* MENU */
 
 function toggleMenu(forceState){
 
@@ -2692,20 +2476,26 @@ function toggleMenu(forceState){
       ? forceState
       : !menu.classList.contains("active");
 
-  menu.classList.toggle(
-    "active",
-    shouldOpen
-  );
+  menu.classList.toggle("active",shouldOpen);
+  overlay.classList.toggle("active",shouldOpen);
 
-  overlay.classList.toggle(
-    "active",
-    shouldOpen
-  );
+  if(shouldOpen){
 
-  burger.classList.toggle(
-    "active",
-    shouldOpen
-  );
+    overlay.hidden = false;
+
+  }else{
+
+    window.setTimeout(()=>{
+
+      if(!menu.classList.contains("active")){
+        overlay.hidden = true;
+      }
+
+    },320);
+
+  }
+
+  burger.classList.toggle("active",shouldOpen);
 
   burger.setAttribute(
     "aria-expanded",
@@ -2714,9 +2504,7 @@ function toggleMenu(forceState){
 
   burger.setAttribute(
     "aria-label",
-    shouldOpen
-      ? "Close menu"
-      : "Open menu"
+    shouldOpen ? "Close menu" : "Open menu"
   );
 
   menu.setAttribute(
@@ -2728,42 +2516,23 @@ function toggleMenu(forceState){
     menu.inert = !shouldOpen;
   }
 
-  pageBody.classList.toggle(
-    "menu-open",
-    shouldOpen
-  );
+  pageBody.classList.toggle("menu-open",shouldOpen);
 
   if(shouldOpen){
 
-    overlay.hidden = false;
+    lastFocusedElement = document.activeElement;
 
-    lastFocusedElement =
-      document.activeElement;
-
-    const firstLink =
-      menu.querySelector("a");
+    const firstLink = menu.querySelector("a");
 
     if(firstLink){
 
-      window.setTimeout(
-        ()=>{
-          firstLink.focus();
-        },
-        50
-      );
+      window.setTimeout(()=>{
+        firstLink.focus();
+      },50);
 
     }
 
   }else{
-
-    window.setTimeout(
-      ()=>{
-        if(!menu.classList.contains("active")){
-          overlay.hidden = true;
-        }
-      },
-      320
-    );
 
     if(
       lastFocusedElement &&
@@ -2772,203 +2541,193 @@ function toggleMenu(forceState){
     ){
 
       lastFocusedElement.focus();
+
     }
 
   }
+
 }
 
-burger.addEventListener(
-  "click",
-  ()=>{
-    toggleMenu();
-  }
-);
+burger.addEventListener("click",()=>{
+  toggleMenu();
+});
 
-overlay.addEventListener(
-  "click",
-  ()=>{
+overlay.addEventListener("click",()=>{
+  toggleMenu(false);
+});
+
+menu.querySelectorAll("a").forEach(link=>{
+
+  link.addEventListener("click",()=>{
     toggleMenu(false);
-  }
-);
+  });
 
-menu.querySelectorAll("a").forEach(
-  link=>{
+});
 
-    link.addEventListener(
-      "click",
-      ()=>{
-        toggleMenu(false);
-      }
-    );
+/* KEYBOARD */
 
-  }
-);
+document.addEventListener("keydown",event=>{
 
-/* =========================
-   KEYBOARD
-========================= */
+  if(event.key === "Escape"){
 
-document.addEventListener(
-  "keydown",
-  event=>{
+    if(zoom.classList.contains("active")){
 
-    if(event.key === "Escape"){
-
-      if(
-        zoom.classList.contains("active")
-      ){
-
-        closeZoom();
-
-        return;
-      }
-
-      if(
-        menu.classList.contains("active")
-      ){
-
-        toggleMenu(false);
-
-        return;
-      }
+      closeZoom();
+      return;
 
     }
 
-    if(event.key === "Tab"){
+    if(menu.classList.contains("active")){
 
-      if(
-        menu.classList.contains("active")
-      ){
-
-        trapFocus(
-          event,
-          menu
-        );
-      }
-
-      if(
-        zoom.classList.contains("active")
-      ){
-
-        trapFocus(
-          event,
-          zoom
-        );
-      }
+      toggleMenu(false);
+      return;
 
     }
 
   }
-);
 
-/* =========================
-   GALLERIES
-========================= */
+  if(event.key === "Tab"){
+
+    if(menu.classList.contains("active")){
+      trapFocus(event,menu);
+    }
+
+    if(zoom.classList.contains("active")){
+      trapFocus(event,zoom);
+    }
+
+  }
+
+});
+
+/* PRODUCT REVEAL */
+
+function revealVisibleProducts(){
+
+  products.forEach(product=>{
+
+    const rect = product.getBoundingClientRect();
+
+    if(rect.top < window.innerHeight * .92){
+      product.classList.add("show");
+    }
+
+  });
+
+}
+
+if("IntersectionObserver" in window){
+
+  const observer = new IntersectionObserver(
+    entries=>{
+
+      entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+  products.forEach(product=>observer.observe(product));
+
+}else{
+
+  products.forEach(product=>product.classList.add("show"));
+
+}
+
+/* GALLERIES */
 
 function createDots(name){
 
-  const gallery =
-    galleries[name];
+  const gallery = galleries[name];
 
-  if(
-    !gallery ||
-    !gallery.dotsEl
-  ){
+  if(!gallery || !gallery.dotsEl){
     return;
   }
 
   gallery.dotsEl.innerHTML = "";
 
-  if(
-    gallery.images.length <= 1
-  ){
+  if(gallery.images.length <= 1){
     return;
   }
 
-  gallery.images.forEach(
-    (_,index)=>{
+  gallery.images.forEach((_,index)=>{
 
-      const dot =
-        document.createElement("button");
+    const dot = document.createElement("button");
 
-      dot.type = "button";
+    dot.type = "button";
 
-      dot.className =
-        index === gallery.index
-          ? "active"
-          : "";
+    dot.className =
+      index === gallery.index
+        ? "active"
+        : "";
 
-      dot.setAttribute(
-        "aria-label",
-        "View " +
-        gallery.alts[index]
-      );
+    dot.setAttribute(
+      "aria-label",
+      "View " + gallery.alts[index]
+    );
 
-      dot.setAttribute(
-        "aria-current",
-        index === gallery.index
-          ? "true"
-          : "false"
-      );
+    dot.setAttribute(
+      "aria-current",
+      index === gallery.index
+        ? "true"
+        : "false"
+    );
 
-      dot.addEventListener(
-        "click",
-        ()=>{
-          setGalleryImage(
-            name,
-            index
-          );
-        }
-      );
+    dot.addEventListener("click",()=>{
+      setGalleryImage(name,index);
+    });
 
-      gallery.dotsEl.appendChild(
-        dot
-      );
+    gallery.dotsEl.appendChild(dot);
 
-    }
-  );
+  });
 
 }
 
 function updateDots(name){
 
-  const gallery =
-    galleries[name];
+  const gallery = galleries[name];
 
-  if(
-    !gallery ||
-    !gallery.dotsEl
-  ){
+  if(!gallery || !gallery.dotsEl){
     return;
   }
 
   Array.from(
     gallery.dotsEl.children
-  ).forEach(
-    (dot,index)=>{
+  ).forEach((dot,index)=>{
 
-      const active =
-        index === gallery.index;
+    const active =
+      index === gallery.index;
 
-      dot.classList.toggle(
-        "active",
-        active
-      );
+    dot.classList.toggle(
+      "active",
+      active
+    );
 
-      dot.setAttribute(
-        "aria-current",
-        String(active)
-      );
+    dot.setAttribute(
+      "aria-current",
+      String(active)
+    );
 
-    }
-  );
+  });
 
 }
 
 function updateGalleryControls(name){
 
-  const gallery =
-    galleries[name];
+  const gallery = galleries[name];
 
   if(!gallery){
     return;
@@ -2979,87 +2738,48 @@ function updateGalleryControls(name){
 
   document
     .querySelectorAll(
-      '[data-gallery="' +
-      name +
-      '"]'
+      '[data-gallery="' + name + '"]'
     )
-    .forEach(
-      button=>{
+    .forEach(button=>{
 
-        button.hidden =
-          !multiple;
+      button.hidden = !multiple;
+      button.disabled = !multiple;
 
-        button.disabled =
-          !multiple;
-
-      }
-    );
+    });
 
 }
 
-function setGalleryImage(
-  name,
-  index
-){
+function setGalleryImage(name,index){
 
-  const gallery =
-    galleries[name];
+  const gallery = galleries[name];
 
-  if(
-    !gallery ||
-    !gallery.imageEl
-  ){
+  if(!gallery || !gallery.imageEl){
     return;
   }
 
-  gallery.index =
-    Math.max(
-      0,
-      Math.min(
-        index,
-        gallery.images.length - 1
-      )
-    );
+  gallery.index = index;
 
-  const image =
-    gallery.imageEl;
+  const image = gallery.imageEl;
 
-  image.classList.add(
-    "is-loading"
-  );
+  image.classList.add("is-loading");
+  image.classList.remove("is-missing");
 
-  image.classList.remove(
-    "is-missing"
-  );
+  image.src = gallery.images[index];
 
-  image.src =
-    gallery.images[
-      gallery.index
-    ];
-
-  image.alt =
-    gallery.alts[
-      gallery.index
-    ];
+  image.alt = gallery.alts[index];
 
   image.setAttribute(
     "aria-label",
     "Open larger view of " +
-    gallery.alts[
-      gallery.index
-    ]
+    gallery.alts[index]
   );
 
   updateDots(name);
 }
 
-function changeGallery(
-  name,
-  direction
-){
+function changeGallery(name,direction){
 
-  const gallery =
-    galleries[name];
+  const gallery = galleries[name];
 
   if(!gallery){
     return;
@@ -3079,246 +2799,156 @@ function changeGallery(
       total
     ) % total;
 
-  setGalleryImage(
-    name,
-    next
-  );
+  setGalleryImage(name,next);
 }
 
 document
-  .querySelectorAll(
-    "[data-gallery]"
-  )
-  .forEach(
-    button=>{
+  .querySelectorAll("[data-gallery]")
+  .forEach(button=>{
 
-      button.addEventListener(
-        "click",
-        ()=>{
+    button.addEventListener("click",()=>{
+
+      changeGallery(
+        button.dataset.gallery,
+        Number(button.dataset.direction)
+      );
+
+    });
+
+  });
+
+Object.keys(galleries).forEach(name=>{
+
+  createDots(name);
+  updateGalleryControls(name);
+
+});
+
+/* IMAGE HANDLING */
+
+document
+  .querySelectorAll(".product-image img")
+  .forEach(img=>{
+
+    img.addEventListener("click",()=>{
+      openZoom(img);
+    });
+
+    img.addEventListener("keydown",event=>{
+
+      if(
+        event.key === "Enter" ||
+        event.key === " "
+      ){
+
+        event.preventDefault();
+
+        openZoom(img);
+
+      }
+
+    });
+
+    img.addEventListener("load",()=>{
+
+      img.classList.remove("is-loading");
+      img.classList.remove("is-missing");
+
+    });
+
+    img.addEventListener("error",()=>{
+
+      img.classList.remove("is-loading");
+      img.classList.add("is-missing");
+
+      if(img.src !== fallbackImage){
+        img.src = fallbackImage;
+      }
+
+      img.alt =
+        "Product image unavailable";
+
+    });
+
+  });
+
+/* MOBILE SWIPE */
+
+document
+  .querySelectorAll("[data-gallery-frame]")
+  .forEach(frame=>{
+
+    let startX = 0;
+    let startY = 0;
+
+    frame.addEventListener(
+      "touchstart",
+      event=>{
+
+        const touch =
+          event.changedTouches[0];
+
+        startX = touch.clientX;
+        startY = touch.clientY;
+
+      },
+      {passive:true}
+    );
+
+    frame.addEventListener(
+      "touchend",
+      event=>{
+
+        const touch =
+          event.changedTouches[0];
+
+        const deltaX =
+          touch.clientX - startX;
+
+        const deltaY =
+          touch.clientY - startY;
+
+        const name =
+          frame.dataset.galleryFrame;
+
+        const gallery =
+          galleries[name];
+
+        if(
+          !gallery ||
+          gallery.images.length <= 1
+        ){
+          return;
+        }
+
+        if(
+          Math.abs(deltaX) > 36 &&
+          Math.abs(deltaX) > Math.abs(deltaY)
+        ){
+
           changeGallery(
-            button.dataset.gallery,
-            Number(
-              button.dataset.direction
-            )
-          );
-        }
-      );
-
-    }
-  );
-
-Object.keys(galleries).forEach(
-  name=>{
-
-    createDots(name);
-
-    updateGalleryControls(name);
-
-    galleries[name]
-      .images
-      .slice(1)
-      .forEach(
-        src=>{
-
-          const preload =
-            new Image();
-
-          preload.src = src;
-
-        }
-      );
-
-  }
-);
-
-/* =========================
-   PRODUCT IMAGE HANDLING
-========================= */
-
-document
-  .querySelectorAll(
-    ".product-image img"
-  )
-  .forEach(
-    img=>{
-
-      img.addEventListener(
-        "click",
-        ()=>{
-          openZoom(img);
-        }
-      );
-
-      img.addEventListener(
-        "keydown",
-        event=>{
-
-          if(
-            event.key === "Enter" ||
-            event.key === " "
-          ){
-
-            event.preventDefault();
-
-            openZoom(img);
-
-          }
-
-        }
-      );
-
-      img.addEventListener(
-        "load",
-        ()=>{
-
-          img.classList.remove(
-            "is-loading"
+            name,
+            deltaX < 0 ? 1 : -1
           );
 
-          img.classList.remove(
-            "is-missing"
-          );
+          suppressZoomUntil =
+            Date.now() + 450;
 
         }
-      );
 
-      img.addEventListener(
-        "error",
-        ()=>{
+      },
+      {passive:true}
+    );
 
-          img.classList.remove(
-            "is-loading"
-          );
+  });
 
-          img.classList.add(
-            "is-missing"
-          );
+/* ZOOM */
 
-          if(
-            img.src !== fallbackImage
-          ){
-
-            img.src =
-              fallbackImage;
-
-          }
-
-          img.alt =
-            "Product image unavailable";
-
-        }
-      );
-
-    }
-  );
-
-/* =========================
-   MOBILE SWIPE
-========================= */
-
-document
-  .querySelectorAll(
-    "[data-gallery-frame]"
-  )
-  .forEach(
-    frame=>{
-
-      let startX = 0;
-      let startY = 0;
-
-      frame.addEventListener(
-        "touchstart",
-        event=>{
-
-          const touch =
-            event.changedTouches[0];
-
-          startX =
-            touch.clientX;
-
-          startY =
-            touch.clientY;
-
-        },
-        {
-          passive:true
-        }
-      );
-
-      frame.addEventListener(
-        "touchend",
-        event=>{
-
-          const touch =
-            event.changedTouches[0];
-
-          const deltaX =
-            touch.clientX -
-            startX;
-
-          const deltaY =
-            touch.clientY -
-            startY;
-
-          const name =
-            frame.dataset.galleryFrame;
-
-          const gallery =
-            galleries[name];
-
-          if(
-            !gallery ||
-            gallery.images.length <= 1
-          ){
-            return;
-          }
-
-          if(
-            Math.abs(deltaX) > 36 &&
-            Math.abs(deltaX) >
-            Math.abs(deltaY)
-          ){
-
-            changeGallery(
-              name,
-              deltaX < 0
-                ? 1
-                : -1
-            );
-
-            suppressZoomUntil =
-              Date.now() + 450;
-
-          }
-
-        },
-        {
-          passive:true
-        }
-      );
-
-    }
-  );
-
-/* =========================
-   ZOOM
-========================= */
-
-function openZoom(
-  imageElement
-){
+function openZoom(imageElement){
 
   if(
-    Date.now() <
-    suppressZoomUntil
-  ){
-    return;
-  }
-
-  if(
-    imageElement.classList.contains(
-      "is-missing"
-    )
+    Date.now() < suppressZoomUntil ||
+    imageElement.classList.contains("is-missing")
   ){
     return;
   }
@@ -3333,40 +2963,30 @@ function openZoom(
   zoomImg.alt =
     imageElement.alt;
 
-  zoom.classList.add(
-    "active"
-  );
+  zoom.classList.add("active");
 
   zoom.setAttribute(
     "aria-hidden",
     "false"
   );
 
-  pageBody.classList.add(
-    "zoom-open"
-  );
+  pageBody.classList.add("zoom-open");
 
   zoomClose.focus();
 }
 
 function closeZoom(){
 
-  zoom.classList.remove(
-    "active"
-  );
+  zoom.classList.remove("active");
 
   zoom.setAttribute(
     "aria-hidden",
     "true"
   );
 
-  zoomImg.removeAttribute(
-    "src"
-  );
+  zoomImg.removeAttribute("src");
 
-  pageBody.classList.remove(
-    "zoom-open"
-  );
+  pageBody.classList.remove("zoom-open");
 
   if(
     lastFocusedElement &&
@@ -3379,26 +2999,21 @@ function closeZoom(){
 
 }
 
-function trapFocus(
-  event,
-  container
-){
+function trapFocus(event,container){
 
   const focusable =
     Array.from(
       container.querySelectorAll(
         focusableSelector
       )
-    ).filter(
-      element=>{
+    ).filter(element=>{
 
-        return(
-          !element.disabled &&
-          element.offsetParent !== null
-        );
+      return(
+        !element.disabled &&
+        element.offsetParent !== null
+      );
 
-      }
-    );
+    });
 
   if(!focusable.length){
     return;
@@ -3408,9 +3023,7 @@ function trapFocus(
     focusable[0];
 
   const last =
-    focusable[
-      focusable.length - 1
-    ];
+    focusable[focusable.length - 1];
 
   if(
     event.shiftKey &&
@@ -3445,36 +3058,29 @@ zoom.addEventListener(
   "click",
   event=>{
 
-    if(
-      event.target === zoom
-    ){
-
+    if(event.target === zoom){
       closeZoom();
-
     }
 
   }
 );
 
-/* =========================
-   RESPONSIVE MENU
-========================= */
+/* RESPONSIVE MENU */
 
-window.addEventListener(
-  "resize",
-  ()=>{
+window.addEventListener("resize",()=>{
 
-    if(
-      window.innerWidth > 700 &&
-      menu.classList.contains("active")
-    ){
+  if(
+    window.innerWidth > 700 &&
+    menu.classList.contains("active")
+  ){
 
-      toggleMenu(false);
-
-    }
+    toggleMenu(false);
 
   }
-);
+
+});
+
+revealVisibleProducts();
 
 </script>
 
